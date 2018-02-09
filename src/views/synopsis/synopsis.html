@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<script src="./Synopsis.js"></script>
+
+<link rel="stylesheet" href="./synopsis.css">
+
+<app-synopsis id="synopsisPage" class="oxygen-transition-none-prepareDisplay oxygen-transition-none-bringIn">
+
+	<div id="synopsisPageTitle"></div>
+	
+	<app-synopsis-navmenu-list id="synopsisPageNavMenu" data-orientation="Horizontal">
+		<template>
+			<app-synopsis-navmenu-list-item>
+				<span class="text"></span>
+				<span class="highlight"></span>
+			</app-synopsis-navmenu-list-item>
+		</template>
+
+		<div> <!--data-menu-breadcrumb-->
+			<div></div>  <!--data-menu-breadcrumb-text-->
+		</div>
+		<div></div> <!--data-menu-sub-->
+	</app-synopsis-navmenu-list>
+
+	<app-synopsis-channel-logo id="synopsisPageChanLogo" data-oxy-image="synopsisChannelImage"></app-synopsis-channel-logo>
+
+	<div id="synopsisPageContainer">
+		<!-- #SynopsisPageSlider: helper classes [tvEpisodes, tv, movie][noOverview, nonIP] -->
+		<div id="synopsisPageSlider" class="tvEpisodes noOverview">
+		
+			<app-synopsis-overview-panel id="synopsisOverview">
+				<div id="synopsisOverviewGradientRight"></div>
+				<div id="synopsisOverviewImage" ></div> <!--data-oxy-image="synopsisOverviewImage"-->
+				<div id="synopsisOverviewTitle"><div id="synopsisOverviewTitleText" class="text"></div></div>
+				<div id="synopsisOverviewDesc"><div id="synopsisOverviewDescText" class="text"></div></div>
+
+				<div id="synopsisOverviewDirectorCast">
+					<div id="synopsisDirectorContainer">  <!--class="hide"-->
+						<div id="synopsisOverviewDirectorLabel" >Director</div> <!--data-i18n="synopsisDirector"-->
+						<div class="directorText"></div>
+					</div>
+					<div id="synopsisCastContainer"> <!--class="hide"-->
+						<div id="synopsisOverviewCastLabel" >Cast</div> <!--data-i18n="synopsisCast"-->
+						<div class="castText"></div>
+					</div>
+				</div>
+				<app-synopsis-details id="synopsisOverviewDetails"></app-synopsis-details>
+				<app-synopsis-rating id="synopsisOverviewRating"></app-synopsis-rating>
+
+				<div id="synopsisOverviewActionsStatus">
+					<div id="synopsisOverviewActions">
+						<div class="synopsisActionBtns"></div>
+					</div>
+
+  				<div id="synopsisOverviewStatus">
+						<app-synopsis-status-actions-list id="synopsisOverviewActions" data-orientation="vertical">
+							<template>
+								<!-- li: helper classes [statusPlay, statusRecorded, statusKeep, statusLocked, statusScheduled, statusScheduledPlus, statusError, statusReminder] -->
+								<app-synopsis-status-actions-list-item>
+									<span class="synopsisActions-item">
+										<div class="title"></div>
+										<div class="buffer" style="width:0%"></div>
+										<div class="icon"><span class=""></span></div>
+									</span>
+								</app-synopsis-status-actions-list-item>
+							</template>
+						</app-synopsis-status-actions-list>
+					</div>
+				</div> <!--synopsisOverviewStatus-->
+
+			</app-synopsis-overview-panel>
+			
+			<!-- #SynopsisEpisodesList: helper classes [new, recorded] -->
+			<app-synopsis-episode-panel id="synopsisEpisodes">
+				<div id="synopsisEpisodesGradientRight"></div>
+
+				<div id="synopsisEpisodesListContainer">
+					<app-synopsis-episodes-list id="synopsisEpisodesList" class="episodeList-disabled" data-orientation="vertical">
+						<template>
+							<app-synopsis-episodes-list-item class="episodeList-cell">
+               <div class="episodeNum"></div>
+               <div class="episodeTitle"></div>
+               <div class="episodeIcons">
+                 <span class="status statusOnNow">On Now</span>
+                 <span class="status statusPPV"></span>
+                 <span class="status statusPlay"></span>
+                 <span class="status statusKeep"></span>
+                 <span class="status statusLocked"></span>
+                 <span class="status statusReminder"></span>
+                 <span class="status statusRecorded"></span>
+                 <span class="status statusScheduled"></span>
+                 <span class="status statusScheduledPlus"></span>
+                 <span class="status iconDolby"></span>
+                 <span class="status iconSubs"></span>
+                 <span class="status statusError"></span>
+               </div>
+              </app-synopsis-episodes-list-item>
+						</template>
+					</app-synopsis-episodes-list>
+				</div>
+				
+				<div id="synopsisEpisodeTitleDesc">
+					<div id="synopsisEpisodeTitle"><div id="synopsisEpisodeTitleText" class="text"></div></div>
+					<div id="synopsisEpisodeSubTitle"><div id="synopsisEpisodeSubTitleText" class="text"></div></div>
+					<div id="synopsisEpisodeDesc"><div id="synopsisEpisodeDescText" class="text"></div></div>
+				</div>
+				<app-synopsis-details id="synopsisEpisodeDetails"></app-synopsis-details>
+				<app-synopsis-rating id="synopsisEpisodeRating"></app-synopsis-rating>
+																 
+				<div id="synopsisEpisodesPreviewImage"></div>
+
+				<div id="synopsisEpisodesActionsStatus">
+					<!-- build action buttons dynamically -->
+					<div class="synopsisActionBtns"></div>
+
+  				<div id="synopsisEpisodesStatus">
+						<app-synopsis-status-actions-list id="synopsisEpisodeActions" data-orientation="vertical">
+							<template>
+								<!-- li: helper classes [statusPlay, statusRecorded, statusKeep, statusLocked, statusScheduled, statusScheduledPlus, statusError, statusReminder] -->
+								<app-synopsis-status-actions-list-item>
+									<span class="synopsisActions-item">
+										<div class="title"></div>
+										<div class="buffer" style="width:0%"></div>
+										<div class="icon"><span class=""></span></div>
+									</span>
+								</app-synopsis-status-actions-list-item>
+							</template>
+						</app-synopsis-status-actions-list>
+					</div>
+				</div> <!--synopsisEpisodesStatus-->
+			
+			</app-synopsis-episode-panel>
+			
+			<app-synopsis-morelikethis-panel id="synopsisMoreLikeThis" class="hide">
+				<div id="synopsisMoreLikeThisTiles" style="transform: translate3d(0px, 0px, 0px);">
+					<app-tile-mosaic-page-list id="synopsisMosaicTiles" data-max-pages="1">
+						<template>
+							<app-tile-mosaic-page-list-item></app-tile-mosaic-page-list-item>
+						</template>
+					</app-tile-mosaic-page-list>
+				</div>
+			</app-synopsis-morelikethis-panel>
+			
+			<app-synopsis-cast-panel id="synopsisCast" class="hide">
+				<div id="synopsisDirectorTitle">Director</div> <!--data-i18n="synopsisDirectorTitle"-->
+				<div id="synopsisDirectorGrid">
+
+          <app-synopsis-director-table id="directorGridMenu" class="directorGridMenu" 
+                  data-row-id="directorGridMenu-row-" 
+                  data-row-class="GridMenu-row">
+            <template>
+              <app-synopsis-director-table-cell id="directorGridMenuItem" class="epgMenu-item" data-path-name="Gridable"></app-synopsis-director-table-cell>
+            </template>
+          </app-synopsis-director-table>
+
+				</div>
+				<div id="synopsisCastTitle" >Cast</div> <!--data-i18n="synopsisCastTitle"-->
+				<div id="synopsisCastGrid">
+
+          <app-synopsis-cast-table id="castGridMenu" class="castGridMenu" 
+                  data-row-id="castGridMenu-row-" 
+                  data-row-class="GridMenu-row">
+            <template>
+              <app-synopsis-cast-table-cell id="castGridMenuItem" class="epgMenu-item" data-path-name="Gridable"></app-synopsis-cast-table-cell>
+            </template>
+          </app-synopsis-cast-table>
+
+				</div>
+			</app-synopsis-cast-panel>
+		
+		</div>
+	</div>
+
+  <app-synopsis-call-to-action-list id="ctaSynopsis" class="callToActionList" data-screen="ctaSynopsis"></app-synopsis-call-to-action-list>
+
+	<template id="synopsisDirectorCellTemplate">
+		<div class='directorGridMenu-item'>
+			<span class='name'></span>
+			<span class='count'></span>
+		</div>
+	</template>
+
+	<template id="synopsisCastCellTemplate">
+		<div class='castGridMenu-item'>
+			<span class='name'></span>
+			<span class='count'></span>
+		</div>
+	</template>
+	
+</app-synopsis>

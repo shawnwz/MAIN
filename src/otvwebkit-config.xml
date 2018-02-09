@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebKitSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="otvwebkit-config.xsd">
+	<cursive-font-family>Vegur</cursive-font-family>
+	<default-font-family>Vegur</default-font-family>
+	<animation-fps-max>30</animation-fps-max>
+	<enable-accelerated-compositing>true</enable-accelerated-compositing>
+        <enable-webgl>true</enable-webgl>
+	<disable-incremental-image-rendering>true</disable-incremental-image-rendering>
+	<fantasy-font-family>Vegur</fantasy-font-family>
+	<default-background-color>00000000</default-background-color>
+</WebKitSettings>

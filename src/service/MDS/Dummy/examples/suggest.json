@@ -1,0 +1,3952 @@
+https://foxtel-prod-admin-0.digitalsmiths.net/sd/foxtel/cores/assets-foxtel/search?prod=FOXTELIQ3&fxid=021b249b41458a01f7fa8379f6c271eea0d41d8cd98f00b204e9800998ecf8427e&hwid=d41d8cd98f00b204e9800998ecf8427e&idm=02&aid=1b249b41458a01f7fa8379f6c271eea0&device=xx-yy&dclass=STB&swver=00&dpg=0&ao=N&BLOCKED=YES&utcOffset=%2B1100&REGION=af35b21540904fcaa3c049fcfd66b111&dopt=[F0%3A11]&rid=SUGGEST1&limit=8
+
+{
+
+    "queryId": "31a37a69ca6d6e24",
+    "hitCount": 15106,
+    "hits": [
+        {
+            "hitType": "tag",
+            "id": "HWW7361702",
+            "guid": null,
+            "metadata": {
+                "sourceTitle": "Thursday Night Show: 2016 Best Bits",
+                "episodeTitle": "2016 Best Bits",
+                "contentType": "PROGRAM",
+                "officialTitle": "Thursday Night Show",
+                "primaryLanguage": "ENG",
+                "title": "Thursday Night Show",
+                "longSynopsis": "Enjoy all the highlights from the last 12 months. Guests include Didi Hamann John Barnes Phil Thompson Ray Clemence Ian St John Darren Farley and Sam Quek.",
+                "programId": "HWW7361702",
+                "description": "Enjoy all the highlights from the last 12 months. Guests include Didi Hamann John Barnes Phil Thompson Ray Clemence Ian St John Darren Farley and Sam Quek.",
+                "yearOfRelease": null,
+                "colourType": "colour",
+                "subGenreId": 14,
+                "subGenreName": "Football & Soccer",
+                "sortTitle": "thursday night show",
+                "seriesInfo": {
+                    "episodeTitle": "2016 Best Bits",
+                    "episodeNumber": "0"
+                },
+                "publishDuration": "PT60M",
+                "category": "TV_NO_EPS",
+                "shortSynopsis": "Enjoy all the highlights from the last 12 months. Guests include Didi Hamann John Barnes Phil Thompson Ray Clemence Ian St John Darren Farley and Sam Quek.",
+                "classification": "NC",
+                "genreName": "Sport",
+                "titleId": "346631",
+                "isSubtitled": "false",
+                "genreId": 6
+            },
+            "images": {
+                "episode": {
+                    "landscape": [
+                        {
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "placeholder placeholder-brand",
+                            "caption": "Liverpool FC TV",
+                            "URI": "store2/mount1/16/2/6h88t.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "season": {
+                    "landscape": [
+                        {
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "placeholder placeholder-brand",
+                            "caption": "Liverpool FC TV",
+                            "URI": "store2/mount1/16/2/6h88t.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "title": {
+                    "landscape": [
+                        {
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "placeholder placeholder-brand",
+                            "caption": "Liverpool FC TV",
+                            "URI": "store2/mount1/16/2/6h88t.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "promotional": {
+                    "landscape": [
+                        {
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "placeholder placeholder-brand",
+                            "caption": "Liverpool FC TV",
+                            "URI": "store2/mount1/16/2/6h88t.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "default": {
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "placeholder placeholder-brand",
+                            "caption": "Liverpool FC TV",
+                            "URI": "store2/mount1/16/2/6h88t.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 14.373598,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "SubGenre": "14",
+                    "ProgrammeTitle": "Thursday Night Show",
+                    "SeriesInfo": {
+                        "SeriesLink": {
+                            "LastLink": "false"
+                        },
+                        "EpisodeTitle": "2016 Best Bits",
+                        "NewSeries": "false",
+                        "EpisodeNumber": "0"
+                    },
+                    "publishStartTime": 1483434000000,
+                    "xsi:type": "programmeEventType",
+                    "type": "LINEAR",
+                    "endTime": 1483437600000,
+                    "isPremiere": false,
+                    "isLastLink": "false",
+                    "version": 1253928,
+                    "mergedSynopsis": "2016 Best Bits: Enjoy all the highlights from the last 12 months. Guests include Didi Hamann John Barnes Phil Thompson Ray Clemence Ian St John Darren Farley and Sam Quek.",
+                    "id": "EP282703037",
+                    "startTime": 1483434000000,
+                    "itemIds": [
+                        "HWW7361702"
+                    ],
+                    "programId": "HWW7361702",
+                    "MainGenre": "06",
+                    "isWidescreen": false,
+                    "ShortSynopsis": "Enjoy all the highlights from the last 12 months. Guests include Didi Hamann John Barnes Phil Thompson Ray Clemence Ian St John Darren Farley and Sam Quek.",
+                    "ExtendedSynopsis": "Enjoy all the highlights from the last 12 months. Guests include Didi Hamann John Barnes Phil Thompson Ray Clemence Ian St John Darren Farley and Sam Quek.",
+                    "isNewSeries": false,
+                    "MainLanguageTrack": "ENG",
+                    "Keywords": {
+                        "Keyword": [
+                            {
+                                "content": "PT20H0M",
+                                "KeyName": "PublishStartOffset"
+                            },
+                            {
+                                "content": "PT60M",
+                                "KeyName": "PublishDuration"
+                            },
+                            {
+                                "content": "TV_NO_EPS",
+                                "KeyName": "Category"
+                            },
+                            {
+                                "content": "default",
+                                "KeyName": "SourceParentalRating"
+                            },
+                            {
+                                "content": "True",
+                                "KeyName": "HighDefinition"
+                            },
+                            {
+                                "content": "HWW7361702",
+                                "KeyName": "ProgramID"
+                            },
+                            {
+                                "content": "346631",
+                                "KeyName": "TitleID"
+                            },
+                            {
+                                "content": "Thursday Night Show: 2016 Best Bits",
+                                "KeyName": "SourceTitle"
+                            },
+                            {
+                                "content": "Thursday Night Show",
+                                "KeyName": "OfficialTitle"
+                            }
+                        ]
+                    },
+                    "colourType": "colour",
+                    "scheduleCreateDate": 1481571107450,
+                    "channelTag": "EP2",
+                    "eventTitle": "Thursday Night Show",
+                    "hasClosedCaptions": false,
+                    "xmlns": "http://www.foxtel.tv/SchedML",
+                    "EventID": "EP282703037",
+                    "sourceChannel": "Liverpool FC TV HD",
+                    "audioType": "stereo",
+                    "duration": "PT60M0S",
+                    "eventDescription": "Sport",
+                    "isLiveEvent": false,
+                    "lastScheduleUpdate": 1482943560711,
+                    "isHighDefinition": true,
+                    "classification": "NC",
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "Liverpool FC",
+                        "videoFormat": "HD",
+                        "epgChannelGenre": "Sport",
+                        "brandName": "Liverpool FC TV",
+                        "brandId": 1688,
+                        "channelPack": "Sports",
+                        "id": 1681,
+                        "groupId": 1691,
+                        "priority": 1,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "Liverpool FC TV HD",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 1080,
+                                        "width": 1920,
+                                        "class": "placeholder placeholder-brand",
+                                        "caption": "Liverpool FC TV",
+                                        "URI": "store2/mount1/16/2/6h88t.jpg"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 33
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "isSubtitled": false
+                },
+                {
+                    "hitType": "tag",
+                    "SubGenre": "14",
+                    "ProgrammeTitle": "Thursday Night Show",
+                    "SeriesInfo": {
+                        "SeriesLink": {
+                            "LastLink": "false"
+                        },
+                        "EpisodeTitle": "2016 Best Bits",
+                        "NewSeries": "false",
+                        "EpisodeNumber": "0"
+                    },
+                    "publishStartTime": 1483434000000,
+                    "xsi:type": "programmeEventType",
+                    "type": "LINEAR",
+                    "endTime": 1483437600000,
+                    "isPremiere": false,
+                    "isLastLink": "false",
+                    "version": 1253937,
+                    "mergedSynopsis": "2016 Best Bits: Enjoy all the highlights from the last 12 months. Guests include Didi Hamann John Barnes Phil Thompson Ray Clemence Ian St John Darren Farley and Sam Quek.",
+                    "id": "E2P82705017",
+                    "startTime": 1483434000000,
+                    "itemIds": [
+                        "HWW7361702"
+                    ],
+                    "programId": "HWW7361702",
+                    "MainGenre": "06",
+                    "isWidescreen": true,
+                    "ShortSynopsis": "Enjoy all the highlights from the last 12 months. Guests include Didi Hamann John Barnes Phil Thompson Ray Clemence Ian St John Darren Farley and Sam Quek.",
+                    "ExtendedSynopsis": "Enjoy all the highlights from the last 12 months. Guests include Didi Hamann John Barnes Phil Thompson Ray Clemence Ian St John Darren Farley and Sam Quek.",
+                    "isNewSeries": false,
+                    "MainLanguageTrack": "ENG",
+                    "Keywords": {
+                        "Keyword": [
+                            {
+                                "content": "PT20H0M",
+                                "KeyName": "PublishStartOffset"
+                            },
+                            {
+                                "content": "PT60M",
+                                "KeyName": "PublishDuration"
+                            },
+                            {
+                                "content": "TV_NO_EPS",
+                                "KeyName": "Category"
+                            },
+                            {
+                                "content": "default",
+                                "KeyName": "SourceParentalRating"
+                            },
+                            {
+                                "content": "HWW7361702",
+                                "KeyName": "ProgramID"
+                            },
+                            {
+                                "content": "346631",
+                                "KeyName": "TitleID"
+                            },
+                            {
+                                "content": "Thursday Night Show: 2016 Best Bits",
+                                "KeyName": "SourceTitle"
+                            },
+                            {
+                                "content": "Thursday Night Show",
+                                "KeyName": "OfficialTitle"
+                            }
+                        ]
+                    },
+                    "colourType": "colour",
+                    "scheduleCreateDate": 1481571103591,
+                    "channelTag": "E2P",
+                    "eventTitle": "Thursday Night Show",
+                    "hasClosedCaptions": false,
+                    "xmlns": "http://www.foxtel.tv/SchedML",
+                    "EventID": "E2P82705017",
+                    "sourceChannel": "Liverpool FC TV",
+                    "audioType": "stereo",
+                    "duration": "PT60M0S",
+                    "eventDescription": "Sport",
+                    "isLiveEvent": false,
+                    "lastScheduleUpdate": 1482943559536,
+                    "classification": "NC",
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "Liverpool FC",
+                        "videoFormat": "SD",
+                        "epgChannelGenre": "Sport",
+                        "brandName": "Liverpool FC TV",
+                        "brandId": 1688,
+                        "channelPack": "Sports",
+                        "id": 1684,
+                        "groupId": 1691,
+                        "priority": 2,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "Liverpool FC TV",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 1080,
+                                        "width": 1920,
+                                        "class": "placeholder placeholder-brand",
+                                        "caption": "Liverpool FC TV",
+                                        "URI": "store2/mount1/16/2/6h88t.jpg"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 33
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "isSubtitled": false
+                }
+            ]
+        },
+        {
+            "hitType": "tag",
+            "id": "HWW7390326",
+            "guid": null,
+            "metadata": {
+                "sourceTitle": "Academy - Best of 2016",
+                "contentType": "PROGRAM",
+                "officialTitle": "Academy - Best of 2016",
+                "primaryLanguage": "ENG",
+                "title": "Academy - Best of 2016",
+                "longSynopsis": "The best moments from 2016 for the Chelsea Academy.",
+                "programId": "HWW7390326",
+                "description": "The best moments from 2016 for the Chelsea Academy.",
+                "yearOfRelease": null,
+                "colourType": "colour",
+                "subGenreId": 0,
+                "subGenreName": "Other",
+                "sortTitle": "academy - best of 2016",
+                "publishDuration": "PT30M",
+                "category": "EVENT",
+                "shortSynopsis": "The best moments from 2016 for the Chelsea Academy.",
+                "classification": "NC",
+                "genreName": "Sport",
+                "titleId": "354520",
+                "isSubtitled": "false",
+                "genreId": 6
+            },
+            "images": {
+                "episode": {
+                    "landscape": [
+                        {
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "placeholder placeholder-brand",
+                            "caption": "Chelsea FC TV",
+                            "URI": "store2/mount1/16/2/8f6ff.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "season": {
+                    "landscape": [
+                        {
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "placeholder placeholder-brand",
+                            "caption": "Chelsea FC TV",
+                            "URI": "store2/mount1/16/2/8f6ff.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "title": {
+                    "landscape": [
+                        {
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "placeholder placeholder-brand",
+                            "caption": "Chelsea FC TV",
+                            "URI": "store2/mount1/16/2/8f6ff.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "promotional": {
+                    "landscape": [
+                        {
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "placeholder placeholder-brand",
+                            "caption": "Chelsea FC TV",
+                            "URI": "store2/mount1/16/2/8f6ff.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "default": {
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "placeholder placeholder-brand",
+                            "caption": "Chelsea FC TV",
+                            "URI": "store2/mount1/16/2/8f6ff.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 13.937437,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "SubGenre": "00",
+                    "ProgrammeTitle": "Academy - Best of 2016",
+                    "publishStartTime": 1483434000000,
+                    "xsi:type": "programmeEventType",
+                    "type": "LINEAR",
+                    "endTime": 1483435800000,
+                    "isPremiere": false,
+                    "version": 1253928,
+                    "mergedSynopsis": "Academy - Best Of 2016: The best moments from 2016 for the Chelsea Academy.",
+                    "id": "EP183002904",
+                    "startTime": 1483434000000,
+                    "itemIds": [
+                        "HWW7390326"
+                    ],
+                    "programId": "HWW7390326",
+                    "MainGenre": "06",
+                    "isWidescreen": false,
+                    "ShortSynopsis": "The best moments from 2016 for the Chelsea Academy.",
+                    "ExtendedSynopsis": "The best moments from 2016 for the Chelsea Academy.",
+                    "MainLanguageTrack": "ENG",
+                    "Keywords": {
+                        "Keyword": [
+                            {
+                                "content": "PT20H0M",
+                                "KeyName": "PublishStartOffset"
+                            },
+                            {
+                                "content": "PT30M",
+                                "KeyName": "PublishDuration"
+                            },
+                            {
+                                "content": "EVENT",
+                                "KeyName": "Category"
+                            },
+                            {
+                                "content": "default",
+                                "KeyName": "SourceParentalRating"
+                            },
+                            {
+                                "content": "HWW7390326",
+                                "KeyName": "ProgramID"
+                            },
+                            {
+                                "content": "354520",
+                                "KeyName": "TitleID"
+                            },
+                            {
+                                "content": "Academy - Best of 2016",
+                                "KeyName": "SourceTitle"
+                            },
+                            {
+                                "content": "Academy - Best of 2016",
+                                "KeyName": "OfficialTitle"
+                            }
+                        ]
+                    },
+                    "colourType": "colour",
+                    "scheduleCreateDate": 1482532075111,
+                    "channelTag": "EP1",
+                    "eventTitle": "Academy - Best of 2016",
+                    "hasClosedCaptions": false,
+                    "EventID": "EP183002904",
+                    "xmlns": "http://www.foxtel.tv/SchedML",
+                    "sourceChannel": "Chelsea FC TV HD",
+                    "audioType": "stereo",
+                    "duration": "PT30M0S",
+                    "eventDescription": "Sport",
+                    "isLiveEvent": false,
+                    "lastScheduleUpdate": 1482943560606,
+                    "classification": "NC",
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "Chelsea FC",
+                        "videoFormat": "HD",
+                        "epgChannelGenre": "Sport",
+                        "brandName": "Chelsea FC TV",
+                        "brandId": 1689,
+                        "channelPack": "Sports",
+                        "id": 1682,
+                        "groupId": 1690,
+                        "priority": 1,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "Chelsea FC TV HD",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 1080,
+                                        "width": 1920,
+                                        "class": "placeholder placeholder-brand",
+                                        "caption": "Chelsea FC TV",
+                                        "URI": "store2/mount1/16/2/8f6ff.jpg"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 33
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "isSubtitled": false
+                },
+                {
+                    "hitType": "tag",
+                    "SubGenre": "00",
+                    "ProgrammeTitle": "Academy - Best of 2016",
+                    "publishStartTime": 1483434000000,
+                    "xsi:type": "programmeEventType",
+                    "type": "LINEAR",
+                    "endTime": 1483435800000,
+                    "isPremiere": false,
+                    "version": 1253937,
+                    "mergedSynopsis": "Academy - Best Of 2016: The best moments from 2016 for the Chelsea Academy.",
+                    "id": "E1P83003140",
+                    "startTime": 1483434000000,
+                    "itemIds": [
+                        "HWW7390326"
+                    ],
+                    "programId": "HWW7390326",
+                    "MainGenre": "06",
+                    "isWidescreen": false,
+                    "ShortSynopsis": "The best moments from 2016 for the Chelsea Academy.",
+                    "ExtendedSynopsis": "The best moments from 2016 for the Chelsea Academy.",
+                    "MainLanguageTrack": "ENG",
+                    "Keywords": {
+                        "Keyword": [
+                            {
+                                "content": "PT20H0M",
+                                "KeyName": "PublishStartOffset"
+                            },
+                            {
+                                "content": "PT30M",
+                                "KeyName": "PublishDuration"
+                            },
+                            {
+                                "content": "EVENT",
+                                "KeyName": "Category"
+                            },
+                            {
+                                "content": "default",
+                                "KeyName": "SourceParentalRating"
+                            },
+                            {
+                                "content": "HWW7390326",
+                                "KeyName": "ProgramID"
+                            },
+                            {
+                                "content": "354520",
+                                "KeyName": "TitleID"
+                            },
+                            {
+                                "content": "Academy - Best of 2016",
+                                "KeyName": "SourceTitle"
+                            },
+                            {
+                                "content": "Academy - Best of 2016",
+                                "KeyName": "OfficialTitle"
+                            }
+                        ]
+                    },
+                    "colourType": "colour",
+                    "scheduleCreateDate": 1482532073406,
+                    "channelTag": "E1P",
+                    "eventTitle": "Academy - Best of 2016",
+                    "hasClosedCaptions": false,
+                    "EventID": "E1P83003140",
+                    "xmlns": "http://www.foxtel.tv/SchedML",
+                    "sourceChannel": "Chelsea FC TV",
+                    "audioType": "stereo",
+                    "duration": "PT30M0S",
+                    "eventDescription": "Sport",
+                    "isLiveEvent": false,
+                    "lastScheduleUpdate": 1482943559350,
+                    "classification": "NC",
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "Chelsea FC",
+                        "videoFormat": "SD",
+                        "epgChannelGenre": "Sport",
+                        "brandName": "Chelsea FC TV",
+                        "brandId": 1689,
+                        "channelPack": "Sports",
+                        "id": 1685,
+                        "groupId": 1690,
+                        "priority": 2,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "Chelsea FC TV",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 1080,
+                                        "width": 1920,
+                                        "class": "placeholder placeholder-brand",
+                                        "caption": "Chelsea FC TV",
+                                        "URI": "store2/mount1/16/2/8f6ff.jpg"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 33
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "isSubtitled": false
+                }
+            ]
+        },
+        {
+            "hitType": "tag",
+            "id": "HWW5941722",
+            "guid": null,
+            "metadata": {
+                "webLink": "Official Site http://www.foxnews.com/hannity/",
+                "contentType": "PROGRAM",
+                "officialTitle": "Hannity",
+                "primaryLanguage": "ENG",
+                "title": "Hannity",
+                "programId": "HWW5941722",
+                "longSynopsis": "Candid, controversial, and completely unleashed, Sean brings you political news of the day.",
+                "description": "Candid, controversial, and completely unleashed, Sean brings you political news of the day.",
+                "yearOfRelease": null,
+                "countryOfOrigin": "USA",
+                "subGenreId": 5,
+                "subGenreName": "Public Affairs & Political",
+                "sortTitle": "hannity",
+                "seriesInfo": {
+                    "episodeTitle": "",
+                    "episodeNumber": "0"
+                },
+                "publishDuration": "PT60M",
+                "category": "TV_NO_EPS",
+                "shortSynopsis": "Candid, controversial, and completely unleashed, Sean brings you political news of the day.",
+                "classification": "NC",
+                "genreName": "News and Documentaries",
+                "titleId": "234705",
+                "isSubtitled": "false",
+                "genreId": 8
+            },
+            "images": {
+                "title": {
+                    "landscape": [
+                        {
+                            "id": 42985,
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "promotional",
+                            "mediaType": "image/jpeg",
+                            "URI": "store2/mount1/16/2/6bsqg.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "episode": {
+                    "landscape": [
+                        {
+                            "height": 500,
+                            "width": 889,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "season": {
+                    "landscape": [
+                        {
+                            "height": 500,
+                            "width": 889,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "promotional": {
+                    "landscape": [
+                        {
+                            "height": 500,
+                            "width": 889,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "default": {
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "id": 42985,
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "promotional",
+                            "mediaType": "image/jpeg",
+                            "URI": "store2/mount1/16/2/6bsqg.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 13.786807,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "SubGenre": "05",
+                    "ProgrammeTitle": "Hannity",
+                    "SeriesInfo": {
+                        "SeriesLink": {
+                            "LastLink": "false"
+                        },
+                        "EpisodeTitle": "",
+                        "NewSeries": "false",
+                        "EpisodeNumber": "0"
+                    },
+                    "publishStartTime": 1483430400000,
+                    "xsi:type": "programmeEventType",
+                    "type": "LINEAR",
+                    "endTime": 1483434000000,
+                    "isPremiere": false,
+                    "isLastLink": "false",
+                    "version": 1253047,
+                    "mergedSynopsis": "Candid, controversial, and completely unleashed, Sean brings you political news of the day.",
+                    "id": "FNC82811205",
+                    "startTime": 1483430400000,
+                    "itemIds": [
+                        "HWW5941722"
+                    ],
+                    "programId": "HWW5941722",
+                    "MainGenre": "08",
+                    "isWidescreen": false,
+                    "ShortSynopsis": "Candid, controversial, and completely unleashed, Sean brings you political news of the day.",
+                    "ExtendedSynopsis": "Candid, controversial, and completely unleashed, Sean brings you political news of the day.",
+                    "isNewSeries": false,
+                    "MainLanguageTrack": "ENG",
+                    "Keywords": {
+                        "Keyword": [
+                            {
+                                "content": "PT19H0M",
+                                "KeyName": "PublishStartOffset"
+                            },
+                            {
+                                "content": "PT60M",
+                                "KeyName": "PublishDuration"
+                            },
+                            {
+                                "content": "TV_NO_EPS",
+                                "KeyName": "Category"
+                            },
+                            {
+                                "content": "default",
+                                "KeyName": "SourceParentalRating"
+                            },
+                            {
+                                "KeyName": "AutomationID"
+                            },
+                            {
+                                "content": "HWW5941722",
+                                "KeyName": "ProgramID"
+                            },
+                            {
+                                "content": "234705",
+                                "KeyName": "TitleID"
+                            },
+                            {
+                                "content": "Official Site http://www.foxnews.com/hannity/",
+                                "KeyName": "WebLink"
+                            },
+                            {
+                                "KeyName": "SourceTitle"
+                            },
+                            {
+                                "content": "Hannity",
+                                "KeyName": "OfficialTitle"
+                            }
+                        ]
+                    },
+                    "CountryOfOrigin": "USA",
+                    "scheduleCreateDate": 1481917454178,
+                    "channelTag": "FNC",
+                    "eventTitle": "Hannity",
+                    "hasClosedCaptions": true,
+                    "xmlns": "http://www.foxtel.tv/SchedML",
+                    "EventID": "FNC82811205",
+                    "sourceChannel": "FOX NEWS",
+                    "audioType": "stereo",
+                    "duration": "PT60M0S",
+                    "eventDescription": "News & Documentaries",
+                    "isLiveEvent": false,
+                    "lastScheduleUpdate": 1482444909372,
+                    "classification": "NC",
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "Fox Networks",
+                        "videoFormat": "",
+                        "epgChannelGenre": "News & Documentaries",
+                        "brandName": "FOX News",
+                        "brandId": 760,
+                        "channelPack": "Essentials",
+                        "id": 177,
+                        "groupId": 674,
+                        "priority": 2,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "FOX News",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 32
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "isSubtitled": false
+                }
+            ]
+        },
+        {
+            "hitType": "tag",
+            "id": "HWW7380648",
+            "guid": null,
+            "metadata": {
+                "subGenreId": 5,
+                "subGenreName": "Public Affairs & Political",
+                "sortTitle": "special report",
+                "seriesInfo": {
+                    "episodeTitle": "",
+                    "episodeNumber": "0"
+                },
+                "contentType": "PROGRAM",
+                "publishDuration": "PT60M",
+                "officialTitle": "Special Report",
+                "primaryLanguage": "ENG",
+                "category": "TV_NO_EPS",
+                "title": "Special Report",
+                "programId": "HWW7380648",
+                "shortSynopsis": "",
+                "description": null,
+                "classification": "NC",
+                "genreName": "News and Documentaries",
+                "yearOfRelease": null,
+                "titleId": "107132",
+                "genreId": 8,
+                "isSubtitled": "false"
+            },
+            "images": {
+                "title": {
+                    "landscape": [
+                        {
+                            "id": 49887,
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "promotional",
+                            "mediaType": "image/jpeg",
+                            "URI": "store2/mount1/16/2/ajmio.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "episode": {
+                    "landscape": [
+                        {
+                            "height": 500,
+                            "width": 889,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "season": {
+                    "landscape": [
+                        {
+                            "height": 500,
+                            "width": 889,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "promotional": {
+                    "landscape": [
+                        {
+                            "height": 500,
+                            "width": 889,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "default": {
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "id": 49887,
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "promotional",
+                            "mediaType": "image/jpeg",
+                            "URI": "store2/mount1/16/2/ajmio.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 13.292451,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "SubGenre": "05",
+                    "ProgrammeTitle": "Special Report",
+                    "SeriesInfo": {
+                        "SeriesLink": {
+                            "LastLink": "false"
+                        },
+                        "EpisodeTitle": "",
+                        "NewSeries": "false",
+                        "EpisodeNumber": "0"
+                    },
+                    "publishStartTime": 1483434000000,
+                    "xsi:type": "programmeEventType",
+                    "type": "LINEAR",
+                    "endTime": 1483437600000,
+                    "isPremiere": false,
+                    "isLastLink": "false",
+                    "version": 1253047,
+                    "mergedSynopsis": "Special Report",
+                    "id": "FNC82811206",
+                    "startTime": 1483434000000,
+                    "itemIds": [
+                        "HWW7380648"
+                    ],
+                    "programId": "HWW7380648",
+                    "MainGenre": "08",
+                    "isWidescreen": false,
+                    "ShortSynopsis": "",
+                    "ExtendedSynopsis": "",
+                    "isNewSeries": false,
+                    "MainLanguageTrack": "ENG",
+                    "Keywords": {
+                        "Keyword": [
+                            {
+                                "content": "PT20H0M",
+                                "KeyName": "PublishStartOffset"
+                            },
+                            {
+                                "content": "PT60M",
+                                "KeyName": "PublishDuration"
+                            },
+                            {
+                                "content": "TV_NO_EPS",
+                                "KeyName": "Category"
+                            },
+                            {
+                                "content": "default",
+                                "KeyName": "SourceParentalRating"
+                            },
+                            {
+                                "KeyName": "AutomationID"
+                            },
+                            {
+                                "content": "HWW7380648",
+                                "KeyName": "ProgramID"
+                            },
+                            {
+                                "content": "107132",
+                                "KeyName": "TitleID"
+                            },
+                            {
+                                "KeyName": "SourceTitle"
+                            },
+                            {
+                                "content": "Special Report",
+                                "KeyName": "OfficialTitle"
+                            }
+                        ]
+                    },
+                    "scheduleCreateDate": 1481917454178,
+                    "channelTag": "FNC",
+                    "eventTitle": "Special Report",
+                    "hasClosedCaptions": true,
+                    "EventID": "FNC82811206",
+                    "xmlns": "http://www.foxtel.tv/SchedML",
+                    "sourceChannel": "FOX NEWS",
+                    "audioType": "stereo",
+                    "duration": "PT60M0S",
+                    "eventDescription": "News & Documentaries",
+                    "isLiveEvent": false,
+                    "lastScheduleUpdate": 1482444909376,
+                    "classification": "NC",
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "Fox Networks",
+                        "videoFormat": "",
+                        "epgChannelGenre": "News & Documentaries",
+                        "brandName": "FOX News",
+                        "brandId": 760,
+                        "channelPack": "Essentials",
+                        "id": 177,
+                        "groupId": 674,
+                        "priority": 2,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "FOX News",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 32
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "isSubtitled": false
+                }
+            ]
+        },
+        {
+            "hitType": "tag",
+            "id": "HWW7321753",
+            "guid": null,
+            "metadata": {
+                "sourceTitle": "Jay Leno's Garage",
+                "episodeTitle": "Anarchy on Wheels",
+                "displaySEpNum": "true",
+                "webLink": "Official Site http://www.nbc.com/jay-lenos-garage",
+                "contentType": "PROGRAM",
+                "episodeNumber": 4,
+                "officialTitle": "Jay Leno's Garage",
+                "primaryLanguage": "ENG",
+                "title": "Jay Leno's Garage",
+                "programId": "HWW7321753",
+                "longSynopsis": "Join former late-night show host Jay Leno and his celebrity guests as they lift the hood on all things motors.",
+                "description": "Join former late-night show host Jay Leno and his celebrity guests as they lift the hood on all things motors.",
+                "yearOfRelease": null,
+                "subGenreId": 11.0,
+                "subGenreName": "Science & Technology",
+                "sortTitle": "jay leno's garage",
+                "seriesInfo": {
+                    "episodeTitle": "Anarchy on Wheels",
+                    "episodeNumber": "0"
+                },
+                "seasonNumber": 2,
+                "publishDuration": "PT60M",
+                "category": "TV_EPS",
+                "shortSynopsis": "Join former late-night show host Jay Leno and his celebrity guests as they lift the hood on all things motors.",
+                "classification": "PG",
+                "genreName": "News and Documentaries",
+                "titleId": "318512",
+                "isSubtitled": "false",
+                "genreId": 8.0
+            },
+            "images": {
+                "episode": {
+                    "portrait": [
+                        {
+                            "category": "Episode",
+                            "height": "1440",
+                            "width": "960",
+                            "primary": "true",
+                            "caption": {
+                                "en": "Anarchy on Wheels"
+                            },
+                            "type": "image/jpg",
+                            "URI": "store4/mount1/assets/p12982090_e_v8_aa.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "category": "Episode",
+                            "height": "1080",
+                            "width": "1920",
+                            "primary": "true",
+                            "caption": {
+                                "en": "Anarchy on Wheels"
+                            },
+                            "type": "image/jpg",
+                            "URI": "store4/mount1/assets/p12982090_e_h10_aa.jpg"
+                        }
+                    ]
+                },
+                "season": {
+                    "landscape": [
+                        {
+                            "id": 73116,
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "promotional",
+                            "mediaType": "image/jpeg",
+                            "URI": "store2/mount1/16/2/6hwzf.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "title": {
+                    "landscape": [
+                        {
+                            "id": 50925,
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "promotional",
+                            "mediaType": "image/jpeg",
+                            "URI": "store2/mount1/16/2/95u9j.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "promotional": {
+                    "landscape": [
+                        {
+                            "height": 500,
+                            "width": 889,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "default": {
+                    "portrait": [
+                        {
+                            "category": "Episode",
+                            "height": "1440",
+                            "width": "960",
+                            "primary": "true",
+                            "caption": {
+                                "en": "Anarchy on Wheels"
+                            },
+                            "type": "image/jpg",
+                            "URI": "store4/mount1/assets/p12982090_e_v8_aa.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "category": "Episode",
+                            "height": "1080",
+                            "width": "1920",
+                            "primary": "true",
+                            "caption": {
+                                "en": "Anarchy on Wheels"
+                            },
+                            "type": "image/jpg",
+                            "URI": "store4/mount1/assets/p12982090_e_h10_aa.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 12.920161,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "SubGenre": "11",
+                    "ProgrammeTitle": "Jay Leno's Garage",
+                    "SeriesInfo": {
+                        "SeriesLink": {
+                            "content": "T365498",
+                            "LastLink": "false"
+                        },
+                        "EpisodeTitle": "Anarchy on Wheels",
+                        "NewSeries": "false",
+                        "EpisodeNumber": "0"
+                    },
+                    "featured": {
+                        "isPlatformPriority": true,
+                        "isChannelPriority": false,
+                        "isOnlyOn": false,
+                        "isFirstOn": true,
+                        "isMadeByFoxtel": false,
+                        "isMadeForFoxtel": false,
+                        "featuredMonth": "2016-12",
+                        "playCount": 3,
+                        "futurePlayCount": 6,
+                        "startDate": "2016-12-12",
+                        "endDate": "2017-02-28",
+                        "startTime": 1481421600000,
+                        "endTime": 1488160800000,
+                        "tagline": [
+                            "First On"
+                        ]
+                    },
+                    "publishStartTime": 1483432200000,
+                    "xsi:type": "programmeEventType",
+                    "type": "LINEAR",
+                    "endTime": 1483435800000,
+                    "isPremiere": false,
+                    "seriesLink": "T365498",
+                    "isLastLink": "false",
+                    "version": 1253957,
+                    "mergedSynopsis": " S2, Ep4. Anarchy on Wheels: Join former late-night show host Jay Leno and his celebrity guests as they lift the hood on all things motors.",
+                    "id": "DI282015354",
+                    "startTime": 1483432200000,
+                    "itemIds": [
+                        "HWW7321753"
+                    ],
+                    "programId": "HWW7321753",
+                    "MainGenre": "08",
+                    "isWidescreen": false,
+                    "ShortSynopsis": "Join former late-night show host Jay Leno and his celebrity guests as they lift the hood on all things motors.",
+                    "ExtendedSynopsis": "Join former late-night show host Jay Leno and his celebrity guests as they lift the hood on all things motors.",
+                    "isNewSeries": false,
+                    "MainLanguageTrack": "ENG",
+                    "Keywords": {
+                        "Keyword": [
+                            {
+                                "content": "PT19H30M",
+                                "KeyName": "PublishStartOffset"
+                            },
+                            {
+                                "content": "PT60M",
+                                "KeyName": "PublishDuration"
+                            },
+                            {
+                                "content": "TV_EPS",
+                                "KeyName": "Category"
+                            },
+                            {
+                                "content": "PG",
+                                "KeyName": "SourceParentalRating"
+                            },
+                            {
+                                "content": "HWW7321753",
+                                "KeyName": "ProgramID"
+                            },
+                            {
+                                "content": "2",
+                                "KeyName": "SourceSeriesNumber"
+                            },
+                            {
+                                "content": "4",
+                                "KeyName": "SourceEpNumber"
+                            },
+                            {
+                                "content": "318512",
+                                "KeyName": "TitleID"
+                            },
+                            {
+                                "content": "Official Site http://www.nbc.com/jay-lenos-garage",
+                                "KeyName": "WebLink"
+                            },
+                            {
+                                "content": "Jay Leno's Garage",
+                                "KeyName": "SourceTitle"
+                            },
+                            {
+                                "content": "Jay Leno's Garage",
+                                "KeyName": "OfficialTitle"
+                            },
+                            {
+                                "content": "true",
+                                "KeyName": "DisplaySEpNum"
+                            }
+                        ]
+                    },
+                    "scheduleCreateDate": 1479238762166,
+                    "channelTag": "DI2",
+                    "eventTitle": "Jay Leno's Garage",
+                    "hasClosedCaptions": false,
+                    "xmlns": "http://www.foxtel.tv/SchedML",
+                    "EventID": "DI282015354",
+                    "sourceChannel": "Discovery Turbo +2",
+                    "audioType": "stereo",
+                    "duration": "PT60M0S",
+                    "eventDescription": "News & Documentaries",
+                    "isLiveEvent": false,
+                    "lastScheduleUpdate": 1482943556487,
+                    "classification": "PG",
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "Discovery",
+                        "videoFormat": "",
+                        "epgChannelGenre": "News & Documentaries",
+                        "brandName": "Discovery Turbo",
+                        "brandId": 744,
+                        "channelPack": "Documentary & Adventure",
+                        "id": 152,
+                        "groupId": 668,
+                        "priority": 2,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "Disc Turbo +2",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 35
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "isSubtitled": false
+                }
+            ]
+        },
+        {
+            "hitType": "tag",
+            "id": "PMG01275104",
+            "guid": null,
+            "metadata": {
+                "sourceTitle": "Frank Bianco Cup",
+                "searchTerms": [
+                    "Boxing"
+                ],
+                "contentType": "PROGRAM",
+                "officialTitle": "Frank Bianco Cup",
+                "primaryLanguage": "ENG",
+                "title": "Frank Bianco Cup",
+                "longSynopsis": "Top-rated Filipino contender Randy Petalcorin faces off against Omari Kimweri in a fight for the vacant WBC silver flyweight title at the Melbourne Pavilion in Flemington, Australia.",
+                "programId": "PMG01275104",
+                "description": "Top-rated Filipino contender Randy Petalcorin faces off against Omari Kimweri in a fight for the vacant WBC silver flyweight title at the Melbourne Pavilion in Flemington, Australia.",
+                "yearOfRelease": 2016,
+                "colourType": "colour",
+                "subGenreId": 4,
+                "subGenreName": "Boxing & Wrestling",
+                "sortTitle": "frank bianco cup",
+                "seriesInfo": {
+                    "episodeTitle": "",
+                    "episodeNumber": "0"
+                },
+                "publishDuration": "PT120M",
+                "category": "TV_EPS",
+                "shortSynopsis": "Top-rated Filipino contender Randy Petalcorin faces off against Omari Kimweri in a fight for the vacant WBC silver flyweight title at the Melbourne Pavilion in Flemington, Australia.",
+                "classification": "NC",
+                "genreName": "Sport",
+                "titleId": "344449",
+                "isSubtitled": "false",
+                "genreId": 6
+            },
+            "images": {
+                "title": {
+                    "landscape": [
+                        {
+                            "id": 54867,
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "promotional",
+                            "mediaType": "image/jpeg",
+                            "URI": "store2/mount1/16/2/akw9a.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "episode": {
+                    "landscape": [
+                        {
+                            "height": 500,
+                            "width": 889,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "season": {
+                    "landscape": [
+                        {
+                            "height": 500,
+                            "width": 889,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "promotional": {
+                    "landscape": [
+                        {
+                            "height": 500,
+                            "width": 889,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "default": {
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "id": 54867,
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "promotional",
+                            "mediaType": "image/jpeg",
+                            "URI": "store2/mount1/16/2/akw9a.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 12.517802,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "SubGenre": "04",
+                    "ProgrammeTitle": "Frank Bianco Cup",
+                    "SeriesInfo": {
+                        "SeriesLink": {
+                            "LastLink": "false"
+                        },
+                        "EpisodeTitle": "",
+                        "NewSeries": "false",
+                        "EpisodeNumber": "0"
+                    },
+                    "publishStartTime": 1483434000000,
+                    "xsi:type": "programmeEventType",
+                    "type": "LINEAR",
+                    "endTime": 1483441200000,
+                    "isPremiere": false,
+                    "isLastLink": "false",
+                    "version": 1254892,
+                    "mergedSynopsis": "Top-rated Filipino contender Randy Petalcorin faces off against Omari Kimweri in a fight for the vacant WBC silver flyweight title at the Melbourne Pavilion in Flemington, Australia.",
+                    "id": "F1D82963212",
+                    "startTime": 1483434000000,
+                    "itemIds": [
+                        "PMG01275104"
+                    ],
+                    "programId": "PMG01275104",
+                    "MainGenre": "06",
+                    "YearOfProduction": "2016",
+                    "isWidescreen": true,
+                    "ShortSynopsis": "Top-rated Filipino contender Randy Petalcorin faces off against Omari Kimweri in a fight for the vacant WBC silver flyweight title at the Melbourne Pavilion in Flemington, Australia.",
+                    "ExtendedSynopsis": "Top-rated Filipino contender Randy Petalcorin faces off against Omari Kimweri in a fight for the vacant WBC silver flyweight title at the Melbourne Pavilion in Flemington, Australia.",
+                    "isNewSeries": false,
+                    "MainLanguageTrack": "ENG",
+                    "Keywords": {
+                        "Keyword": [
+                            {
+                                "content": "PT20H0M",
+                                "KeyName": "PublishStartOffset"
+                            },
+                            {
+                                "content": "PT120M",
+                                "KeyName": "PublishDuration"
+                            },
+                            {
+                                "content": "TV_EPS",
+                                "KeyName": "Category"
+                            },
+                            {
+                                "content": "NC",
+                                "KeyName": "SourceParentalRating"
+                            },
+                            {
+                                "content": "True",
+                                "KeyName": "HighDefinition"
+                            },
+                            {
+                                "content": "PMG01275104",
+                                "KeyName": "ProgramID"
+                            },
+                            {
+                                "content": "344449",
+                                "KeyName": "TitleID"
+                            },
+                            {
+                                "content": "Frank Bianco Cup",
+                                "KeyName": "SourceTitle"
+                            },
+                            {
+                                "content": "Frank Bianco Cup",
+                                "KeyName": "OfficialTitle"
+                            },
+                            {
+                                "content": "Boxing",
+                                "KeyName": "SearchTerms"
+                            }
+                        ]
+                    },
+                    "colourType": "colour",
+                    "scheduleCreateDate": 1482380501234,
+                    "channelTag": "F1D",
+                    "eventTitle": "Boxing: Frank Bianco Cup",
+                    "hasClosedCaptions": false,
+                    "xmlns": "http://www.foxtel.tv/SchedML",
+                    "EventID": "F1D82963212",
+                    "sourceChannel": "FOX SPORTS 1 HD",
+                    "audioType": "stereo",
+                    "duration": "PT120M0S",
+                    "eventDescription": "Sport",
+                    "isLiveEvent": false,
+                    "lastScheduleUpdate": 1483399903426,
+                    "isHighDefinition": true,
+                    "classification": "NC",
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "FOX Sports",
+                        "videoFormat": "HD",
+                        "epgChannelGenre": "HD",
+                        "brandName": "FOX SPORTS",
+                        "brandId": 761,
+                        "channelPack": "Sports",
+                        "id": 190,
+                        "groupId": 675,
+                        "priority": 1,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "FOX SPORTS 1 HD",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 33
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "isSubtitled": false
+                },
+                {
+                    "hitType": "tag",
+                    "SubGenre": "04",
+                    "ProgrammeTitle": "Frank Bianco Cup",
+                    "SeriesInfo": {
+                        "SeriesLink": {
+                            "LastLink": "false"
+                        },
+                        "EpisodeTitle": "",
+                        "NewSeries": "false",
+                        "EpisodeNumber": "0"
+                    },
+                    "publishStartTime": 1483434000000,
+                    "xsi:type": "programmeEventType",
+                    "type": "LINEAR",
+                    "endTime": 1483441200000,
+                    "isPremiere": false,
+                    "isLastLink": "false",
+                    "version": 1254892,
+                    "mergedSynopsis": "Top-rated Filipino contender Randy Petalcorin faces off against Omari Kimweri in a fight for the vacant WBC silver flyweight title at the Melbourne Pavilion in Flemington, Australia.",
+                    "id": "FS182963903",
+                    "startTime": 1483434000000,
+                    "itemIds": [
+                        "PMG01275104"
+                    ],
+                    "programId": "PMG01275104",
+                    "MainGenre": "06",
+                    "YearOfProduction": "2016",
+                    "isWidescreen": true,
+                    "ShortSynopsis": "Top-rated Filipino contender Randy Petalcorin faces off against Omari Kimweri in a fight for the vacant WBC silver flyweight title at the Melbourne Pavilion in Flemington, Australia.",
+                    "ExtendedSynopsis": "Top-rated Filipino contender Randy Petalcorin faces off against Omari Kimweri in a fight for the vacant WBC silver flyweight title at the Melbourne Pavilion in Flemington, Australia.",
+                    "isNewSeries": false,
+                    "MainLanguageTrack": "ENG",
+                    "Keywords": {
+                        "Keyword": [
+                            {
+                                "content": "PT20H0M",
+                                "KeyName": "PublishStartOffset"
+                            },
+                            {
+                                "content": "PT120M",
+                                "KeyName": "PublishDuration"
+                            },
+                            {
+                                "content": "TV_EPS",
+                                "KeyName": "Category"
+                            },
+                            {
+                                "content": "NC",
+                                "KeyName": "SourceParentalRating"
+                            },
+                            {
+                                "content": "PMG01275104",
+                                "KeyName": "ProgramID"
+                            },
+                            {
+                                "content": "344449",
+                                "KeyName": "TitleID"
+                            },
+                            {
+                                "content": "Frank Bianco Cup",
+                                "KeyName": "SourceTitle"
+                            },
+                            {
+                                "content": "Frank Bianco Cup",
+                                "KeyName": "OfficialTitle"
+                            },
+                            {
+                                "content": "Boxing",
+                                "KeyName": "SearchTerms"
+                            }
+                        ]
+                    },
+                    "colourType": "colour",
+                    "scheduleCreateDate": 1482380501825,
+                    "channelTag": "FS1",
+                    "eventTitle": "Boxing: Frank Bianco Cup",
+                    "hasClosedCaptions": false,
+                    "xmlns": "http://www.foxtel.tv/SchedML",
+                    "EventID": "FS182963903",
+                    "sourceChannel": "FOX SPORTS 1",
+                    "audioType": "stereo",
+                    "duration": "PT120M0S",
+                    "eventDescription": "Sport",
+                    "isLiveEvent": false,
+                    "lastScheduleUpdate": 1483399904459,
+                    "classification": "NC",
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "FOX Sports",
+                        "videoFormat": "",
+                        "epgChannelGenre": "Sport",
+                        "brandName": "FOX SPORTS",
+                        "brandId": 761,
+                        "channelPack": "Sports",
+                        "id": 178,
+                        "groupId": 675,
+                        "priority": 2,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "FOX SPORTS 1",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 33
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "isSubtitled": false
+                }
+            ]
+        },
+        {
+            "hitType": "tag",
+            "id": "PMG01279708",
+            "guid": null,
+            "metadata": {
+                "sourceTitle": "NBL",
+                "searchTerms": [
+                    "Basketball"
+                ],
+                "episodeTitle": "Illawarra v Perth",
+                "contentType": "PROGRAM",
+                "officialTitle": "NBL",
+                "primaryLanguage": "ENG",
+                "title": "NBL",
+                "programId": "PMG01279708",
+                "longSynopsis": "The Hawks have a chance to make a statement that they no longer fear the Wildcats, who are in a world of pain right now. Rob Beveridge will hope to send Illawarra into 2017 with a win against his former team.",
+                "description": "The Hawks have a chance to make a statement that they no longer fear the Wildcats, who are in a world of pain right now. Rob Beveridge will hope to send Illawarra into 2017 with a win against his former team.",
+                "yearOfRelease": 2016,
+                "colourType": "colour",
+                "subGenreId": 3,
+                "subGenreName": "Court Sports",
+                "sortTitle": "nbl",
+                "seriesInfo": {
+                    "episodeTitle": "Illawarra v Perth",
+                    "episodeNumber": "0"
+                },
+                "publishDuration": "PT90M",
+                "category": "TV_EPS",
+                "shortSynopsis": "The Hawks have a chance to make a statement that they no longer fear the Wildcats, who are in a world of pain right now. Rob Beveridge will hope to send Illawarra into 2017 with a win against his former team.",
+                "classification": "NC",
+                "genreName": "Sport",
+                "titleId": "132079",
+                "genreId": 6,
+                "isSubtitled": "false"
+            },
+            "images": {
+                "episode": {
+                    "portrait": [
+                        {
+                            "type": "image/jpeg",
+                            "URI": "store1/mount1/FSX/2016/I@068730.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "type": "image/jpeg",
+                            "URI": "store1/mount1/FSX/2016/I@068730_L.jpg"
+                        }
+                    ]
+                },
+                "title": {
+                    "landscape": [
+                        {
+                            "id": 48327,
+                            "height": 1080,
+                            "width": 1920,
+                            "class": "promotional",
+                            "mediaType": "image/jpeg",
+                            "URI": "store2/mount1/16/2/7p2ld.jpg"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "season": {
+                    "landscape": [
+                        {
+                            "height": 500,
+                            "width": 889,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "promotional": {
+                    "landscape": [
+                        {
+                            "height": 500,
+                            "width": 889,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                        }
+                    ],
+                    "portrait": [
+                        {
+                            "height": 500,
+                            "width": 333,
+                            "class": "placeholder placeholder-brand",
+                            "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                        }
+                    ]
+                },
+                "default": {
+                    "portrait": [
+                        {
+                            "type": "image/jpeg",
+                            "URI": "store1/mount1/FSX/2016/I@068730.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "type": "image/jpeg",
+                            "URI": "store1/mount1/FSX/2016/I@068730_L.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 12.363,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "destinations": [
+                        "nagra"
+                    ],
+                    "destinationHeadend": "nagra",
+                    "productTermsTag": "VOD",
+                    "packageId": "13506373",
+                    "endTime": 1485626399000,
+                    "type": "VOD",
+                    "productTerms": [
+                        "VOD"
+                    ],
+                    "activate": "true",
+                    "startTime": 1483207200000,
+                    "id": "IBMSnagra13506373",
+                    "itemIds": [
+                        "PMG01279708"
+                    ],
+                    "eventId": "IBMSnagra13506373",
+                    "feature": {
+                        "episodeTitle": "Illawarra v Perth",
+                        "showID": "132079",
+                        "episodeNumber": "3",
+                        "releaseYear": 2016,
+                        "title": "NBL Illawarra v Perth",
+                        "longSynopsis": "The Hawks have a chance to make a statement that they no longer fear the Wildcats, who are in a world of pain right now. Rob Beveridge will hope to send Illawarra into 2017 with a win against his former team.",
+                        "groupID": "9080180",
+                        "programId": "PMG01279708",
+                        "description": "The Hawks have a chance to make a statement that they no longer fear the Wildcats, who are in a world of pain right now. Rob Beveridge will hope to send Illawarra into 2017 with a win against his former team.",
+                        "yearOfRelease": 2016,
+                        "countryOfOrigin": "AU",
+                        "colourType": "Colour",
+                        "subGenreId": 3,
+                        "versionCopyId": "9882538",
+                        "bugging": "false",
+                        "channelTag": "FSX",
+                        "seasonNumber": "2016",
+                        "videoFormat": "SD",
+                        "publishDuration": "122 Mins",
+                        "category": "TV_EPS",
+                        "shortSynopsis": "The Hawks have a chance to make a statement that they no longer fear the Wildcats, who are in a world of pain right now. Rob Beveridge will hope to send Illawarra into 2017 with a win against his former team.",
+                        "classification": "NC",
+                        "library": "true",
+                        "versionId": "9624001",
+                        "widescreen": "true",
+                        "media": {
+                            "videos": [
+                                {
+                                    "files": {
+                                        "videoFile": {
+                                            "assetId": "ON293065"
+                                        },
+                                        "base": ""
+                                    },
+                                    "duration": "PT2H2M26S",
+                                    "hasClosedCaptions": "false",
+                                    "class": "feature",
+                                    "aspectRatio": "16x9",
+                                    "audioType": "Stereo"
+                                }
+                            ],
+                            "images": [
+                                {
+                                    "fileSize": "814256",
+                                    "imageId": "I@068730",
+                                    "class": "poster",
+                                    "filename": "I@068730.jpg",
+                                    "contentType": "image/jpeg"
+                                },
+                                {
+                                    "fileSize": "1449841",
+                                    "imageId": "I@068730_L",
+                                    "class": "landscape",
+                                    "filename": "I@068730_L.jpg",
+                                    "contentType": "image/jpeg"
+                                }
+                            ]
+                        },
+                        "genreId": 6,
+                        "isSubtitled": "false"
+                    },
+                    "scheduleCreateDate": 1483189561981,
+                    "channelTag": "FSX",
+                    "origin": "IBMS",
+                    "eventTitle": "NBL Illawarra v Perth",
+                    "xmlns": "http://foxtel.tv/engineering/bcms/schemas/exchange/2/5",
+                    "header": {
+                        "destinations": {
+                            "destinationID": "nagra",
+                            "accessTerm": "CA900004",
+                            "productTerm": "PR1",
+                            "destination": {
+                                "destinationID": "nagra",
+                                "accessTerm": "CA900004",
+                                "deviceId": "STBmanaged",
+                                "productTerm": "PR1"
+                            }
+                        },
+                        "terms": {
+                            "term": [
+                                {
+                                    "parameter": [
+                                        {
+                                            "name": "profile"
+                                        },
+                                        {
+                                            "name": "policy"
+                                        },
+                                        {
+                                            "content": "true",
+                                            "name": "download"
+                                        },
+                                        {
+                                            "content": "false",
+                                            "name": "streaming"
+                                        },
+                                        {
+                                            "name": "rentalHours"
+                                        },
+                                        {
+                                            "content": "P28D",
+                                            "name": "retentionPeriod"
+                                        }
+                                    ],
+                                    "type": "CA900004"
+                                },
+                                {
+                                    "parameter": {
+                                        "content": "VOD",
+                                        "name": "product"
+                                    },
+                                    "type": "PR1"
+                                }
+                            ]
+                        },
+                        "exhibitionWindow": {
+                            "offerType": "Subscription",
+                            "price": "0.00",
+                            "start": "2016-12-31T18:00:00.0Z",
+                            "end": "2017-01-28T17:59:59.0Z"
+                        }
+                    },
+                    "offerType": "Subscription",
+                    "duration": "PT2H2M26S",
+                    "price": "0.00",
+                    "lastScheduleUpdate": 1483189561981,
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "FOX Sports",
+                        "videoFormat": "",
+                        "epgChannelGenre": "Sport",
+                        "brandName": "FOX SPORTS PLAY",
+                        "brandId": 765,
+                        "channelPack": "",
+                        "id": 182,
+                        "groupId": 675,
+                        "priority": 2,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "FOX SPORTS PLAY",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": ""
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "publishedDate": 1483227251000,
+                    "schemaVersion": "2.5.0",
+                    "media": {
+                        "videos": [
+                            {
+                                "files": {
+                                    "videoFile": {
+                                        "assetId": "ON293065"
+                                    },
+                                    "base": ""
+                                },
+                                "duration": "PT2H2M26S",
+                                "hasClosedCaptions": "false",
+                                "class": "feature",
+                                "aspectRatio": "16x9",
+                                "audioType": "Stereo"
+                            }
+                        ],
+                        "images": [
+                            {
+                                "fileSize": "814256",
+                                "imageId": "I@068730",
+                                "class": "poster",
+                                "filename": "I@068730.jpg",
+                                "contentType": "image/jpeg"
+                            },
+                            {
+                                "fileSize": "1449841",
+                                "imageId": "I@068730_L",
+                                "class": "landscape",
+                                "filename": "I@068730_L.jpg",
+                                "contentType": "image/jpeg"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "hitType": "tag",
+                    "SubGenre": "03",
+                    "ProgrammeTitle": "NBL",
+                    "SeriesInfo": {
+                        "SeriesLink": {
+                            "LastLink": "false"
+                        },
+                        "EpisodeTitle": "Illawarra v Perth",
+                        "NewSeries": "false",
+                        "EpisodeNumber": "0"
+                    },
+                    "featured": {
+                        "isPlatformPriority": false,
+                        "isChannelPriority": false,
+                        "isOnlyOn": false,
+                        "isFirstOn": false,
+                        "isMadeByFoxtel": false,
+                        "isMadeForFoxtel": false,
+                        "featuredMonth": "2016-10",
+                        "playCount": 4,
+                        "futurePlayCount": 2,
+                        "startDate": "2016-10-06",
+                        "endDate": "2016-10-31",
+                        "startTime": 1475632800000,
+                        "endTime": 1477792800000,
+                        "tagline": [ ]
+                    },
+                    "publishStartTime": 1483426800000,
+                    "xsi:type": "programmeEventType",
+                    "type": "LINEAR",
+                    "endTime": 1483432200000,
+                    "isPremiere": false,
+                    "isLastLink": "false",
+                    "version": 1253937,
+                    "mergedSynopsis": "The Hawks have a chance to make a statement that they no longer fear the Wildcats, who are in a world of pain right now. Rob Beveridge will hope to send Illawarra into 2017 with a win against his former team.",
+                    "id": "FS382246516",
+                    "startTime": 1483426800000,
+                    "itemIds": [
+                        "PMG01279708"
+                    ],
+                    "programId": "PMG01279708",
+                    "MainGenre": "06",
+                    "YearOfProduction": "2016",
+                    "isWidescreen": true,
+                    "ShortSynopsis": "The Hawks have a chance to make a statement that they no longer fear the Wildcats, who are in a world of pain right now. Rob Beveridge will hope to send Illawarra into 2017 with a win against his former team.",
+                    "ExtendedSynopsis": "The Hawks have a chance to make a statement that they no longer fear the Wildcats, who are in a world of pain right now. Rob Beveridge will hope to send Illawarra into 2017 with a win against his former team.",
+                    "isNewSeries": false,
+                    "MainLanguageTrack": "ENG",
+                    "Keywords": {
+                        "Keyword": [
+                            {
+                                "content": "PT18H0M",
+                                "KeyName": "PublishStartOffset"
+                            },
+                            {
+                                "content": "PT90M",
+                                "KeyName": "PublishDuration"
+                            },
+                            {
+                                "content": "TV_EPS",
+                                "KeyName": "Category"
+                            },
+                            {
+                                "content": "NC",
+                                "KeyName": "SourceParentalRating"
+                            },
+                            {
+                                "content": "PMG01279708",
+                                "KeyName": "ProgramID"
+                            },
+                            {
+                                "content": "132079",
+                                "KeyName": "TitleID"
+                            },
+                            {
+                                "content": "NBL",
+                                "KeyName": "SourceTitle"
+                            },
+                            {
+                                "content": "NBL",
+                                "KeyName": "OfficialTitle"
+                            },
+                            {
+                                "content": "Basketball",
+                                "KeyName": "SearchTerms"
+                            },
+                            {
+                                "content": "ROUND 13",
+                                "KeyName": "PASH"
+                            },
+                            {
+                                "content": "NBLILL",
+                                "KeyName": "HomeTeam"
+                            },
+                            {
+                                "content": "NBLPER",
+                                "KeyName": "AwayTeam"
+                            },
+                            {
+                                "content": "R13",
+                                "KeyName": "RoundNumber"
+                            },
+                            {
+                                "content": "NBL",
+                                "KeyName": "Competition"
+                            },
+                            {
+                                "content": "SS20162017",
+                                "KeyName": "Season"
+                            }
+                        ]
+                    },
+                    "colourType": "colour",
+                    "scheduleCreateDate": 1479934918175,
+                    "channelTag": "FS3",
+                    "eventTitle": "NBL Illawarra v Perth",
+                    "hasClosedCaptions": true,
+                    "xmlns": "http://www.foxtel.tv/SchedML",
+                    "EventID": "FS382246516",
+                    "sourceChannel": "FOX SPORTS 3",
+                    "audioType": "stereo",
+                    "duration": "PT90M0S",
+                    "eventDescription": "Sport",
+                    "isLiveEvent": false,
+                    "lastScheduleUpdate": 1482943569058,
+                    "classification": "NC",
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "FOX Sports",
+                        "videoFormat": "",
+                        "epgChannelGenre": "Sport",
+                        "brandName": "FOX SPORTS",
+                        "brandId": 761,
+                        "channelPack": "Sports",
+                        "id": 180,
+                        "groupId": 675,
+                        "priority": 2,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "FOX SPORTS 3",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 33
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "isSubtitled": false
+                },
+                {
+                    "hitType": "tag",
+                    "SubGenre": "03",
+                    "ProgrammeTitle": "NBL",
+                    "SeriesInfo": {
+                        "SeriesLink": {
+                            "LastLink": "false"
+                        },
+                        "EpisodeTitle": "Illawarra v Perth",
+                        "NewSeries": "false",
+                        "EpisodeNumber": "0"
+                    },
+                    "featured": {
+                        "isPlatformPriority": false,
+                        "isChannelPriority": false,
+                        "isOnlyOn": false,
+                        "isFirstOn": false,
+                        "isMadeByFoxtel": false,
+                        "isMadeForFoxtel": false,
+                        "featuredMonth": "2016-10",
+                        "playCount": 4,
+                        "futurePlayCount": 2,
+                        "startDate": "2016-10-06",
+                        "endDate": "2016-10-31",
+                        "startTime": 1475632800000,
+                        "endTime": 1477792800000,
+                        "tagline": [ ]
+                    },
+                    "publishStartTime": 1483426800000,
+                    "xsi:type": "programmeEventType",
+                    "type": "LINEAR",
+                    "endTime": 1483432200000,
+                    "isPremiere": false,
+                    "isLastLink": "false",
+                    "version": 1253928,
+                    "mergedSynopsis": "The Hawks have a chance to make a statement that they no longer fear the Wildcats, who are in a world of pain right now. Rob Beveridge will hope to send Illawarra into 2017 with a win against his former team.",
+                    "id": "FHD82242187",
+                    "startTime": 1483426800000,
+                    "itemIds": [
+                        "PMG01279708"
+                    ],
+                    "programId": "PMG01279708",
+                    "MainGenre": "06",
+                    "YearOfProduction": "2016",
+                    "isWidescreen": true,
+                    "ShortSynopsis": "The Hawks have a chance to make a statement that they no longer fear the Wildcats, who are in a world of pain right now. Rob Beveridge will hope to send Illawarra into 2017 with a win against his former team.",
+                    "ExtendedSynopsis": "The Hawks have a chance to make a statement that they no longer fear the Wildcats, who are in a world of pain right now. Rob Beveridge will hope to send Illawarra into 2017 with a win against his former team.",
+                    "isNewSeries": false,
+                    "MainLanguageTrack": "ENG",
+                    "Keywords": {
+                        "Keyword": [
+                            {
+                                "content": "PT18H0M",
+                                "KeyName": "PublishStartOffset"
+                            },
+                            {
+                                "content": "PT90M",
+                                "KeyName": "PublishDuration"
+                            },
+                            {
+                                "content": "TV_EPS",
+                                "KeyName": "Category"
+                            },
+                            {
+                                "content": "NC",
+                                "KeyName": "SourceParentalRating"
+                            },
+                            {
+                                "content": "True",
+                                "KeyName": "HighDefinition"
+                            },
+                            {
+                                "content": "PMG01279708",
+                                "KeyName": "ProgramID"
+                            },
+                            {
+                                "content": "132079",
+                                "KeyName": "TitleID"
+                            },
+                            {
+                                "content": "NBL",
+                                "KeyName": "SourceTitle"
+                            },
+                            {
+                                "content": "NBL",
+                                "KeyName": "OfficialTitle"
+                            },
+                            {
+                                "content": "Basketball",
+                                "KeyName": "SearchTerms"
+                            },
+                            {
+                                "content": "ROUND 13",
+                                "KeyName": "PASH"
+                            },
+                            {
+                                "content": "NBLILL",
+                                "KeyName": "HomeTeam"
+                            },
+                            {
+                                "content": "NBLPER",
+                                "KeyName": "AwayTeam"
+                            },
+                            {
+                                "content": "R13",
+                                "KeyName": "RoundNumber"
+                            },
+                            {
+                                "content": "NBL",
+                                "KeyName": "Competition"
+                            },
+                            {
+                                "content": "SS20162017",
+                                "KeyName": "Season"
+                            }
+                        ]
+                    },
+                    "colourType": "colour",
+                    "scheduleCreateDate": 1479934899058,
+                    "channelTag": "FHD",
+                    "eventTitle": "NBL Illawarra v Perth",
+                    "hasClosedCaptions": true,
+                    "xmlns": "http://www.foxtel.tv/SchedML",
+                    "EventID": "FHD82242187",
+                    "sourceChannel": "FOX SPORTS 3 HD",
+                    "audioType": "stereo",
+                    "duration": "PT90M0S",
+                    "eventDescription": "Sport",
+                    "isLiveEvent": false,
+                    "lastScheduleUpdate": 1482943564669,
+                    "isHighDefinition": true,
+                    "classification": "NC",
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "FOX Sports",
+                        "videoFormat": "HD",
+                        "epgChannelGenre": "HD",
+                        "brandName": "FOX SPORTS",
+                        "brandId": 761,
+                        "channelPack": "Sports",
+                        "id": 192,
+                        "groupId": 675,
+                        "priority": 1,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "FOX SPORTS 3 HD",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 33
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "isSubtitled": false
+                }
+            ]
+        },
+        {
+            "hitType": "tag",
+            "id": "6084470",
+            "guid": "70890561-4984-4470-a960-baa37e9286a3",
+            "metadata": {
+                "sourceTitle": "Money Train",
+                "webLink": "IMDB http://www.imdb.com/title/tt0113845/",
+                "contentType": "MOVIE",
+                "officialTitle": "Money Train",
+                "primaryLanguage": "ENG",
+                "consumerAdvice": "l v",
+                "title": "Money Train",
+                "programId": "6084470",
+                "longSynopsis": "A debt-laden transit cop tries to talk his partner and foster brother into robbing a money train.",
+                "description": "A debt-laden transit cop tries to talk his partner and foster brother into robbing a money train.",
+                "yearOfRelease": 1995,
+                "countryOfOrigin": "USA",
+                "colourType": "colour",
+                "subGenreId": 1.0,
+                "subGenreName": "Action & Adventure",
+                "sortTitle": "money train",
+                "imdbId": "0113845",
+                "publishDuration": "PT115M",
+                "category": "MOVIE",
+                "cast": [
+                    {
+                        "name": "Wesley Snipes",
+                        "role": "actor"
+                    },
+                    {
+                        "name": "Woody Harrelson",
+                        "role": "actor"
+                    },
+                    {
+                        "name": "Jennifer Lopez",
+                        "role": "actor"
+                    },
+                    {
+                        "name": "Chris Cooper",
+                        "role": "actor"
+                    },
+                    {
+                        "name": "Robert Blake",
+                        "role": "actor"
+                    },
+                    {
+                        "name": "Joseph Ruben",
+                        "role": "director"
+                    }
+                ],
+                "shortSynopsis": "A debt-laden transit cop tries to talk his partner and foster brother into robbing a money train.",
+                "classification": "MA",
+                "freebase": {
+                    "id": "/m/0bhh9g",
+                    "wikipediaId": "4090453",
+                    "imdbId": "tt0113845"
+                },
+                "directors": [
+                    "Joseph Ruben"
+                ],
+                "genreName": "Movie",
+                "titleId": "121754",
+                "isSubtitled": "false",
+                "genreId": 4.0
+            },
+            "images": {
+                "title": {
+                    "portrait": [
+                        {
+                            "id": 75179,
+                            "height": 1440,
+                            "width": 960,
+                            "class": "title",
+                            "mediaType": "image/jpeg",
+                            "URI": "store2/mount1/16/2/a1abl.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "type": "image/jpeg",
+                            "URI": "store1/mount1/PTO/2016/I@061805_L.jpg"
+                        }
+                    ]
+                },
+                "promotional": {
+                    "portrait": [
+                        {
+                            "category": "Iconic",
+                            "height": "1440",
+                            "width": "960",
+                            "primary": "true",
+                            "caption": {
+                                "content": "Money Train (1995)",
+                                "lang": "en"
+                            },
+                            "type": "image/jpg",
+                            "URI": "store4/mount1/iconic/v8/AllPhotos/17421/p17421_i_v8_aa.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "category": "Iconic",
+                            "height": "1080",
+                            "width": "1920",
+                            "primary": "true",
+                            "caption": {
+                                "content": "Money Train (1995)",
+                                "lang": "en"
+                            },
+                            "type": "image/jpg",
+                            "URI": "store4/mount1/iconic/h10/AllPhotos/17421/p17421_i_h10_aa.jpg"
+                        }
+                    ]
+                },
+                "default": {
+                    "portrait": [
+                        {
+                            "id": 75179,
+                            "height": 1440,
+                            "width": 960,
+                            "class": "title",
+                            "mediaType": "image/jpeg",
+                            "URI": "store2/mount1/16/2/a1abl.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "type": "image/jpeg",
+                            "URI": "store1/mount1/PTO/2016/I@061805_L.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 12.310126,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "destinations": [
+                        "nagra"
+                    ],
+                    "destinationHeadend": "nagra",
+                    "productTermsTag": "VOD",
+                    "packageId": "12039925",
+                    "endTime": 1506779999000,
+                    "type": "VOD",
+                    "productTerms": [
+                        "VOD"
+                    ],
+                    "activate": "true",
+                    "startTime": 1467316800000,
+                    "id": "IBMSnagra12039925",
+                    "itemIds": [
+                        "6084470"
+                    ],
+                    "eventId": "IBMSnagra12039925",
+                    "feature": {
+                        "showID": "121754",
+                        "primaryLanguage": "EN",
+                        "releaseYear": 1995,
+                        "consumerAdvice": "l v",
+                        "title": "Money Train",
+                        "programId": "6084470",
+                        "description": "A debt-laden transit cop tries to talk his partner and foster brother into robbing a money train.",
+                        "yearOfRelease": 1995,
+                        "countryOfOrigin": "US",
+                        "colourType": "Colour",
+                        "subGenreId": 1,
+                        "channelTag": "SHA",
+                        "versionCopyId": "9534355",
+                        "bugging": "false",
+                        "videoFormat": "SD",
+                        "publishDuration": "105 Mins",
+                        "marketingMessage": "A debt-laden transit cop tries to talk his partner and foster brother into robbing a money train.",
+                        "category": "MOVIE",
+                        "shortSynopsis": "A debt-laden transit cop tries to talk his partner and foster brother into robbing a money train.",
+                        "cast": [
+                            {
+                                "name": "Joseph Ruben",
+                                "role": "Director"
+                            },
+                            {
+                                "name": "Wesley Snipes",
+                                "role": "Actor"
+                            },
+                            {
+                                "name": "Woody Harrelson",
+                                "role": "Actor"
+                            },
+                            {
+                                "name": "Jennifer Lopez",
+                                "role": "Actor"
+                            },
+                            {
+                                "name": "Chris Cooper",
+                                "role": "Actor"
+                            },
+                            {
+                                "name": "Robert Blake",
+                                "role": "Actor"
+                            }
+                        ],
+                        "classification": "MA15+",
+                        "library": "true",
+                        "versionId": "9405945",
+                        "directors": [
+                            "Joseph Ruben"
+                        ],
+                        "media": {
+                            "videos": [
+                                {
+                                    "files": {
+                                        "videoFile": {
+                                            "assetId": "ON180785"
+                                        },
+                                        "base": ""
+                                    },
+                                    "duration": "PT6333S",
+                                    "hasClosedCaptions": "false",
+                                    "class": "feature",
+                                    "aspectRatio": "16x9",
+                                    "audioType": "Stereo"
+                                }
+                            ],
+                            "images": [
+                                {
+                                    "fileSize": "1222016",
+                                    "imageId": "I@061805",
+                                    "class": "poster",
+                                    "filename": "I@061805.jpg",
+                                    "contentType": "image/jpeg"
+                                },
+                                {
+                                    "fileSize": "2254816",
+                                    "imageId": "I@061805_L",
+                                    "class": "landscape",
+                                    "filename": "I@061805_L.jpg",
+                                    "contentType": "image/jpeg"
+                                }
+                            ]
+                        },
+                        "isSubtitled": "false",
+                        "genreId": 4
+                    },
+                    "scheduleCreateDate": 1466407445875,
+                    "channelTag": "SHA",
+                    "origin": "IBMS",
+                    "eventTitle": "Money Train",
+                    "xmlns": "http://foxtel.tv/engineering/bcms/schemas/exchange/2/5",
+                    "header": {
+                        "destinations": {
+                            "destinationID": "nagra",
+                            "accessTerm": "CA900004",
+                            "productTerm": "PR1",
+                            "destination": {
+                                "destinationID": "nagra",
+                                "accessTerm": "CA900004",
+                                "deviceId": "STBmanaged",
+                                "productTerm": "PR1"
+                            }
+                        },
+                        "terms": {
+                            "term": [
+                                {
+                                    "parameter": [
+                                        {
+                                            "name": "profile"
+                                        },
+                                        {
+                                            "name": "policy"
+                                        },
+                                        {
+                                            "content": "true",
+                                            "name": "download"
+                                        },
+                                        {
+                                            "content": "false",
+                                            "name": "streaming"
+                                        },
+                                        {
+                                            "name": "rentalHours"
+                                        },
+                                        {
+                                            "content": "P28D",
+                                            "name": "retentionPeriod"
+                                        }
+                                    ],
+                                    "type": "CA900004"
+                                },
+                                {
+                                    "parameter": {
+                                        "content": "VOD",
+                                        "name": "product"
+                                    },
+                                    "type": "PR1"
+                                }
+                            ]
+                        },
+                        "exhibitionWindow": {
+                            "offerType": "Subscription",
+                            "price": "0.00",
+                            "start": "2016-06-30T20:00:00.0Z",
+                            "end": "2017-09-30T13:59:59.0Z"
+                        }
+                    },
+                    "offerType": "Subscription",
+                    "duration": "PT6333S",
+                    "price": "0.00",
+                    "lastScheduleUpdate": 1466407445875,
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "Foxtel Movies",
+                        "videoFormat": "",
+                        "epgChannelGenre": "Movies",
+                        "brandName": "Action/Adventure",
+                        "brandId": 810,
+                        "channelPack": "Movies & Premium Drama",
+                        "id": 309,
+                        "groupId": 704,
+                        "priority": 2,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "Action/Adventure",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 1440,
+                                        "width": 960,
+                                        "class": "placeholder placeholder-brand",
+                                        "caption": "Action/Adventure",
+                                        "URI": "store2/mount1/16/2/83azp.jpg"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 34
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "publishedDate": 1466441200000,
+                    "schemaVersion": "2.5.0",
+                    "media": {
+                        "videos": [
+                            {
+                                "files": {
+                                    "videoFile": {
+                                        "assetId": "ON180785"
+                                    },
+                                    "base": ""
+                                },
+                                "duration": "PT6333S",
+                                "hasClosedCaptions": "false",
+                                "class": "feature",
+                                "aspectRatio": "16x9",
+                                "audioType": "Stereo"
+                            }
+                        ],
+                        "images": [
+                            {
+                                "fileSize": "1222016",
+                                "imageId": "I@061805",
+                                "class": "poster",
+                                "filename": "I@061805.jpg",
+                                "contentType": "image/jpeg"
+                            },
+                            {
+                                "fileSize": "2254816",
+                                "imageId": "I@061805_L",
+                                "class": "landscape",
+                                "filename": "I@061805_L.jpg",
+                                "contentType": "image/jpeg"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "hitType": "tag",
+                    "SubGenre": "01",
+                    "ProgrammeTitle": "Money Train",
+                    "publishStartTime": 1483428000000,
+                    "xsi:type": "programmeEventType",
+                    "type": "LINEAR",
+                    "endTime": 1483434926000,
+                    "isPremiere": false,
+                    "version": 1254751,
+                    "consumerAdvice": "l v",
+                    "mergedSynopsis": "(l,v) (1995) Wesley Snipes, Woody Harrelson. A debt-laden transit cop tries to talk his partner and foster brother into robbing a money train.",
+                    "id": "MTA81859571",
+                    "startTime": 1483428081000,
+                    "itemIds": [
+                        "6084470"
+                    ],
+                    "programId": "6084470",
+                    "MainGenre": "04",
+                    "automationId": "TX030578",
+                    "YearOfProduction": "1995",
+                    "isWidescreen": true,
+                    "ShortSynopsis": "A debt-laden transit cop tries to talk his partner and foster brother into robbing a money train.",
+                    "ExtendedSynopsis": "A debt-laden transit cop tries to talk his partner and foster brother into robbing a money train.",
+                    "MainLanguageTrack": "ENG",
+                    "Keywords": {
+                        "Keyword": [
+                            {
+                                "content": "PT18H20M",
+                                "KeyName": "PublishStartOffset"
+                            },
+                            {
+                                "content": "PT115M",
+                                "KeyName": "PublishDuration"
+                            },
+                            {
+                                "content": "MOVIE",
+                                "KeyName": "Category"
+                            },
+                            {
+                                "content": "MA",
+                                "KeyName": "SourceParentalRating"
+                            },
+                            {
+                                "content": "Wesley Snipes",
+                                "KeyName": "Actor"
+                            },
+                            {
+                                "content": "Woody Harrelson",
+                                "KeyName": "Actor"
+                            },
+                            {
+                                "content": "Jennifer Lopez",
+                                "KeyName": "Actor"
+                            },
+                            {
+                                "content": "Chris Cooper",
+                                "KeyName": "Actor"
+                            },
+                            {
+                                "content": "Robert Blake",
+                                "KeyName": "Actor"
+                            },
+                            {
+                                "content": "Joseph Ruben",
+                                "KeyName": "Director"
+                            },
+                            {
+                                "content": "TX030578",
+                                "KeyName": "AutomationID"
+                            },
+                            {
+                                "content": "6084470",
+                                "KeyName": "ProgramID"
+                            },
+                            {
+                                "content": "121754",
+                                "KeyName": "TitleID"
+                            },
+                            {
+                                "content": "Rotten Tomatoes http://rottentomatoes.com/m/Money%5FTrain",
+                                "KeyName": "WebLink"
+                            },
+                            {
+                                "content": "IMDB http://www.imdb.com/title/tt0113845/",
+                                "KeyName": "WebLink"
+                            },
+                            {
+                                "content": "Money Train",
+                                "KeyName": "SourceTitle"
+                            },
+                            {
+                                "content": "Money Train",
+                                "KeyName": "OfficialTitle"
+                            },
+                            {
+                                "content": "0113845",
+                                "KeyName": "IMDBID"
+                            },
+                            {
+                                "content": "3",
+                                "KeyName": "CriticRating"
+                            },
+                            {
+                                "content": "2.5",
+                                "KeyName": "ViewerRating"
+                            },
+                            {
+                                "content": "Wesley Snipes and Woody Harrelson clown around as foster brothers who work as New York City undercover transit cops in this buddy action-comedy. They're an appealing duo, with Snipes as a straight-arrow and Woody as a gambling-addicted, error-prone loser. The frenetic plot follows several strands including Chris Cooper as a sadistic villain who robs female ticket clerks and sets fire to their booths; Woody's gambling problem, which threatens his well-being; and the brothers vying for the affections of hot new subway cop Jennifer Lopez. All these themes converge on the money train which collects several million dollars each night from the subway system. Re-teaming after White Men Can't Jump, Snipes and Harrelson bounce off each other nicely, especially playing on the racial difference as Woody says things like \"I'm black and I'm proud.\" There are some terrific action sequences although several are graphically violent, which sits oddly with the film's overall jokey air. Lopez isn't convincing as a tough, fist-fighting gal from the Bronx, and Robert Blake has the thankless task of playing the psychotic chief of the transit police, who values his money train above the lives of his passengers.",
+                                "KeyName": "CriticReview"
+                            },
+                            {
+                                "content": "CVOD, DVOD",
+                                "KeyName": "SpotRight"
+                            },
+                            {
+                                "content": "Sony Pictures Television Pty L",
+                                "KeyName": "Distributor"
+                            }
+                        ]
+                    },
+                    "colourType": "colour",
+                    "CountryOfOrigin": "USA",
+                    "scheduleCreateDate": 1478632227592,
+                    "channelTag": "MTA",
+                    "eventTitle": "Money Train",
+                    "hasClosedCaptions": true,
+                    "xmlns": "http://www.foxtel.tv/SchedML",
+                    "EventID": "MTA81859571",
+                    "sourceChannel": "Action+2",
+                    "audioType": "digital",
+                    "duration": "PT114M5S",
+                    "eventDescription": "Movie - Action",
+                    "isLiveEvent": false,
+                    "lastScheduleUpdate": 1483325565697,
+                    "classification": "MA",
+                    "service": {
+                        "groupType": "Subscription",
+                        "groupName": "Foxtel Movies",
+                        "videoFormat": "",
+                        "epgChannelGenre": "Movies",
+                        "brandName": "Action/Adventure",
+                        "brandId": 810,
+                        "channelPack": "Movies & Premium Drama",
+                        "id": 640,
+                        "groupId": 704,
+                        "priority": 2,
+                        "integration": {
+                            "gracenote": {
+                                "reconcile": "true",
+                                "images": "true"
+                            }
+                        },
+                        "name": "Action/Adventure +2",
+                        "images": {
+                            "placeholder": {
+                                "landscape": [
+                                    {
+                                        "height": 1440,
+                                        "width": 960,
+                                        "class": "placeholder placeholder-brand",
+                                        "caption": "Action/Adventure",
+                                        "URI": "store2/mount1/16/2/83azp.jpg"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "brand": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-brand",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            },
+                            "channel": {
+                                "landscape": [
+                                    {
+                                        "height": 500,
+                                        "width": 889,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-16x9-beam.png"
+                                    }
+                                ],
+                                "portrait": [
+                                    {
+                                        "height": 500,
+                                        "width": 333,
+                                        "class": "placeholder placeholder-channel",
+                                        "URI": "store2/mount1/17/placeholder-2x3-beam.png"
+                                    }
+                                ]
+                            }
+                        },
+                        "participationConsents": {
+                            "listings": {
+                                "basic": "true",
+                                "enhanced": "true"
+                            },
+                            "resultSetInclusions": {
+                                "ipConnected": {
+                                    "trending": "true",
+                                    "moreLikeThis": "true",
+                                    "search": "true",
+                                    "suggested": "true"
+                                }
+                            }
+                        },
+                        "channelPackId": 34
+                    },
+                    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                    "isSubtitled": false
+                }
+            ]
+        }
+    ]
+
+}

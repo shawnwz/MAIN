@@ -1,0 +1,13 @@
+{
+    "paths": {
+        "src_output_path": "../../src/",
+        "lib_o5_path": "o5/",
+        "build_output_dir": "../../output/",
+        "build_output_docs_path": "../../output/docs/",
+        "build_output_package_path": "../../output/package/",
+        "build_xml_path": "../xml/",
+        "lint_output_location": "../../output/package/lint_reports/",
+        "csslint_output_location": "../../output/package/lint_reports/css/",
+        "eslint_output_location": "../../output/package/lint_reports/es/"
+    }
+}

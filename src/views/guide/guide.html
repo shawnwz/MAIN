@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+
+
+
+<script src="./Guide.js"></script>
+
+<link rel="stylesheet" href="./guide.css">
+
+
+
+<app-guide class="oxygen-transition-none-prepareDisplay oxygen-transition-none-bringIn">
+
+
+
+  <!-- #epg: class helpers [channelView listingsView mainView mainViewSynopsis][mainViewMenu][reverseEpg nowNextEpg futureEpg] -->
+
+  <div id="epg" class="oxygen-transition-none-prepareDisplay oxygen-transition-none-bringIn" data-oxy-anim="true"> <!-- oxygen-transition-none-hide -->
+    <div id="homeBgSolid"></div>
+    <div id="epgPipInViewLeft" class="opaqueBg">
+
+      <div id="epgInnerPipInViewLeft"></div>
+
+    </div>
+
+    <div id="epgPipInViewTopRight">
+
+      <div id="epgPipInViewTopRightTopBorder" class="opaqueBg"></div>
+
+      <div id="epgPipInViewTopRightRightBorder" class="opaqueBg"></div>
+
+      <div id="epgPipInViewTopRightBottomRightBorder" class="opaqueBg"></div>
+
+      <div id="epgPipInViewBottomBorder" class="opaqueBg"></div>
+
+    </div>
+
+    <div id="epgPipInViewBottomRight" class="opaqueBg">
+
+      <div id="epgInnerPipInViewBottomRight">
+
+      </div>
+
+    </div>
+
+    
+
+    <div id="epgCommon">
+
+      <div id="epgGenreMenu"></div>
+
+      <app-guide-clock id="epgClock"></app-guide-clock>
+
+
+
+      <!-- #epgPip: class helpers [show pipLoading pipNoTuner pipPin pipNotEntitled pipRadio pipFallback] -->
+
+      <div id="epgPip" class="">
+
+        <div id="epgPipInner">
+
+          <div id="epgPipPreview">
+
+            <div id="epgPipLoading" class="epgPipPreviewItem"></div>
+
+            <div id="epgPipNoTuner" class="epgPipPreviewItem"></div>
+
+            <div id="epgPipPin" class="pipText epgPipPreviewItem" data-i18n="pipPin">PIN Required</div>
+
+            <div id="epgPipNotEntitled" class="pipText epgPipPreviewItem" data-i18n="pipNotEntitled">Upgrade your package to view this channel</div>
+
+            <div id="epgPipNoSignal" class="pipText epgPipPreviewItem" data-i18n="pipNoSignal">No signal is being received</div>
+
+            <div id="epgPipVideoError" class="pipText epgPipPreviewItem" data-i18n="pipVideoError">Technical fault</div>
+
+            <div id="epgPipRadio" class="epgPipPreviewItem"></div>
+
+            <div id="epgPipFallback" class="epgPipPreviewItem"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- #epgMiniSynopsis: class helpers [show][miniSynopsis][rating cc hd dolby subs] -->
+
+      <app-guide-mini-synopsis id="epgMiniSynopsis" class="miniSynopsis"><!-- template guideMiniSynopsisTemplate --></app-guide-mini-synopsis>
+
+      <div id="epgBottomBar">
+
+        <div id="epgLogo"></div>
+
+      </div>
+
+    </div>
+
+    <!--<div id="epgGridMenu"></div>-->
+
+    <div id="epgChannelView" class="oxygen-transition-none-bringOut oxygen-transition-none-hide"> <!--oxygen-transition-none-hide-->
+
+      <div id="epgChannelViewChannelBar">
+
+
+
+        <app-guide-prev-channel-stack-list id="epgChannelViewChanListPrev" class="epgChannelViewChannelList" data-orientation = "Horizontal" data-cyclic>
+
+					<template>
+
+						<app-guide-prev-channel-stack-list-item class="prevChannelStack-cell">
+
+							<span class="prevChannelStack-channelNum"></span>
+
+							<span class="prevChannelStack-channelLogo"></span>
+
+              <div class="prevChannelStack-channelNameCont"><span class="prevChannelStack-channelName"></span></div>
+
+              <span class="iconLocked"></span>
+
+              <span class="fav"></span>
+
+						</app-guide-prev-channel-stack-list-item>
+
+					</template>
+
+				</app-guide-prev-channel-stack-list>
+
+
+
+        <app-guide-next-channel-stack-list id="epgChannelViewChanListNext" class="epgChannelViewChannelList" data-orientation = "Horizontal" data-cyclic>
+
+					<template>
+
+						<app-guide-next-channel-stack-list-item class="nextChannelStack-cell">
+
+							<span class="nextChannelStack-channelNum"></span>
+
+							<span class="nextChannelStack-channelLogo"></span>
+
+              <div class="nextChannelStack-channelNameCont"><span class="nextChannelStack-channelName"></span></div>
+
+              <span class="iconLocked"></span>
+
+              <span class="fav"></span>
+
+						</app-guide-next-channel-stack-list-item>
+
+					</template>
+
+				</app-guide-next-channel-stack-list>
+
+
+
+      </div>
+
+
+
+      <div id="epgChannelViewProgList" data-oxy-anim="true">
+
+				<app-guide-programme-list id="epgChannelProgList" class="progList-list progList-anim-normal" data-orientation = "Vertical">
+
+					<template>
+
+            <app-guide-programme-list-item class="progList-cell">
+
+              <div class="cellTime"></div>
+
+              <div class="cellTitle"></div>
+
+              <div class="progListIcons">
+
+                <span class="progListIcon iconRecord">R</span>
+
+                <span class="progListIcon iconRecordPlus30">R+</span>
+
+                <span class="progListIcon iconSeriesLinkList"></span>
+
+                <span class="progListIcon iconPlay"></span>
+
+                <span class="progListIcon iconCC">cc</span>
+
+              </div>
+
+            </app-guide-programme-list-item>
+
+					</template>
+
+        </app-guide-programme-list>
+
+			</div>
+
+
+
+      <div id="epgChannelViewNoProgCell" data-oxy-anim="true" class="hide">
+
+        <span class="noProgrammeTxt" data-i18n="miniSynopsisTitleError">No Programme Information Available</span>
+
+      </div>
+
+    </div>
+
+    
+
+    <!-- #epgListingsView: class helpers [AtoZ time] -->
+
+    <div id="epgListingsView" class="oxygen-transition-none-hide"><!--oxygen-transition-none-bringOut oxygen-transition-none-hide-->
+
+      <div id="epgListingsBg">
+
+        <div id="epgListingsFilter">
+
+          <div id="epgListingsFilterBtnLabel" data-i18n="plannerListFilterBtnLabel">SHOWING</div>
+
+          <app-guide-listings-genre-filter id="epgListingsGenreFilter" class="epgListingsFilterBtn" >
+
+            <span> All Programmes</span>
+
+          </app-guide-listings-genre-filter>
+
+          <app-guide-listings-sub-genre-filter id="epgListingsSubGenreFilter" class="epgListingsFilterBtn">
+
+          </app-guide-listings-sub-genre-filter>
+
+        </div>
+
+        <div id="epgListingsSort">
+
+          <label>SORT BY</label>
+
+          <ul class="oxy-anim-normal">
+
+            <app-guide-listings-sort-time id="epgListingsSortTime">Time</app-guide-listings-sort-time>
+
+            <app-guide-listings-sort-string id="epgListingsSortString">A-Z</app-guide-listings-sort-string>
+
+          </ul>
+
+        </div>
+
+        <div id="epgListingsShowOnly">
+
+          <div id="epgListingsShowOnlyBtnLabel" data-i18n="epgListingsShowOnlyBtnLabel">SHOW ONLY</div>
+
+          <!-- #epgListingsSortBtn: class helpers [focused selected] -->
+
+          <app-guide-listings-show-only-cc id="epgListingsShowOnlyBtnCc" class="guideSortItems-toggle">
+
+            <label>Closed Captions</label>
+
+            <div id="epgListingsShowOnlyCc" class="toggle"><div class="toggleInner"></div></div>
+
+          </app-guide-listings-show-only-cc>
+
+          <app-guide-listings-show-only-hd id="epgListingsShowOnlyBtnHd" class="guideSortItems-toggle">
+
+            <label>HD</label>
+
+            <div id="epgListingsShowOnlyHd" class="toggle"><div class="toggleInner"></div></div>
+
+          </app-guide-listings-show-only-hd>
+
+        </div>
+
+
+
+        <div id="epgListingsSortListDate" class="disabled">
+
+        <app-guide-listings-sort-list-date id="epgListingsSortListDateList" class="dateList-list" data-orientation="Vertical">
+
+          <template>
+
+          <app-guide-listings-sort-list-date-item class="dateList-cell" >
+
+          </app-guide-listings-sort-list-date-item>
+
+          </template>
+
+        </app-guide-listings-sort-list-date>
+
+        </div>
+
+        <div id="epgListingsSortListLetter" class="disabled">
+
+        <app-guide-listings-sort-list-letter id="epgListingsSortListLetterList" class="letterList-list" data-orientation="Vertical">
+
+          <template>
+
+            <app-guide-listings-sort-list-letter-item class="letterList-cell" >
+
+            </app-guide-listings-sort-list-letter-item>
+
+          </template>
+
+        </app-guide-listings-sort-list-letter>
+
+        </div>
+
+        <!-- li: class helpers [unavailable dayLabel back forward][focused][eventCC eventPlay eventSLink eventRecord] -->
+
+        <div id="epgListingsProgList" data-oxy-anim="true">
+
+          <app-guide-listings-prog-list id="epgListingsProgList-List" class="programmeList-list" data-orientation="Vertical" >
+
+            <template>
+
+              <app-guide-listings-prog-list-item class="programmeList-cell">
+
+                <span class="titleColumn">
+
+                  <div class="cellTime "></div>
+
+                  <div class="cellTitle "></div>
+
+                  <div class="icons">
+
+                    <div class="icon iconRecord">R</div>
+
+                    <div class="icon iconRecordPlus30">R+</div>
+
+                    <div class="icon iconSeriesLinkList"></div>
+
+                    <div class="icon iconCC">cc</div>
+
+                    <div class="icon iconPlay"></div>
+
+                  </div>
+
+                </span>
+
+                <div class="dateTimeColumn">
+
+                  <div class="dateTime-cell">
+
+                    <span class="date "></span>
+
+                    <span class="time "></span>
+
+                  </div>
+
+                </div>
+
+                <div class="chanColumn"></div>
+
+              </app-guide-listings-prog-list-item>
+
+            </template>
+
+          </app-guide-listings-prog-list>
+
+        </div>
+
+        <div id="epgListingsSpinner" class="spinner"></div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- #epgViewsBg: class helpers [earlier later pip][loading] -->
+
+    <div id="epgViewsBg" class="oxygen-transition-none-prepareDisplay oxygen-transition-none-bringIn earlier later"> <!--oxygen-transition-none-hide-->
+
+      <div id="epgDate"></div>
+
+      <div id="epgEarlierIndicator"></div>
+
+      <div id="epgLaterIndicator"></div>
+
+      <div id="epgSpinner" class="spinner"></div>
+
+
+
+      <!-- #epgViewsSlider: class helpers [ reverse nowNextFuture ] -->
+
+      <div id="epgViewsSlider" data-oxy-anim="true" class="nowNextFuture">
+
+        
+
+        <div id="epgViewReverseCont" data-oxy-anim="true" data-oxy-anim-vertical="false" class="">
+
+
+
+          <div id="reverseEpgContainer" class="reverseEpg" style="width: 3132px; -webkit-transform: translate3d(0px, 0, 0);"> 
+
+            <div id="reverseEpgEvents" class="eventsContainer" style="width: 3132px; height: 550px;">
+
+              <app-guide-reverse-grid id="reverseEpgEventsInner" class="eventsInner reverseEpg-normal" 
+
+                      style="-webkit-transform: translate3d(0,0,0); width: 3132px;"
+
+                      data-row-id="reverseEpg-row-"
+
+                      data-row-class="reverseEpg-row">
+
+                <template>
+
+                  <app-guide-reverse-grid-cell></app-guide-reverse-grid-cell>
+
+                </template>
+
+              </app-guide-reverse-grid>
+
+            </div>
+
+          </div>
+
+
+
+          <app-guide-timeline-list id="reverseEpgTimeline" data-grid="reverseEpgEventsInner" class="timelineContainer " style="width: 3132px;">
+
+              <template>
+
+                <app-guide-timeline-list-item class="timelineItem interval"></app-guide-timeline-list-item>
+
+              </template>
+
+          </app-guide-timeline-list>
+
+
+
+        </div>
+
+        
+
+        <div id="epgViewChannelsCont">
+
+          <div id="epgViewChannelList" data-oxy-anim="false">
+
+            <app-guide-channel-list id="epgChannelStack" class="epgChannelStack-list epgChannelStack-anim-normal" 
+
+                    data-min-items="10" data-max-items="10" 
+
+                    data-cyclic 
+
+                    data-orientation="vertical"> <!-- style="top:-55px;" -->
+
+              <template>
+
+                <app-guide-channel-list-item class="epgChannelStack-cell">
+
+                  <span class="epgChannelStack-channelNum"></span>
+
+                  <span class="epgChannelStack-channelLogo"></span>
+
+		      				<div class="epgChannelStack-channelNameCont"><span class="epgChannelStack-channelName"></span></div>
+
+             <!-- <span class="iconLocked"></span>
+
+                  <span class="fav"></span> -->
+
+                </app-guide-channel-list-item>
+
+              </template>
+
+            </app-guide-channel-list>
+
+          </div>
+
+        </div>
+
+
+
+        <div id="epgViewNowNextFutureCont">
+
+          <!-- #epgViewNowNextFutureSlider: class helpers [ nowNext future hide ] -->
+
+          <div id="epgViewNowNextFutureSlider" data-oxy-anim="true" class="nowNext">
+
+            <div id="epgViewNowNext">
+
+              <div id="epgViewNowNextHeaders">
+
+                <div class="header"><span data-i18n="epgNowNextOnNow">On Now</span></div>
+
+                <div class="header"><span data-i18n="epgNowNextOnNext">On Next</span></div>
+
+              </div>
+
+              <div id="epgViewNowNextCont" data-oxy-anim="true" data-oxy-anim-vertical="false" >
+
+
+
+                <app-guide-now-next-grid id="nowNextGrid" class="nowNextGrid-grid"
+
+                        data-row-id="nowNextGrid-row-"
+
+                        data-row-class="nowNextGrid-row">
+
+                  <template>
+
+                    <app-guide-now-next-grid-cell></app-guide-now-next-grid-cell>
+
+                  </template>
+
+                </app-guide-now-next-grid>
+
+
+
+              </div>
+
+            </div>
+
+            <div id="epgViewFuture" data-oxy-anim="true" data-oxy-anim-vertical="false" class="">
+
+
+
+              <div id="futureEpgContainer" class="futureEpg" style="width: 3132px; -webkit-transform: translate3d(0px, 0, 0);">
+
+                <div id="futureEpgEvents" class="eventsContainer" style="width: 3132px; height: 550px;">
+
+                  <app-guide-future-grid id="futureEpgEventsInner" class="eventsInner futureEpg-normal" 
+
+                          style="-webkit-transform: translate3d(0,0,0); width: 3132px;"
+
+                          data-row-id="futureEpg-row-"
+
+                          data-row-class="futureEpg-row"> <!-- style="top:-55px;" -->
+
+                    <template>
+
+                      <app-guide-future-grid-cell></app-guide-future-grid-cell>
+
+                    </template>
+
+                  </app-guide-future-grid>
+
+                </div>
+
+              </div>
+
+
+
+              <app-guide-timeline-list id="futureEpgTimeline" data-grid="futureEpgEventsInner" class="timelineContainer " style="width: 3132px;">
+
+                <template>
+
+                  <app-guide-timeline-list-item class="timelineItem interval"></app-guide-timeline-list-item>
+
+                </template>
+
+              </app-guide-timeline-list>
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+	<app-guide-call-to-action-list id="ctaGuide" class="callToActionList" data-screen="ctaGuide"></app-guide-call-to-action-list>
+
+
+
+  <template id="guideMiniSynopsisTemplate">
+
+    <div class="epgMiniSynopsisTitle synopsisTitle"></div>
+
+    <div class="synopsisBottom">
+
+      <div id="epgMiniSynopsisDetails">
+
+        <div id="epgMiniSynopsisDetailsInner">
+
+          <span id="epgMiniSynopsisEpisodeInfo" class="synopsisEpisodeInfo">
+
+            <span id="epgMiniSynopsisEpisodeName" class="synopsisEpisodeName"></span>
+
+          </span>
+
+          <span id="epgMiniSynopsisTime" class="miniSynopsisTime" x-divider="|"></span>
+
+          <span id="epgMiniSynopsisRatings" class="synopsisRatings" x-divider="|"></span>
+
+          <div id="epgMiniSynopsisIcons" class="miniSynopsisIcons" x-divider="|"></div>
+
+        </div>
+
+      </div>
+
+      <div class="synopsisDescription"></div>
+
+    </div>
+
+    <div class="synopsisTimeRemaining"></div>
+
+  </template>
+
+		
+
+</app-guide>
+

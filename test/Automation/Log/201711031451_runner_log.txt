@@ -1,0 +1,5 @@
+Input plan: ['FOXTEL_0000_debugger.py']
+Execution order: ['FOXTEL_0000_debugger.py']
+Test: FOXTEL_0000_debugger.py, log-dir: log_150969187645_FOXTEL_0000_debugger, slot_id = 1
+Execution result:
+FOXTEL_0000_debugger.py, Pass

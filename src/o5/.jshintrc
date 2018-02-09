@@ -1,0 +1,18 @@
+{
+    "loopfunc": true,
+
+    //W069: ['{a}'] is better written in dot notation.              
+    "-W069": false,        
+
+    //W093: "Did you mean to return a conditional instead of an assignment?",
+    "-W093": false,
+
+	//W004: "'{a}' is already defined.",
+    "-W004": false,
+
+    //W086: "Expected a 'break' statement before '{a}'."
+    "-W086": false,
+	
+    //W103: "The '{a}' property is deprecated.",
+    "-W103": false
+}

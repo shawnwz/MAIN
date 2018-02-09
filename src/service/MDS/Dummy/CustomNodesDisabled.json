@@ -1,0 +1,287 @@
+{
+  "total_records": 8,
+  "nodes": [
+    {
+      "NodeLayoutInfo": "MENU_NODE",
+      "nls": {
+        "Title": "4b4f33332f4b4d2f2d010d018f0c00"
+      },
+      "Title": "Continue Watching",
+      "locale": "en_AU",
+      "PrivateMetadata": "/sd/foxtel/taps/assets/personalised/suggested?rid=SUGGEST2",
+      "children": [],
+      "CUST_PublishStartTime": "1483933033.714",
+      "ancestors": [
+        "CAT000000010",
+        "CAT000000011"
+      ],
+      "isRoot": false,
+      "CUST_PreviewOnly": "false",
+      "companyId": "FOXTEL",
+      "id": "FUI000000001",
+      "deviceType": [],
+      "nodeOrder": -8,
+      "provider": "FOXTEL",
+      "CUST_SeriesRollup": "NO_Rollup",
+      "parent": "CAT000000011",
+      "descendants": [],
+      "cmsOrder": 8,
+      "RecommendationQuery": "rid=AUTO1&fx=Continue&limit=10",
+      "xRating": {
+        "code": "P",
+        "precedence": 0,
+        "Title": "Label for P"
+      },
+      "title": "[DSC] Continue Watching",
+      "CUST_SortCriteria": "[[\"voditem.DisplayPriority\",1],[\"editorial.CUST_SortTitle\",1],[\"editorial.CUST_SeasonNumber\",1],[\"editorial.episodeNumber\",1]]",
+      "CUST_PublishEndTime": "4639606633.714"
+    },
+    {
+      "NodeLayoutInfo": "MENU_NODE",
+      "nls": {
+        "Title": "4b4f33332f4b4d2f2d010d018f0c00"
+      },
+      "Title": "Live TV - On Now",
+      "locale": "en_AU",
+      "PrivateMetadata": "/sd/foxtel/taps/assets/personalised/suggested?rid=SUGGEST2",
+      "children": [],
+      "CUST_PublishStartTime": "1483933033.714",
+      "ancestors": [
+        "CAT000000010",
+        "CAT000000011"
+      ],
+      "isRoot": false,
+      "CUST_PreviewOnly": "false",
+      "companyId": "FOXTEL",
+      "id": "FUI000000002",
+      "deviceType": [],
+      "nodeOrder": -7,
+      "provider": "FOXTEL",
+      "CUST_SeriesRollup": "NO_Rollup",
+      "parent": "CAT000000011",
+      "descendants": [],
+      "cmsOrder": 8,
+      "RecommendationQuery": "rid=AUTO1&fx=Now&limit=10",
+      "xRating": {
+        "code": "P",
+        "precedence": 0,
+        "Title": "Label for P"
+      },
+      "title": "[DSC] Live TV - On Now",
+      "CUST_SortCriteria": "[[\"voditem.DisplayPriority\",1],[\"editorial.CUST_SortTitle\",1],[\"editorial.CUST_SeasonNumber\",1],[\"editorial.episodeNumber\",1]]",
+      "CUST_PublishEndTime": "4639606633.714"
+    },
+    {
+      "NodeLayoutInfo": "MENU_NODE",
+      "nls": {
+        "Title": "4b4f33332f4b4d2f2d010d018f0c00"
+      },
+      "Title": "Coming Up on Live TV",
+      "locale": "en_AU",
+      "PrivateMetadata": "/sd/foxtel/taps/assets/personalised/suggested?rid=SUGGEST2",
+      "children": [],
+      "CUST_PublishStartTime": "1483933033.714",
+      "ancestors": [
+        "CAT000000010",
+        "CAT000000011"
+      ],
+      "isRoot": false,
+      "CUST_PreviewOnly": "false",
+      "companyId": "FOXTEL",
+      "id": "FUI000000003",
+      "deviceType": [],
+      "nodeOrder": -6,
+      "provider": "FOXTEL",
+      "CUST_SeriesRollup": "NO_Rollup",
+      "parent": "CAT000000011",
+      "descendants": [],
+      "cmsOrder": 8,
+      "RecommendationQuery": "rid=AUTO1&fx=comming&limit=10",
+      "xRating": {
+        "code": "P",
+        "precedence": 0,
+        "Title": "Label for P"
+      },
+      "title": "[DSC] Coming Up on Live TV",
+      "CUST_SortCriteria": "[[\"voditem.DisplayPriority\",1],[\"editorial.CUST_SortTitle\",1],[\"editorial.CUST_SeasonNumber\",1],[\"editorial.episodeNumber\",1]]",
+      "CUST_PublishEndTime": "4639606633.714"
+    },
+    {
+      "NodeLayoutInfo": "MENU_NODE",
+      "nls": {
+        "Title": "4b4f33332f4b4d2f2d010d018f0c00"
+      },
+      "Title": "Movies on Tonight",
+      "locale": "en_AU",
+      "PrivateMetadata": "/sd/foxtel/taps/assets/personalised/suggested?rid=SUGGEST2",
+      "children": [],
+      "CUST_PublishStartTime": "1483933033.714",
+      "ancestors": [
+        "CAT000000010",
+        "CAT000000011"
+      ],
+      "isRoot": false,
+      "CUST_PreviewOnly": "false",
+      "companyId": "FOXTEL",
+      "id": "FUI000000004",
+      "deviceType": [],
+      "nodeOrder": -5,
+      "provider": "FOXTEL",
+      "CUST_SeriesRollup": "NO_Rollup",
+      "parent": "CAT000000011",
+      "descendants": [],
+      "cmsOrder": 8,
+      "RecommendationQuery": "rid=AUTO1&fx=Movies&limit=10",
+      "xRating": {
+        "code": "P",
+        "precedence": 0,
+        "Title": "Label for P"
+      },
+      "title": "[DSC] Movies on Tonight",
+      "CUST_SortCriteria": "[[\"voditem.DisplayPriority\",1],[\"editorial.CUST_SortTitle\",1],[\"editorial.CUST_SeasonNumber\",1],[\"editorial.episodeNumber\",1]]",
+      "CUST_PublishEndTime": "4639606633.714"
+    },
+    {
+      "NodeLayoutInfo": "MENU_NODE",
+      "nls": {
+        "Title": "4b4f33332f4b4d2f2d010d018f0c00"
+      },
+      "Title": "Sports this Week",
+      "locale": "en_AU",
+      "PrivateMetadata": "/sd/foxtel/taps/assets/personalised/suggested?rid=SUGGEST2",
+      "children": [],
+      "CUST_PublishStartTime": "1483933033.714",
+      "ancestors": [
+        "CAT000000010",
+        "CAT000000011"
+      ],
+      "isRoot": false,
+      "CUST_PreviewOnly": "false",
+      "companyId": "FOXTEL",
+      "id": "FUI000000005",
+      "deviceType": [],
+      "nodeOrder": -4,
+      "provider": "FOXTEL",
+      "CUST_SeriesRollup": "NO_Rollup",
+      "parent": "CAT000000011",
+      "descendants": [],
+      "cmsOrder": 8,
+      "RecommendationQuery": "rid=AUTO1&fx=Sports&limit=10",
+      "xRating": {
+        "code": "P",
+        "precedence": 0,
+        "Title": "Label for P"
+      },
+      "title": "[DSC] Sports this Week",
+      "CUST_SortCriteria": "[[\"voditem.DisplayPriority\",1],[\"editorial.CUST_SortTitle\",1],[\"editorial.CUST_SeasonNumber\",1],[\"editorial.episodeNumber\",1]]",
+      "CUST_PublishEndTime": "4639606633.714"
+    },
+    {
+      "NodeLayoutInfo": "MENU_NODE",
+      "nls": {
+        "Title": "4b4f33332f4b4d2f2d010d018f0c00"
+      },
+      "Title": "Top Picks for you",
+      "locale": "en_AU",
+      "PrivateMetadata": "/sd/foxtel/taps/assets/personalised/suggested?rid=SUGGEST2",
+      "children": [],
+      "CUST_PublishStartTime": "1483933033.714",
+      "ancestors": [
+        "CAT000000010",
+        "CAT000000011"
+      ],
+      "isRoot": false,
+      "CUST_PreviewOnly": "false",
+      "companyId": "FOXTEL",
+      "id": "FUI000000006",
+      "deviceType": [],
+      "nodeOrder": -3,
+      "provider": "FOXTEL",
+      "CUST_SeriesRollup": "NO_Rollup",
+      "parent": "CAT000000011",
+      "descendants": [],
+      "cmsOrder": 8,
+      "RecommendationQuery": "rid=AUTO1&fx=Top&limit=10",
+      "xRating": {
+        "code": "P",
+        "precedence": 0,
+        "Title": "Label for P"
+      },
+      "title": "[DSC] Top Picks for you",
+      "CUST_SortCriteria": "[[\"voditem.DisplayPriority\",1],[\"editorial.CUST_SortTitle\",1],[\"editorial.CUST_SeasonNumber\",1],[\"editorial.episodeNumber\",1]]",
+      "CUST_PublishEndTime": "4639606633.714"
+    },
+    {
+      "NodeLayoutInfo": "MENU_NODE",
+      "nls": {
+        "Title": "4b4f33332f4b4d2f2d010d018f0c00"
+      },
+      "Title": "Last Chance",
+      "locale": "en_AU",
+      "PrivateMetadata": "/sd/foxtel/taps/assets/personalised/suggested?rid=SUGGEST2",
+      "children": [],
+      "CUST_PublishStartTime": "1483933033.714",
+      "ancestors": [
+        "CAT000000010",
+        "CAT000000011"
+      ],
+      "isRoot": false,
+      "CUST_PreviewOnly": "false",
+      "companyId": "FOXTEL",
+      "id": "FUI000000007",
+      "deviceType": [],
+      "nodeOrder": -2,
+      "provider": "FOXTEL",
+      "CUST_SeriesRollup": "NO_Rollup",
+      "parent": "CAT000000011",
+      "descendants": [],
+      "cmsOrder": 8,
+      "RecommendationQuery": "rid=AUTO1&fx=Last&limit=10",
+      "xRating": {
+        "code": "P",
+        "precedence": 0,
+        "Title": "Label for P"
+      },
+      "title": "[DSC] Last Chance",
+      "CUST_SortCriteria": "[[\"voditem.DisplayPriority\",1],[\"editorial.CUST_SortTitle\",1],[\"editorial.CUST_SeasonNumber\",1],[\"editorial.episodeNumber\",1]]",
+      "CUST_PublishEndTime": "4639606633.714"
+    },
+    {
+      "NodeLayoutInfo": "MENU_NODE",
+      "nls": {
+        "Title": "4b4f33332f4b4d2f2d010d018f0c00"
+      },
+      "Title": "Last Coming Soon to Foxtel",
+      "locale": "en_AU",
+      "PrivateMetadata": "/sd/foxtel/taps/assets/personalised/suggested?rid=SUGGEST2",
+      "children": [],
+      "CUST_PublishStartTime": "1483933033.714",
+      "ancestors": [
+        "CAT000000010",
+        "CAT000000011"
+      ],
+      "isRoot": false,
+      "CUST_PreviewOnly": "false",
+      "companyId": "FOXTEL",
+      "id": "FUI000000008",
+      "deviceType": [],
+      "nodeOrder": -1,
+      "provider": "FOXTEL",
+      "CUST_SeriesRollup": "NO_Rollup",
+      "parent": "CAT000000011",
+      "descendants": [],
+      "cmsOrder": 8,
+      "RecommendationQuery": "rid=AUTO1&fx=Soon&limit=10",
+      "xRating": {
+        "code": "P",
+        "precedence": 0,
+        "Title": "Label for P"
+      },
+      "title": "[DSC] Last Coming Soon to Foxtel",
+      "CUST_SortCriteria": "[[\"voditem.DisplayPriority\",1],[\"editorial.CUST_SortTitle\",1],[\"editorial.CUST_SeasonNumber\",1],[\"editorial.episodeNumber\",1]]",
+      "CUST_PublishEndTime": "4639606633.714"
+    }
+ ],
+  "version": "20170109033646",
+  "xurl": "http://203.17.26.41/metadata/delivery/FOXTEL/vod/nodes?filter={\"CUST_PreviewOnly\":\"false\",\"locale\":\"en_AU\"}&limit=3000&fields=[]&sort=[[\"nodeOrder\",1]]"
+}

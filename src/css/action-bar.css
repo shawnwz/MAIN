@@ -1,0 +1,54 @@
+app-action-bar {
+	font-family: fontSemiBold;
+	font-size: 18px;
+	text-transform: uppercase;
+	z-index: 5;
+	overflow: hidden;
+	white-space: nowrap;
+	display: -webkit-flex;
+	align-items: center;
+}
+app-action-bar-item {
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: 0 60%;
+	text-transform: uppercase;
+	margin-right: 30px;
+}
+
+app-action-bar-item[data-key="Red"] {
+	background-image: url('../images/common/buttons/rcu-red.png');
+}
+
+app-action-bar-item[data-key="Green"] {
+	background-image: url('../images/common/buttons/rcu-green.png');
+}
+
+app-action-bar-item[data-key="Yellow"] {
+	background-image: url('../images/common/buttons/rcu-yellow.png');
+}
+
+app-action-bar-item[data-key="Blue"] {
+	background-image: url('../images/common/buttons/rcu-blue.png');
+}
+
+app-action-bar-item[data-key="UpDown"] {
+	background-image: url('../images/common/buttons/rcu-updown.png');
+}
+
+app-action-bar-item[data-key="Info"] {
+	background-image: url('../images/common/buttons/rcu-info.png');
+}
+
+app-action-bar-item[data-key="Record"] {
+	background-image: url('../images/common/buttons/rcu-record.png');
+}
+
+app-action-bar-item[data-key="Play"] {
+	background-image: url('../images/common/buttons/rcu-play.png');
+}
+
+app-action-bar-item[data-key="Back"] {
+	background-image: url('../images/common/buttons/rcu-back.png');
+	padding-left: 50px;
+}

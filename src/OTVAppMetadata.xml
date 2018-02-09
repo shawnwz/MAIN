@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AIM xmlns:otv="http://security.opentv.com/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://security.opentv.com/schema OtvSecSchema.xsd">
+    <AUTHOR_HREF>http://www.nagra.com/dtv/</AUTHOR_HREF>
+    <AUTHOR_EMAIL>contact@opentv.com</AUTHOR_EMAIL>
+    <AUTHOR>NAGRA</AUTHOR>
+    <APP_ID>FoxtelUIPuck</APP_ID>
+    <APP_TYPE>html</APP_TYPE>
+    <APP_VER>v0.0</APP_VER>
+    <START_ARG>launch.html</START_ARG>
+    <NAME>
+        Foxtel UI Puck
+        <SHORT_NAME>FOXTEL_UI_PUCK</SHORT_NAME>
+    </NAME>
+	<CCOM_MAJOR_VERSION>2</CCOM_MAJOR_VERSION>
+	<CCOM_MINOR_VERSION>0</CCOM_MINOR_VERSION>
+    <LICENSE>
+        THIS SOFTWARE IS CONFIDENTIAL AND PROPRIETARY PROPERTY OF OPENTV, INC. Copyright (c) 1994-2011 OpenTV, Inc. All rights reserved. OpenTV, the OpenTV logo, OpenTV Hardware Porting Kit, OpenTV Software Development Kit, It's the Experience and Powered by
+        OpenTV are either service marks, trademarks and/or registered trademarks of OpenTV, Inc. in the United States and other countries. All other trademarks are the property of their respective owners. This software and the accompanying documentation are
+        the confidential and proprietary products of OpenTV, Inc., the use of which is governed by the terms and conditions of a separate license agreement. This software may not be copied, compiled, decompiled, distributed, modified, or transferred without
+        the prior written permission of OpenTV, Inc. and its licensors, if any. See 'Release Notes' for more information. OpenTV, Inc. 275 Sacramento Street San Francisco, CA 94111-3810 Tel: (415) 962-5000, Fax: (415) 962-5300
+    </LICENSE>
+    <otv:AUTHORIZATIONS>
+        <otv:SERVICES>
+            <otv:ALL>
+                <otv:PERMISSIONS>*</otv:PERMISSIONS>
+            </otv:ALL>
+        </otv:SERVICES>
+        <otv:RESOURCES>
+            <otv:MEMORY>LARGE</otv:MEMORY>
+            <otv:NETWORK/>
+        </otv:RESOURCES>
+    </otv:AUTHORIZATIONS>
+</AIM>

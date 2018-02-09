@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+
+
+<script src="./Settings.js"></script>
+
+<script src="./screenConfig/TvGuide.js"></script>
+
+<script src="./screenConfig/Notifications.js"></script>
+
+<script src="./screenConfig/Privacy.js"></script>
+<script src="./screenConfig/ViewRestrictions.js"></script>
+<script src="./screenConfig/DownloadControl.js"></script>
+<script src="./screenConfig/Advanced.js"></script>
+<script src="./screenConfig/SystemDetails.js"></script>
+<script src="./screenConfig/HardwareDetails.js"></script>
+<script src="./screenConfig/AudioLanguage.js"></script>
+<script src="./screenConfig/Picture.js"></script>
+<script src="./screenConfig/Bluetooth.js"></script>
+<script src="./screenConfig/InternetConnection.js"></script>
+<script src="./screenConfig/ParentalControl.js"></script>
+<script src="./screenConfig/NetworkSettings.js"></script>
+
+<script src="./screenConfig/TerrestrialChannels.js"></script>
+
+<script src="./screenConfig/StartScan.js"></script>
+<script src="./screenConfig/Scan.js"></script>
+<script src="./screenConfig/ScanComplete.js"></script>
+<script src="./screenConfig/FavouriteChannel.js"></script>
+<script src="./screenConfig/ChannelBlocking.js"></script>
+<script src="./screenConfig/WifiOptions.js"></script>
+<script src="./screenConfig/PinControl.js"></script>
+<script src="./screenConfig/InstallerSetup.js"></script>
+
+
+<!--components -->
+
+
+<link rel="stylesheet" href="./settings.css">
+
+
+
+<!-- #settings: helper classes [mainViewMenu listView infoView localSourcesPip] -->
+
+<app-settings id="settings" class="oxygen-transition-none-hide">
+
+
+
+    <!-- #backgroundSlices: helper classes [show] -->
+
+    <div id="backgroundSlices">
+
+        <div id="slice1" class="backgroundSlice"></div>
+
+        <div id="slice2" class="backgroundSlice"></div>
+
+        <div id="slice3" class="backgroundSlice"></div>
+
+        <div id="slice4" class="backgroundSlice"></div>
+
+    </div>
+
+
+
+    <div id="settingsTitle"></div>
+
+    <div id="settingsBottomBar">
+
+        <div id="settingsBottomBarLogo"></div>
+
+    </div>
+
+
+
+    <div id="settingsGridMenu" class ="settingsGridMenu"></div>
+
+    <div id="settingsParentalControlsMenu"  class="oxygen-transition-none-hide settingsGridMenu"></div>
+
+
+
+    <div id="settingsStbNameView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <ul>
+
+                <li>
+
+                    <div id="settingsStbNameValue" class="settingsListLabel"></div>
+
+                    <div id="settingsStbNameEdit" class="settingsEditValue" data-i18n="settingsEditSTBName"></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+	<div id="settingsChannelScanView"  class="oxygen-transition-none-hide ">
+    	  <app-settings-table id="settingsChannelScanViewGrid"    class="settingsGridMenu" data-config="app.screenConfig.settings.CHANNEL_SCAN"
+                    data-row-id="gridMenu-row-"    data-row-class="gridMenu-row" data-col-count ="1">
+        <template>
+            <app-settings-table-cell class="gridMenu-item" data-path-name="Gridable"></app-settings-table-cell>
+        </template>
+    </app-settings-table>
+
+    </div>
+
+    <div id="settingsFullScanView" class="oxygen-transition-none-hide">
+    	<app-settings-start-scan id="settingsScanStart"></app-settings-start-scan>
+       <app-settings-table id="settingsFullScanViewGrid"    class="settingsGridMenu" data-config="app.screenConfig.settings.START_SCAN"
+                    data-row-id="gridMenu-row-"    data-row-class="gridMenu-row" data-col-count ="1">
+        <template>
+            <app-settings-table-cell class="gridMenu-item" data-path-name="Gridable"></app-settings-table-cell>
+        </template>
+    </app-settings-table>
+   </div>
+
+    </div>
+
+	<div id="settingsScanningView" class="oxygen-transition-none-hide">
+      <app-settings-scan id="settingsScan"  class="show" ></app-settings-scan>
+    </div>
+
+    <div id="settingsScanResults" class="settingsList">
+
+        <ul>
+
+            <li class="noArrows">
+
+                <div id="settingsScanResult" class="settingsSubTitleLeft"></div>
+
+            </li>
+
+            <li class="noArrows">
+
+                <div id="settingsScanCount" class="settingsSubTitleLeft"></div>
+
+            </li>
+
+            <li class="noArrows">
+
+                <div id="settingsScanGuide" class="settingsSelectionValue " data-i18n="settingsMenuScanResultsGuide"></div>
+
+            </li>
+
+            <li class="noArrows">
+
+                <div id="settingsScanAgain" class="settingsListLabel" data-i18n="settingsMenuScanResultsAgain"></div>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+    <div id="settingsLocalChannelsView" class="oxygen-transition-none-hide">
+
+        <div id="settingsChannelSourceListTitleContainer">
+
+            <span id="channelListTitle" data-i18n="settingsChannelListTitle"></span>
+
+            <span id="sourceListTitle" data-i18n="settingsSourceListTitle" ></span>
+
+        </div>
+
+        <div id="settingsChannelSourcePostCodeContainer">
+
+            <div id="settingsChannelSourcePostCode" data-i18n="settingsChannelListPostCode"></div>
+
+            <div id="settingsChannelSourcePostCodeValue"></div>
+
+        </div>
+
+
+
+        <div id="settingsLocalChannelsList" class="settingsList"></div>
+
+        <div id="settingsLocalChannelsListContainer" class="settingsList">
+
+            <div id="settingsLocalChannelsListScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+
+        </div>
+
+        <div id="settingsLocalChannelsSignalContainer">
+
+            <div class="signalStrengthLabel"><span data-i18n="signalStrengthLabel"></span></div>
+
+            <div>
+
+                <div class="signalStrengthSubLabel"><span data-i18n="signalQualitySubLabel"></span></div>
+
+                <div id="localChannelTunerSignalQuality"></div>
+
+                <ul id="localChannelSignalQualityBar" class="settingsSignalQualityBar colourScaleQuality"></ul>
+
+            </div>
+
+            <div id="localChannelStrengthWrapper">
+
+                <div class="signalStrengthSubLabel"><span data-i18n="signalStrengthSubLabel"></span></div>
+
+                <div id="localChannelTunerSignalStrength"></div>
+
+                <ul id="localChannelSignalStrengthBar" class="settingsSignalStrengthBar colourScale"></ul>
+
+            </div>
+
+        </div>
+
+        <!-- #LocalChannelPip: class helpers [show pipLoader pipPin pipNotEntitled pipFallback] -->
+
+        <div id="localChannelPip" >
+
+            <div id="localChannelPipInner">
+
+                <div id="localChannelPipPreview">
+
+                    <div id="localChannelPipPin" class="pipText" data-i18n="pipPin"></div>
+
+                    <div id="localChannelPipNotEntitled" class="pipText" data-i18n="pipNotEntitled"></div>
+
+                    <div id="localChannelPipLoader"></div>
+
+                    <div id="localChannelPipFallback"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="localChannelBottomLine"></div>
+
+    </div>
+
+
+
+    <div id="settingsTVGuideView" class="oxygen-transition-none-hide">
+        <div id="settingsListTVGuideContainer" class="settingsList">
+            <div id="settingsTVGuideScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+        </div>
+        <div class="settingsList">
+            <app-settings-list id="settingsTVGuideViewList"
+            		data-config="app.screenConfig.settings.TV_GUIDE"
+                	data-scrollbar="settingsTVGuideScrollBar"
+               	data-scrollbar-type = "item">
+                <template>
+                  <app-settings-list-item class="settings-list-item">
+                    <div class="settingsListLabel"></div>
+                    <div id="" class="settingsListValue"></div>
+                  </app-settings-list-item>
+                </template>
+            </app-settings-list>
+				</div>
+    </div>
+
+    <div id="settingsPictureView" class="oxygen-transition-none-hide">
+
+        <div id="settingsListStatusContainer" class="settingsList">
+
+            <div id="settingsPictureScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+
+        </div>
+
+        <div class="settingsList">
+
+            <app-settings-list id="settingsPictureViewList"
+
+            		data-config="app.screenConfig.settings.PICTURE"
+
+                	data-scrollbar="settingsPictureScrollBar">
+
+
+                <template>
+
+                  <app-settings-list-item class="settings-list-item">
+
+                    <div class="settingsListLabel"></div>
+
+                    <div id="" class="settingsListValue"></div>
+
+                  </app-settings-list-item>
+
+                </template>
+
+            </app-settings-list>
+
+		</div>
+
+    </div>
+        <div id="settingsAudioLanguageView" class="oxygen-transition-none-hide">
+        <div id="settingsListStatusContainer" class="settingsList">
+            <div id="settingsAudioLanguageScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+        </div>
+        <div class="settingsList">
+            <app-settings-list id="settingsAudioLanguageViewList"
+            		data-config="app.screenConfig.settings.AUDIO_LANGUAGE"
+                	data-scrollbar="settingsAudioLanguageScrollBar">
+
+                <template>
+                  <app-settings-list-item class="settings-list-item">
+                    <div class="settingsListLabel"></div>
+                    <div id="" class="settingsListValue"></div>
+                  </app-settings-list-item>
+                </template>
+            </app-settings-list>
+		</div>
+    </div>
+
+    <div id="settingsPrivacyView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <app-settings-list id="settingsPrivacyViewList"
+
+            		data-config="app.screenConfig.settings.PRIVACY">
+
+                <template>
+
+                  <app-settings-list-item class="settings-list-item">
+
+                    <div class="settingsListLabel"></div>
+
+                    <div id="" class="settingsListValue"></div>
+
+                  </app-settings-list-item>
+
+                </template>
+
+            </app-settings-list>
+
+		</div>
+
+    </div>
+
+
+
+    <div id="settingsPinControlView" class="oxygen-transition-none-hide">
+        <div class="settingsList">
+        	 <app-settings-list id="settingsPinControlViewList"
+            		data-config="app.screenConfig.settings.PIN_CONTROL">
+                <template>
+                  <app-settings-list-item class="settings-list-item">
+                    <div class="settingsListLabel"></div>
+                    <div id="" class="settingsListValue"></div>
+                  </app-settings-list-item>
+                </template>
+            </app-settings-list>
+        </div>
+    </div>
+
+
+
+    <div id="settingsBluetoothView" class="oxygen-transition-none-hide">
+
+
+        <div id="settingsListStatusContainer" class="settingsList">
+
+            <div id="settingsBluetoothScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+
+        </div>
+
+        <div class="settingsList">
+
+            <app-settings-list id="settingsBluetoothViewList"
+
+            		data-config="app.screenConfig.settings.BLUETOOTH"
+
+                	data-scrollbar="settingsBluetoothScrollBar">
+
+
+                <template>
+
+                  <app-settings-list-item class="settings-list-item">
+
+                    <div class="settingsListLabel"></div>
+
+                    <div id="" class="settingsListValue"></div>
+
+                  </app-settings-list-item>
+
+                </template>
+
+            </app-settings-list>
+
+		</div>
+
+    </div>
+
+    <div id="settingsNotifications" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <app-settings-list id="settingsNotificationsList"  data-config="app.screenConfig.settings.NOTIFICATIONS">
+
+                <template>
+
+                  <app-settings-list-item class="settings-list-item">
+
+                    <div class="settingsListLabel"></div>
+
+                    <div id="" class="settingsListValue"></div>
+
+                  </app-settings-list-item>
+
+                </template>
+
+            </app-settings-list>
+
+        </div>
+
+    </div>
+    
+     <div id="settingsViewingRestrictionsView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <app-settings-list id="settingsViewingRestrictionsViewList"
+
+            		data-config="app.screenConfig.settings.VIEW_RESTRICTIONS">
+            		
+            		<div class = "settingsViewRestrictionsFirstSubTitle" id="viewingRestrictionsFirstSubTitle" data-i18n="settingsRestrictionsClassifiedSubTitle"></div>
+
+                <template>
+
+                  <app-settings-list-item class="settings-list-item">
+
+                    <div class="settingsListLabel"></div>
+
+                    <div id="" class="settingsListValue"></div>
+
+                  </app-settings-list-item>
+
+                </template>
+                
+            </app-settings-list>
+
+		</div>
+    </div>
+    
+	<div id="settingsInternetConnectionMenu"  class="oxygen-transition-none-hide ">
+    	  <app-settings-table id="settingsInternetConnectionMenuGrid"    class="settingsGridMenu" data-config="app.screenConfig.settings.INTERNET_CONNECTION"
+                    data-row-id="gridMenu-row-"    data-row-class="gridMenu-row" data-col-count ="1">
+        <template>
+            <app-settings-table-cell class="gridMenu-item" data-path-name="Gridable"></app-settings-table-cell>
+        </template>
+    </app-settings-table>
+
+    </div>
+
+
+
+
+    <div id="settingsAdvancedSettingsMenu"  class="oxygen-transition-none-hide ">
+    	  <app-settings-table id="settingsAdvancedSettingsMenuGrid"    class="settingsGridMenu" data-config="app.screenConfig.settings.ADVANCED"
+                    data-row-id="gridMenu-row-"    data-row-class="gridMenu-row" data-col-count ="2">
+        <template>
+            <app-settings-table-cell class="gridMenu-item" data-path-name="Gridable"></app-settings-table-cell>
+        </template>
+
+    </app-settings-table>
+
+    </div>
+
+
+
+    <div id="settingsInstallerSettingsMenu"  class="oxygen-transition-none-hide ">
+    	  <app-settings-table id="settingsInstallerSettingsMenuGrid"    class="settingsGridMenu" data-config="app.screenConfig.settings.INSTALLER_SETUP"
+                    data-row-id="gridMenu-row-"    data-row-class="gridMenu-row" data-col-count ="1">
+        <template>
+            <app-settings-table-cell class="gridMenu-item" data-path-name="Gridable"></app-settings-table-cell>
+        </template>
+
+    </app-settings-table>
+
+    </div>
+
+
+
+
+    <div id="settingsTerrestrialChannels"  class="oxygen-transition-none-hide settingsGridMenu"></div>
+
+
+
+
+
+
+
+    <div id="settingsInstallerIrdetoMenu"  class="oxygen-transition-none-hide settingsGridMenu"></div>
+
+
+
+    <div id="settingsListStatusView" class="oxygen-transition-none-hide">
+
+        <div id="settingsListStatusContainer" class="settingsList">
+
+            <div id="settingsListStatusListScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+
+        </div>
+
+        <div id="settingsListStatusList" class="settingsList"></div>
+
+    </div>
+
+
+
+    <div id="settingsSystemDetailsView" class="oxygen-transition-none-hide">
+        <div id="settingsListStatusContainer" class="settingsList">
+            <div id="settingsSystemDetailsScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+        </div>
+        <div class="settingsList">
+            <app-settings-list id="settingsSystemDetailsViewList"
+            		data-config="app.screenConfig.settings.SYSTEM_DETAILS"
+                	data-scrollbar="settingsSystemDetailsScrollBar"
+                	data-scrollbar-type = "page">
+                <template>
+                  <app-settings-list-item class="settings-list-item">
+                    <div class="settingsListLabel"></div>
+                    <div id="" class="settingsListValue"></div>
+                  </app-settings-list-item>
+                </template>
+            </app-settings-list>
+		</div>
+    </div>
+    <div id="settingsHardwareDetailsView" class="oxygen-transition-none-hide">
+
+        <div id="settingsListStatusContainer" class="settingsList">
+
+            <div id="settingsHardwareDetailsScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+
+        </div>
+        <div class="settingsList">
+            <app-settings-list id="settingsHardwareDetailsViewList"
+            		data-config="app.screenConfig.settings.HARDWARE_DETAILS"
+                	data-scrollbar="settingsHardwareDetailsScrollBar"
+                	data-scrollbar-type = "page">
+                <template>
+                  <app-settings-list-item class="settings-list-item">
+                    <div class="settingsListLabel"></div>
+                    <div id="" class="settingsListValue"></div>
+                  </app-settings-list-item>
+                </template>
+            </app-settings-list>
+		</div>
+    </div>
+
+
+
+    <div id="installerEntitlementView" class="oxygen-transition-none-hide">
+
+        <div id="installerEntitlementList" class="settingsList"></div>
+
+    </div>
+
+
+
+    <div id="installerFPView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <ul id="installerFPViewControls">
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="settingsMenuHardwareSTU"></div>
+
+                    <div id="installerFPLED" class="settingsListValue"></div>
+
+                </li>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="installerFrontPanelDisplay"></div>
+
+                    <div id="installerFPdisplay" class="settingsListValue"></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="installerLNBView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <ul>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="installerLNBPower"></div>
+
+                    <div id="installerLNBPower" class="settingsListValue"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="installerLNBKHz"></div>
+
+                    <div id="installerLNB22KHz" class="settingsListValue"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="installerLNBLoFreq"></div>
+
+                    <div id="installerLNBLoFreq" class="settingsListValue"></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="installerHomeTransView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <ul>
+
+                <li id="installerHome1">
+
+                    <div id="installerHomeTrans1Label" class="settingsListLabel"></div>
+
+                    <div id="installerHomeTrans1" class="settingsListValue"></div>
+
+                </li>
+
+                <li id="installerHome2">
+
+                    <div id="installerHomeTrans2Label" class="settingsListLabel" ></div>
+
+                    <div id="installerHomeTrans2" class="settingsListValue"></div>
+
+                </li>
+
+                <li id="installerHome3" class="noArrows">
+
+                    <div id="installerHomeTrans3Label" class="settingsListLabel"></div>
+
+                    <div id="installerHomeTrans3" class="settingsListValue"></div>
+
+                </li>
+
+                <li id="installerHome4">
+
+                    <div id="installerHomeTrans4Label" class="settingsListLabel"></div>
+
+                    <div id="installerHomeTrans4" class="settingsListValue"></div>
+
+                </li>
+
+                <li id="installerHome5">
+
+                    <div id="installerHomeTrans5Label" class="settingsListLabel"></div>
+
+                    <div id="installerHomeTrans5" class="settingsListValue"></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="installerLNBSetupView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <ul>
+
+                <li class="noArrows">
+
+                    <div id="installerLNBSetup1Label" class="settingsListLabel"></div>
+
+                    <div id="installerLNBSetup1" class="settingsListValue"></div>
+
+                </li>
+
+                <li >
+
+                    <div id="installerLNBSetup2Label" class="settingsListLabel"></div>
+
+                    <div id="installerLNBSetup2" class="settingsListValue"></div>
+
+                </li>
+
+                <li >
+
+                    <div id="installerLNBSetup3Label" class="settingsListLabel"></div>
+
+                    <div id="installerLNBSetup3" class="settingsListValue"></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="settingsHelpView" class="oxygen-transition-none-hide">
+
+        <div id="settingsHelpScrollBar" class="settingsScroll">
+
+            <div class="scrollBarItemFill"></div>
+
+        </div>
+
+        <div id="settingsHelpList" class="settingsList"></div>
+
+    </div>
+
+
+
+    <!-- remove settings info example after its first use  -->
+
+    <div id="settingsInfoView" class="oxygen-transition-none-hide">
+	  	<div id="settingsInfoScrollBar" class="settingsScroll">
+            <div class="settingsScrollInner"></div>
+            <div class="scrollBarItemFill"></div>
+        </div>
+        <app-settings-licences id="settingsInfoContent">
+            <div id="settingsInfoGradient"></div>
+            <div id="settingsInfoImageContainer"></div>
+            <div id="settingsInfoContentText">
+            	<div class='paragraphs'>
+              	<div id='LicenceText' class='paragraphsText' data-i18n= 'settingsMenuLicencesText' style="top: 0px; margin-top: 0px;"></div>
+            </div>
+            </div>
+        </app-settings-licences>
+    </div>
+
+
+
+    <div id="installerFPView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <ul>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="settingsMenuHardwareSTU"></div>
+
+                    <div id="installerFPLED" class="settingsListValue"></div>
+
+                </li>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="installerFrontPanelDisplay"></div>
+
+                    <div id="installerFPdisplay" class="settingsListValue"></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="installerLNBView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <ul>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="installerLNBPower"></div>
+
+                    <div id="installerLNBPower" class="settingsListValue"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="installerLNBKHz"></div>
+
+                    <div id="installerLNB22KHz" class="settingsListValue"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="installerLNBLoFreq"></div>
+
+                    <div id="installerLNBLoFreq" class="settingsListValue"></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="installerHomeTransView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <ul>
+
+                <li id="installerHome1">
+
+                    <div id="installerHomeTrans1Label" class="settingsListLabel"></div>
+
+                    <div id="installerHomeTrans1" class="settingsListValue"></div>
+
+                </li>
+
+                <li id="installerHome2">
+
+                    <div id="installerHomeTrans2Label" class="settingsListLabel" ></div>
+
+                    <div id="installerHomeTrans2" class="settingsListValue"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div id="installerHomeTrans3Label" class="settingsListLabel"></div>
+
+                    <div id="installerHomeTrans3" class="settingsListValue"></div>
+
+                </li>
+
+                <li id="installerHome4">
+
+                    <div id="installerHomeTrans4Label" class="settingsListLabel"></div>
+
+                    <div id="installerHomeTrans4" class="settingsListValue"></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="settingsHelpView" class="oxygen-transition-none-hide">
+
+        <div id="settingsHelpScrollBar" class="settingsScroll">
+
+            <div class="scrollBarItemFill"></div>
+
+        </div>
+
+        <div id="settingsHelpList" class="settingsList"></div>
+
+    </div>
+
+
+
+    <div id="settingsDiagnosticsView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <ul>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="settingsDiagnosticsViewTitle"></div>
+
+                    <div class="settingsListValue control-focused" data-i18n="settingsStartDiagnostics"></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="settingsVideoView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <ul>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="settingsVideoHDTVMode"></div>
+
+                    <div id="settingsHDTVMode" class="settingsListValue"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="settingsVideoHDCPStatus"></div>
+
+                    <div id="settingsHDCPStatus" class="settingsListValue"></div>
+
+                </li>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="settingsVideoHDCPWarning"></div>
+
+                    <div id="settingsHDCPWarning" class="settingsListValue"></div>
+
+                </li>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="settingsVideoTVAspectRatio"></div>
+
+                    <div id="settingstvAspectRatio" class="settingsListValue"></div>
+
+                </li>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="settingsVideoContentFormatting"></div>
+
+                    <div id="settingsContentFormatting" class="settingsListValue"></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="settingsParentalControlsView" class="oxygen-transition-none-hide">
+    	 <app-settings-table id="settingsParentalControlsViewGrid"    class="settingsGridMenu" data-config="app.screenConfig.settings.PARENTAL_CONTROL"
+                    data-row-id="gridMenu-row-"    data-row-class="gridMenu-row" data-col-count= "1" >
+        <template>
+            <app-settings-table-cell class="gridMenu-item" data-path-name="Gridable"></app-settings-table-cell>
+        </template>
+    </div>
+
+
+
+    <div id="settingsSignalView" class="oxygen-transition-none-hide">
+
+        <div id="settingsSignalTitles">
+
+            <!-- TODO update these with translations -->
+
+            <span>Tuners</span>
+
+            <span id="settingsSignalTunerType" data-i18n="settingsSignalSatelliteTuner">Foxtel Satellite Live</span>
+
+        </div>
+
+
+
+        <div id="settingsSignalListContainer">
+
+            <div id="settingsSignalListScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+
+            <div id="settingsSignalList"></div>
+
+        </div>
+
+    </div>
+
+
+    <div id="settingsFavChannelsView" class="oxygen-transition-none-hide">
+    	 <app-settings-channel-menu  id="favScreen" data-config="app.screenConfig.settings.FAVOURITECHANNELS">
+    		<app-settings-category-list id="settingsFavChannelCategoryList">
+				<template>
+					<app-settings-channel-menu-category-item class = "listView-cell">
+						<span class="categoryItem"> </span>
+					</app-settings-channel-category>
+				</template>
+			</app-settings-category-list>
+			<div id="settingsFavChannelsContainer">
+				 <div id="settingsFavChannelsListScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+				 <app-settings-channel-list id="settingsFavChannelsList" class="listView-container" data-scrollbar="settingsFavChannelsListScrollBar"
+               	data-scrollbar-type = "item">
+					<template>
+						<app-settings-channel-menu-channel-item class= "listView-cell" data-type="FAV_ITEM">
+							<span class="icon"></span>
+							<span class="channelNumber"></span>
+							<span class="channelName"></span>
+						</app-settings-channel-menu-channel-item>
+					</template>
+				</app-settings-channel-list>
+			</div>
+    	</app-settings-channel-menu>
+    </div>
+
+	<div id="settingsBlockedChannelsView" class="oxygen-transition-none-hide">
+		<app-settings-channel-menu  id="blockScreen" data-config="app.screenConfig.settings.BLOCKING">
+			<app-settings-category-list id="settingsBlockedChannelCategoryList">
+					<template>
+						<app-settings-channel-menu-category-item class = "listView-cell">
+							<span class="categoryItem"> </span>
+						</app-settings-channel-menu-category-item>
+					</template>
+			</app-settings-category-list>
+	        <div id="settingsBlockedChannelsContainer">
+	            <div id="settingsBlockedChannelsListScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+				 <app-settings-channel-list id="settingsBlockedChannelsList" class="listView-container" data-scrollbar="settingsBlockedChannelsListScrollBar"
+	               	data-scrollbar-type = "item">
+						<template>
+							<app-settings-channel-menu-channel-item class= "listView-cell" data-type="CHANNEL_BLOCKED_ITEM">
+								<span class="icon"></span>
+								<span class="channelNumber"></span>
+								<span class="channelName"></span>
+							</app-settings-channel-menu-channel-item>
+						</template>
+				</app-settings-channel-list>
+	        </div>
+	     </app-settings-channel-menu>
+	</div>
+
+
+	<div id="settingsEthernetMenu" class="oxygen-transition-none-hide">
+      <app-settings-ethernet-menu-list id="settingsEthernetMenuList" class="listView-list listView-anim-normal" tabindex="-1" data-orientation="Vertical">
+          <div id="settingsEthernetMenuList-List">
+
+              <app-settings-ethernet-menu-list-item id='EthernetConnection' class="EthernetConnection listView-cell" data-index="0" style="top:0px;">
+                <span id="EthernetImage" ></span>
+                <span id="EthernetConnectionText" data-i18n="settingsEthernetEthernet"></span>
+                <span id="connectionStatus" data-i18n="settingsEthernetConnected"></span>
+              </app-settings-ethernet-menu-list-item>
+      
+              <app-settings-ethernet-menu-list-item id='networkConnectionTest' class="networkTest listView-cell"  data-index="1" style="top:67px;" data-i18n="settingsEthernetNetworkTest">
+              </app-settings-ethernet-menu-list-item>
+    
+         </div>
+     </app-settings-ethernet-menu-list>
+	</div>
+
+
+<div id="settingsWifiView" class="oxygen-transition-none-hide">
+	<app-settings-wifi id="wifiScreen" data-config="app.screenConfig.settings.WIFI_OPTIONS">
+        <div id="settingsWifiMenu" class="listView-container">
+        	<app-settings-wifi-menu-list id="settingsWifiMenuList"   class="listView-list listView-anim-normal" >
+				<template>
+					<app-settings-wifi-menu-list-item class = "listView-cell">
+					</app-settings-wifi-menu-list-item>
+				</template>
+			</app-settings-wifi-menu-list>
+        </div>
+        <div id="settingsNetworkIdText" data-i18n="settingsWifiJoinOtherNetwork">settingsWifiJoinOtherNetwork</div>
+        <div id="settingsWPSText">
+            <div data-i18n="settingsWifiMenuConnectWPSTitle">settingsWifiMenuConnectWPSTitle</div>
+            <ol>
+                <li data-i18n="settingsWifiMenuConnectWPSHelp1">settingsWifiMenuConnectWPSHelp1</li>
+                <li data-i18n="settingsWifiMenuConnectWPSHelp2">settingsWifiMenuConnectWPSHelp1</li>
+            </ol>
+        </div>
+        <div id="settingsWifiList">
+        	<div id="settingsWifiListScroll" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+            <app-settings-wifi-connection-list id="settingswifiConnectionList" class="listView-container" data-scrollbar="settingsWifiListScroll"
+               	data-scrollbar-type = "item">
+					<template>
+						<app-settings-wifi-connection-list-item class= "listView-cell">
+							<span class="wifiName"></span>
+						</app-settings-wifi-connection-list-item>
+					</template>
+			</app-settings-wifi-connection-list>
+        </div>
+       <!-- #settingsWifiConnect: class helpers [connecting, fail, connected] -->
+        <div id="settingsWifiConnect">
+            <div id="settingsWifiConnecting">
+                <div id="settingsWifiConnectingImg"></div>
+                <div class="settingsWifiConnectText" data-i18n="settingsWifiConnecting"></div>
+            </div>
+            <div id="settingsWifiFail">
+                <div class="settingsWifiConnectText" data-i18n="settingsWifiConnectFail"></div>
+            </div>
+            <div id="settingsWifiConnected">
+                <div id="settingsWifiConnectedImg"></div>
+                <div class="settingsWifiConnectText">
+                    <span data-i18n="settingsWifiConnected"></span>
+                    <span id="settingsWifiConnectedName"></span>
+                </div>
+            </div>
+            <div id="settingsWPSConnection">
+                <div id="settingsWPSConnecting">
+                    <div id="settingsWPSConnectingImg"></div>
+                    <div class="settingsWPSConnectingText" data-i18n="settingsWPSConnecting"></div>
+                </div>
+                <div id="settingsWPSConnectionFail">
+                    <div class="settingsWPSConnectingText" data-i18n="settingsWPSFailed"></div>
+                </div>
+                <div id="settingsWPSConnected">
+                    <div class="settingsWPSConnectingText"><span data-i18n="settingsWPSSuccess"></span>
+                        <span id="settingsWPSConnectedName"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</app-settings-wifi>
+</div>
+
+
+
+    <!-- #settingsNetworkTestView: class helpers [testing-modem, testing-foxtel, fail-modem, fail-foxtel, connected] -->
+
+    <div id="settingsNetworkTestView" class="testing-modem oxygen-transition-none-hide">
+
+        <div id="settingsNetworkTestBorder"></div>
+
+        <div id="settingsNetworkTestTestingModem">
+
+            <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestTestingModem"></div>
+
+            <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem"></span></div>
+
+        </div>
+
+        <div id="settingsNetworkTestTestingFoxtel">
+
+            <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestTestingFoxtel"></div>
+
+            <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem"></span></div>
+
+        </div>
+
+        <div id="settingsNetworkTestFailModem">
+
+            <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestFailModem"></div>
+
+            <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem"></span></div>
+
+        </div>
+
+        <div id="settingsNetworkTestFailFoxtel">
+
+            <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestFailFoxtel"></div>
+
+            <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem"></span></div>
+
+        </div>
+
+        <div id="settingsNetworkTestConnected">
+
+            <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestConnected"></div>
+
+            <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem"></span></div>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="settingsSpeedTestView" class="oxygen-transition-none-hide">
+
+        <div class="testInProgres hide">
+
+            <ul class="dotProgressBar">
+
+                <li></li>
+
+                <li></li>
+
+                <li></li>
+
+                <li></li>
+
+                <li></li>
+
+            </ul>
+
+            <div class="spinner-text" data-i18n="settingsMenuSpeedTestTest"></div>
+
+        </div>
+
+        <div id="settingsSpeedTestViewResults" class="settingsList hide">
+
+            <ul>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="settingsMenuDownloadSpeed"></div>
+
+                    <div id="DownloadSpeedResult" class="settingsListValue">0 Mbit/s</div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="settingsMenuSpeedTest"></div>
+
+                    <div class="settingsListValue">
+
+                        <ul id="SpeedTestResult" class="colourScale"></ul>
+
+                    </div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="settingsMenuQualityOfService"></div>
+
+                    <div class="settingsListValue">
+
+                        <ul id="QualityOfServiceResult" class="colourScale"></ul>
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="settingsIrdetoCaStatusView" class="oxygen-transition-none-hide">
+
+        <div id="settingsIrdetoCaStatusContainer" class="settingsList">
+
+            <div id="settingsIrdetoCaStatusListScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+
+        </div>
+
+        <div id="settingsIrdetoCaStatusList" class="settingsList"></div>
+
+    </div>
+
+
+
+    <div id="settingsIPConfigView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <ul>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="settingsMenuTitleNetworkSettings"></div>
+
+                    <div id="settingsIPSetting" class="settingsListValue focused"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="settingsMenuTcpIPAddress"></div>
+
+                    <div id="settingsWiFiIP" class="settingsListValue"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="settingsMenuTcpIPSubnet"></div>
+
+                    <div id="settingsWiFiSubnet" class="settingsListValue"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="settingsMenuTcpIPGateway"></div>
+
+                    <div id="settingsWiFiGateway" class="settingsListValue"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="settingsMenuTcpIPPrimaryDNS"></div>
+
+                    <div id="settingsFirstDNS" class="settingsListValue"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="settingsMenuTcpIPSecondaryDNS"></div>
+
+                    <div id="settingsSecondDNS" class="settingsListValue"></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+	<div id="settingsDownloadControlView" class="oxygen-transition-none-hide">
+
+		<div class="settingsList">
+
+			<app-settings-list id="settingsDownloadControlViewList" data-config="app.screenConfig.settings.DOWNLOAD_CONTROL">
+
+				<template>
+
+	                  <app-settings-list-item class="settings-list-item">
+
+	                    <div class="settingsListLabel"></div>
+
+	                    <div id="" class="settingsListValue"></div>
+
+	                  </app-settings-list-item>
+
+	                </template>
+
+			</app-settings-list>
+
+		</div>
+
+	</div>
+
+
+    <div id="settingsNetworkDetailsView" class="oxygen-transition-none-hide">
+
+        <div id="settingsNetworkDetailsContainer" class="settingsList">
+
+        	<div id="settingsNetworkDetailsScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+
+		</div>
+
+        <div class="settingsList">
+
+            <app-settings-list id="settingsNetworkDetailsViewList"
+
+            		data-config="app.screenConfig.settings.NETWORKSETTINGS"
+
+                	data-scrollbar="settingsNetworkDetailsScrollBar"
+
+                	data-scrollbar-type = "item">
+
+                <template>
+
+                  <app-settings-list-item class="settings-list-item">
+
+                    <div class="settingsListLabel"></div>
+
+                    <div id="" class="settingsListValue"></div>
+
+                  </app-settings-list-item>
+
+                </template>
+
+            </app-settings-list>
+
+		</div>
+		<app-settings-internet-status-overlay id="settingsDHCPRenewal">
+
+            <div id="settingsDHCPRenewing">
+
+                <div id="settingsDHCPRenewingImg"></div>
+
+                <div class="settingsDHCPRenewingText" data-i18n="settingsDHCPRenewing"></div>
+
+            </div>
+
+            <div id="settingsDHCPRenewalFail">
+
+                <div class="settingsDHCPRenewingText" data-i18n="settingsDHCPRenewingFailed"></div>
+
+            </div>
+
+            <div id="settingsDHCPUpdateFail">
+
+                <div class="settingsDHCPRenewingText" data-i18n="settingsDHCPUpdateFail"></div>
+
+            </div>
+
+            <div id="settingsDHCPRenewed">
+
+                <div class="settingsDHCPRenewingText">
+
+                    <span data-i18n="settingsDHCPRenewed"></span>
+
+                    <span id="settingsDHCPRenewedName"></span>
+
+                </div>
+
+            </div>
+
+            <div id="settingsDHCPUpdating">
+
+                <div id="settingsDHCPRenewingImg"></div>
+
+                <div class="settingsDHCPRenewingText">
+
+                    <span data-i18n="settingsDHCPUpdating"></span>
+
+                    <span id="settingsDHCPUpdatingName"></span>
+
+                </div>
+
+            </div>
+          <div class="dialogCta internetStatusOverlay">
+            <span><span class="btnBack"></span><span class="txtBack" data-i18n="callToActionClose">Close</span></span>
+          </div>
+        </app-settings-internet-status-overlay>
+
+    </div>
+
+
+    <div id="settingsRecordingView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <app-settings-list id="settingsRecordingViewList" data-config="app.screenConfig.settings.RECORDING">
+
+                <template>
+
+                  <app-settings-list-item class="settings-list-item">
+
+                    <div class="settingsListLabel"></div>
+
+                    <div id="" class="settingsListValue"></div>
+
+                  </app-settings-list-item>
+
+                </template>
+
+            </app-settings-list>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="settingsManualRecordView" class="oxygen-transition-none-hide">
+
+        <div class="settingsList">
+
+            <ul>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="settingsManualRecordChannel"></div>
+
+                    <div id="settingsManualRecordChannel" class="settingsListValue control-focused">
+
+                        <div id="settingsManualRecordChannelName">
+
+                            <div class="chanNumber"></div>
+
+                            <div class="chanName"></div>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="settingsManualRecordDay"></div>
+
+                    <div id="settingsManualRecordDay" class="settingsListValue"></div>
+
+                </li>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="settingsManualRecordStart"></div>
+
+                    <div id="settingsManualRecordStart" class="settingsListValue">
+
+                        <div class="time"></div>
+
+                        <div class="period"></div>
+
+                    </div>
+
+                </li>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="settingsManualRecordEnd"></div>
+
+                    <div id="settingsManualRecordEnd" class="settingsListValue">
+
+                        <div class="time"></div>
+
+                        <div class="period"></div>
+
+                    </div>
+
+                </li>
+
+                <li>
+
+                    <div class="settingsListLabel" data-i18n="settingsManualRecordFreq"></div>
+
+                    <div id="settingsManualRecordFreq" class="settingsListValue"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div class="settingsListLabel" data-i18n="settingsManualRecordTitle"></div>
+
+                    <div id="settingsManualRecordTitle" class="settingsListValue"></div>
+
+                </li>
+
+                <li class="noArrows">
+
+                    <div id="settingsManualRecordAdd" class="settingsListValue"></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="settingsinstallerIrdetoService" class="oxygen-transition-none-hide">
+
+        <div id="settingsinstallerIrdetoServiceContainer" class="settingsList">
+
+            <div id="settingsinstallerIrdetoServiceScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+
+        </div>
+
+        <div id="settingsinstallerIrdetoServiceList" class="settingsList"></div>
+
+    </div>
+
+
+
+    <div id="settingsinstallerIrdetoServiceStatus" class="oxygen-transition-none-hide">
+
+        <div id="settingsinstallerIrdetoServiceStatusContainer" class="settingsList">
+
+            <div id="settingsinstallerIrdetoServiceStatusScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+
+        </div>
+
+        <div id="settingsinstallerIrdetoServiceStatusList" class="settingsList"></div>
+
+    </div>
+
+
+
+    <div id="settingsinstallerIrdetoProduct" class="oxygen-transition-none-hide">
+
+        <div id="settingsinstallerIrdetoProductListCount" class="settingsList">
+
+            <div class="title" data-i18n="settingsIrdetoProductCount"></div>
+
+            <div class="count">3</div>
+
+        </div>
+
+        <div id="settingsinstallerIrdetoProductListTitles" class="settingsList">
+
+            <ul>
+
+                <li class="noArrows">
+
+                    <div class="settingsListValue wide" data-i18n="">Product Type</div>
+
+                    <div class="settingsListValue" data-i18n="">Entitled</div>
+
+                    <div class="settingsListValue" data-i18n="">Duration</div>
+
+                    <div class="settingsListValue" data-i18n="">Start Date</div>
+
+                    <div class="settingsListValue" data-i18n="">Product ID</div>
+
+                    <div class="settingsListValue" data-i18n="">Sector Number</div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div id="settingsinstallerIrdetoProductContainer" class="settingsList">
+
+            <div id="settingsinstallerIrdetoProductScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
+
+        </div>
+
+        <div id="settingsinstallerIrdetoProductList" class="settingsList"></div>
+
+    </div>
+
+
+
+    <div id="settingsinstallerIrdetoClient" class="oxygen-transition-none-hide">
+
+        <div id="settingsinstallerIrdetoClientContainer" class="settingsList">
+
+            <div id="settingsinstallerIrdetoClientScrollBar" class="settingsScroll">
+
+                <div class="scrollBarItemFill"></div>
+
+            </div>
+
+        </div>
+
+        <div id="settingsinstallerIrdetoClientList" class="settingsList"></div>
+
+    </div>
+
+
+
+  <template id="settingsToggleTemplate">
+
+    <div class="control">
+
+        <label data-i18n="generic">generic</label>
+
+        <div class="control-hslider">
+
+        	<app-settings-toggle-list style="-webkit-transform: translate(0px, 0px);">
+
+            	<template>
+
+		        	<app-settings-toggle-list-item>
+
+        	        	<span></span>
+
+		            </app-settings-toggle-list-item>
+
+                </template>
+
+            </app-settings-toggle-list>
+
+        </div>
+
+    </div>
+
+  </template>
+
+
+
+  <template id="settingsButtonTemplate">
+
+    <app-settings-button style="-webkit-transform: translate(0px, 0px);">
+
+		<div class="control control-button"></div>
+
+    </app-settings-button>
+
+  </template>
+
+ <template id="settingsInputTextTemplate">
+
+    <app-settings-input-text>
+		<span class= "inputText"></span>
+    </app-settings-input-text>
+
+  </template>
+
+  <template id="settingsTextTemplate">
+    <app-settings-text class="noArrows listView-cell   ">
+		<div class="settingsListLabel " data-i18n="settingsMenuSystemManufacturer">Manufacturer</div>
+		<div id="settingsMenuSystemManufacturer" class="settingsListValue">Pace</div>
+	</li>
+  </template>
+  <div id="callToAction" class="ctaClose " x-screen="ctaSettings" style="display: block;">
+        <div class="ctaWrapper">
+            <span id="ctaOrder"><span class="btnSelect"></span><span data-i18n="callToActionOrder">callToActionOrder</span></span>
+            <span id="ctaClose"><span class="btnBack"></span><span data-i18n="callToActionClose">callToActionClose</span></span>
+            <span id="ctaInfo"><span class="btnInfo"></span><span data-i18n="callToActionMoreInfo">callToActionMoreInfo</span></span>
+            <span id="ctaFullDetails"><span class="btnInfo"></span><span data-i18n="callToActionFullDetails">callToActionFullDetails</span></span>
+            <span id="ctaUpDown"><span class="btnUpDown"></span><span data-i18n="callToActionChannels">callToActionChannels</span></span>
+            <span id="ctaScrollText"><span class="btnScrollText"></span><span data-i18n="callToActionScrollText">callToActionScrollText</span></span>
+            <span id="ctaRecord"><span class="btnRecord"></span><span data-i18n="callToActionRecord">callToActionRecord</span></span>
+            <span id="ctaCancelRecord"><span class="btnRecord"></span><span data-i18n="callToActionCancelRecord">callToActionCancelRecord</span></span>
+            <span id="ctaRecordOptions"><span class="btnRecord"></span><span data-i18n="callToActionRecordOptions">callToActionRecordOptions</span></span>
+            <span id="ctaStartOver"><span class="btnPlay"></span><span data-i18n="callToActionStartOver">callToActionStartOver</span></span>
+            <span id="ctaWatchNow"><span class="btnPlay"></span><span data-i18n="callToActionWatchNow">callToActionWatchNow</span></span>
+            <span id="ctaPlayNow"><span class="btnPlay"></span><span data-i18n="callToActionPlayNow">callToActionPlayNow</span></span>
+            <span id="ctaJumpTo"><span class="btnRed"></span><span data-i18n="callToActionJumpTo">callToActionJumpTo</span></span>
+            <span id="ctaSortListings"><span class="btnRed"></span><span data-i18n="callToActionSortListings">callToActionSortListings</span></span>
+            <span id="ctaUndoChanges"><span class="btnRed"></span><span data-i18n="callToActionUndoChanges">callToActionSortListings</span></span>
+            <span id="ctaResetDefaults"><span class="btnRed"></span><span data-i18n="callToActionResetToDefaults">callToActionResetToDefaults</span></span>
+            <span id="ctaOtherTimes"><span class="btnRed"></span><span data-i18n="callToActionOtherTimes">callToActionOtherTimes</span></span>
+            <span id="ctaOptions"><span class="btnOptions"></span><span data-i18n="callToActionOptions">callToActionOptions</span></span>
+            <span id="ctaChannelView"><span class="btnGreen"></span><span data-i18n="callToActionChannelView">callToActionChannelView</span></span>
+            <span id="ctaGridView"><span class="btnGreen"></span><span data-i18n="callToActionGridView">callToActionGridView</span></span>
+            <span id="ctaAdvancedSettings"><span class="btnGreen"></span><span data-i18n="callToActionAdvancedSettings">callToActionAdvancedSettings</span></span>
+            <span id="ctaSkip24H"><span class="btnSkip"></span><span data-i18n="callToActionSkip24H">callToActionSkip24H</span></span>
+            <span id="ctaFfwdSkip"><span class="btnFfwdSkip"></span><span data-i18n="callToActionFfwdSkip">callToActionFfwdSkip</span></span>
+            <span id="ctaRwdSkip"><span class="btnRwdSkip"></span><span data-i18n="callToActionRwdSkip">callToActionRwdSkip</span></span>
+            <span id="ctaPageLeftRight"><span class="btnSkip"></span><span data-i18n="callToActionPageLeftRight">callToActionPageLeftRight</span></span>
+            <span id="ctaPageUpDown"><span class="btnPageUpDown"></span><span data-i18n="callToActionPageUpDown">callToActionPageUpDown</span></span>
+            <span id="ctaClear"><span class="btnBack"></span><span data-i18n="callToActionClear">callToActionClear</span></span>
+            <span id="ctaCancel"><span class="btnBack"></span><span data-i18n="callToActionBack">callToActionBack</span></span>
+
+            <!-- Planner Specific -->
+            <span id="ctaPlus30"><span class="btnRed"></span><span data-i18n="callToActionPlus30">callToActionPlus30</span></span>
+            <span id="ctaMinus30"><span class="btnRed"></span><span data-i18n="callToActionMinus30">callToActionMinus30</span></span>
+            <span id="ctaAddSeries"><span class="btnGreen"></span><span data-i18n="callToActionAddSeries">callToActionAddSeries</span></span>
+            <span id="ctaRemoveSeries"><span class="btnGreen"></span><span data-i18n="callToActionRemoveSeries">callToActionRemoveSeries</span></span>
+            <!--Reminder Specific-->
+            <span id="ctaSetReminder"><span class="btnGreen"></span><span data-i18n="callToActionSetReminder">callToActionSetReminder</span></span>
+            <span id="ctaRemoveReminder"><span class="btnGreen"></span><span data-i18n="callToActionRemoveReminder">callToActionRemoveReminder</span></span>
+            <span id="ctaDelAll"><span class="btnOptions"></span><span data-i18n="callToActionDeleteAll">callToActionDeleteAll</span></span>
+            <span id="ctaDel"><span class="btnOptions"></span><span data-i18n="callToActionDelete">callToActionDelete</span></span>
+            <!-- This 'DELETE' is not necessarily planner specific, but it has to go here to enforce correct CTA order -->
+            <span id="ctaDelete"><span class="btnYellow"></span><span data-i18n="callToActionDelete">callToActionDelete</span></span>
+            <span id="ctaKeep"><span class="btnBlue"></span><span data-i18n="callToActionKeep">callToActionKeep</span></span>
+            <span id="ctaDontKeep"><span class="btnBlue"></span><span data-i18n="callToActionDontKeep">callToActionDontKeep</span></span>
+
+            <!-- Block Settings Specific-->
+            <span id="ctaBlock"><span class="btnSelect"></span><span data-i18n="callToActionBlock">callToActionBlock</span></span>
+            <span id="ctaUnBlock"><span class="btnSelect"></span><span data-i18n="callToActionUnBlock">callToActionUnBlock</span></span>
+            <span id="ctaUnBlockAll"><span class="btnRed"></span><span data-i18n="callToActionUnBlockAll">callToActionUnBlockAll</span></span>
+
+            <!-- Favourite Settings Specific-->
+            <span id="ctaFavourite"><span class="btnStar"></span><span data-i18n="callToActionFavourite">callToActionFavourite</span></span>
+            <span id="ctaUnFavourite"><span class="btnStar"></span><span data-i18n="callToActionUnFavourite">callToActionUnFavourite</span></span>
+            <span id="ctaUnFavouriteAll"><span class="btnRed"></span><span data-i18n="callToActionUnFavouriteAll">callToActionUnFavouriteAll</span></span>
+
+            <!--App Drawer Specific-->
+            <span id="ctaLaunchApp"><span class="btnSelect"></span><span data-i18n="callToActionLaunchApp">callToActionLaunchApp</span></span>
+            <span id="ctaCloseAppDrawer"><span class="btnApps"></span><span data-i18n="callToActionCloseAppDrawer">callToActionCloseAppDrawer</span></span>
+
+            <!--App Portal Specific-->
+            <span id="ctaAddToAppDrawer"><span class="btnStar"></span><span data-i18n="callToActionAddToAppDrawer">callToActionAddToAppDrawer</span></span>
+            <span id="ctaRemoveFromAppDrawer"><span class="btnStar"></span><span data-i18n="callToActionRemoveFromAppDrawer">callToActionRemoveFromAppDrawer</span></span>
+
+            <!--Search Screen-->
+            <span id="ctaSearchClose"><span class="btnBack"></span><span data-i18n="callToActionReturn">callToActionReturn</span></span>
+            <span id="ctaSearchDelete"><span class="btnBack"></span><span data-i18n="callToActionDelete">callToActionDelete</span></span>
+            <span id="ctaFilter"><span class="btnGreen"></span><span data-i18n="callToActionFilter">callToActionFilter</span></span>
+
+            <!--Search Keyboard Specific-->
+            <span id="ctaFullSearch"><span class="btnRed"></span><span data-i18n="callToActionFullSearch">callToActionFullSearch</span></span>
+            <span id="ctaClearRecent"><span class="btnYellow"></span><span data-i18n="callToActionClearRecentSearches">callToActionClearRecentSearches</span></span>
+
+            <!--Network Specific-->
+            <span id="ctaConnect"><span class="btnSelect"></span><span data-i18n="callToActionConnect">callToActionConnect</span></span>
+            <span id="ctaNetworkDetails"><span class="btnSelect"></span><span data-i18n="callToActionNetworkDetails">callToActionNetworkDetails</span></span>
+            <span id="ctaSecurity"><span class="btnRed"></span><span data-i18n="callToActionNetworkSecuritySettings">callToActionNetworkSecuritySettings</span></span>
+            <span id="ctaTCPIPSettings"><span class="btnRed"></span><span data-i18n="callToActionTCPIPSettings">callToActionTCPIPSettings</span></span>
+            <span id="ctaWifiSettings"><span class="btnSelect"></span><span data-i18n="callToActionWifiSettings">callToActionWifiSettings</span></span>
+            <span id="ctaForget"><span class="btnYellow"></span><span data-i18n="callToActionForget">callToActionForget</span></span>
+            <span id="ctaRenewDHCP"><span class="btnGreen"></span><span data-i18n="callToActionRenewDHCP">callToActionRenewDHCP</span></span>
+        </div>
+    </div>
+    <app-settings-call-to-action-list id="ctaSettingsMenu" class="callToActionList" data-screen="ctaSettings"></app-settings-call-to-action-list>
+</app-settings>
+

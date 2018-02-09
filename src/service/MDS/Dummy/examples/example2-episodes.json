@@ -1,0 +1,2139 @@
+http://203.17.26.41/metadata/delivery/FOXTEL/vod/editorials?filter={%22editorial.seriesRef%22:%22335205%22,%22voditem.publishToEndUserDevices%22:true,%22isValid%22:true,%22isVisible%22:true,%22locale%22:%22en_AU%22}&limit=50&fields=[]&sort=[[%22editorial.CUST_SeasonNumber%22,1],[%22editorial.episodeNumber%22,1],[%22programme.period.start%22,1]]
+
+{
+
+    "total_records": 8,
+    "version": "20170103034548",
+    "editorials": [
+        {
+            "nls": {
+                "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+            },
+            "Title": "Grand Designs New Zealand",
+            "duration": 3600,
+            "technicals": [
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "CUST_RetentionPeriod": "672",
+                    "PrivateMetadata": "ext_event_id=13387330",
+                    "CUST_FileSize": "641941604",
+                    "duration": 2689,
+                    "CUST_SeasonNumber": "1",
+                    "episodeNumber": 1,
+                    "AudioMode": "Stereo",
+                    "Description": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "seriesRef": "335205",
+                    "media": {
+                        "AV_EncryptedTS": {
+                            "drmId": "ON268137.ts",
+                            "format": "AV_EncryptedTS",
+                            "frameDuration": 0,
+                            "drmInstanceName": "CCA_PDL",
+                            "fileName": "Mount1/nagraDrop/VOD/ON268137_9321532-F-PDL/ON268137.ts",
+                            "fileSize": 641941604,
+                            "id": "LYS030105908"
+                        },
+                        "Data_Index": {
+                            "frameDuration": 0,
+                            "format": "Data_Index",
+                            "fileSize": 641941604,
+                            "id": "LYS030105910",
+                            "fileName": "Mount1/nagraDrop/VOD/ON268137_9321532-F-PDL/ON268137.ts.cdx"
+                        }
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "CUEndDate": "2019-09-30T13:59:59Z",
+                    "id": "9321532-F-PDL",
+                    "deviceType": [
+                        "iQ3-HD",
+                        "iQ3-SD"
+                    ],
+                    "provider": "FOXTEL",
+                    "profileRef": "LYS000000399",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "Definition": "SD",
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Concrete Farmhouse",
+                    "ServiceLongName": "LST",
+                    "Language": "eng",
+                    "Countries": "NZ",
+                    "Colour": "Colour",
+                    "mainContentRef": "9321532",
+                    "Synopsis": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "CUStartDate": "2017-01-01T13:00:00Z",
+                    "Rating": {
+                        "code": "PG",
+                        "precedence": 0,
+                        "Title": "Label for PG"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": "0:0:2:8",
+                    "companyId": "FOXTEL",
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "products": [
+                        {
+                            "startPurchase": 1388534400.0,
+                            "endValidity": 1577836799.0,
+                            "startValidity": 1388534400.0,
+                            "voditems": [
+                                {
+                                    "node": "",
+                                    "_id": "9321532-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E01/VOD/Concrete Farmhouse/9321532-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS006458151",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321532-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321532-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "LYS020400316",
+                                    "_id": "9321532-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E01/VOD/Concrete Farmhouse/9321532-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS006458151",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321532-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321532-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "LYS020403275",
+                                    "_id": "9321532-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E01/VOD/Concrete Farmhouse/9321532-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS006458151",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321532-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321532-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "LYS006458151",
+                                    "_id": "9321532-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E01/VOD/Concrete Farmhouse/9321532-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS006458151",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321532-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 12,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321532-F-PDL",
+                                    "publishToEndUserDevices": true
+                                }
+                            ],
+                            "price": {
+                                "startPurchase": 1388534400.0,
+                                "currency": "AUD",
+                                "endPurchase": 1577836799.0,
+                                "value": 0.0,
+                                "billingInterval": "1",
+                                "subscriptionDurationRatio": "1",
+                                "billingTimeUnit": "month"
+                            },
+                            "title": "CCA_PDL_LST",
+                            "endPurchase": 1577836799.0,
+                            "regions": [
+                                "FOXTEL"
+                            ],
+                            "deviceType": [ ],
+                            "provider": "FOXTEL",
+                            "_id": "CCA_PDL_LST",
+                            "type": "subscription",
+                            "id": "CCA_PDL_LST"
+                        }
+                    ],
+                    "Aspect": "16x9",
+                    "Year": 2015,
+                    "title": "Grand Designs New Zealand/S01/E01/VOD/Concrete Farmhouse/9321532-F-SUB-PDL",
+                    "_id": "9321532-F-PDL"
+                }
+            ],
+            "id": "9321532",
+            "episodeNumber": 1,
+            "Description": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+            "companyId": "FOXTEL",
+            "media": { },
+            "CUST_SeasonNumber": "1",
+            "deviceType": [ ],
+            "provider": "FOXTEL",
+            "Categories": [
+                "TV SHOWS - LIFESTYLE"
+            ],
+            "CUST_DispSEpNum": "true",
+            "Episode": "Concrete Farmhouse",
+            "Language": "eng",
+            "Countries": "NZ",
+            "Synopsis": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+            "Rating": {
+                "code": "PG",
+                "precedence": 0,
+                "Title": "Label for PG"
+            },
+            "ContentType": "TV_EPS",
+            "DvbCategories": "0:0:2:8",
+            "seriesRef": "335205",
+            "CUST_SortTitle": "grand designs new zealand",
+            "Year": 2015,
+            "Images": [
+                {
+                    "title": "9321532_poster_Main",
+                    "media": { },
+                    "illustratedRef": "9321532",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321532_poster_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030105800",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/poster_I@057006.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321532_poster_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321532_poster_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321532_poster_Version",
+                            "ImageType": "poster"
+                        }
+                    ],
+                    "_id": "Img_9321532_poster_Main",
+                    "id": "Img_9321532_poster_Main"
+                },
+                {
+                    "title": "9321532_landscape_Main",
+                    "media": { },
+                    "illustratedRef": "9321532",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321532_landscape_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030105802",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/landscape_I@057006_L.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321532_landscape_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321532_landscape_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321532_landscape_Version",
+                            "ImageType": "landscape"
+                        }
+                    ],
+                    "_id": "Img_9321532_landscape_Main",
+                    "id": "Img_9321532_landscape_Main"
+                }
+            ],
+            "title": "Grand Designs New Zealand/S01/E01/Concrete Farmhouse/9321532",
+            "_id": "9321532"
+        },
+        {
+            "nls": {
+                "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+            },
+            "Title": "Grand Designs New Zealand",
+            "duration": 2686,
+            "technicals": [
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "CUST_RetentionPeriod": "672",
+                    "PrivateMetadata": "ext_event_id=13394404",
+                    "CUST_FileSize": "640860980",
+                    "duration": 2686,
+                    "CUST_SeasonNumber": "1",
+                    "episodeNumber": 2,
+                    "AudioMode": "Stereo",
+                    "Description": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "seriesRef": "335205",
+                    "media": {
+                        "AV_EncryptedTS": {
+                            "drmId": "ON207062.ts",
+                            "format": "AV_EncryptedTS",
+                            "frameDuration": 0,
+                            "drmInstanceName": "CCA_PDL",
+                            "fileName": "Mount1/nagraDrop/VOD/ON207062_9321533-F-PDL/ON207062.ts",
+                            "fileSize": 640860980,
+                            "id": "LYS030105852"
+                        },
+                        "Data_Index": {
+                            "frameDuration": 0,
+                            "format": "Data_Index",
+                            "fileSize": 640860980,
+                            "id": "LYS030105854",
+                            "fileName": "Mount1/nagraDrop/VOD/ON207062_9321533-F-PDL/ON207062.ts.cdx"
+                        }
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "CUEndDate": "2019-09-30T13:59:59Z",
+                    "id": "9321533-F-PDL",
+                    "deviceType": [
+                        "iQ3-HD",
+                        "iQ3-SD"
+                    ],
+                    "provider": "FOXTEL",
+                    "profileRef": "LYS000000399",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "Definition": "SD",
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Earthship",
+                    "ServiceLongName": "LST",
+                    "Language": "eng",
+                    "Countries": "NZ",
+                    "Colour": "Colour",
+                    "mainContentRef": "9321533",
+                    "CUStartDate": "2017-01-01T13:00:00Z",
+                    "Rating": {
+                        "code": "G",
+                        "precedence": 0,
+                        "Title": "Label for G"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": "0:0:2:8",
+                    "companyId": "FOXTEL",
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "products": [
+                        {
+                            "startPurchase": 1388534400.0,
+                            "endValidity": 1577836799.0,
+                            "startValidity": 1388534400.0,
+                            "voditems": [
+                                {
+                                    "node": "LYS020400316",
+                                    "_id": "9321533-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E02/VOD/Earthship/9321533-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321533-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321533-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "LYS020403275",
+                                    "_id": "9321533-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E02/VOD/Earthship/9321533-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321533-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321533-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "",
+                                    "_id": "9321533-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E02/VOD/Earthship/9321533-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321533-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321533-F-PDL",
+                                    "publishToEndUserDevices": true
+                                }
+                            ],
+                            "price": {
+                                "startPurchase": 1388534400.0,
+                                "currency": "AUD",
+                                "endPurchase": 1577836799.0,
+                                "value": 0.0,
+                                "billingInterval": "1",
+                                "subscriptionDurationRatio": "1",
+                                "billingTimeUnit": "month"
+                            },
+                            "title": "CCA_PDL_LST",
+                            "endPurchase": 1577836799.0,
+                            "regions": [
+                                "FOXTEL"
+                            ],
+                            "deviceType": [ ],
+                            "provider": "FOXTEL",
+                            "_id": "CCA_PDL_LST",
+                            "type": "subscription",
+                            "id": "CCA_PDL_LST"
+                        }
+                    ],
+                    "Aspect": "16x9",
+                    "Year": 2015,
+                    "title": "Grand Designs New Zealand/S01/E02/VOD/Earthship/9321533-F-SUB-PDL",
+                    "_id": "9321533-F-PDL"
+                }
+            ],
+            "id": "9321533",
+            "episodeNumber": 2,
+            "Description": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+            "companyId": "FOXTEL",
+            "media": { },
+            "CUST_SeasonNumber": "1",
+            "deviceType": [ ],
+            "provider": "FOXTEL",
+            "Categories": [
+                "TV SHOWS - LIFESTYLE"
+            ],
+            "CUST_DispSEpNum": "true",
+            "Episode": "Earthship",
+            "Language": "eng",
+            "Countries": "NZ",
+            "Rating": {
+                "code": "G",
+                "precedence": 0,
+                "Title": "Label for G"
+            },
+            "ContentType": "TV_EPS",
+            "DvbCategories": "0:0:2:8",
+            "seriesRef": "335205",
+            "CUST_SortTitle": "grand designs new zealand",
+            "Year": 2015,
+            "Images": [
+                {
+                    "title": "9321533_landscape_Main",
+                    "media": { },
+                    "illustratedRef": "9321533",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321533_landscape_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030105753",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/landscape_I@057006_L.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321533_landscape_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321533_landscape_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321533_landscape_Version",
+                            "ImageType": "landscape"
+                        }
+                    ],
+                    "_id": "Img_9321533_landscape_Main",
+                    "id": "Img_9321533_landscape_Main"
+                },
+                {
+                    "title": "9321533_poster_Main",
+                    "media": { },
+                    "illustratedRef": "9321533",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321533_poster_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030105751",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/poster_I@057006.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321533_poster_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321533_poster_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321533_poster_Version",
+                            "ImageType": "poster"
+                        }
+                    ],
+                    "_id": "Img_9321533_poster_Main",
+                    "id": "Img_9321533_poster_Main"
+                }
+            ],
+            "title": "Grand Designs New Zealand/S01/E02/Earthship/9321533",
+            "_id": "9321533"
+        },
+        {
+            "nls": {
+                "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+            },
+            "Title": "Grand Designs New Zealand",
+            "duration": 2695,
+            "technicals": [
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "CUST_RetentionPeriod": "672",
+                    "PrivateMetadata": "ext_event_id=13397648",
+                    "CUST_FileSize": "643004368",
+                    "duration": 2695,
+                    "CUST_SeasonNumber": "1",
+                    "episodeNumber": 3,
+                    "AudioMode": "Stereo",
+                    "Description": "Chris meets Scottish migrant and urbanite, Scott Lawrie, who has a dream for a new life and a radical new stainless steel home in the remote hills behind Pakiri.",
+                    "seriesRef": "335205",
+                    "media": {
+                        "AV_EncryptedTS": {
+                            "drmId": "ON222186.ts",
+                            "format": "AV_EncryptedTS",
+                            "frameDuration": 0,
+                            "drmInstanceName": "CCA_PDL",
+                            "fileName": "Mount1/nagraDrop/VOD/ON222186_9321535-F-PDL/ON222186.ts",
+                            "fileSize": 643004368,
+                            "id": "LYS030108207"
+                        },
+                        "Data_Index": {
+                            "frameDuration": 0,
+                            "format": "Data_Index",
+                            "fileSize": 643004368,
+                            "id": "LYS030108215",
+                            "fileName": "Mount1/nagraDrop/VOD/ON222186_9321535-F-PDL/ON222186.ts.cdx"
+                        }
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "CUEndDate": "2019-09-30T13:59:59Z",
+                    "id": "9321535-F-PDL",
+                    "deviceType": [
+                        "iQ3-HD",
+                        "iQ3-SD"
+                    ],
+                    "provider": "FOXTEL",
+                    "profileRef": "LYS000000399",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "Definition": "SD",
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Steel House",
+                    "ServiceLongName": "LST",
+                    "Countries": "NZ",
+                    "Colour": "Colour",
+                    "mainContentRef": "9321535",
+                    "CUStartDate": "2017-01-01T13:00:00Z",
+                    "Rating": {
+                        "code": "G",
+                        "precedence": 0,
+                        "Title": "Label for G"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": "0:0:2:8",
+                    "companyId": "FOXTEL",
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "products": [
+                        {
+                            "startPurchase": 1388534400.0,
+                            "endValidity": 1577836799.0,
+                            "startValidity": 1388534400.0,
+                            "voditems": [
+                                {
+                                    "node": "",
+                                    "_id": "9321535-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E03/VOD/Steel House/9321535-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321535-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321535-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "LYS020400316",
+                                    "_id": "9321535-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E03/VOD/Steel House/9321535-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321535-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321535-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "LYS020403275",
+                                    "_id": "9321535-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E03/VOD/Steel House/9321535-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321535-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321535-F-PDL",
+                                    "publishToEndUserDevices": true
+                                }
+                            ],
+                            "price": {
+                                "startPurchase": 1388534400.0,
+                                "currency": "AUD",
+                                "endPurchase": 1577836799.0,
+                                "value": 0.0,
+                                "billingInterval": "1",
+                                "subscriptionDurationRatio": "1",
+                                "billingTimeUnit": "month"
+                            },
+                            "title": "CCA_PDL_LST",
+                            "endPurchase": 1577836799.0,
+                            "regions": [
+                                "FOXTEL"
+                            ],
+                            "deviceType": [ ],
+                            "provider": "FOXTEL",
+                            "_id": "CCA_PDL_LST",
+                            "type": "subscription",
+                            "id": "CCA_PDL_LST"
+                        }
+                    ],
+                    "Aspect": "16x9",
+                    "Year": 2015,
+                    "title": "Grand Designs New Zealand/S01/E03/VOD/Steel House/9321535-F-SUB-PDL",
+                    "_id": "9321535-F-PDL"
+                }
+            ],
+            "id": "9321535",
+            "episodeNumber": 3,
+            "Description": "Chris meets Scottish migrant and urbanite, Scott Lawrie, who has a dream for a new life and a radical new stainless steel home in the remote hills behind Pakiri.",
+            "companyId": "FOXTEL",
+            "media": { },
+            "CUST_SeasonNumber": "1",
+            "deviceType": [ ],
+            "provider": "FOXTEL",
+            "Categories": [
+                "TV SHOWS - LIFESTYLE"
+            ],
+            "CUST_DispSEpNum": "true",
+            "Episode": "Steel House",
+            "Countries": "NZ",
+            "Rating": {
+                "code": "G",
+                "precedence": 0,
+                "Title": "Label for G"
+            },
+            "seriesRef": "335205",
+            "ContentType": "TV_EPS",
+            "DvbCategories": "0:0:2:8",
+            "title": "Grand Designs New Zealand/S01/E03/Steel House/9321535",
+            "CUST_SortTitle": "grand designs new zealand",
+            "Year": 2015,
+            "Images": [
+                {
+                    "title": "9321535_landscape_Main",
+                    "media": { },
+                    "illustratedRef": "9321535",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321535_landscape_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030108193",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/landscape_I@057006_L.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321535_landscape_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321535_landscape_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321535_landscape_Version",
+                            "ImageType": "landscape"
+                        }
+                    ],
+                    "_id": "Img_9321535_landscape_Main",
+                    "id": "Img_9321535_landscape_Main"
+                },
+                {
+                    "title": "9321535_poster_Main",
+                    "media": { },
+                    "illustratedRef": "9321535",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321535_poster_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030108191",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/poster_I@057006.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321535_poster_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321535_poster_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321535_poster_Version",
+                            "ImageType": "poster"
+                        }
+                    ],
+                    "_id": "Img_9321535_poster_Main",
+                    "id": "Img_9321535_poster_Main"
+                }
+            ],
+            "_id": "9321535"
+        },
+        {
+            "nls": {
+                "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+            },
+            "Title": "Grand Designs New Zealand",
+            "duration": 2703,
+            "technicals": [
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "CUST_RetentionPeriod": "672",
+                    "PrivateMetadata": "ext_event_id=13440160",
+                    "CUST_FileSize": "644603308",
+                    "duration": 2703,
+                    "CUST_SeasonNumber": "1",
+                    "episodeNumber": 4,
+                    "AudioMode": "Stereo",
+                    "Description": "Chris meets builder Steve Sygrove, who's planning to build and ornate and colourful American Gothic home in the Titirangi bush.",
+                    "seriesRef": "335205",
+                    "media": {
+                        "AV_EncryptedTS": {
+                            "drmId": "ON225778.ts",
+                            "format": "AV_EncryptedTS",
+                            "frameDuration": 0,
+                            "drmInstanceName": "CCA_PDL",
+                            "fileName": "Mount1/nagraDrop/VOD/ON225778_9321536-F-PDL/ON225778.ts",
+                            "fileSize": 644603308,
+                            "id": "LYS030108204"
+                        },
+                        "Data_Index": {
+                            "frameDuration": 0,
+                            "format": "Data_Index",
+                            "fileSize": 644603308,
+                            "id": "LYS030108205",
+                            "fileName": "Mount1/nagraDrop/VOD/ON225778_9321536-F-PDL/ON225778.ts.cdx"
+                        }
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "CUEndDate": "2019-09-30T13:59:59Z",
+                    "id": "9321536-F-PDL",
+                    "deviceType": [
+                        "iQ3-HD",
+                        "iQ3-SD"
+                    ],
+                    "provider": "FOXTEL",
+                    "profileRef": "LYS000000399",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "Definition": "SD",
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "American Gothic",
+                    "ServiceLongName": "LST",
+                    "Countries": "NZ",
+                    "Colour": "Colour",
+                    "mainContentRef": "9321536",
+                    "CUStartDate": "2017-01-01T13:00:00Z",
+                    "Rating": {
+                        "code": "G",
+                        "precedence": 0,
+                        "Title": "Label for G"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": "0:0:2:8",
+                    "companyId": "FOXTEL",
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "products": [
+                        {
+                            "startPurchase": 1388534400.0,
+                            "endValidity": 1577836799.0,
+                            "startValidity": 1388534400.0,
+                            "voditems": [
+                                {
+                                    "node": "",
+                                    "_id": "9321536-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E04/VOD/American Gothic/9321536-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321536-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321536-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "LYS020400316",
+                                    "_id": "9321536-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E04/VOD/American Gothic/9321536-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321536-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321536-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "LYS020403275",
+                                    "_id": "9321536-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E04/VOD/American Gothic/9321536-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321536-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321536-F-PDL",
+                                    "publishToEndUserDevices": true
+                                }
+                            ],
+                            "price": {
+                                "startPurchase": 1388534400.0,
+                                "currency": "AUD",
+                                "endPurchase": 1577836799.0,
+                                "value": 0.0,
+                                "billingInterval": "1",
+                                "subscriptionDurationRatio": "1",
+                                "billingTimeUnit": "month"
+                            },
+                            "title": "CCA_PDL_LST",
+                            "endPurchase": 1577836799.0,
+                            "regions": [
+                                "FOXTEL"
+                            ],
+                            "deviceType": [ ],
+                            "provider": "FOXTEL",
+                            "_id": "CCA_PDL_LST",
+                            "type": "subscription",
+                            "id": "CCA_PDL_LST"
+                        }
+                    ],
+                    "Aspect": "16x9",
+                    "Year": 2015,
+                    "title": "Grand Designs New Zealand/S01/E04/VOD/American Gothic/9321536-F-SUB-PDL",
+                    "_id": "9321536-F-PDL"
+                }
+            ],
+            "id": "9321536",
+            "episodeNumber": 4,
+            "Description": "Chris meets builder Steve Sygrove, who's planning to build and ornate and colourful American Gothic home in the Titirangi bush.",
+            "companyId": "FOXTEL",
+            "media": { },
+            "CUST_SeasonNumber": "1",
+            "deviceType": [ ],
+            "provider": "FOXTEL",
+            "Categories": [
+                "TV SHOWS - LIFESTYLE"
+            ],
+            "CUST_DispSEpNum": "true",
+            "Episode": "American Gothic",
+            "Countries": "NZ",
+            "Rating": {
+                "code": "G",
+                "precedence": 0,
+                "Title": "Label for G"
+            },
+            "seriesRef": "335205",
+            "ContentType": "TV_EPS",
+            "DvbCategories": "0:0:2:8",
+            "title": "Grand Designs New Zealand/S01/E04/American Gothic/9321536",
+            "CUST_SortTitle": "grand designs new zealand",
+            "Year": 2015,
+            "Images": [
+                {
+                    "title": "9321536_landscape_Main",
+                    "media": { },
+                    "illustratedRef": "9321536",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321536_landscape_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030108137",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/landscape_I@057006_L.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321536_landscape_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321536_landscape_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321536_landscape_Version",
+                            "ImageType": "landscape"
+                        }
+                    ],
+                    "_id": "Img_9321536_landscape_Main",
+                    "id": "Img_9321536_landscape_Main"
+                },
+                {
+                    "title": "9321536_poster_Main",
+                    "media": { },
+                    "illustratedRef": "9321536",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321536_poster_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030108135",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/poster_I@057006.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321536_poster_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321536_poster_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321536_poster_Version",
+                            "ImageType": "poster"
+                        }
+                    ],
+                    "_id": "Img_9321536_poster_Main",
+                    "id": "Img_9321536_poster_Main"
+                }
+            ],
+            "_id": "9321536"
+        },
+        {
+            "nls": {
+                "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+            },
+            "Title": "Grand Designs New Zealand",
+            "duration": 2715,
+            "technicals": [
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "CUST_RetentionPeriod": "672",
+                    "PrivateMetadata": "ext_event_id=13440162",
+                    "CUST_FileSize": "648262728",
+                    "duration": 2715,
+                    "CUST_SeasonNumber": "1",
+                    "episodeNumber": 5,
+                    "AudioMode": "Stereo",
+                    "Description": "Chris meets architect Nic Ballara, who's planning to build a house on a steep 45-degree slope overlooking Wellington.",
+                    "seriesRef": "335205",
+                    "media": {
+                        "AV_EncryptedTS": {
+                            "drmId": "ON232233.ts",
+                            "format": "AV_EncryptedTS",
+                            "frameDuration": 0,
+                            "drmInstanceName": "CCA_PDL",
+                            "fileName": "Mount1/nagraDrop/VOD/ON232233_9321537-F-PDL/ON232233.ts",
+                            "fileSize": 648262728,
+                            "id": "LYS030109094"
+                        },
+                        "Data_Index": {
+                            "frameDuration": 0,
+                            "format": "Data_Index",
+                            "fileSize": 648262728,
+                            "id": "LYS030109099",
+                            "fileName": "Mount1/nagraDrop/VOD/ON232233_9321537-F-PDL/ON232233.ts.cdx"
+                        }
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "CUEndDate": "2019-09-30T13:59:59Z",
+                    "id": "9321537-F-PDL",
+                    "deviceType": [
+                        "iQ3-HD",
+                        "iQ3-SD"
+                    ],
+                    "provider": "FOXTEL",
+                    "profileRef": "LYS000000399",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "Definition": "SD",
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "45 Degree House",
+                    "ServiceLongName": "LST",
+                    "Countries": "NZ",
+                    "Colour": "Colour",
+                    "mainContentRef": "9321537",
+                    "CUStartDate": "2017-01-01T13:00:00Z",
+                    "Rating": {
+                        "code": "G",
+                        "precedence": 0,
+                        "Title": "Label for G"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": "0:0:2:8",
+                    "companyId": "FOXTEL",
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "products": [
+                        {
+                            "startPurchase": 1388534400.0,
+                            "endValidity": 1577836799.0,
+                            "startValidity": 1388534400.0,
+                            "voditems": [
+                                {
+                                    "node": "LYS020400316",
+                                    "_id": "9321537-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E05/VOD/45 Degree House/9321537-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020400316",
+                                        "LYS020403275"
+                                    ],
+                                    "contentRef": "9321537-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321537-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "LYS020403275",
+                                    "_id": "9321537-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E05/VOD/45 Degree House/9321537-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020400316",
+                                        "LYS020403275"
+                                    ],
+                                    "contentRef": "9321537-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321537-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "",
+                                    "_id": "9321537-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E05/VOD/45 Degree House/9321537-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020400316",
+                                        "LYS020403275"
+                                    ],
+                                    "contentRef": "9321537-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321537-F-PDL",
+                                    "publishToEndUserDevices": true
+                                }
+                            ],
+                            "price": {
+                                "startPurchase": 1388534400.0,
+                                "currency": "AUD",
+                                "endPurchase": 1577836799.0,
+                                "value": 0.0,
+                                "billingInterval": "1",
+                                "subscriptionDurationRatio": "1",
+                                "billingTimeUnit": "month"
+                            },
+                            "title": "CCA_PDL_LST",
+                            "endPurchase": 1577836799.0,
+                            "regions": [
+                                "FOXTEL"
+                            ],
+                            "deviceType": [ ],
+                            "provider": "FOXTEL",
+                            "_id": "CCA_PDL_LST",
+                            "type": "subscription",
+                            "id": "CCA_PDL_LST"
+                        }
+                    ],
+                    "Aspect": "16x9",
+                    "Year": 2015,
+                    "title": "Grand Designs New Zealand/S01/E05/VOD/45 Degree House/9321537-F-SUB-PDL",
+                    "_id": "9321537-F-PDL"
+                }
+            ],
+            "id": "9321537",
+            "episodeNumber": 5,
+            "Description": "Chris meets architect Nic Ballara, who's planning to build a house on a steep 45-degree slope overlooking Wellington.",
+            "companyId": "FOXTEL",
+            "media": { },
+            "CUST_SeasonNumber": "1",
+            "deviceType": [ ],
+            "provider": "FOXTEL",
+            "Categories": [
+                "TV SHOWS - LIFESTYLE"
+            ],
+            "CUST_DispSEpNum": "true",
+            "Episode": "45 Degree House",
+            "Countries": "NZ",
+            "Rating": {
+                "code": "G",
+                "precedence": 0,
+                "Title": "Label for G"
+            },
+            "seriesRef": "335205",
+            "ContentType": "TV_EPS",
+            "DvbCategories": "0:0:2:8",
+            "title": "Grand Designs New Zealand/S01/E05/45 Degree House/9321537",
+            "CUST_SortTitle": "grand designs new zealand",
+            "Year": 2015,
+            "Images": [
+                {
+                    "title": "9321537_landscape_Main",
+                    "media": { },
+                    "illustratedRef": "9321537",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321537_landscape_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030109075",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/landscape_I@057006_L.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321537_landscape_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321537_landscape_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321537_landscape_Version",
+                            "ImageType": "landscape"
+                        }
+                    ],
+                    "_id": "Img_9321537_landscape_Main",
+                    "id": "Img_9321537_landscape_Main"
+                },
+                {
+                    "title": "9321537_poster_Main",
+                    "media": { },
+                    "illustratedRef": "9321537",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321537_poster_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030109074",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/poster_I@057006.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321537_poster_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321537_poster_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321537_poster_Version",
+                            "ImageType": "poster"
+                        }
+                    ],
+                    "_id": "Img_9321537_poster_Main",
+                    "id": "Img_9321537_poster_Main"
+                }
+            ],
+            "_id": "9321537"
+        },
+        {
+            "nls": {
+                "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+            },
+            "Title": "Grand Designs New Zealand",
+            "duration": 2696,
+            "technicals": [
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "CUST_RetentionPeriod": "672",
+                    "PrivateMetadata": "ext_event_id=13440159",
+                    "CUST_FileSize": "642444880",
+                    "duration": 2696,
+                    "CUST_SeasonNumber": "1",
+                    "episodeNumber": 6,
+                    "AudioMode": "Stereo",
+                    "Description": "Chris meets Hamish and Diane Divett, who are rebuilding their house on the most unlikely spot - on the edge of a crumbling cliff top that plummets 40 metres to the sea below.",
+                    "seriesRef": "335205",
+                    "media": {
+                        "AV_EncryptedTS": {
+                            "drmId": "ON232259.ts",
+                            "format": "AV_EncryptedTS",
+                            "frameDuration": 0,
+                            "drmInstanceName": "CCA_PDL",
+                            "fileName": "Mount1/nagraDrop/VOD/ON232259_9321538-F-PDL/ON232259.ts",
+                            "fileSize": 642444880,
+                            "id": "LYS030108206"
+                        },
+                        "Data_Index": {
+                            "frameDuration": 0,
+                            "format": "Data_Index",
+                            "fileSize": 642444880,
+                            "id": "LYS030108209",
+                            "fileName": "Mount1/nagraDrop/VOD/ON232259_9321538-F-PDL/ON232259.ts.cdx"
+                        }
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "CUEndDate": "2019-09-30T13:59:59Z",
+                    "id": "9321538-F-PDL",
+                    "deviceType": [
+                        "iQ3-HD",
+                        "iQ3-SD"
+                    ],
+                    "provider": "FOXTEL",
+                    "profileRef": "LYS000000399",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "Definition": "SD",
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Clifftop House",
+                    "ServiceLongName": "LST",
+                    "Countries": "NZ",
+                    "Colour": "Colour",
+                    "mainContentRef": "9321538",
+                    "CUStartDate": "2017-01-01T13:00:00Z",
+                    "Rating": {
+                        "code": "PG",
+                        "precedence": 0,
+                        "Title": "Label for PG"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": "0:0:2:8",
+                    "companyId": "FOXTEL",
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "products": [
+                        {
+                            "startPurchase": 1388534400.0,
+                            "endValidity": 1577836799.0,
+                            "startValidity": 1388534400.0,
+                            "voditems": [
+                                {
+                                    "node": "LYS020400316",
+                                    "_id": "9321538-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E06/VOD/Clifftop House/9321538-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321538-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321538-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "LYS020403275",
+                                    "_id": "9321538-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E06/VOD/Clifftop House/9321538-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321538-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321538-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "",
+                                    "_id": "9321538-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E06/VOD/Clifftop House/9321538-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321538-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321538-F-PDL",
+                                    "publishToEndUserDevices": true
+                                }
+                            ],
+                            "price": {
+                                "startPurchase": 1388534400.0,
+                                "currency": "AUD",
+                                "endPurchase": 1577836799.0,
+                                "value": 0.0,
+                                "billingInterval": "1",
+                                "subscriptionDurationRatio": "1",
+                                "billingTimeUnit": "month"
+                            },
+                            "title": "CCA_PDL_LST",
+                            "endPurchase": 1577836799.0,
+                            "regions": [
+                                "FOXTEL"
+                            ],
+                            "deviceType": [ ],
+                            "provider": "FOXTEL",
+                            "_id": "CCA_PDL_LST",
+                            "type": "subscription",
+                            "id": "CCA_PDL_LST"
+                        }
+                    ],
+                    "Aspect": "16x9",
+                    "Year": 2015,
+                    "title": "Grand Designs New Zealand/S01/E06/VOD/Clifftop House/9321538-F-SUB-PDL",
+                    "_id": "9321538-F-PDL"
+                }
+            ],
+            "id": "9321538",
+            "episodeNumber": 6,
+            "Description": "Chris meets Hamish and Diane Divett, who are rebuilding their house on the most unlikely spot - on the edge of a crumbling cliff top that plummets 40 metres to the sea below.",
+            "companyId": "FOXTEL",
+            "media": { },
+            "CUST_SeasonNumber": "1",
+            "deviceType": [ ],
+            "provider": "FOXTEL",
+            "Categories": [
+                "TV SHOWS - LIFESTYLE"
+            ],
+            "CUST_DispSEpNum": "true",
+            "Episode": "Clifftop House",
+            "Countries": "NZ",
+            "Rating": {
+                "code": "PG",
+                "precedence": 0,
+                "Title": "Label for PG"
+            },
+            "seriesRef": "335205",
+            "ContentType": "TV_EPS",
+            "DvbCategories": "0:0:2:8",
+            "title": "Grand Designs New Zealand/S01/E06/Clifftop House/9321538",
+            "CUST_SortTitle": "grand designs new zealand",
+            "Year": 2015,
+            "Images": [
+                {
+                    "title": "9321538_poster_Main",
+                    "media": { },
+                    "illustratedRef": "9321538",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321538_poster_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030108190",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/poster_I@057006.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321538_poster_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321538_poster_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321538_poster_Version",
+                            "ImageType": "poster"
+                        }
+                    ],
+                    "_id": "Img_9321538_poster_Main",
+                    "id": "Img_9321538_poster_Main"
+                },
+                {
+                    "title": "9321538_landscape_Main",
+                    "media": { },
+                    "illustratedRef": "9321538",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321538_landscape_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030108192",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/landscape_I@057006_L.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321538_landscape_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321538_landscape_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321538_landscape_Version",
+                            "ImageType": "landscape"
+                        }
+                    ],
+                    "_id": "Img_9321538_landscape_Main",
+                    "id": "Img_9321538_landscape_Main"
+                }
+            ],
+            "_id": "9321538"
+        },
+        {
+            "nls": {
+                "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+            },
+            "Title": "Grand Designs New Zealand",
+            "duration": 2703,
+            "technicals": [
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "CUST_RetentionPeriod": "672",
+                    "PrivateMetadata": "ext_event_id=13440158",
+                    "CUST_FileSize": "644557624",
+                    "duration": 2703,
+                    "CUST_SeasonNumber": "1",
+                    "episodeNumber": 7,
+                    "AudioMode": "Stereo",
+                    "Description": "After years of living apart with their separate children, Mike and Catherine are finally building an extraordinary straw bale together on top of a rocky outcrop in central Otego.",
+                    "seriesRef": "335205",
+                    "media": {
+                        "AV_EncryptedTS": {
+                            "drmId": "ON236242.ts",
+                            "format": "AV_EncryptedTS",
+                            "frameDuration": 0,
+                            "drmInstanceName": "CCA_PDL",
+                            "fileName": "Mount1/nagraDrop/VOD/ON236242_9321539-F-PDL/ON236242.ts",
+                            "fileSize": 644557624,
+                            "id": "LYS030105849"
+                        },
+                        "Data_Index": {
+                            "frameDuration": 0,
+                            "format": "Data_Index",
+                            "fileSize": 644557624,
+                            "id": "LYS030105850",
+                            "fileName": "Mount1/nagraDrop/VOD/ON236242_9321539-F-PDL/ON236242.ts.cdx"
+                        }
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "CUEndDate": "2019-09-30T13:59:59Z",
+                    "id": "9321539-F-PDL",
+                    "deviceType": [
+                        "iQ3-HD",
+                        "iQ3-SD"
+                    ],
+                    "provider": "FOXTEL",
+                    "profileRef": "LYS000000399",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "Definition": "SD",
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Straw Bale",
+                    "ServiceLongName": "LST",
+                    "Countries": "NZ",
+                    "Colour": "Colour",
+                    "mainContentRef": "9321539",
+                    "CUStartDate": "2017-01-01T13:00:00Z",
+                    "Rating": {
+                        "code": "PG",
+                        "precedence": 0,
+                        "Title": "Label for PG"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": "0:0:2:8",
+                    "companyId": "FOXTEL",
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "products": [
+                        {
+                            "startPurchase": 1388534400.0,
+                            "endValidity": 1577836799.0,
+                            "startValidity": 1388534400.0,
+                            "voditems": [
+                                {
+                                    "node": "LYS020400316",
+                                    "_id": "9321539-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E07/VOD/Straw Bale/9321539-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321539-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321539-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "LYS020403275",
+                                    "_id": "9321539-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E07/VOD/Straw Bale/9321539-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321539-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321539-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "",
+                                    "_id": "9321539-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E07/VOD/Straw Bale/9321539-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321539-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321539-F-PDL",
+                                    "publishToEndUserDevices": true
+                                }
+                            ],
+                            "price": {
+                                "startPurchase": 1388534400.0,
+                                "currency": "AUD",
+                                "endPurchase": 1577836799.0,
+                                "value": 0.0,
+                                "billingInterval": "1",
+                                "subscriptionDurationRatio": "1",
+                                "billingTimeUnit": "month"
+                            },
+                            "title": "CCA_PDL_LST",
+                            "endPurchase": 1577836799.0,
+                            "regions": [
+                                "FOXTEL"
+                            ],
+                            "deviceType": [ ],
+                            "provider": "FOXTEL",
+                            "_id": "CCA_PDL_LST",
+                            "type": "subscription",
+                            "id": "CCA_PDL_LST"
+                        }
+                    ],
+                    "Aspect": "16x9",
+                    "Year": 2015,
+                    "title": "Grand Designs New Zealand/S01/E07/VOD/Straw Bale/9321539-F-SUB-PDL",
+                    "_id": "9321539-F-PDL"
+                }
+            ],
+            "id": "9321539",
+            "episodeNumber": 7,
+            "Description": "After years of living apart with their separate children, Mike and Catherine are finally building an extraordinary straw bale together on top of a rocky outcrop in central Otego.",
+            "companyId": "FOXTEL",
+            "media": { },
+            "CUST_SeasonNumber": "1",
+            "deviceType": [ ],
+            "provider": "FOXTEL",
+            "Categories": [
+                "TV SHOWS - LIFESTYLE"
+            ],
+            "CUST_DispSEpNum": "true",
+            "Episode": "Straw Bale",
+            "Countries": "NZ",
+            "Rating": {
+                "code": "PG",
+                "precedence": 0,
+                "Title": "Label for PG"
+            },
+            "seriesRef": "335205",
+            "ContentType": "TV_EPS",
+            "DvbCategories": "0:0:2:8",
+            "title": "Grand Designs New Zealand/S01/E07/Straw Bale/9321539",
+            "CUST_SortTitle": "grand designs new zealand",
+            "Year": 2015,
+            "Images": [
+                {
+                    "title": "9321539_landscape_Main",
+                    "media": { },
+                    "illustratedRef": "9321539",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321539_landscape_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030105752",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/landscape_I@057006_L.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321539_landscape_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321539_landscape_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321539_landscape_Version",
+                            "ImageType": "landscape"
+                        }
+                    ],
+                    "_id": "Img_9321539_landscape_Main",
+                    "id": "Img_9321539_landscape_Main"
+                },
+                {
+                    "title": "9321539_poster_Main",
+                    "media": { },
+                    "illustratedRef": "9321539",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321539_poster_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030105750",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/poster_I@057006.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321539_poster_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321539_poster_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321539_poster_Version",
+                            "ImageType": "poster"
+                        }
+                    ],
+                    "_id": "Img_9321539_poster_Main",
+                    "id": "Img_9321539_poster_Main"
+                }
+            ],
+            "_id": "9321539"
+        },
+        {
+            "nls": {
+                "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+            },
+            "Title": "Grand Designs New Zealand",
+            "duration": 2712,
+            "technicals": [
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "CUST_RetentionPeriod": "672",
+                    "PrivateMetadata": "ext_event_id=13440161",
+                    "CUST_FileSize": "646575052",
+                    "duration": 2712,
+                    "CUST_SeasonNumber": "1",
+                    "episodeNumber": 8,
+                    "AudioMode": "Stereo",
+                    "Description": "The series finale sees Marty import two old American barns from New York valley, which are raised by heritage builders and merged with a design for a modern home.",
+                    "seriesRef": "335205",
+                    "media": {
+                        "AV_EncryptedTS": {
+                            "drmId": "ON236244.ts",
+                            "format": "AV_EncryptedTS",
+                            "frameDuration": 0,
+                            "drmInstanceName": "CCA_PDL",
+                            "fileName": "Mount1/nagraDrop/VOD/ON236244_9321540-F-PDL/ON236244.ts",
+                            "fileSize": 646575052,
+                            "id": "LYS030105991"
+                        },
+                        "Data_Index": {
+                            "frameDuration": 0,
+                            "format": "Data_Index",
+                            "fileSize": 646575052,
+                            "id": "LYS030105993",
+                            "fileName": "Mount1/nagraDrop/VOD/ON236244_9321540-F-PDL/ON236244.ts.cdx"
+                        }
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "CUEndDate": "2019-09-30T13:59:59Z",
+                    "id": "9321540-F-PDL",
+                    "deviceType": [
+                        "iQ3-HD",
+                        "iQ3-SD"
+                    ],
+                    "provider": "FOXTEL",
+                    "profileRef": "LYS000000399",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "Definition": "SD",
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "American Barn",
+                    "ServiceLongName": "LST",
+                    "Countries": "NZ",
+                    "Colour": "Colour",
+                    "mainContentRef": "9321540",
+                    "CUStartDate": "2017-01-01T13:00:00Z",
+                    "Rating": {
+                        "code": "PG",
+                        "precedence": 0,
+                        "Title": "Label for PG"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": "0:0:2:8",
+                    "companyId": "FOXTEL",
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "products": [
+                        {
+                            "startPurchase": 1388534400.0,
+                            "endValidity": 1577836799.0,
+                            "startValidity": 1388534400.0,
+                            "voditems": [
+                                {
+                                    "node": "LYS020400316",
+                                    "_id": "9321540-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E08/VOD/American Barn/9321540-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321540-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321540-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "",
+                                    "_id": "9321540-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E08/VOD/American Barn/9321540-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321540-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321540-F-PDL",
+                                    "publishToEndUserDevices": true
+                                },
+                                {
+                                    "node": "LYS020403275",
+                                    "_id": "9321540-F-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Grand Designs New Zealand/S01/E08/VOD/American Barn/9321540-F-SUB-PDL",
+                                    "nodeRefs": [
+                                        "LYS020403275",
+                                        "LYS020400316"
+                                    ],
+                                    "contentRef": "9321540-F-PDL",
+                                    "period": {
+                                        "duration": 86576399,
+                                        "start": 1483275600.0,
+                                        "end": 1569851999.0
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1483275600.0,
+                                    "id": "9321540-F-PDL",
+                                    "publishToEndUserDevices": true
+                                }
+                            ],
+                            "price": {
+                                "startPurchase": 1388534400.0,
+                                "currency": "AUD",
+                                "endPurchase": 1577836799.0,
+                                "value": 0.0,
+                                "billingInterval": "1",
+                                "subscriptionDurationRatio": "1",
+                                "billingTimeUnit": "month"
+                            },
+                            "title": "CCA_PDL_LST",
+                            "endPurchase": 1577836799.0,
+                            "regions": [
+                                "FOXTEL"
+                            ],
+                            "deviceType": [ ],
+                            "provider": "FOXTEL",
+                            "_id": "CCA_PDL_LST",
+                            "type": "subscription",
+                            "id": "CCA_PDL_LST"
+                        }
+                    ],
+                    "Aspect": "16x9",
+                    "Year": 2015,
+                    "title": "Grand Designs New Zealand/S01/E08/VOD/American Barn/9321540-F-SUB-PDL",
+                    "_id": "9321540-F-PDL"
+                }
+            ],
+            "id": "9321540",
+            "episodeNumber": 8,
+            "Description": "The series finale sees Marty import two old American barns from New York valley, which are raised by heritage builders and merged with a design for a modern home.",
+            "companyId": "FOXTEL",
+            "media": { },
+            "CUST_SeasonNumber": "1",
+            "deviceType": [ ],
+            "provider": "FOXTEL",
+            "Categories": [
+                "TV SHOWS - LIFESTYLE"
+            ],
+            "CUST_DispSEpNum": "true",
+            "Episode": "American Barn",
+            "Countries": "NZ",
+            "Rating": {
+                "code": "PG",
+                "precedence": 0,
+                "Title": "Label for PG"
+            },
+            "seriesRef": "335205",
+            "ContentType": "TV_EPS",
+            "DvbCategories": "0:0:2:8",
+            "title": "Grand Designs New Zealand/S01/E08/American Barn/9321540",
+            "CUST_SortTitle": "grand designs new zealand",
+            "Year": 2015,
+            "Images": [
+                {
+                    "title": "9321540_landscape_Main",
+                    "media": { },
+                    "illustratedRef": "9321540",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321540_landscape_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030105844",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/landscape_I@057006_L.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321540_landscape_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321540_landscape_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321540_landscape_Version",
+                            "ImageType": "landscape"
+                        }
+                    ],
+                    "_id": "Img_9321540_landscape_Main",
+                    "id": "Img_9321540_landscape_Main"
+                },
+                {
+                    "title": "9321540_poster_Main",
+                    "media": { },
+                    "illustratedRef": "9321540",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "technicals": [
+                        {
+                            "title": "9321540_poster_Version",
+                            "media": {
+                                "Image_Basic": {
+                                    "frameDuration": 0,
+                                    "format": "Image_Basic",
+                                    "id": "LYS030105843",
+                                    "fileName": "store3/Mount1/nagraDrop/images_23/poster_I@057006.jpg"
+                                }
+                            },
+                            "deviceType": [
+                                "iQ3-HD",
+                                "iQ3-SD"
+                            ],
+                            "mainImageRef": "Img_9321540_poster_Main",
+                            "provider": "FOXTEL",
+                            "_id": "Img_9321540_poster_Version",
+                            "profileRef": "LYS000000401",
+                            "id": "Img_9321540_poster_Version",
+                            "ImageType": "poster"
+                        }
+                    ],
+                    "_id": "Img_9321540_poster_Main",
+                    "id": "Img_9321540_poster_Main"
+                }
+            ],
+            "_id": "9321540"
+        }
+    ]
+
+}

@@ -1,0 +1,387 @@
+/**
+ * The default css for O5JS is as follows 
+ * 
+ * @class o5.gui.css.Default
+ */
+
+
+/**
+ * @css *
+ *
+ * { box-sizing: border-box; -webkit-line-clamp: 1; }
+ *
+ * GlobalOptions
+ */
+* 					{ box-sizing: border-box; -webkit-line-clamp: 1; }
+
+*[hidden]			{ display: none; }
+
+/**
+ * @css Body
+ * body				{ overflow: hidden; margin: 0; position: absolute; width: 100%; height: 100%; }
+ */
+body				{ overflow: hidden; margin: 0; position: absolute; width: 100%; height: 100%; }
+
+/**
+ * @css img
+ * img					{ image-rendering: optimizeQuality; }
+ */
+img					{ image-rendering: optimizeQuality; }
+
+:focus 				{ outline: none; }
+
+#CCOMid				{ position: fixed; visibility: hidden; width: 0; height: 0; }
+
+/* experimental */
+.will-change		{ -webkit-backface-visibility: hidden; -webkit-perspective: 1000; }
+
+
+/**
+ * @css FlexGrid
+ * o5-flex-grid		{ position: absolute; display: block; }
+ */
+o5-asset-grid		{ position: absolute; display: block; }
+
+
+
+/**
+ * @css FlexGridRow
+ * o5-flex-grid-row	{ position: relative; display: block; }
+ */
+o5-asset-grid-row	{ position: relative; display: block; }
+
+
+
+/**
+ * @css FlexGridCell
+ * o5-flex-grid-cell	{ position: relative; display: block; }
+ */
+o5-asset-grid-cell	{ position: relative; display: block; }
+
+
+
+/**
+ * @css AssetMosaic
+ * o5-asset-mosaic			{ position: absolute; display: block; }
+ */
+o5-asset-mosaic			{ position: absolute; display: block; }
+
+/**
+ * @css AssetMosaicItem
+ * o5-asset-mosaic-item	{ position: absolute; display: block; }
+ */
+o5-asset-mosaic-item	{ position: absolute; display: block; }
+
+
+/**
+ * @css Digital Clock
+ * o5-digital-clock	{ position: absolute; white-space: nowrap; overflow: hidden; }
+ */
+o5-digital-clock	{ position: absolute; white-space: nowrap; overflow: hidden; }
+
+
+/**
+ * @css Image
+ * o5-image			{ position: absolute; display: inline-block; image-rendering: optimizeQuality; }
+ */
+o5-image			{ position: absolute; display: inline-block; image-rendering: optimizeQuality; }
+
+
+/**
+ * @css Keyboard
+ * o5-keyboard		{ position: absolute; display: block; }
+ */
+o5-keyboard		{ position: absolute; display: block; }
+
+
+/**
+ * @css Keyboard Key
+ * o5-keyboard-key	{ position: relative; display: block; } 
+ */
+o5-keyboard-key	{ position: relative; display: block; }
+
+
+/**
+ * @css Label
+ * o5-label			{ position: absolute; white-space: nowrap; overflow: hidden; }
+ */
+o5-label			{ position: absolute; white-space: nowrap; overflow: hidden; }
+
+
+/**
+ * @css List
+ * o5-list				{ position: absolute; display: block; }
+ */
+o5-list				{ position: absolute; display: block; }
+
+/**
+ * @css ListItem
+ * o5-list-item		{ position: relative; display: block; }
+ */
+o5-list-item		{ position: relative; display: block; }
+
+
+
+/**
+ * @css Menu
+ * o5-menu				{ position: absolute; display: block; }
+ */
+o5-menu				{ position: absolute; display: block; }
+
+/**
+ * @css MenuItem
+ * o5-menu-item		{ position: relative; display: block; }
+ */
+o5-menu-item		{ position: relative; display: block; }
+
+/**
+ * @css Mosaic
+ * o5-mosaic			{ position: absolute; display: block; }
+ */
+o5-mosaic			{ position: absolute; display: block; }
+
+/**
+ * @css MosaicItem
+ * o5-mosaic-item			{ position: absolute; display: block; }
+ */
+o5-mosaic-item		{ position: absolute; display: block; }
+
+
+/**
+ * @css Panel
+ * o5-panel			{ position: absolute; display: block; }
+ */
+o5-panel			{ position: absolute; display: block; }
+
+
+/**
+ * @css ChannelList
+ * o5-channel-list			{ position: absolute; display: block; }
+ */
+o5-channel-list			{ position: absolute; display: block; }
+
+/**
+ * @css ChannelListItem
+ * o5-channel-list-item	{ position: relative; display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+ */
+o5-channel-list-item	{ position: relative; display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+
+
+/**
+ * @css ProgramList
+ * o5-program-list			{ position: absolute; display: block; }
+ */
+o5-program-list			{ position: absolute; display: block; }
+
+/**
+ * @css ProgramListItem
+ * o5-program-list-item		{ position: relative; display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+ */
+o5-program-list-item		{ position: relative; display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+
+
+/**
+ * @css FlexGrid
+ * o5-flex-grid		{ position: absolute; display: block; }
+ */
+o5-flex-grid		{ position: absolute; display: block; }
+
+
+
+/**
+ * @css FlexGridRow
+ * o5-flex-grid-row	{ position: relative; display: block; }
+ */
+o5-flex-grid-row	{ position: relative; display: block; }
+
+
+
+/**
+ * @css FlexGridCell
+ * o5-flex-grid-cell	{ position: relative; display: block; }
+ */
+o5-flex-grid-cell	{ position: relative; display: block; }
+
+
+/**
+ * @css GridGuide
+ * o5-grid-guide		{ position: absolute; display: block; }
+ *
+ * o5-grid-guide		{ position: absolute; display: block; }
+ *
+ * o5-grid-guide > o5-time-list {  }
+ *
+ * o5-grid-guide > o5-channel-list {  }
+ *
+ * o5-grid-guide > o5-grid-guide-program-grid { position: absolute; display: block; }
+ * 
+ * o5-grid-guide-program-row { position: relative; display: block; }
+ *
+ * o5-grid-guide-program-cell { position: absolute; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+ *
+ */
+o5-grid-guide		{ position: absolute; display: block; }
+
+o5-grid-guide > o5-time-list {  }
+
+o5-grid-guide > o5-channel-list {  }
+
+o5-grid-guide > o5-grid-guide-program-grid { position: absolute; display: block; }
+
+o5-grid-guide-program-row { position: relative; display: block; }
+
+o5-grid-guide-program-cell { position: absolute; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+
+/**
+ * @css FocusBox
+ * o5-focus-box		{ position: absolute; display: block; left: 0; top: 0; }
+ */
+o5-focus-box		{ position: absolute; display: block; left: 0; top: 0; }
+
+
+
+/**
+ * @css ProgramInfoPanel
+ * o5-program-info-panel		{ position: absolute; display: block; overflow: hidden; }
+ */
+o5-program-info-panel		{ position: absolute; display: block; overflow: hidden; }
+
+
+
+/**
+ * @css ProgressBar
+ * o5-progress-bar		{ position: absolute; overflow: hidden; }
+ *
+ * o5-progress-bar	> div { left: 0px; top: 0px; height: 100%; position: relative; }
+ *
+ */
+o5-progress-bar		{ position: absolute; overflow: hidden; }
+
+o5-progress-bar	> div { left: 0px; top: 0px; height: 100%; position: relative; }
+
+
+
+/**
+ * @css ContentProgressBar
+ * o5-content-progress-bar		{ position: absolute; overflow: hidden; display: -webkit-flex; -webkit-align-items: center; }
+ *
+ * o5-content-progress-bar[data-orientation='horizontal']		{ -webkit-flex-direction: row;  }
+ *
+ * o5-content-progress-bar[data-orientation='vertical']		{ -webkit-flex-direction: column;  }
+ *
+ * o5-content-progress-bar > o5-label { position: static; }
+ *
+ * o5-content-progress-bar > o5-label:not(:empty) { padding-left: 0.3em; padding-right: 0.2em;  }
+ *
+ * o5-content-progress-bar > div { -webkit-flex-grow: 1; margin: auto; position: relative; }
+ *
+ * o5-content-progress-bar > div > o5-image { position: absolute; }
+ *
+ * o5-content-progress-bar > div > div { position: absolute; }
+ */
+o5-content-progress-bar		{ position: absolute; overflow: hidden; display: -webkit-flex; -webkit-align-items: center; }
+
+o5-content-progress-bar[data-orientation='horizontal']		{ -webkit-flex-direction: row;  }
+
+o5-content-progress-bar[data-orientation='vertical']		{ -webkit-flex-direction: column;  }
+
+o5-content-progress-bar > o5-label { position: static; }
+
+o5-content-progress-bar > o5-label:not(:empty) { padding-left: 0.3em; padding-right: 0.2em;  }
+
+o5-content-progress-bar > div { -webkit-flex-grow: 1; margin: auto; position: relative; }
+
+o5-content-progress-bar > div > o5-image { position: absolute; }
+
+o5-content-progress-bar > div > div { position: absolute; }
+
+/* o5-content-progress-bar[data-orientation='horizontal'] > div { height: 100%; }
+
+o5-content-progress-bar[data-orientation='vertical'] > div { width: 100%; } */
+
+
+
+/**
+ * @css SpanLabel
+ * o5-span-label		{ position: absolute; }
+ */
+o5-span-label		{ position: absolute; }
+
+
+
+/**
+ * @css ScrollingLabel
+ * o5-scrolling-label	{ position: absolute; overflow: hidden; }
+ *
+ * o5-scrolling-label > o5-label[data-animate='true']	{ -webkit-animation: o5-scrolling-label-animation 10s linear infinite; }
+ *
+ * @-webkit-keyframes o5-scrolling-label-animation {
+ *   from { -webkit-transform: translate3d(    0, 0, 0); }
+ *   to   { -webkit-transform: translate3d(-100%, 0, 0); }
+ * }
+ */
+o5-scrolling-label	{ position: absolute; overflow: hidden; }
+
+o5-scrolling-label > o5-label[data-animate='true']	{ -webkit-animation: o5-scrolling-label-animation 10s linear infinite; }
+
+@-webkit-keyframes o5-scrolling-label-animation {
+    from { -webkit-transform: translate3d(    0, 0, 0); }
+    to   { -webkit-transform: translate3d(-100%, 0, 0); }
+}
+
+
+
+/**
+ * @css TextInput
+ * o5-text-input		{ position: absolute; display: block; }
+ */
+o5-text-input		{ position: absolute; display: block; }
+
+
+
+/**
+ * @css TimeList
+ * o5-time-list		{ position: absolute; display: block; }
+ */
+o5-time-list		{ position: absolute; display: block; }
+
+
+
+/**
+ * @css Video
+ * o5-video			{ position: absolute; }
+ *
+ * o5-video > video	{ position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain; }
+ */
+o5-video			{ position: absolute; }
+
+o5-video > video	{ position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain; }
+
+/**
+ * @css VideoInfoPanel
+ * o5-video-info-panel	{ position: absolute; display: block; }
+ */
+o5-video-info-panel	{ position: absolute; display: block; }
+
+
+/**
+ * @css View
+ * o5-view				{ position: absolute; overflow: hidden; left: 0; top: 0; right: 0; bottom: 0; display: block; }
+ */
+o5-view				{ position: absolute; overflow: hidden; left: 0; top: 0; right: 0; bottom: 0; display: block; }
+
+
+/**
+ * @css ViewWindow
+ * o5-view-window		{ position: absolute; overflow: hidden; width: 100%; height: 100%; display: block; }
+ */
+o5-view-window		{ position: absolute; overflow: hidden; width: 100%; height: 100%; display: block; }
+
+/**
+ * @css iframe
+ * iframe				{ position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; border: none; }
+ */
+iframe				{ position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; border: none; }

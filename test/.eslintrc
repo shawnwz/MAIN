@@ -1,0 +1,15 @@
+# Testing keywords, narrowed the scope to the test folder only
+globals:
+    describe: true
+    it: true
+    expect: true
+    beforeEach: true
+    afterEach: true
+    beforeAll: true
+    afterAll: true
+    sinon: true
+
+rules:
+    max-nested-callbacks: [ error, 4 ] # More callbacks for testing
+    require-jsdoc: off
+    max-statements: [ warn, 30 ]

@@ -1,0 +1,179 @@
+#searchQuery {
+	display:block;
+	z-index: 10; /* //@hdk: why? */
+}
+.searchResultsListItem-cell .searchResultsLogo {
+	width: 88px;
+	height: 57px;
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: 66px 45px;
+	float: left;
+}
+.searchResultsListItem-cell:not(.noLogo) .searchResultsMatch { padding-left: 10px; }
+.searchResultsListItem-cell.noLogo .searchResultsLogo { display: none; }
+.searchResultsListItem-cell.fromBigpm .searchResultsLogo  { background-image: url(../../images/common/logos/search_bigpm_mini.png) }
+.searchResultsListItem-cell.fromDs .searchResultsLogo  { background-image: url(../../images/common/logos/search_ds_mini.png) }
+.searchResultsListItem-cell.fromFoxtel .searchResultsLogo  { background-image: url(../../images/common/logos/search_foxtel_mini.png) }
+.searchResultsListItem-cell.fromGo .searchResultsLogo  { background-image: url(../../images/common/logos/search_go_mini.png) }
+.searchResultsListItem-cell.fromIq3 .searchResultsLogo  { background-image: url(../../images/common/logos/search_iq3_mini.png) }
+.searchResultsListItem-cell.fromIview .searchResultsLogo  { background-image: url(../../images/common/logos/search_iview_mini.png) }
+.searchResultsListItem-cell.fromLibrary .searchResultsLogo  { background-image: url(../../images/common/logos/search_library_mini.png) }
+.searchResultsListItem-cell.fromNetflix .searchResultsLogo  { background-image: url(../../images/common/logos/search_netflix_mini.png) }
+.searchResultsListItem-cell.fromPlay .searchResultsLogo  { background-image: url(../../images/common/logos/search_play_mini.png) }
+.searchResultsListItem-cell.fromPresto .searchResultsLogo  { background-image: url(../../images/common/logos/search_presto_mini.png) }
+.searchResultsListItem-cell.fromSbsod .searchResultsLogo  { background-image: url(../../images/common/logos/search_sbsod_mini.png) }
+.searchResultsListItem-cell.fromTvnz .searchResultsLogo  { background-image: url(../../images/common/logos/search_tvnz_mini.png) }
+.searchResultsListItem-cell.fromYoutube .searchResultsLogo  { background-image: url(../../images/common/logos/search_youtube_mini.png) }
+
+
+
+.Rel8Theme #searchQueryField {
+  position: absolute;
+  height: 46px;
+  width: 716px;
+  left: 203px;
+  top: 0;
+  background-color: rgba(40,40,40,0.9);
+}
+.Rel8Theme #searchQueryField #searchQueryEntry {
+  line-height: 45px;
+  font-size: 30px;
+  text-align: center;
+}
+.Rel8Theme #searchQueryField #searchQueryEntry #searchQueryEntryText #searchQueryEntryTextT9{
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 40px;
+  padding: 0;
+}
+.Rel8Theme #searchQueryField #searchQueryEntry #searchQueryEntryText #searchQueryEntryTextT9 .searchEntryInfo {
+    color: #666666;
+}
+.Rel8Theme #searchQueryField #searchQueryEntry #searchQueryEntryText #searchQueryEntryTextT9 .searchEntryTerm {
+    color: #dadada;
+}
+.Rel8Theme #searchQueryField #searchQueryEntry #searchQueryKeyTitleBlinker {
+  line-height: 45px;
+}
+.Rel8Theme #searchQueryKeys {
+  position: absolute;
+  height: 100px;
+  width: 600px;
+  left: 261px;
+  top: 82px;
+  padding-top: 2px;
+  -webkit-transition: -webkit-transform 500ms linear;
+}
+.Rel8Theme #searchQueryKeys #searchQueryKeysTable {
+}
+.Rel8Theme #searchQueryKeys .searchKeys-row {
+  width: 600px;
+  height: 45px;
+  font-size: 30px;
+}
+.Rel8Theme #searchQueryKeys .searchKeys-item {
+    width: 46px;
+    height: 45px;
+    text-align: center;
+    float: left;
+    line-height: 40px;
+}
+.Rel8Theme #searchQueryButtons {
+  position: absolute;
+  height: 46px;
+  width: 300px;
+  left: 411px;
+  top: 200px;
+  -webkit-transition: -webkit-transform 500ms linear;
+}
+.Rel8Theme #searchQueryButtons .searchButtonsList-item {
+  position: absolute;
+  width: 75px;
+  height: 35px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 15px;
+}
+.Rel8Theme #searchQueryButtons .searchButtonsList-item .searchButtonItem {
+  height: 35px;
+  margin: 2px;
+  background: #1d1d1d;
+  width: 65px;
+  color: #dadada;
+}
+.Rel8Theme #searchQueryButtons .searchButtonsList-item.searchButtonBackspace .searchButtonItem {
+  background-image: url('../../images/common/icons/backspace.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.Rel8Theme #searchQueryKeys .searchKeysTable.focused .searchKeys-item.focused,
+.Rel8Theme #searchQueryButtons .searchButtonsList.focused .searchButtonsList-item.focused .searchButtonItem {
+  background-color: #cd3b3b;
+  border: 3px solid #fff;
+}
+
+
+.searchT9tapPopup {
+    position: relative;
+    display: inline-block;
+}
+
+/* The actual popup */
+.searchT9tapPopup .searchT9tapPopuptext {
+    visibility: visible;
+    width: 120px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px 0;
+    position: absolute;
+    line-height: 35px;
+    z-index: 1;
+    top: 110%;
+    left: 99%;
+    margin-left: -68px;
+}
+
+
+/* Popup arrow */
+.searchT9tapPopup .searchT9tapPopuptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
+
+
+.Rel8Theme #searchRecentPopular { /* added */
+    top: 280px;
+    left: 42px;
+    width: 1066px;
+}
+
+#searchQueryResultsContainer {
+    position: absolute;
+    top: 97px;
+    right: 0;
+    bottom: 0;
+    left: 188px;
+    width: 1032px;
+    height: 385px;
+    display: none
+}
+.Rel8Theme #searchQueryResultsContainer { /* added */
+    top: 250px;
+    left: 40px;
+    -webkit-transition: -webkit-transform 500ms linear;
+}
+#searchQueryResultsContainer.show { display: block }
+
+.Rel8Theme .fullScreenMode { /* added */
+  will-change: transform;
+  -webkit-transform:translate3d(0, -300px, 0);
+}

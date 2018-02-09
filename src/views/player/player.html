@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<script src="./Player.js"></script>
+<link rel="stylesheet" href="./player.css">
+
+<app-player id="playerView" class="oxygen-transition-none-prepareDisplay oxygen-transition-none-bringIn">
+
+  <!-- #player: class helpers [synopsisView]-->
+  <div id="player"> <!--oxygen-transition-none-hide-->
+  
+    <!-- #trickMode: class helpers [tmBuffering][noSpin] -->
+    <!-- #trickMode: x-state helpers [hide pause play rewind forward skip-rewind skip-forward streaming] -->
+    <!-- #trickMode: x-speed helpers [sp02,sp1,sp2,sp6,sp12,sp30,sp60] -->
+    <app-player-trick-mode id="trickMode" class="tmBuffering" x-speed="sp1" x-state="hide">
+      <div id="tmStateBg">
+        <div id="tmState"><span></span></div>
+      </div>
+      <div id="tmStreaming"></div> <!-- //@hdk what is this for?? -->
+      <div id="tmSpinner">
+        <div id="tmSpinnerBg"></div>
+        <div id="tmSpinnerGlow"></div>
+      </div>
+    </app-player-trick-mode>
+    <app-player-buffer-text id="tmBufferText"></app-player-buffer-text>
+  
+    <app-player-banner id="playerBanner" x-player>
+      <div id="playerBg" class="">
+        <div id="playerTitle" x-player-title></div>
+        <div id="playerBar" x-player-bar>
+          <div id="playerBarFill"></div>
+          <div id="playerBarPointer" class="iconArrowPointer"></div>
+          <div id="playerBarBeforeAfterIndicator"></div>
+        </div>
+        <div id="playerBarInfo">
+          <div id="playerBarStartTime" x-meridiem></div>
+          <div id="playerBarEndTime" x-meridiem></div>
+        </div>
+      </div>
+    </app-player-banner>
+    
+    <!-- #playerMiniSynopsis: class helpers [show][miniSynopsis][synopsisMovie][cc hd dolby subs] -->
+    <app-player-mini-synopsis id="playerMiniSynopsis" not-updated class="miniSynopsis cc hd dolby subs">
+      <!-- synopsisTitle: attr [x-synopsis-rating - appends a rating after title] -->
+      <div class="synopsisTitle" x-synopsis-rating="(#{ratings})"></div>
+      <div class="synopsisBottom">
+        <div class="synopsisDescription"></div>
+        <div class="miniSynopsisIcons"></div>
+      </div>
+    </app-player-mini-synopsis>
+
+    <div id="playerBottomBar">
+      <div id="playerLogo"></div>
+    </div>
+    <app-player-call-to-action-list id="ctaPlayer" class="callToActionList" data-screen="ctaPlayer"></app-player-call-to-action-list>
+  </div>
+
+  <!-- #playerBuffering: class helpers [show] -->
+  <div id="playerBuffering">
+    <div class="spinner"></div>
+    <div class="progress"></div>
+  </div>
+
+
+		
+</app-player>

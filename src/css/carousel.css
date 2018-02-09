@@ -1,0 +1,278 @@
+app-carousel-row-list {
+    display: block;
+    margin-bottom: 12px;
+    position: relative;
+    left: -50px;
+    width: 1550px;
+    overflow: hidden;
+    will-change: transform;
+}
+app-jumpoff-list div {
+    display: -webkit-inline-flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+.jump-list {
+    display: block;
+    margin-top: 50px;
+    margin-left: 55px;
+    margin-right: 55px;
+    position: relative;
+    height: 102px;
+    will-change: transform;
+}
+.jumpoff-item {
+    color: #ffffff;
+    width: 215px;
+    height: 102px;
+    line-height: 102px;
+    background-color: #333333;
+    text-align: center;
+    display: inline-block;
+}
+#carouselView {
+    position: absolute;
+    transition: -webkit-transform 300ms linear;
+    width: 100%;
+    height: 720px;
+    top: 100px;
+    overflow: hidden;
+}
+#carouselTiles {
+    width: 100%;
+    height: 720px;
+}
+app-carousel-list app-carousel-list-item .carouselTileInfo {
+    margin-left: 65px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    will-change: transform;
+}
+app-carousel-list[selected] app-carousel-list-item[selected] .carouselTileInfo {
+    visibility: visible;
+    opacity: 1;
+}
+app-carousel-list .carouselTileInfo .carouselTileInfoTitle {
+    height: 40px;
+    line-height: 40px;
+    font-family: fontSemiBold;
+    font-size: 28px;
+}
+app-carousel-list .carouselTileInfo .carouselTileInfoSubTitle {
+    height: 40px;
+    line-height: 40px;
+    font-family: fontSemiBold;
+    font-size: 28px;
+    color: #999;
+}
+app-carousel-list-item {
+    transition: transform 200ms linear;
+    transform: translateY(0px);
+    will-change: transform;
+}
+app-carousel-list[selected] app-carousel-list-item[selected] ~ app-carousel-list-item {
+    transform: translateY(70px);
+}
+app-carousel-row-list-item {
+    position: relative;
+    width: 273px;
+}
+app-carousel-row-list-item .tileGradient {
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 127px;
+    width: 100%;
+    background-image: url("../images/common/tile-gradient.png");
+    background-repeat: repeat-x;
+    background-position: bottom left
+}
+#carouselView #carouselTiles.noJumpList app-jumpoff-list { display: none; }
+#carouselView #carouselTiles.hideJumpList app-jumpoff-list { display: none; }
+.carousel-title {
+    height: 40px;
+    line-height: 40px;
+    font-family: fontSemiBold;
+    font-size: 28px;
+    margin-bottom: 0px;
+    margin-left: 65px;
+    margin-top: 20px;
+    will-change: transform;
+}
+app-carousel-list-item.asset-tv app-carousel-row-list-item,
+app-carousel-list-item.asset-movie app-carousel-row-list-item {
+    margin-right: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-repeat:no-repeat;
+}
+app-carousel-list-item.asset-tv app-carousel-row-list-item {
+    width: 273px;
+    height: 154px;
+    background-image: url("../images/common/NoImage-Landscape.png");
+    background-size: 273px 154px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+app-carousel-list-item.asset-movie app-carousel-row-list-item {
+    width: 175px;
+    height: 262px;
+    background-image: url("../images/common/NoImage-Portrait.png");
+    background-size: 175px 262px;
+}
+app-jumpoff-list[selected] app-jumpoff-list-item[selected],
+app-carousel-list[selected] app-carousel-list-item[selected] app-carousel-row-list-item[selected] {
+    border: 3px solid #fff;
+    -webkit-transform: scale(1.1, 1.1);
+}
+app-jumpoff-list-item,
+app-carousel-row-list-item {
+    -webkit-transform: scale(1, 1);
+    transition: -webkit-transform 300ms linear;
+}
+.asset-channelName,
+.asset-title {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: 10px;
+}
+.asset-title {
+    font-size: 17pt;
+}
+.asset-channelName {
+    font-size: 15pt;
+    font-family: fontThin;
+    display: none;
+}
+app-carousel-list[selected] app-carousel-list-item[selected] app-carousel-row-list-item[selected].continueWatching .playIconWrapper {
+    height: 100%;
+    background: url("../images/common/icons/icon-play-round.png") no-repeat center;
+}
+app-carousel-list .carouselList-List {
+    transition: -webkit-transform 300ms linear;
+}
+app-carousel-row-list .carouselListRow-List {
+    display: -webkit-inline-flex;
+    transition: -webkit-transform 300ms linear;
+}
+app-carousel-row-list .carouselListRow-List.jumpFast {
+    transition: -webkit-transform 100ms linear !important;
+}
+app-carousel-list {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 1280px;
+  height: 700px;
+  overflow: hidden;
+  display: block;
+  margin-top: 20px;
+}
+app-carousel-list-item {
+  width: 1550px;
+  height: 240px;
+  display: block;
+  position: absolute;
+}
+app-carousel-list-item[selected] { margin-top: -30px; }
+app-carousel-list-item.asset-tv { height: 240px; }
+app-carousel-list-item.asset-movie { height: 350px; }
+app-carousel-list-item.asset-tv app-carousel-row-list { height: 190px; }
+app-carousel-list-item.asset-movie app-carousel-row-list { height: 300px; }
+app-carousel-list .carouselList-ListFocus {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1550px;
+  height: 350px;
+}
+app-carousel-list .carouselList-ListFocus.asset-tv  { height: 240px; }
+app-carousel-list .carouselList-ListFocus.asset-movie  { height: 350px; }
+app-carousel-row-list .carouselListRow-ListFocus {
+  position: absolute;
+  top: -10px;
+  left: 110px;
+  width: 240px;
+  height: 180px;
+}
+app-carousel-list-item.asset-tv .carouselListRow-ListFocus { width: 300px; }
+app-carousel-list-item.asset-movie .carouselListRow-ListFocus { width: 195px; }
+
+/* tileChannelName make sure the text show in the middle */
+.tileChannelName { 
+    position:absolute; height:100%; width:100%;
+    display: table;
+}
+.tileChannelName h1 {
+    color: #ffffff;
+    display: table-cell;
+    vertical-align: middle;
+    text-align:center;
+    font-size: 28px;
+}
+
+.tile .notEntitled {
+    background-color: rgba(0,0,0,0.45);
+    background-image: url("../images/common/icons/icon-tile-locked.png")
+}
+.tile .seriesLink {
+    background-color: rgba(0,0,0,0.45);
+    background-image: url("../images/common/icons/icon-tile-srcLnk.png")
+}
+.tile .isRecord {
+    background-color: rgba(0,0,0,0.45);
+    background-image: url("../images/common/icons/icon-tile-record.png")
+}
+.tile .isCC {
+    background-color: rgba(0,0,0,0.45);
+    background-image: url("../images/common/icons/icon-tile-cc.png")
+}
+.tile .isBooked {
+    background-color: rgba(0,0,0,0.45);
+    background-image: url("../images/common/icons/icon-tile-booked.png")
+}
+.tile .isRent {
+    background-color: rgba(0,0,0,0.45);
+    background-image: url("../images/common/icons/icon-tile-rent.png")
+}
+
+/* tile progress indicator */
+.tile .tileProgressIndicator {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 2;
+    width: 254px;
+}
+
+app-carousel-list-item.asset-movie app-carousel-row-list-item .tileProgressIndicator{
+    width: 165px;
+}
+
+.tile .tileProgressIndicator .tileProgress {
+    margin-right: 10px;
+    
+  background-color: grey;
+}
+
+.tile .tileProgressIndicator .tileBar {
+  width: 0%;
+  height: 5px;
+  background-color: #cd3b3b;
+}
+
+/* tileText show above the indicator */
+.tile .tileText {
+    bottom: 15px;
+}
+
+.tile .tileBlackTextBar span.lowercase {
+  text-transform: lowercase;
+}

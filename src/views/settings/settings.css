@@ -1,0 +1,133 @@
+
+#settingsScan, #settingsConfigMenu, #settingsChannelMenu {
+	width: 1122px;
+	height: 275px;
+	position: absolute;
+	top: 257px;
+	left: 80px;
+	display: none;
+}
+
+#fullScanStatusPreText {
+
+	margin: 200px 0 0 75px;	
+	font-size: 30px;
+	font-family: fontLight;
+	line-height: 140%;
+	width: 579px;
+	line-height: 120%
+
+}
+
+#settingsScan.show, 
+#settingsConfigMenu.show, 
+#settingsChannelMenu.show {
+	display: inherit;
+}
+
+
+#settingsScanStatusText {
+	position: absolute;
+	top: 100px;
+	right: 100px;
+	bottom: 0;
+	left: 0;
+	font-size: 35px;
+	font-family: fontLight;
+	color: #ccc;
+	line-height: 120%
+}
+#settingsScanProgressText {
+	position: absolute;
+	top: 100px;
+	right: 0;
+	bottom: 0;
+	left: auto;
+	font-size: 35px;
+	font-family: fontLight;
+	text-align: right;
+	color: #ccc;
+	width: 100px;
+	line-height: 120%
+}
+
+#settingsScanResultText {
+	font-size: 60px;
+	line-height: 120%;
+	font-family: fontLight;
+	color: #ccc;
+	padding-bottom: 40px;
+}
+
+#settingsScanResultDetails {
+	font-size: 35px;
+	line-height: 120%;
+	font-family: fontLight;
+	color: #ccc;
+}
+
+app-grid-menu, app-settings-channel-menu, app-settings-config-menu, app-settings-config-menu-row, app-settings-toggle, app-settings-text, app-settings-scan {
+	display: block;
+	visibility: inherit;
+}
+
+.scanCompleteGrid {
+	margin: 20px 0;
+	position: relative;
+}
+
+.settingsGrid app-menu-item {
+	width: 556px;
+	height: 53px;
+	position: absolute;
+	background-color: #222;
+	padding: 0 20px;
+	font-size: 22px;
+	line-height: 53px;
+	color: #dadada;
+}
+
+.settingsGrid:focus app-menu-item[selected] {
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #b5300b), color-stop(100%, #c7531e));
+}
+.settingsGrid app-menu-item[data-col='1'] {
+	left: 560px;
+}
+
+.settingsGrid app-menu-item[data-row='0'], app-settings-config-menu-row:nth-child(1) {
+	top: 0;
+}
+
+.settingsGrid app-menu-item[data-row='1'], app-settings-config-menu-row:nth-child(2) {
+	top: 57px;
+}
+
+.settingsGrid app-menu-item[data-row='2'], app-settings-config-menu-row:nth-child(3) {
+	top: 114px;
+}
+
+.settingsGrid app-menu-item[data-row='3'], app-settings-config-menu-row:nth-child(4) {
+	top: 171px;
+}
+
+.settingsGrid app-menu-item[data-row='4'], app-settings-config-menu-row:nth-child(5) {
+	top: 228px;
+}
+
+#settingsViewingRestrictionsView app-settings-list-item:nth-child(4) {
+  border-top: 0px;
+}
+
+#settingsViewingRestrictionsView app-settings-list-item:nth-child(6) {
+  margin-top: 0px;
+}
+
+.settingsViewRestrictionsFirstSubTitle {
+	display: block;
+    text-align: left;
+    font-size: 35px !important;
+    color: #989898;
+	margin-bottom: 20px;
+	padding-top: 20px;
+    border-top: 2px solid #252525
+}

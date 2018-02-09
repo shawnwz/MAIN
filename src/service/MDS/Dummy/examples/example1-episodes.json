@@ -1,0 +1,916 @@
+http://203.17.26.41/metadata/delivery/FOXTEL/btv/editorials?filter={%22technical.seriesRef%22:%22335205%22,%22locale%22:%22en_AU%22}&limit=50&fields=[]&sort=[[%22editorial.CUST_SeasonNumber%22,1],[%22editorial.episodeNumber%22,1],[%22programme.period.start%22,1]]
+
+{
+
+    "total_records": 2,
+    "version": "20170103034654",
+    "editorials": [
+        {
+            "nls": {
+                "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+            },
+            "Title": "Grand Designs New Zealand",
+            "duration": 2689,
+            "technicals": [
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "CUST_RetentionPeriod": "672",
+                    "PrivateMetadata": "ext_event_id=13387330",
+                    "CUST_FileSize": "641941604",
+                    "duration": 2689,
+                    "CUST_SeasonNumber": "1",
+                    "episodeNumber": 1,
+                    "AudioMode": "Stereo",
+                    "Description": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "seriesRef": "335205",
+                    "media": {
+                        "drmId": "ON268137.ts",
+                        "format": "AV_EncryptedTS",
+                        "frameDuration": "0",
+                        "drmInstanceName": "CCA_PDL",
+                        "fileName": "ON268137_9321532-F-PDL/ON268137.ts",
+                        "bitRate": "",
+                        "id": "LYS030105908"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "CUEndDate": 1569851999.0,
+                    "id": "9321532-F-PDL",
+                    "deviceType": [
+                        "iQ3-HD",
+                        "iQ3-SD"
+                    ],
+                    "provider": "FOXTEL",
+                    "profileRef": "LYS000000399",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "Definition": "SD",
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Concrete Farmhouse",
+                    "ServiceLongName": "LST",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "mainContentRef": "9321532",
+                    "CUStartDate": 1483275600.0,
+                    "Rating": {
+                        "code": "PG",
+                        "precedence": 0,
+                        "Title": "Label for PG"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "companyId": "FOXTEL",
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Aspect": "16x9",
+                    "Year": 2015,
+                    "title": "Grand Designs New Zealand/S01/E01/VOD/Concrete Farmhouse/9321532-F-SUB-PDL"
+                },
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "duration": 3600,
+                    "id": "9321532-BTV",
+                    "episodeNumber": 1,
+                    "Description": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "seriesRef": "335205",
+                    "media": { },
+                    "CUST_SeasonNumber": "1",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Concrete Farmhouse",
+                    "ServiceLongName": "LST",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "mainContentRef": "9321532",
+                    "Rating": {
+                        "code": "PG",
+                        "precedence": 0,
+                        "Title": "Label for PG"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "title": "Grand Designs New Zealand/S01/E01/BTV/Concrete Farmhouse/9321532-BTV",
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "companyId": "FOXTEL",
+                    "Year": 2015
+                }
+            ],
+            "programmes": [
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "contentRef": "9321532",
+                    "period": {
+                        "duration": 3600,
+                        "start": 1483608600.0,
+                        "end": 1483612200.0,
+                        "provider": "FOXTEL"
+                    },
+                    "serviceRef": "LSD",
+                    "SOCU_filename": "LSD82078174/1483608600/3600/manifest",
+                    "CUST_SeasonNumber": "1",
+                    "eventId": "1192",
+                    "AudioMode": "Stereo",
+                    "Description": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "title": "Grand Designs New Zealand /S1 /E1",
+                    "productRefs": [ ],
+                    "id": "LSD82078174",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Concrete Farmhouse",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "Year": 2015,
+                    "Synopsis": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "Rating": {
+                        "code": "PG",
+                        "precedence": 0,
+                        "Title": "Label for PG"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Subtitles": [
+                        "eng-HearingImpaired"
+                    ],
+                    "Aspect": "Widescreen",
+                    "isCatchUp": true,
+                    "isStartOver": true
+                },
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "contentRef": "9321532",
+                    "period": {
+                        "duration": 3600,
+                        "start": 1483608600.0,
+                        "end": 1483612200.0,
+                        "provider": "FOXTEL"
+                    },
+                    "serviceRef": "LST",
+                    "SOCU_filename": "LST82067571/1483608600/3600/manifest",
+                    "CUST_SeasonNumber": "1",
+                    "eventId": "1111",
+                    "AudioMode": "Stereo",
+                    "Description": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "title": "Grand Designs New Zealand /S1 /E1",
+                    "productRefs": [ ],
+                    "id": "LST82067571",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Concrete Farmhouse",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "Year": 2015,
+                    "Synopsis": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "Rating": {
+                        "code": "PG",
+                        "precedence": 0,
+                        "Title": "Label for PG"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Subtitles": [
+                        "eng-HearingImpaired"
+                    ],
+                    "Aspect": "Widescreen",
+                    "isCatchUp": true,
+                    "isStartOver": true
+                },
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "contentRef": "9321532",
+                    "period": {
+                        "duration": 3600,
+                        "start": 1483615800.0,
+                        "end": 1483619400.0,
+                        "provider": "FOXTEL"
+                    },
+                    "serviceRef": "LS2",
+                    "SOCU_filename": "LS282078927/1483615800/3600/manifest",
+                    "CUST_SeasonNumber": "1",
+                    "eventId": "1223",
+                    "AudioMode": "Stereo",
+                    "Description": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "title": "Grand Designs New Zealand /S1 /E1",
+                    "productRefs": [ ],
+                    "id": "LS282078927",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Concrete Farmhouse",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "Year": 2015,
+                    "Synopsis": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "Rating": {
+                        "code": "PG",
+                        "precedence": 0,
+                        "Title": "Label for PG"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Subtitles": [
+                        "eng-HearingImpaired"
+                    ],
+                    "Aspect": "Widescreen",
+                    "isCatchUp": true,
+                    "isStartOver": true
+                },
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "contentRef": "9321532",
+                    "period": {
+                        "duration": 3600,
+                        "start": 1483660800.0,
+                        "end": 1483664400.0,
+                        "provider": "FOXTEL"
+                    },
+                    "serviceRef": "LST",
+                    "SOCU_filename": "LST82067586/1483660800/3600/manifest",
+                    "CUST_SeasonNumber": "1",
+                    "eventId": "255",
+                    "AudioMode": "Stereo",
+                    "Description": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "title": "Grand Designs New Zealand /S1 /E1",
+                    "productRefs": [ ],
+                    "id": "LST82067586",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Concrete Farmhouse",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "Year": 2015,
+                    "Synopsis": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "Rating": {
+                        "code": "PG",
+                        "precedence": 0,
+                        "Title": "Label for PG"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Subtitles": [
+                        "eng-HearingImpaired"
+                    ],
+                    "Aspect": "Widescreen",
+                    "isCatchUp": true,
+                    "isStartOver": true
+                },
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "contentRef": "9321532",
+                    "period": {
+                        "duration": 3600,
+                        "start": 1483660800.0,
+                        "end": 1483664400.0,
+                        "provider": "FOXTEL"
+                    },
+                    "serviceRef": "LSD",
+                    "SOCU_filename": "LSD82078189/1483660800/3600/manifest",
+                    "CUST_SeasonNumber": "1",
+                    "eventId": "685",
+                    "AudioMode": "Stereo",
+                    "Description": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "title": "Grand Designs New Zealand /S1 /E1",
+                    "productRefs": [ ],
+                    "id": "LSD82078189",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Concrete Farmhouse",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "Year": 2015,
+                    "Synopsis": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "Rating": {
+                        "code": "PG",
+                        "precedence": 0,
+                        "Title": "Label for PG"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Subtitles": [
+                        "eng-HearingImpaired"
+                    ],
+                    "Aspect": "Widescreen",
+                    "isCatchUp": true,
+                    "isStartOver": true
+                },
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "contentRef": "9321532",
+                    "period": {
+                        "duration": 3600,
+                        "start": 1483668000.0,
+                        "end": 1483671600.0,
+                        "provider": "FOXTEL"
+                    },
+                    "serviceRef": "LS2",
+                    "SOCU_filename": "LS282078942/1483668000/3600/manifest",
+                    "CUST_SeasonNumber": "1",
+                    "eventId": "624",
+                    "AudioMode": "Stereo",
+                    "Description": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "title": "Grand Designs New Zealand /S1 /E1",
+                    "productRefs": [ ],
+                    "id": "LS282078942",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Concrete Farmhouse",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "Year": 2015,
+                    "Synopsis": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+                    "Rating": {
+                        "code": "PG",
+                        "precedence": 0,
+                        "Title": "Label for PG"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Subtitles": [
+                        "eng-HearingImpaired"
+                    ],
+                    "Aspect": "Widescreen",
+                    "isCatchUp": true,
+                    "isStartOver": true
+                }
+            ],
+            "id": "9321532",
+            "episodeNumber": 1,
+            "Description": "Architect Chris Moller meets Southland farmer Lachlan McDonald, who's building a modernist concrete home with a controversial roof in one of the most remote parts of NZ.",
+            "companyId": "FOXTEL",
+            "media": { },
+            "CUST_SeasonNumber": "1",
+            "deviceType": [ ],
+            "provider": "FOXTEL",
+            "Categories": [
+                "TV SHOWS - LIFESTYLE"
+            ],
+            "CUST_DispSEpNum": "true",
+            "Episode": "Concrete Farmhouse",
+            "Language": "eng",
+            "Countries": [
+                "NZ"
+            ],
+            "Rating": {
+                "code": "PG",
+                "precedence": 0,
+                "Title": "Label for PG"
+            },
+            "ContentType": "TV_EPS",
+            "DvbCategories": [
+                "0:0:2:8"
+            ],
+            "seriesRef": "335205",
+            "CUST_SortTitle": "grand designs new zealand",
+            "Year": 2015,
+            "title": "Grand Designs New Zealand/S01/E01/Concrete Farmhouse/9321532",
+            "_id": "9321532|FOXTEL"
+        },
+        {
+            "nls": {
+                "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+            },
+            "Title": "Grand Designs New Zealand",
+            "duration": 2686,
+            "technicals": [
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "CUST_RetentionPeriod": "672",
+                    "PrivateMetadata": "ext_event_id=13394404",
+                    "CUST_FileSize": "640860980",
+                    "duration": 2686,
+                    "CUST_SeasonNumber": "1",
+                    "episodeNumber": 2,
+                    "AudioMode": "Stereo",
+                    "Description": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "seriesRef": "335205",
+                    "media": {
+                        "drmId": "ON207062.ts",
+                        "format": "AV_EncryptedTS",
+                        "frameDuration": "0",
+                        "drmInstanceName": "CCA_PDL",
+                        "fileName": "ON207062_9321533-F-PDL/ON207062.ts",
+                        "bitRate": "",
+                        "id": "LYS030105852"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "CUEndDate": 1569851999.0,
+                    "id": "9321533-F-PDL",
+                    "deviceType": [
+                        "iQ3-HD",
+                        "iQ3-SD"
+                    ],
+                    "provider": "FOXTEL",
+                    "profileRef": "LYS000000399",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "Definition": "SD",
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Earthship",
+                    "ServiceLongName": "LST",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "mainContentRef": "9321533",
+                    "CUStartDate": 1483275600.0,
+                    "Rating": {
+                        "code": "G",
+                        "precedence": 0,
+                        "Title": "Label for G"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "companyId": "FOXTEL",
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Aspect": "16x9",
+                    "Year": 2015,
+                    "title": "Grand Designs New Zealand/S01/E02/VOD/Earthship/9321533-F-SUB-PDL"
+                },
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "duration": 3600,
+                    "id": "9321533-BTV",
+                    "episodeNumber": 2,
+                    "Description": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "seriesRef": "335205",
+                    "media": { },
+                    "CUST_SeasonNumber": "1",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Earthship",
+                    "ServiceLongName": "LST",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "mainContentRef": "9321533",
+                    "Rating": {
+                        "code": "G",
+                        "precedence": 0,
+                        "Title": "Label for G"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "title": "Grand Designs New Zealand/S01/E02/BTV/Earthship/9321533-BTV",
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "companyId": "FOXTEL",
+                    "Year": 2015
+                }
+            ],
+            "programmes": [
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "contentRef": "9321533",
+                    "period": {
+                        "duration": 3600,
+                        "start": 1484213400.0,
+                        "end": 1484217000.0,
+                        "provider": "FOXTEL"
+                    },
+                    "serviceRef": "LST",
+                    "SOCU_filename": "LST82067741/1484213400/3600/manifest",
+                    "CUST_SeasonNumber": "1",
+                    "eventId": "1296",
+                    "AudioMode": "Stereo",
+                    "Description": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "title": "Grand Designs New Zealand /S1 /E2",
+                    "productRefs": [ ],
+                    "id": "LST82067741",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Earthship",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "Year": 2015,
+                    "Synopsis": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "Rating": {
+                        "code": "G",
+                        "precedence": 0,
+                        "Title": "Label for G"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Subtitles": [
+                        "eng-HearingImpaired"
+                    ],
+                    "Aspect": "Widescreen",
+                    "isCatchUp": true,
+                    "isStartOver": true
+                },
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "contentRef": "9321533",
+                    "period": {
+                        "duration": 3600,
+                        "start": 1484213400.0,
+                        "end": 1484217000.0,
+                        "provider": "FOXTEL"
+                    },
+                    "serviceRef": "LSD",
+                    "SOCU_filename": "LSD82078344/1484213400/3600/manifest",
+                    "CUST_SeasonNumber": "1",
+                    "eventId": "347",
+                    "AudioMode": "Stereo",
+                    "Description": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "title": "Grand Designs New Zealand /S1 /E2",
+                    "productRefs": [ ],
+                    "id": "LSD82078344",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Earthship",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "Year": 2015,
+                    "Synopsis": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "Rating": {
+                        "code": "G",
+                        "precedence": 0,
+                        "Title": "Label for G"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Subtitles": [
+                        "eng-HearingImpaired"
+                    ],
+                    "Aspect": "Widescreen",
+                    "isCatchUp": true,
+                    "isStartOver": true
+                },
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "contentRef": "9321533",
+                    "period": {
+                        "duration": 3600,
+                        "start": 1484220600.0,
+                        "end": 1484224200.0,
+                        "provider": "FOXTEL"
+                    },
+                    "serviceRef": "LS2",
+                    "SOCU_filename": "LS282079097/1484220600/3600/manifest",
+                    "CUST_SeasonNumber": "1",
+                    "eventId": "1239",
+                    "AudioMode": "Stereo",
+                    "Description": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "title": "Grand Designs New Zealand /S1 /E2",
+                    "productRefs": [ ],
+                    "id": "LS282079097",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Earthship",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "Year": 2015,
+                    "Synopsis": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "Rating": {
+                        "code": "G",
+                        "precedence": 0,
+                        "Title": "Label for G"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Subtitles": [
+                        "eng-HearingImpaired"
+                    ],
+                    "Aspect": "Widescreen",
+                    "isCatchUp": true,
+                    "isStartOver": true
+                },
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "contentRef": "9321533",
+                    "period": {
+                        "duration": 3600,
+                        "start": 1484265600.0,
+                        "end": 1484269200.0,
+                        "provider": "FOXTEL"
+                    },
+                    "serviceRef": "LSD",
+                    "SOCU_filename": "LSD82078359/1484265600/3600/manifest",
+                    "CUST_SeasonNumber": "1",
+                    "eventId": "910",
+                    "AudioMode": "Stereo",
+                    "Description": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "title": "Grand Designs New Zealand /S1 /E2",
+                    "productRefs": [ ],
+                    "id": "LSD82078359",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Earthship",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "Year": 2015,
+                    "Synopsis": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "Rating": {
+                        "code": "G",
+                        "precedence": 0,
+                        "Title": "Label for G"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Subtitles": [
+                        "eng-HearingImpaired"
+                    ],
+                    "Aspect": "Widescreen",
+                    "isCatchUp": true,
+                    "isStartOver": true
+                },
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "contentRef": "9321533",
+                    "period": {
+                        "duration": 3600,
+                        "start": 1484265600.0,
+                        "end": 1484269200.0,
+                        "provider": "FOXTEL"
+                    },
+                    "serviceRef": "LST",
+                    "SOCU_filename": "LST82067756/1484265600/3600/manifest",
+                    "CUST_SeasonNumber": "1",
+                    "eventId": "1203",
+                    "AudioMode": "Stereo",
+                    "Description": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "title": "Grand Designs New Zealand /S1 /E2",
+                    "productRefs": [ ],
+                    "id": "LST82067756",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Earthship",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "Year": 2015,
+                    "Synopsis": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "Rating": {
+                        "code": "G",
+                        "precedence": 0,
+                        "Title": "Label for G"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Subtitles": [
+                        "eng-HearingImpaired"
+                    ],
+                    "Aspect": "Widescreen",
+                    "isCatchUp": true,
+                    "isStartOver": true
+                },
+                {
+                    "nls": {
+                        "Title": "334927412d042d2f4b3733414b04412f5304592f273d27412d011d018f818f7f8f838f0a00"
+                    },
+                    "Title": "Grand Designs New Zealand",
+                    "contentRef": "9321533",
+                    "period": {
+                        "duration": 3600,
+                        "start": 1484272800.0,
+                        "end": 1484276400.0,
+                        "provider": "FOXTEL"
+                    },
+                    "serviceRef": "LS2",
+                    "SOCU_filename": "LS282079112/1484272800/3600/manifest",
+                    "CUST_SeasonNumber": "1",
+                    "eventId": "757",
+                    "AudioMode": "Stereo",
+                    "Description": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "title": "Grand Designs New Zealand /S1 /E2",
+                    "productRefs": [ ],
+                    "id": "LS282079112",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - LIFESTYLE"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Earthship",
+                    "Language": "eng",
+                    "Countries": [
+                        "NZ"
+                    ],
+                    "Colour": "Colour",
+                    "Year": 2015,
+                    "Synopsis": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+                    "Rating": {
+                        "code": "G",
+                        "precedence": 0,
+                        "Title": "Label for G"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:8"
+                    ],
+                    "CUST_SortTitle": "grand designs new zealand",
+                    "Subtitles": [
+                        "eng-HearingImpaired"
+                    ],
+                    "Aspect": "Widescreen",
+                    "isCatchUp": true,
+                    "isStartOver": true
+                }
+            ],
+            "id": "9321533",
+            "episodeNumber": 2,
+            "Description": "Chris meets Gus and Sarah whose solution to spiraling house prices is to make their first home an Earthship - an off-the-grid house made of recycled rubbish, earthen bricks and clay.",
+            "companyId": "FOXTEL",
+            "media": { },
+            "CUST_SeasonNumber": "1",
+            "deviceType": [ ],
+            "provider": "FOXTEL",
+            "Categories": [
+                "TV SHOWS - LIFESTYLE"
+            ],
+            "CUST_DispSEpNum": "true",
+            "Episode": "Earthship",
+            "Language": "eng",
+            "Countries": [
+                "NZ"
+            ],
+            "Rating": {
+                "code": "G",
+                "precedence": 0,
+                "Title": "Label for G"
+            },
+            "ContentType": "TV_EPS",
+            "DvbCategories": [
+                "0:0:2:8"
+            ],
+            "seriesRef": "335205",
+            "CUST_SortTitle": "grand designs new zealand",
+            "Year": 2015,
+            "title": "Grand Designs New Zealand/S01/E02/Earthship/9321533",
+            "_id": "9321533|FOXTEL"
+        }
+    ]
+
+}

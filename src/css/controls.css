@@ -1,0 +1,65 @@
+/* app.gui.controls.Progressbar */
+
+app-progress-bar {
+	width: 1122px;
+	height: 5px;
+	background-color: #141414;
+	display: block;
+	visibility: inherit;
+	position: absolute;
+	top: 80px;
+}
+
+.progressFill {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 0%;
+	height: 5px;
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #b5300b), color-stop(100%, #c7531e))
+}
+
+.progressGlow {
+	position: absolute;
+	top: -12px;
+	right: -16px;
+	bottom: 0;
+	left: auto;
+	width: 42px;
+	height: 31px;
+	background: url("../images/scan-glow.png") no-repeat;
+}
+
+app-menu-item, app-grid-menu {
+	visibility: inherit;
+}
+app-clock {
+	position: absolute;
+	top: 5px;
+	right: 55px;
+	text-transform: uppercase;
+	text-align: right;
+	font-family: fontThin;
+	font-size: 80px;
+	line-height: 120%;
+	z-index: 10;
+}
+
+.clock-period {
+	font-family: fontLight;
+	font-size: 40px;
+	line-height: 120%;
+}
+
+app-event-progress-bar {
+	/* Default color for progress bar background */
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+app-event-progress-bar > div {
+	height: 100%;
+	/* Default color for progress bar progress */
+	background-color: rgba(255, 255, 255, 0.6);
+}

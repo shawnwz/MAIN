@@ -1,0 +1,342 @@
+https://foxtel-prod-admin-0.digitalsmiths.net/sd/foxtel/cores/assets-foxtel/search?prod=FOXTELIQ3&fxid=021b249b41458a01f7fa8379f6c271eea0d41d8cd98f00b204e9800998ecf8427e&hwid=d41d8cd98f00b204e9800998ecf8427e&idm=02&aid=1b249b41458a01f7fa8379f6c271eea0&device=xx-yy&dclass=STB&swver=00&dpg=0&ao=N&BLOCKED=YES&utcOffset=%2B1100&REGION=af35b21540904fcaa3c049fcfd66b111&dopt=%5BF0%3A11%5D&mlt=9386871&limit=6&rid=MLT1&fp=metadata.programId%2Cmetadata.title%2Cmetadata.shortSynopsis%2CrelevantSchedules.isHighDefinition%2CrelevantSchedules.channelTag%2CrelevantSchedules.isWidescreen%2CrelevantSchedules.audioType%2Cmetadata.isSubtitled%2CrelevantSchedules.hasClosedCaptions%2Cmetadata.publishDuration%2Cmetadata.yearOfRelease%2Cmetadata.seasonNumber%2Cmetadata.episodeNumber%2Cmetadata.episodeTitle%2Cmetadata.genreId%2Cmetadata.subGenreId%2Cmetadata.classification%2Cmetadata.consumerAdvice%2Cmetadata.cast%2Cmetadata.category%2Cmetadata.subGenreName%2Cmetadata.contentType%2Cmetadata.titleId%2Cmetadata.displaySEpNum%2CrelevantSchedules.startTime%2CrelevantSchedules.endTime%2CrelevantSchedules.type%2CrelevantSchedules.id%2CrelevantSchedules.offerType%2CrelevantSchedules.seriesLink%2Cimages.default.landscape.URI%2Cimages.default.portrait.URI
+
+{
+
+    "queryId": "66902a0f93049399",
+    "hitCount": 19184,
+    "hits": [
+        {
+            "hitType": "tag",
+            "id": "000000387813",
+            "guid": null,
+            "metadata": {
+                "episodeTitle": "Face Bumper Smash",
+                "displaySEpNum": "true",
+                "contentType": "PROGRAM",
+                "episodeNumber": 28,
+                "consumerAdvice": "s v",
+                "title": "Tosh.0",
+                "programId": "000000387813",
+                "yearOfRelease": 2011,
+                "subGenreId": 3,
+                "subGenreName": "Comedy",
+                "seasonNumber": 3,
+                "publishDuration": "PT25M",
+                "category": "TV_EPS",
+                "shortSynopsis": "Daniel Tosh takes a byte out of the internet with viral videos, digital celebrities, and his own crazy sketches. In this episode the 'Face Bumper Smash' guy gets a web redemption.",
+                "classification": "MA",
+                "titleId": "255770",
+                "genreId": 2,
+                "isSubtitled": "false"
+            },
+            "images": {
+                "default": {
+                    "portrait": [
+                        {
+                            "URI": "store4/mount1/assets/p8857642_e_v8_ab.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "URI": "store4/mount1/assets/p8857642_e_h10_ab.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 7.504657,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "endTime": 1483443300000,
+                    "type": "VOD",
+                    "startTime": 1481025600000,
+                    "id": "IBMSnagra13208016",
+                    "channelTag": "COM",
+                    "offerType": "Subscription"
+                }
+            ]
+        },
+        {
+            "hitType": "tag",
+            "id": "000000387815",
+            "guid": null,
+            "metadata": {
+                "episodeTitle": "Web Reflection",
+                "contentType": "PROGRAM",
+                "episodeNumber": 30,
+                "title": "Tosh.0",
+                "programId": "000000387815",
+                "yearOfRelease": 2011,
+                "subGenreId": 3,
+                "subGenreName": "Comedy",
+                "seasonNumber": 3,
+                "publishDuration": "20 Mins",
+                "category": "TV_EPS",
+                "shortSynopsis": "Daniel Tosh takes a byte out of the internet with viral videos, digital celebrities and his own crazy sketches. In this episode, Daniel takes a look back at the greatest moments from series three.",
+                "classification": "MA15+",
+                "titleId": "255770",
+                "genreId": 2,
+                "isSubtitled": "false"
+            },
+            "images": {
+                "default": {
+                    "portrait": [
+                        {
+                            "URI": "store4/mount1/assets/p8860529_e_v8_aa.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "URI": "store4/mount1/assets/p8860529_e_h10_aa.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 7.090068,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "endTime": 1483529700000,
+                    "type": "VOD",
+                    "startTime": 1481112000000,
+                    "id": "IBMSnagra13208322",
+                    "channelTag": "COM",
+                    "offerType": "Subscription"
+                }
+            ]
+        },
+        {
+            "hitType": "tag",
+            "id": "000000407589",
+            "guid": null,
+            "metadata": {
+                "episodeTitle": "Kid Juggalo",
+                "displaySEpNum": "true",
+                "contentType": "PROGRAM",
+                "episodeNumber": 17,
+                "consumerAdvice": "s a",
+                "title": "Tosh.0",
+                "programId": "000000407589",
+                "yearOfRelease": 2012,
+                "subGenreId": 3,
+                "subGenreName": "Comedy",
+                "seasonNumber": 4,
+                "publishDuration": "PT25M",
+                "category": "TV_EPS",
+                "shortSynopsis": "Daniel Tosh takes a byte out of the internet with viral videos and digital celebrities. The Juggalo Kid gets a web redemption, Daniel introduces new internet challenges, and slap, lick, fondle goes global.",
+                "classification": "MA",
+                "titleId": "255770",
+                "genreId": 2,
+                "isSubtitled": "false"
+            },
+            "images": {
+                "default": {
+                    "portrait": [
+                        {
+                            "URI": "store4/mount1/assets/p9252977_e_v8_ab.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "URI": "store4/mount1/assets/p9252977_e_h10_ab.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 7.040911,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "type": "LINEAR",
+                    "endTime": 1484136000000,
+                    "seriesLink": "339746",
+                    "id": "COM81695724",
+                    "startTime": 1484134500000,
+                    "isWidescreen": true,
+                    "channelTag": "COM",
+                    "hasClosedCaptions": true,
+                    "audioType": "stereo"
+                },
+                {
+                    "hitType": "tag",
+                    "type": "LINEAR",
+                    "endTime": 1484143200000,
+                    "seriesLink": "T339746",
+                    "id": "CO281699304",
+                    "startTime": 1484141700000,
+                    "isWidescreen": true,
+                    "channelTag": "CO2",
+                    "hasClosedCaptions": true,
+                    "audioType": "stereo"
+                }
+            ]
+        },
+        {
+            "hitType": "tag",
+            "id": "9379823",
+            "guid": null,
+            "metadata": {
+                "episodeTitle": "Come Out To Play",
+                "contentType": "PROGRAM",
+                "episodeNumber": 3,
+                "consumerAdvice": "s a",
+                "title": "Legends Of Chamberlain Heights",
+                "programId": "9379823",
+                "yearOfRelease": 2015,
+                "subGenreId": 3,
+                "subGenreName": "Comedy",
+                "seasonNumber": 1,
+                "publishDuration": "PT25M",
+                "category": "TV_EPS",
+                "shortSynopsis": "After Grover's ratty shoes turn him into the laughing stock of the internet, he decides that it's time to step into some new kicks: the latest phenomenon in basketball shoes, Shackles.",
+                "classification": "MA",
+                "titleId": "346849",
+                "genreId": 2,
+                "isSubtitled": "false"
+            },
+            "images": {
+                "default": {
+                    "portrait": [
+                        {
+                            "URI": "store1/mount1/COM/2016/I@067474.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "URI": "store1/mount1/COM/2016/I@067474_L.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 6.997987,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "endTime": 1483960200000,
+                    "type": "VOD",
+                    "startTime": 1481542800000,
+                    "id": "IBMSnagra13209934",
+                    "channelTag": "COM",
+                    "offerType": "Subscription"
+                }
+            ]
+        },
+        {
+            "hitType": "tag",
+            "id": "000000363590",
+            "guid": null,
+            "metadata": {
+                "contentType": "PROGRAM",
+                "consumerAdvice": "l s",
+                "title": "Chris Rock: Kill The Messenger",
+                "programId": "000000363590",
+                "yearOfRelease": 2009,
+                "subGenreId": 3,
+                "subGenreName": "Comedy",
+                "publishDuration": "97 Mins",
+                "category": "TV_NO_EPS",
+                "shortSynopsis": "Chris Rock delivers his unique take on social, political and celebrity issues from three international stages: South Africa's Carnival City Casino, London's Carling Apollo Hammersmith and New York's legendary Apollo Theatre.",
+                "classification": "MA15+",
+                "titleId": "257368",
+                "genreId": 2,
+                "isSubtitled": "false"
+            },
+            "images": {
+                "default": {
+                    "portrait": [
+                        {
+                            "URI": "store1/mount1/COM/2016/I@059535.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "URI": "store1/mount1/COM/2016/I@059535_L.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 6.940223,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "endTime": 1485181800000,
+                    "type": "VOD",
+                    "startTime": 1482595200000,
+                    "id": "IBMSnagra13476665",
+                    "channelTag": "COM",
+                    "offerType": "Subscription"
+                }
+            ]
+        },
+        {
+            "hitType": "tag",
+            "id": "000000487511",
+            "guid": null,
+            "metadata": {
+                "episodeTitle": "Gayborhood",
+                "displaySEpNum": "true",
+                "contentType": "PROGRAM",
+                "episodeNumber": 5,
+                "consumerAdvice": "s",
+                "title": "Workaholics",
+                "programId": "000000487511",
+                "yearOfRelease": 2015,
+                "subGenreId": 3.0,
+                "subGenreName": "Comedy",
+                "seasonNumber": 5,
+                "publishDuration": "PT30M",
+                "category": "TV_EPS",
+                "cast": [
+                    {
+                        "name": "Anders Holm",
+                        "role": "actor"
+                    },
+                    {
+                        "name": "Blake Anderson",
+                        "role": "actor"
+                    },
+                    {
+                        "name": "Adam Devine",
+                        "role": "actor"
+                    },
+                    {
+                        "name": "Kyle Newacheck",
+                        "role": "actor"
+                    }
+                ],
+                "shortSynopsis": "A wild night at a neighbour's house leads the guys to question the nature of their relationship.",
+                "classification": "MA",
+                "titleId": "271064",
+                "isSubtitled": "false",
+                "genreId": 2.0
+            },
+            "images": {
+                "default": {
+                    "portrait": [
+                        {
+                            "URI": "store4/mount1/assets/p11421529_e_v8_aa.jpg"
+                        }
+                    ],
+                    "landscape": [
+                        {
+                            "URI": "store4/mount1/assets/p11421529_e_h10_aa.jpg"
+                        }
+                    ]
+                }
+            },
+            "score": 6.8441668,
+            "relevantSchedules": [
+                {
+                    "hitType": "tag",
+                    "endTime": 1485867599000,
+                    "type": "VOD",
+                    "startTime": 1469973600000,
+                    "id": "IBMSnagra12435535",
+                    "channelTag": "COM",
+                    "offerType": "Subscription"
+                }
+            ]
+        }
+    ]
+
+}

@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="o5/O5.js"
+      data-legacy-support='disabled'
+      data-app-resolution='1280x720'
+      data-gui-animations='enabled'></script>
+    <!-- namespace and constants -->
+    <script src="./namespace.js"></script>
+    <script src="./util/constants.js"></script>
+    <script src="./Version.js"></script>
+
+    <!-- configuration -->
+    <script src="./config/config.js"></script>
+    <script src="./config/development.js"></script>
+    <script src="./config/headend.js"></script>
+    <script src="./config/si.js"></script>
+    <script src="./config/tv.js"></script>
+    <script src="./config/settings.js"></script>
+    <script src="./config/unused.js"></script>
+    <!-- app utils -->
+    <script src="./util/Array.js"></script>
+    <script src="./util/Object.js"></script>
+    <script src="./util/Events.js"></script>
+    <script src="./util/DateTime.js"></script>
+    <script src="./util/ControlEvents.js"></script>
+    <script src="./util/Screens.js"></script>
+    <script src="./util/Functional.js"></script>
+    <script src="./util/LogConfig.js"></script>
+    <script src="./util/Fetch.js"></script>
+    <script src="./util/WebWorker.js"></script>
+    <script src="./util/Stack.js"></script>
+    <script src="./util/String.js"></script>
+    <script src="./util/Translations.js"></script>
+    <script src="./util/Control.js"></script>
+    <script src="./util/ViewManager.js"></script>
+    <script src="./util/PersistentCache.js"></script>
+    <script src="./util/PowerMgmt.js"></script>
+    <script src="./defaultKeyHandler.js"></script>
+
+    <script src="./util/ScreenHistoryManager.js"></script>
+    <!-- app actions -->
+    <script src="./actions/Navigate.js"></script>
+    <script src="./actions/EPG/Channel.js"></script>
+    <script src="./actions/settings/Scan.js"></script>
+    <script src="./actions/settings/AV.js"></script>
+    <script src="./actions/settings/IpNetwork.js"></script>
+    <script src="./actions/settings/Notifications.js"></script>
+    <script src="./actions/settings/Privacy.js"></script>
+    <script src="./actions/settings/ViewRestrictions.js"></script>
+    <script src="./actions/settings/TvGuide.js"></script>
+    <script src="./actions/settings/ChannelBlocking.js"></script>
+    <script src="./actions/settings/PinControl.js"></script>
+    <script src="./actions/app/OTVControlApp.js"></script>
+    <script src="./actions/app/LaunchAppUtil.js"></script>
+    <!-- services -->
+    <script src="./service/SDP/Base.js"></script>
+    <script src="./service/SDP/FoxtelSignon.js"></script>
+    <script src="./service/EPG/ChannelTempData.js"></script>
+    <script src="./service/EPG/Channel.js"></script>
+    <script src="./service/EPG/Event.js"></script>
+    <script src="./service/DISCO/Base.js"></script>
+    <script src="./service/DISCO/Map.js"></script>
+    <script src="./service/DISCO/Asset.js"></script>
+    <script src="./service/DISCO/Morelikethis.js"></script>
+    <script src="./service/DISCO/Search.js"></script>
+    <script src="./service/Map.js"></script>
+    <script src="./service/MDS/Base.js"></script>
+    <script src="./service/MDS/Map.js"></script>
+    <script src="./service/MDS/Node.js"></script>
+    <script src="./service/MDS/Asset.js"></script>
+    <script src="./service/MDS/Channel.js"></script>
+    <script src="./service/MDS/Programme.js"></script>
+    <script src="./service/MDS/Episode.js"></script>
+    <script src="./service/MDS/Editorial.js"></script>
+    <script src="./service/scan/DVBScanUtil.js"></script>
+    
+
+    <!-- settings -->
+    <script src="./service/settings/AV.js"></script>
+    <script src="./service/settings/Bluetooth.js"></script>
+    <script src="./service/settings/HardwareDetails.js"></script>
+    <script src="./service/settings/SystemDetails.js"></script>
+    <script src="./service/settings/IpNetwork.js"></script>
+    <script src="./service/settings/TvGuide.js"></script>
+    <script src="./service/settings/ViewRestrictions.js"></script>
+    <script src="./service/settings/Notifications.js"></script>
+    <script src="./service/settings/PinService.js"></script>
+    <script src="./service/settings/Licences.js"></script>
+    <script src="./service/settings/FavouriteService.js"></script>
+    <script src="./service/settings/ChannelBlocking.js"></script>
+    <script src="./service/settings/WifiService.js"></script>
+    <script src="./service/settings/NetworkTestService.js"></script>
+
+
+
+    <!-- app data types -->
+    <script src="./data/Collection.js"></script>
+    <!-- app gui controls and components -->
+    <script src="./gui/controls/HtmlItem.js"></script>
+    <script src="./gui/controls/HtmlFocusItem.js"></script>
+    <script src="./gui/controls/HtmlListItem.js"></script>
+    <script src="./gui/controls/HtmlGridItem.js"></script>
+    <script src="./gui/controls/HtmlList.js"></script>
+    <script src="./gui/controls/HtmlFocusList.js"></script>
+    <script src="./gui/controls/HtmlScrollList.js"></script>
+    <script src="./gui/controls/HtmlFlexList.js"></script>
+    <script src="./gui/controls/HtmlPagedList.js"></script>
+    <script src="./gui/controls/HtmlTable.js"></script>
+    <script src="./gui/controls/HtmlGrid.js"></script>
+    <script src="./gui/controls/HtmlSelector.js"></script>
+    <script src="./gui/controls/HtmlInputTextBox.js"></script>
+    <script src="./gui/controls/callToActionBar/CallToActionList.js"></script>
+    <script src="./gui/controls/callToActionBar/CallToActionConfig.js"></script>
+    <script src="./gui/controls/MenuItem.js"></script>
+    <script src="./gui/controls/GridMenu.js"></script>
+    <script src="./gui/controls/Menu.js"></script>
+    <script src="./gui/controls/ProgressBar.js"></script>
+    <script src="./gui/controls/EventProgressBar.js"></script>
+    <script src="./gui/controls/HtmlVolumeBar.js"></script>
+    <script src="./gui/controls/HtmlPinEntry.js"></script>
+    <script src="./gui/controls/Clock.js"></script>
+    <script src="./gui/controls/HtmlDialogContainer.js"></script>
+    <script src="./gui/controls/HtmlDialog.js"></script>
+    <script src="./gui/controls/TogglePanel.js"></script>
+    <script src="./gui/controls/Keyboard.js"></script>
+    <script src="./gui/controls/KeyboardGrid.js"></script>
+    <script src="./gui/controls/KeyboardConfig.js"></script>
+
+    <!-- dialogs -->
+    <script src="./gui/controls/dialog/DialogAcquiring.js"></script>
+    <script src="./gui/controls/dialog/DialogAudioAndCcOptions.js"></script>
+    <script src="./gui/controls/dialog/DialogBookablePromo.js"></script>
+    <script src="./gui/controls/dialog/DialogBookmarks.js"></script>
+    <script src="./gui/controls/dialog/DialogBookmarksJumpToTime.js"></script>
+    <script src="./gui/controls/dialog/DialogConfirm.js"></script>
+    <script src="./gui/controls/dialog/DialogDisambiguation.js"></script>
+    <script src="./gui/controls/dialog/DialogDisambiguationDelete.js"></script>
+    <script src="./gui/controls/dialog/DialogDisambiguationKeep.js"></script>
+    <script src="./gui/controls/dialog/DialogDisambiguationPlay.js"></script>
+    <script src="./gui/controls/dialog/DialogGenericErrorH.js"></script>
+    <script src="./gui/controls/dialog/DialogGenre.js"></script>
+    <script src="./gui/controls/dialog/DialogJoinOtherNetwork.js"></script>
+    <script src="./gui/controls/dialog/DialogOrder.js"></script>
+    <script src="./gui/controls/dialog/DialogOrderNowBanner.js"></script>
+    <script src="./gui/controls/dialog/DialogOrderWithPin.js"></script>
+    <script src="./gui/controls/dialog/DialogOtherTimes.js"></script>
+    <script src="./gui/controls/dialog/DialogPinEntryH.js"></script>
+    <script src="./gui/controls/dialog/DialogPinsDoMatch.js"></script>
+    <script src="./gui/controls/dialog/DialogPurchase.js"></script>
+    <script src="./gui/controls/dialog/DialogPurchaseMainEventOffline.js"></script>
+    <script src="./gui/controls/dialog/DialogPurchaseWithPin.js"></script>
+    <script src="./gui/controls/dialog/DialogRecordingClash.js"></script>
+    <script src="./gui/controls/dialog/DialogRecordOptions.js"></script>
+    <script src="./gui/controls/dialog/DialogResolveClash.js"></script>
+    <script src="./gui/controls/dialog/DialogReturnLiveTv.js"></script>
+    <script src="./gui/controls/dialog/DialogScanning.js"></script>
+    <script src="./gui/controls/dialog/DialogScrollableMessage.js"></script>
+    <script src="./gui/controls/dialog/DialogSearchFilter.js"></script>
+    <script src="./gui/controls/dialog/DialogSearchHomePopularResults.js"></script>
+    <script src="./gui/controls/dialog/DialogSort.js"></script>
+    <script src="./gui/controls/dialog/DialogStandby.js"></script>
+    <script src="./gui/controls/dialog/DialogSubGenre.js"></script>
+    <script src="./gui/controls/dialog/DialogTcpIpConfig.js"></script>
+    <script src="./gui/controls/dialog/DialogTcpIpError.js"></script>    
+
+    <!-- channel entry -->
+    <script src="./gui/controls/channelEntry/ChannelEntryListItem.js"></script>
+    <script src="./gui/controls/channelEntry/ChannelEntryList.js"></script>
+    <script src="./gui/controls/channelEntry/ChannelEntry.js"></script>
+    <!-- synopsis view -->
+    <script src="./gui/controls/synopsis/SynopsisCallToActionList.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisOverviewPanel.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisEpisodePanel.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisEpisodesList.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisMorelikethisPanel.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisCastTable.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisCastTableCell.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisChannelLogo.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisDirectorTable.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisDirectorTableCell.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisCastPanel.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisNavmenuList.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisDetails.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisRating.js"></script>
+    <script src="./gui/controls/synopsis/SynopsisStatusActionsList.js"></script>
+    <!-- search views -->
+    <script src="./gui/controls/search/SearchKeyTitle.js"></script>
+    <script src="./gui/controls/search/SearchEntryText.js"></script>
+    <script src="./gui/controls/search/SearchEntryTextT9.js"></script>
+    <script src="./gui/controls/search/SearchNewButton.js"></script>
+    <script src="./gui/controls/search/SearchRecentList.js"></script>
+    <script src="./gui/controls/search/SearchPopularList.js"></script>
+    <script src="./gui/controls/search/SearchKeyList.js"></script>
+    <script src="./gui/controls/search/SearchResultsList.js"></script>
+    <script src="./gui/controls/search/SearchFullResultsList.js"></script>
+    <script src="./gui/controls/search/SearchFullQueryCallToActionList.js"></script>
+    <script src="./gui/controls/search/SearchKeysTable.js"></script>
+    <script src="./gui/controls/search/SearchButtonsList.js"></script>
+    <script src="./gui/controls/search/SearchQueryCallToActionList.js"></script>
+    <!-- settings views -->
+    <script src="./gui/controls/settings/SettingsCallToActionList.js"></script>
+    <script src="./gui/controls/settings/SettingsList.js"></script>
+    <script src="./gui/controls/settings/SettingsToggleList.js"></script>
+    <script src="./gui/controls/settings/SettingsTable.js"></script>
+    <script src="./gui/controls/settings/SettingsScan.js"></script>
+    <script src="./gui/controls/settings/SettingsStartScan.js"></script>
+    <script src="./gui/controls/settings/SettingsNetworkTest.js"></script>
+    <script src="./gui/controls/settings/SettingsLicences.js"></script>
+    <script src="./gui/controls/settings/SettingsChannelList.js"></script>
+	<script src="./gui/controls/settings/SettingsCategoryList.js"></script>
+	<script src="./gui/controls/settings/SettingsChannelMenuCategoryItem.js"></script>
+	<script src="./gui/controls/settings/SettingsChannelMenuChannelItem.js"></script>
+	<script src="./gui/controls/settings/SettingsChannelMenu.js"></script>
+	<script src="./gui/controls/settings/SettingsWifiConnectionList.js"></script>
+	<script src="./gui/controls/settings/SettingsWifiMenuList.js"></script>
+	<script src="./gui/controls/settings/SettingsEthernetMenuList.js"></script>
+	<script src="./gui/controls/settings/SettingsWifi.js"></script>
+	<script src="./gui/controls/settings/SettingsInputText.js"></script>
+	<script src="./gui/controls/settings/SettingsInternetStatusOverlay.js"></script>
+
+   <!-- TCP IP List view -->    
+	<script src="./views/settings/screenConfig/TcpIPConfig.js"></script>
+
+    <!-- guide view -->
+    <script src="./gui/controls/guide/GuideCallToActionList.js"></script>
+    <script src="./gui/controls/guide/GuideClock.js"></script>
+    <script src="./gui/controls/guide/GuideChannelList.js"></script>
+    <script src="./gui/controls/guide/GuideNowNextGrid.js"></script>
+    <script src="./gui/controls/guide/GuideGrid.js"></script>
+    <script src="./gui/controls/guide/GuideGridFuture.js"></script>
+    <script src="./gui/controls/guide/GuideGridReverse.js"></script>
+    <script src="./gui/controls/guide/GuideTimelineList.js"></script>
+    <script src="./gui/controls/guide/GuideMiniSynopsis.js"></script>
+    <script src="./gui/controls/guide/GuideChannelStack.js"></script>
+    <script src="./gui/controls/guide/GuideProgrammeList.js"></script>
+    <script src="./gui/controls/guide/GuideListingsSortList.js"></script>
+    <script src="./gui/controls/guide/GuideListingsProgList.js"></script>
+    <script src="./gui/controls/guide/GuideListingsFilter.js"></script>
+    <script src="./gui/controls/guide/GuideListingsSortby.js"></script>
+    <script src="./gui/controls/guide/GuideListingsShowOnly.js"></script>
+    <!-- surf view -->
+    <script src="./gui/controls/surf/SurfCallToActionList.js"></script>
+    <script src="./gui/controls/surf/SurfChannelBox.js"></script>
+    <script src="./gui/controls/surf/SurfChannelList.js"></script>
+    <script src="./gui/controls/surf/SurfEventsList.js"></script>
+    <script src="./gui/controls/surf/SurfFutureEventsList.js"></script>
+    <script src="./gui/controls/surf/SurfPastEventsList.js"></script>
+    <script src="./gui/controls/surf/SurfMiniSynopsis.js"></script>
+    <script src="./gui/controls/surf/SurfPlayerBar.js"></script>
+    <!-- player view -->
+    <script src="./gui/controls/player/PlayerTrickMode.js"></script>
+    <script src="./gui/controls/player/PlayerBufferText.js"></script>
+    <script src="./gui/controls/player/PlayerBanner.js"></script>
+    <script src="./gui/controls/player/PlayerMiniSynopsis.js"></script>
+    <script src="./gui/controls/player/PlayerCallToActionList.js"></script>
+    <!-- homeMenu view -->
+    <script src="./gui/controls/homeMenu/HomeCallToActionList.js"></script>
+    <script src="./gui/controls/homeMenu/HomeMenuList.js"></script>
+    <script src="./gui/controls/homeMenu/HomeSubMenuList.js"></script>
+    <script src="./gui/controls/homeMenu/HomeBreadcrumb.js"></script>
+    <script src="./gui/controls/homeMenu/HomeEpgGrid.js"></script>
+    <script src="./gui/controls/homeMenu/HomeSettingsGrid.js"></script>
+    <script src="./gui/controls/homeMenu/HomeGridCell.js"></script>
+    <script src="./gui/controls/portalMenu/PortalMenuList.js"></script>
+    <script src="./gui/controls/portalMenu/PortalBreadcrumb.js"></script>
+    <script src="./gui/controls/tileCarouselFlex/JumpoffList.js"></script>
+    <script src="./gui/controls/tileCarouselFlex/JumpoffListItem.js"></script>
+    <script src="./gui/controls/tileCarouselFlex/CarouselList.js"></script>
+    <script src="./gui/controls/tileCarouselFlex/CarouselRowList.js"></script>
+
+    <script src="./gui/controls/tileMosaic/TileMosaicPageList.js"></script>
+    <script src="./gui/controls/tileMosaic/TileMosaicPageListItem.js"></script>
+    <script src="./gui/controls/tileMosaic/TileMosaicColumnList.js"></script>
+    <script src="./gui/controls/tileMosaic/TileMosaicColumnListItem.js"></script>
+    <script src="./gui/controls/tileMosaic/TileMosaicTileList.js"></script>
+    <script src="./gui/controls/tileMosaic/TileMosaicTileListItem.js"></script>
+    <script src="./gui/controls/tileMosaic/TileMosaicScrollbar.js"></script>
+    <script src="Launch.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/foxtel-iq3.css">
+    <link rel="stylesheet" href="./css/controls.css">
+    <link rel="stylesheet" href="./css/action-bar.css">
+    <link rel="stylesheet" href="./css/spinner.css">
+    <link rel="stylesheet" href="./css/carousel.css">
+    <link rel="stylesheet" href="./gui/controls/channelEntry/channelEntry.css">
+    <title>Foxtel o5</title>
+  </head>
+  <body onload="Launch.load();">
+  <app-toggle-panel data-show-event="clock:show" data-hide-event="clock:hide">
+    <app-clock data-format="h:mmTT"></app-clock>
+  </app-toggle-panel>
+  <app-channel-entry class="hidden" tabindex="-1">
+    <div id="channelEntryNumber" class="channel-entry__number channel-number--large"></div>
+    <app-channel-entry-list id="channelEntryList" data-orientation="vertical">
+      <template>
+        <app-channel-entry-list-item></app-channel-entry-list-item>
+      </template>
+    </app-channel-entry-list>
+    <div id="channelEntryNoResult">
+      <p id="channelEntryNoResultTitle"></p>
+      <p id="channelEntryNoResultBody"></p>
+    </div>
+  </app-channel-entry>
+  <app-toggle-panel data-show-event="spinner:show" data-hide-event="spinner:hide" class="hidden">
+    <div id="spinner"></div>
+  </app-toggle-panel>
+    
+  <!-- #volume: class helpers [volume-muted, volume-hide]-->
+  <app-html-volume-bar id="volume" class="volume-hide">
+    <div id="volumeIcon"></div>
+    <div id="volumeBar"><div id="volumeBarFill"></div></div>
+    <div id="volumeMuteValue" data-i18n="volumeMute">MUTE</div>
+  </app-html-volume-bar>
+   <div id="Oxy-Notifications">
+   	<div id="Oxy-Notifications-0" class="notification"></div>
+   	</div>
+	<app-keyboard id="keyboardBg">
+    		<div id="keyboardBalloonTooltip"></div>
+        	<div id="keyboardContainer">
+            	<div id="keyboardTitle"></div>
+            	<div id="keyboardTextBox"></div>
+            	<div id="keyboardInstruction"></div>
+      			<div class="control-textbox-keyboard control-textbox-keyboard-active" style="left: 0px; top: 0px;">
+				    <app-keyboard-grid  id="keyboardGrid" data-row-id="keyborad-row-" data-row-class="keyborad-row-">
+	     				<template>
+		     				<app-keyboard-grid-cell class = "control-textbox-keyboard-key">
+		     					<div data-abc="true" class ="cellText"></div>
+		     				</app-keyboard-grid-cell>
+	     				</template>
+	     			</app-keyboard-grid>
+    			</div>
+       			<div class="control control-focused"><label></label>
+       			<div class="control-textbox">
+					<app-html-input-text-box id="foxtelKeyboardInput" class="control-textbox-input-highlight" contenteditable="true">
+					</app-html-input-text-box>
+				</div>
+				</div>
+   			</div>
+       		<div id="keyboardCta">
+            <span id="ctaKeyboardClose"><span class="btnBack"></span><span data-i18n="callToActionBack"></span></span>
+            <span id="ctaKeyboardDelete"><span class="btnYellow"></span><span data-i18n="callToActionDelete"></span></span>
+            <span id="ctaChangeKeyboard"><span class="btnBlue"></span><span data-i18n="callToActionChangeKeyboard"></span></span>
+            <span id="ctaShowPassword"><span class="btnGreen"></span><span class = "btnText" data-i18n="callToActionShowPassword"></span></span>
+        	</div>
+	</app-keyboard>
+
+  <div id="dialog">
+  	<!-- div: class helpers [show-dialog overlay]-->
+    <app-html-dialog id="genreDialog" class="overlay list-dialog">
+      <template>
+        <app-dialog-genre id="showGenre">
+          <div class="dialogBody">
+            <div class="dialogTitle" data-i18n="dialogGenre">Show</div>
+            <app-dialog-genre-list id="dialogGenreList" class="listView-list list">
+              <template>
+                <app-dialog-genre-list-item  class="listView-cell" ></app-dialog-genre-list-item>
+              </template>
+            </app-dialog-genre-list>
+          </div>
+          <div class="dialogCta"></div>
+        </app-dialog-genre>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="disambiguationDialog" class="overlay list-dialog">
+      <template>
+        <app-dialog-disambiguation>
+          <div class="dialogBody">
+            <div class="dialogTitleWrap">
+            <div class="dialogTitle" data-i18n="dialogDisambiguation"></div>
+            </div>
+            <div class="list"></div>
+          </div>
+          <div class="dialogCta">
+            <span>
+            <span class="btnBack"></span><span data-i18n="callToActionExit"></span></span>
+          </div>
+        </app-dialog-disambiguation>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="disambiguationKeepDialog" class="overlay list-dialog">
+      <template>
+        <app-dialog-disambiguation-keep>
+          <div class="dialogBody">
+            <div class="dialogTitleWrap">
+            <div class="dialogTitle" data-i18n="dialogDisambiguationKeep"></div>
+            </div>
+            <div class="list"></div>
+          </div>
+          <div class="dialogCta">
+            <span>
+            <span class="btnBack"></span><span data-i18n="callToActionExit"></span></span>
+          </div>
+        </app-dialog-disambiguation-keep>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="disambiguationDeleteDialog" class="overlay list-dialog">
+      <template>
+        <app-dialog-disambiguation-delete>
+          <div class="dialogBody">
+            <div class="dialogTitleWrap">
+            <div class="dialogTitle" data-i18n="dialogDisambiguationDelete"></div>
+            </div>
+            <div class="list"></div>
+          </div>
+          <div class="dialogCta">
+            <span>
+            <span class="btnBack"></span><span data-i18n="callToActionExit"></span></span>
+          </div>
+        </app-dialog-disambiguation-delete>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="otherTimesDialog" class="overlay list-dialog">
+      <template>
+        <app-dialog-other-times>
+          <div class="dialogBody">
+            <div class="dialogTitleWrap">
+            <div class="dialogTitle" data-i18n="dialogOtherTimes">
+            </div>
+            <div class="dialogText"></div>
+            </div>
+            <div class="list"></div>
+          </div>
+          <div class="dialogCta">
+            <span>
+            <span class="btnBack"></span><span data-i18n="callToActionExit"></span></span>
+            <span id="otherTimesRecord">
+            <span class="btnRecord"></span>
+            <span data-i18n="callToActionRecord"></span>
+            </span>
+            <span id="otherTimesRecordOptions">
+            <span class="btnRecord"></span>
+            <span data-i18n="callToActionRecordOptions"></span>
+            </span>
+            <span id="otherTimesSetReminder">
+            <span class="btnGreen"></span>
+            <span data-i18n="callToActionSetReminder"></span>
+            </span>
+            <span id="otherTimesRemoveReminder">
+            <span class="btnGreen"></span>
+            <span data-i18n="callToActionRemoveReminder"></span>
+            </span>
+          </div>
+        </app-dialog-other-times>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="disambiguationPlayDialog" class="overlay list-dialog">
+      <template>
+        <app-dialog-disambiguation-play>
+          <div class="dialogBody">
+          <div class="dialogTitleWrap">
+            <div class="dialogTitle" data-i18n="dialogDisambiguationPlay"></div>
+          </div>
+          <div class="list"></div>
+          </div>
+          <div class="dialogCta">
+          <span>
+            <span class="btnBack"></span><span data-i18n="callToActionExit"></span></span>
+          </div>
+        </app-dialog-disambiguation-play>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="subGenreDialog" class="overlay list-dialog">
+      <template>
+        <app-dialog-sub-genre id="showSubGenre">
+          <div class="dialogBody">
+            <span class="dialogTitle" data-i18n="dialogSubGenre">Select Sub Genre</span>
+            <app-dialog-sub-genre-list id="dialogSubGenreList" class="listView-list list">
+            <template>
+              <app-dialog-sub-genre-list-item class="listView-cell"></app-dialog-sub-genre-list-item>
+            </template>
+            </app-dialog-sub-genre-list>
+          </div>
+          <div class="dialogCta"></div>
+        </app-dialog-sub-genre>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="searchFilterDialog" class="overlay list-dialog">
+      <template>
+        <app-dialog-search-filter id="showSearchFilter">
+          <div class="dialogBody">
+            <span class="dialogTitle" data-i18n="dialogSearchFilter">Filter Results</span>
+            <app-dialog-search-filter-list id="dialogSearchFilterList" class="listView-list list">
+              <template>
+                <app-dialog-search-filter-list-item  class="listView-cell" ></app-dialog-search-filter-list-item>
+              </template>
+            </app-dialog-search-filter-list>
+          </div>
+          <div class="dialogCta">
+            <span>
+              <span class="btnBack"></span><span data-i18n="callToActionExit"></span></span>
+          </div>
+        </app-dialog-search-filter>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="sortDialog" class="overlay list-dialog">
+      <template>
+        <app-dialog-sort>
+          <div class ="dialogBody">
+          <span class="dialogTitle" data-i18n="dialogSortBy"></span>
+          <div class="list"></div>
+          </div>
+          <div class="dialogCta">
+          <span>
+            <span class="btnBack"></span><span data-i18n="callToActionExit"></span></span>
+          </div>
+        </app-dialog-sort>
+      </template>
+    </app-html-dialog>
+    <!-- class helpers [addBookmark, removeBookmark] -->
+    <app-html-dialog id="bookmarksDialog" class="overlay list-dialog addBookmark">
+      <template>
+        <app-dialog-bookmarks id="showBookmarks">
+          <div class="dialogBody">
+            <span class="dialogTitle" data-i18n="dialogBookmarks">Jump to</span>
+            <app-dialog-bookmarks-list id="dialogBookmarksList" class="listView-list list">
+              <template>
+                <app-dialog-bookmarks-list-item class="listView-cell">
+                  <div class="bookmarkName"></div>
+                  <div class="bookmarkTime"></div>
+                </app-dialog-bookmarks-list-item>
+              </template>
+            </app-dialog-bookmarks-list>
+          </div>
+          <div class="dialogCta">
+          <span>
+            <span class="btnBack"></span><span data-i18n="callToActionExit">EXIT</span>
+          </span>
+            <span id="addBookmark">
+            <span class="btnRed"></span>
+            <span data-i18n="callToActionSetBookmark">ADD BOOKMARK</span>
+          </span>
+            <span id="removeBookmark">
+            <span class="btnRed"></span>
+            <span data-i18n="callToActionRemoveBookmark"></span>
+          </span>
+          </div>
+        </app-dialog-bookmarks>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="dialogBookablePromo" class="list-dialog">
+      <template>
+        <app-dialog-bookable-promo id="dialogBookablePromoInner">
+          <div class="dialogBody">
+            <div class="dialogTitle" id="evtPromoTitle">#{dialog.text}</div>
+            <div class="list"></div>
+          </div>
+          <div class="dialogCta">
+            <span>
+              <span class="btnSelect"></span>
+              <span data-i18n="callToActionRecord"></span>
+            </span>
+            <span>
+              <span class="btnBack"></span><span data-i18n="callToActionExit"></span></span>
+          </div>
+        </app-dialog-bookable-promo>
+      </template>
+    </app-html-dialog>
+    <!-- #dialogRecordOptions: class helpers [show]-->
+    <app-html-dialog id="dialogRecordOptions" class="overlay">
+      <template>
+        <app-dialog-record-options>
+          <div class ="dialogBody">
+            <div class="dialogTitle" data-i18n="dialogRecordOptionsForText"></div>
+            <div class="dialogText" id="evtTitle">#{dialog.text}</div>
+            <ul>
+              <!-- li: class helpers [focused]-->
+              <li id="seriesLinked" class="focused">
+                <span data-i18n="dialogRecordOptionsSeriesLabel"></span>
+                <span id="dialogRecordOptionsSeriesLinked"></span>
+              </li>
+              <li id="extendByList">
+                <span data-i18n="dialogRecordOptionsExtendLabel"></span>
+                <span id="dialogRecordOptionsExtendBy"></span>
+              </li>
+              <li>
+                <span data-i18n="dialogRecordOptionsMarkAsLabel"></span>
+                <span id="dialogRecordOptionsMarkAs"></span>
+              </li>
+            </ul>
+          </div>
+          <div class="dialogCta">
+            <span>
+              <span class="btnSelect"></span>
+              <span data-i18n="callToActionApply"></span>
+            </span>
+            <span id="dialogRecordOptionsCancelRecord">
+              <span class="btnRed"></span>
+              <span data-i18n="callToActionCancelRecord"></span>
+            </span>
+            <span>
+              <span class="btnBack"></span><span data-i18n="callToActionBack"></span></span>
+          </div>
+        </app-dialog-record-options>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="bookmarksJumpToTimeDialog" class="overlay list-dialog">
+      <template>
+        <app-dialog-bookmarks-jump-to-time id="showBookmarksJumpTo">
+          <div class="dialogBody">
+            <div class="title dialogTitle" data-i18n="dialogBookmarksJumpTo"></div>
+            <div class="text dialogText" data-i18n="dialogBookmarksJumpToText"></div>
+            <div class="dialogOptions">
+              <app-jump-to-time-box id="jumpToTimeBox" class="numberInput minutes-textbox-input"></app-jump-to-time-box>
+              <div class="inputText" data-i18n="dialogBookmarksJumpToMinutes">minutes</div>
+            </div>
+          </div>
+          <div class="dialogCta">
+            <span>
+              <span class="btnBack"></span><span data-i18n="callToActionBack"></span></span>
+            <span>
+              <span class="btnSelect"></span>
+              <span data-i18n="callToActionApply"></span>
+            </span>
+          </div>
+        </app-dialog-bookmarks-jump-to-time>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="audioAndCCOptionsDialog">
+      <template>
+        <app-dialog-audio-and-cc-options id="showAudioAndCcDialog">
+          <div class="dialogBody">
+            <!-- li: class helpers [focused]-->
+            <div>
+            <span data-i18n="audioAndCCOptionsCCLabel">Closed Captions</span>
+            <app-audio-and-cc-options-cc class="focused" id="audioAndCcOptionsCc"></app-audio-and-cc-options-cc>
+            </div>
+            <div>
+            <span data-i18n="audioAndCCAudioLangLabel">Audio Language</span>
+            <app-audio-and-cc-options-audio id="audioAndCcOptionsAudioLang"></app-audio-and-cc-options-audio>
+            </div>
+          </div>
+          <div class="dialogCta">
+            <span>
+              <span class="btnSelect"></span>
+              <span data-i18n="callToActionApply"></span>
+            </span>
+            <span>
+              <span class="btnBack"></span><span data-i18n="callToActionBack"></span></span>
+					</div>
+        </app-dialog-audio-and-cc-options>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="scanningDialog" class="overlay">
+      <template>
+        <app-dialog-scanning>
+          <div class="dialogBody">
+            <div id ="scanningDialogTitle" class="dialogTitle" data-i18n="installerScanDialogTitle"></div>
+            <div id ="scanningDialogText" class="dialogText"></div>
+            <div class="dialogCta">
+              <span>
+                <span class="btnBack"></span><span data-i18n="callToActionBack"></span></span>
+            </div>
+          </div>
+        </app-dialog-scanning>
+      </template>
+    </app-html-dialog>
+
+    <app-html-dialog id="tcpIPConfigDialog"  class="overlay list-dialog">
+      <template>
+        <app-dialog-tcp-ip-config id="tcpIpContainer">
+          <div id="tcpIpDialogTitle" class="dialogTitle" data-i18n="settingsMenuTitleTcpIPConfig"></div>
+          <div id="tcpIpDialogBody"class ="dialogBody">
+            <app-dialog-tcp-ip-list id="tcpIPConfigList" data-config="app.screenConfig.settings.TCPIP">
+	            <template>
+	              <app-dialog-tcp-ip-list-item class="tcpIpConfigListItem">
+	               <span class= "tcpIpListItemLabel"></span>
+                   <span class= "tcpIpListItemValue"></span>
+	              </app-dialog-tcp-ip-list-item>
+	            </template>
+            </app-dialog-tcp-ip-list>
+            </div>
+          <div id="tcpIpDialogCta" class="dialogCta">
+            <span>
+              <span class="btnBack"></span><span data-i18n="callToActionBack"></span></span>
+            <span>
+              <span class="btnSelect"></span>
+              <span data-i18n="callToActionSaveSettings"></span>
+            </span>
+            <!-- <span>
+              <span class="btnYellow"></span>
+              <span data-i18n="callToActionUndoChanges"></span>
+            </span> -->
+            <span id="tcpIpErrorCode" class="errorCode">F0200</span>
+          </div>
+        </app-dialog-tcp-ip-config>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="joinOtherNetworkDialog" class="overlay">
+      <template>
+        <app-dialog-join-other-network>
+          <div class="dialogTitle" data-i18n="joinOtherNetworkDialogTitle"></div>
+          <div class="dialogBody">
+            <ul id="joinOtherNetworkDialogList">
+              <li>
+                <span data-i18n="joinOtherNetworkDialogNetworkName"></span>
+                <span id="joinOtherNetworkDialogNetworkName" class="keyboard"></span>
+              </li>
+              <li>
+                <span data-i18n="joinOtherNetworkDialogSecurity"></span>
+                <span id="joinOtherNetworkDialogSecurity"></span>
+              </li>
+              <li>
+                <span data-i18n="joinOtherNetworkDialogIPConfig"></span>
+                <span id="joinOtherNetworkDialogIPConfig"></span>
+              </li>
+            </ul>
+            <div id="joinOtherNetworkDialogConnect" data-i18n="joinOtherNetworkDialogConnect"></div>
+          </div>
+          <div class="dialogCta">
+            <span>
+              <span class="btnBack"></span><span data-i18n="callToActionBack"></span></span>
+              <span id="joinOtherNetworkDialogCTAKeyboard">
+              <span class="btnSelect"></span>
+              <span data-i18n="callToActionKeyboard"></span>
+            </span>
+            <span id="joinOtherNetworkDialogCTAIPConfig">
+              <span class="btnSelect"></span>
+              <span data-i18n="callToActionTCPIPSettings"></span>
+            </span>
+          </div>
+        </app-dialog-join-other-network>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="dialogResolveClash" class="dialogResolveClash overlay">
+      <template>
+        <app-dialog-resolve-clash>
+          <div class="dialogBody">
+            <div class="dialogStage"></div>
+            <div class="dialogTitle" data-i18n="F1131Title"></div>
+            <div class="dialogEventTitle"></div>
+            <div class="dialogText" data-i18n="F1131Description"></div>
+            <div class="dialogOptions"></div>
+          </div>
+          <div class="dialogCta">
+            <span class="errorCode">F1131</span>
+          </div>
+        </app-dialog-resolve-clash>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="dialogConfirm">
+      <template>
+        <app-dialog-confirm id="#{dialog.name}" class="dialogConfirm #{dialog.orientation} #{dialog.cssClasses}">
+          <div>
+            <div class="dialogBody">
+              <div class="dialogTitle">#{dialog.title}</div>
+              <div class="dialogText">#{dialog.text}</div>
+              <div class="dialogOptions"></div>
+              <div class="dialogDescription #{showDesc}">
+                <span data-i18n="dialogDeleteAllDescription"></span>
+                <span>#{description}</span>
+              </div>
+            </div>
+            <div class="dialogCta">
+              <span class="ctaSelect"><span class="btnSelect"></span><span data-i18n="#{dialog.selectTranslation}"></span></span>
+              <span class="ctaBack"><span class="btnBack"></span><span data-i18n="#{dialog.backTranslation}"></span></span>
+              <span class="errorCode">#{dialog.errorCode}</span>
+            </div>
+          </div>
+        </app-dialog-confirm>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="dialogRecordingClash">
+      <template>
+        <app-dialog-recording-clash id="#{dialog.name}" class="dialogConfirm dialogRecordingClash #{dialog.orientation} #{dialog.cssClasses}">
+          <div>
+            <div class="dialogBody">
+              <div class="dialogTitle" data-i18n="#{dialog.errorCode}Title"></div>
+              <div class="dialogEventTitle">#{dialog.text}</div>
+              <div class="dialogText" data-i18n="#{dialog.errorCode}Description"></div>
+              <div class="dialogConflicts">#{dialog.conflicts}</div>
+              <div class="dialogOptions"></div>
+            </div>
+            <div class="dialogCta">
+              <span class="errorCode">#{dialog.errorCode}</span>
+            </div>
+          </div>
+        </app-dialog-recording-clash>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="returnLiveTV">
+      <template>
+        <app-dialog-return-live-tv id="#{dialog.name}" class="dialogConfirm returnLiveTV #{dialog.orientation} #{dialog.cssClasses}">
+          <div>
+            <div class="dialogBody">
+              <div class="dialogTitle" data-i18n="#{dialog.errorCode}Title"></div>
+              <div class="dialogText" data-i18n="#{dialog.errorCode}Description"></div>
+              <div class="dialogOptions"></div>
+            </div>
+            <div class="dialogCta">
+              <span class="errorCode">#{dialog.errorCode}</span>
+            </div>
+          </div>
+        </app-dialog-return-live-tv>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="dialogGenericErrorH">
+      <template>
+        <app-dialog-generic-error-h id="#{dialog.name}" class="dialogConfirm">
+          <div>
+            <div class="dialogBody">
+              <div class="title dialogTitle">#{dialog.title}</div>
+              <div class="text dialogText">#{dialog.text}</div>
+              <div class="subText dialogSubText">#{dialog.subText}</div>
+            </div>
+            <div class="dialogCta">
+              <span class="okAction"><span class="btnSelect"></span><span class="txtSelect" data-i18n="#{dialog.okTranslationKey}"></span></span>
+              <span class="backAction"><span class="btnBack"></span><span class="txtBack" data-i18n="#{dialog.backTranslationKey}"></span></span>
+              <span class="errorCode">#{dialog.errorCode}</span>
+            </div>
+          </div>
+        </app-dialog-generic-error-h>
+      </template>
+    </app-html-dialog>
+
+    <app-html-dialog id="DialogTcpIpError">
+      <template>
+        <app-dialog-tcp-ip-error id="#{dialog.name}" class="dialogConfirm">
+          <div>
+            <div class="dialogBody">
+              <div class="title dialogTitle">#{dialog.title}</div>
+              <div class="text dialogText">#{dialog.text}</div>
+              <div class="subText dialogSubText">#{dialog.subText}</div>
+            </div>
+            <div class="dialogCta">
+              <span class="okAction"><span class="btnSelect"></span><span class="txtSelect" data-i18n="#{dialog.okTranslationKey}"></span></span>
+              <span class="backAction"><span class="btnBack"></span><span class="txtBack" data-i18n="#{dialog.backTranslationKey}"></span></span>
+              <span class="errorCode">#{dialog.errorCode}</span>
+            </div>
+          </div>
+        </app-dialog-tcp-ip-error>
+      </template>
+    </app-html-dialog>
+
+    <app-html-dialog id="dialogScrollableMessage">
+      <template>
+        <app-dialog-scrollable-message id="#{dialog.name}" class="dialogScrollableMessage">
+          <div>
+            <div class="dialogBody">
+              <div class="dialogTextOuter">
+                <div class="dialogTextInner">#{text}</div>
+              </div>
+              <div class="scrollbar"></div>
+            </div>
+            <div class="dialogCta">
+              <span class="backAction"><span class="btnBack"></span><span class="txtBack" data-i18n="#{dialog.backTranslationKey}"></span></span>
+              <span class="errorCode">#{dialog.errorCode}</span>
+            </div>
+          </div>
+        </app-dialog-scrollable-message>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="dialogAcquiringDialogs">
+      <template>
+        <app-dialog-acquiring id="#{dialog.name}" class="dialogConfirm">
+          <div>
+            <div class="dialogBody">
+              <div class="dialogTitle">#{dialog.title}</div>
+              <div class="dialogText">#{dialog.text}<span class="percentageComplete">0</span></div>
+              <div class="dialogSubText">#{dialog.subText}</div>
+            </div>
+            <div class="dialogCta">
+              <span class="okAction"><span class="btnSelect"></span><span class="txtSelect" data-i18n="#{dialog.okTranslationKey}"></span></span>
+              <span class="backAction"><span class="btnBack"></span><span class="txtBack" data-i18n="#{dialog.backTranslationKey}"></span></span>
+              <span class="errorCode">#{dialog.errorCode}</span>
+            </div>
+          </div>
+        </app-dialog-acquiring>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="searchHomePopularResults">
+      <template>
+        <app-dialog-search-home-popular-results class="searchRecentPopularMatch">
+          #{getQuery}
+        </app-dialog-search-home-popular-results>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="dialogPinEntryH" class="overlay">
+      <template>
+        <app-dialog-pin-entry-h id="enterPIN" class="dialogPinEntryH">
+          <div class="dialogBody">
+            <div id="dialogPinEntryTitle" class="title dialogTitle"></div>
+            <div id="dialogPinEntryText" class="text dialogText"></div>
+            <div class="subText dialogText"></div>
+						<app-html-pin-entry id="dialogPinEntryH-pin" class="pinEntrySelection pinEntry-clear" data-digitsnb="4"></app-html-pin-entry>
+          </div>
+          <div class="dialogCta">
+            <span><span class="btnBack"></span><span class="txtBack" data-i18n="callToActionClose">Close</span></span>
+            <span class="errorCode"></span>
+          </div>
+        </app-dialog-pin-entry-h>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="standbyDialog">
+      <template>
+        <app-dialog-standby id="#{dialog.name}">
+          <div>
+            <div>
+              <div class="standbyText" data-i18n="#{dialog.errorCode}Description"></div>
+            </div>
+            <div class="standbyCta">
+              <span><span class="btnBack"></span><span data-i18n="callToActionBack"></span></span>
+              <span class="errorCode">#{dialog.errorCode}</span>
+            </div>
+          </div>
+        </app-dialog-standby>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="purchaseDialogWithPin">
+      <template>
+        <app-dialog-purchase-with-pin id="#{dialog.name}">
+          <div class="dialogBody #{dialog.data.nonPurchase}">
+            <div class="dialogTitle" data-i18n="#{dialog.data.errorCode}Title"></div>
+            <div id="purchaseTitle">
+              <span id="purchaseTitleText">#{dialog.data.title}</span>
+              <span id="purchaseTitleHD" class="#{dialog.data.hideHDFromTitle}">#{dialog.data.definition}</span>
+            </div>
+            <div id="purchaseContent">
+              <div id="purchasePrice">$#{dialog.data.price}</div>
+              <div id="purchasePriceDesc" data-i18n="#{dialog.data.errorCode}AddedToBill"></div>
+              <div id="purchaseText">
+                <p>
+                  <span data-i18n="#{dialog.data.errorCode}WillUse"></span>
+                  #{dialog.data.size}
+                  <span data-i18n="#{dialog.data.errorCode}OfData"></span>
+                  <span id="purchaseExpires">
+                    <br/>
+                    <span data-i18n="#{dialog.data.errorCode}Expires"></span>
+                    #{dialog.data.duration}
+                    <span data-i18n="#{dialog.data.errorCode}ExpiresFrom"></span>
+                  </span>
+                </p>
+                <p>
+                  <span data-i18n="#{dialog.data.errorCode}Broadband"></span>
+                </p>
+                <p>
+                  <span class="#{dialog.data.isPresentedHD}" data-i18n="#{dialog.data.errorCode}PresentedIn"></span><span class="#{dialog.data.hideCC}" data-i18n="#{dialog.data.errorCode}ClosedCaptions"></span>
+                </p>
+              </div>
+            </div>
+            <div id="purchasePin">
+							<app-html-pin-entry id="purchaseDialogWithPin-pin" class="pinEntrySelection pinEntry-clear" data-digitsnb="4"></app-html-pin-entry>
+              <div id="purchasePinText" class="text" data-i18n="#{dialog.data.errorCode}PinConfirm"></div>
+            </div>
+          </div>
+          <div class="dialogCta">
+            <span>
+              <span class="btnBack"></span><span class="txtBack" data-i18n="callToActionBack"></span></span>
+            <span class="errorCode">#{dialog.data.errorCode}</span>
+          </div>
+        </app-dialog-purchase-with-pin>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="purchaseDialog">
+      <template>
+        <app-dialog-purchase id="#{dialog.name}" class="noPin">
+          <div class="dialogBody #{dialog.data.nonPurchase}">
+            <div class="dialogTitle" data-i18n="#{dialog.data.errorCode}Title"></div>
+            <div id="purchaseTitle">
+              <span id="purchaseTitleText">#{dialog.data.title}</span>
+              <span id="purchaseTitleHD" class="#{dialog.data.hideHDFromTitle}">#{dialog.data.definition}</span>
+            </div>
+            <div id="purchaseContent">
+              <div id="purchasePrice">$#{dialog.data.price}</div>
+              <div id="purchasePriceDesc" data-i18n="#{dialog.data.errorCode}AddedToBill"></div>
+              <div id="purchaseText">
+                <p>
+                  <span data-i18n="#{dialog.data.errorCode}WillUse"></span>
+                  #{dialog.data.size}
+                  <span data-i18n="#{dialog.data.errorCode}OfData"></span>
+                  <span id="purchaseExpires">
+                    <br/>
+                    <span data-i18n="#{dialog.data.errorCode}Expires"></span>
+                    #{dialog.data.duration}
+                    <span data-i18n="#{dialog.data.errorCode}ExpiresFrom"></span>
+                  </span>
+                </p>
+                <p>
+                  <span data-i18n="#{dialog.data.errorCode}Broadband"></span>
+                </p>
+                <p>
+                  <span class="#{dialog.data.isPresentedHD}" data-i18n="#{dialog.data.errorCode}PresentedIn"></span><span class="#{dialog.data.hideCC}" data-i18n="#{dialog.data.errorCode}ClosedCaptions"></span>
+                </p>
+              </div>
+            </div>
+            <div id="purchaseBtnRent">#{dialog.data.buttonText}</div>
+          </div>
+          <div class="dialogCta">
+            <span class="backAction">
+              <span class="btnBack"></span><span class="txtBack" data-i18n="callToActionBack"></span></span>
+            <span class="errorCode">#{dialog.data.errorCode}</span>
+          </div>
+        </app-dialog-purchase>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="orderDialog">
+      <template>
+        <app-dialog-order id="#{dialog.name}">
+          <div class="dialogBody">
+            <div class="dialogTitle" data-i18n="#{dialog.errorCode}Title"></div>
+            <div id="purchaseTitle">
+              <span id="purchaseTitleText">#{dialog.data.title}</span>
+            </div>
+            <div id="purchaseContent">
+              <div id="purchasePrice">$#{dialog.data.price}</div>
+              <div id="purchasePriceDesc" data-i18n="#{dialog.errorCode}AddedToBill"></div>
+              <div id="purchaseText">
+                <p>
+                  <div id="purchaseText1">
+                    #{dialog.data.orderText1}
+                  </div>
+                </p>
+                <p>
+                  <div id="purchaseText2">
+                   <span data-i18n="#{dialog.errorCode}Expires1"></span>
+                    #{dialog.data.duration}
+                    <span data-i18n="#{dialog.errorCode}Expires2"></span>
+                    #{dialog.data.orderText2}
+                  </div>
+                </p>
+              </div>
+            </div>
+            <div id="purchaseBtnRent">#{dialog.data.buttonText}</div>
+          </div>
+          <div class="dialogCta">
+            <span>
+              <span class="btnBack"></span><span class="txtBack" data-i18n="callToActionBack"></span></span>
+            <span class="errorCode">#{dialog.errorCode}</span>
+          </div>
+        </app-dialog-order>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="orderDialogWithPin">
+      <template>
+        <app-dialog-order-with-pin id="#{dialog.name}">
+          <div class="dialogBody">
+            <div class="dialogTitle" data-i18n="#{dialog.errorCode}Title"></div>
+            <div id="purchaseTitle">
+              <span id="purchaseTitleText">#{dialog.data.title}</span>
+            </div>
+            <div id="purchaseContent">
+              <div id="purchasePrice">$#{dialog.data.price}</div>
+              <div id="purchasePriceDesc" data-i18n="#{dialog.errorCode}AddedToBill"></div>
+              <div id="purchaseText">
+                <p>
+                  <div id="purchaseText1">
+                    #{dialog.data.orderText1}
+                  </div>
+                </p>
+                <p>
+                  <div id="purchaseText2">
+                   <span data-i18n="#{dialog.errorCode}Expires1"></span>
+                    #{dialog.data.duration}
+                    <span data-i18n="#{dialog.errorCode}Expires2"></span>
+                    #{dialog.data.orderText2}
+                  </div>
+                </p>
+              </div>
+            </div>
+            <div id="purchasePin">
+							<app-html-pin-entry id="orderDialogWithPin-pin" class="pinEntrySelection pinEntry-clear" data-digitsnb="4"></app-html-pin-entry>
+              <div id="purchasePinText" class="text" data-i18n="#{dialog.errorCode}PinConfirm"></div>
+            </div>
+          </div>
+          <div class="dialogCta">
+            <span>
+              <span class="btnBack"></span><span class="txtBack" data-i18n="callToActionBack"></span></span>
+            <span class="errorCode">#{dialog.errorCode}</span>
+          </div>
+        </app-dialog-order-with-pin>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="purchaseMainEventOfflineDialog">
+      <template>
+        <app-dialog-purchase-main-event-offline id="#{dialog.name}">
+          <div class="dialogBody">
+            <div class="dialogTitle" data-i18n="#{dialog.errorCode}Title"></div>
+            <div id="purchaseTitle">
+              <span id="purchaseTitleText">#{dialog.data.title}</span>
+            </div>
+            <div id="purchaseContent">
+              <div id="purchasePrice">$#{dialog.data.price}</div>
+              <div id="purchasePriceDesc" data-i18n="#{dialog.errorCode}AddedToBill"></div>
+              <div id="purchaseText">
+                <p>
+                  <div id="purchaseText1">
+                    #{dialog.data.timeDetails}
+                  </div>
+                </p>
+              </div>
+            </div>
+            <div id="purchaseOfflineDesc"><span data-i18n="#{dialog.errorCode}OfflineDesc"></span></div>
+          </div>
+          <div class="dialogCta">
+            <span class="backAction">
+              <span class="btnBack"></span><span class="txtBack" data-i18n="callToActionBack"></span></span>
+            <span class="errorCode">#{dialog.errorCode}</span>
+          </div>
+        </app-dialog-purchase-main-event-offline>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="orderNowBannerDialog">
+      <template>
+        <app-dialog-order-now-banner id="#{dialog.name}">
+          <div class="dialogBody">
+            <div id="orderNowBannerContent">
+              <div id="orderNowBannerText">#{dialog.data.text}</div>
+            </div>
+            <div id="orderNowBannerBtnOrder" data-i18n="dialogOrderNow"></div>
+          </div>
+        </app-dialog-order-now-banner>
+      </template>
+    </app-html-dialog>
+    <app-html-dialog id="pinsDoMatch">
+      <template>
+        <app-dialog-pins-do-match id="#{dialog.name}" class="dialogConfirm pinsDoMatch #{dialog.orientation} #{dialog.cssClasses}">
+          <div>
+            <div class="dialogBody">
+              <div class="dialogTitle" data-i18n="#{dialog.errorCode}Title"></div>
+              <div class="dialogText" data-i18n="#{dialog.errorCode}Description"></div>
+							<app-html-pin-entry id="pinsDoMatch-pin" class="pinEntrySelection pinEntry-correct" data-digitsnb="4" data-entry="****"></app-html-pin-entry>
+            </div>
+            <div class="dialogCta">
+              <span class="backAction"><span class="btnBack"></span><span class="txtBack" data-i18n="callToActionClose"></span></span>
+              <span class="errorCode">#{dialog.errorCode}</span>
+            </div>
+          </div>
+        </app-dialog-pins-do-match>
+      </template>
+    </app-html-dialog>
+  </div> <!-- #dialog -->
+    <app-toggle-panel data-show-event="app:cta:show" data-hide-event="app:cta:hide"> <!-- //@hdk remove me!!! -->
+      <!-- Application Call To Action: class helpers [show, hide, ctaRedApp, ctaBlueApp, ctaGreenApp, ctaYellowApp]  -->
+      <div id="callToActionApplications" class="">
+        <span id="autoLaunchIcon"></span>
+      </div>
+    </app-toggle-panel>
+  </body>
+</html>

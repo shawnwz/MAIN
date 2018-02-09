@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+
+<script src="./SearchFullQuery.js"></script>
+
+<link rel="stylesheet" href="./searchFullQuery.css">
+
+<app-search-full-query id="searchFullQuery" class="">
+
+  <div class="onlyRel8Theme">
+    <div id="searchFullQuery" class=""> <!--oxygen-transition-none-prepareDisplay oxygen-transition-none-bringIn-->
+      <div id="searchFullTitle"></div>
+      <div id="searchFullFilter"></div>
+
+      <!-- searchContent: helper classes [loadingResults, showResults, searchFullResults] -->
+      <div id="searchFullResultsContent" class="">
+        <div id="searchFullLoadingResults"></div>
+        <div id="searchFullLoadingMoreResults"><div id="searchFullLoadingMoreResultsCell" data-i18n="searchLoadingMore"></div></div>
+        <div id="searchFullResultsContainer">
+          <div id="searchFullNoResultsFound" data-i18n="searchNoResults"></div>
+          <div id="searchFullScrollBar"><div class="scrollBarItemFill"></div></div>
+          <div id="searchFullResults" class="searchFullResultsListItem-container">
+
+            <app-search-full-results-list id="searchFullResults" class="searchFullResultsListItem-list searchFullResultsListItem-anim-normal">
+              <template>
+                <app-search-full-results-list-item class="searchFullResultsListItem-cell"> <!-- see also searchFullResultsListItemExtendedTemplate below -->
+                  <div class="searchFullResultsListItemContent">
+                    <div class="searchFullResultsMatch"></div>
+                    <div class="searchFullResultsType"></div>
+                  </div>
+                </app-search-full-results-list-item>
+              </template>
+            </app-search-full-results-list>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--onlyRel6Theme-->
+  <div class="onlyRel6Theme">
+    <div id="searchFullQuery" class=""> <!--oxygen-transition-none-prepareDisplay oxygen-transition-none-bringIn-->
+      <div id="searchFullTitle"></div>
+      <div id="searchFullFilter"></div>
+
+      <!-- searchContent: helper classes [loadingResults, showResults, loadingMoreResults] -->
+      <div id="searchFullResultsContent" class="">
+        <div id="searchFullLoadingResults"></div>
+        <div id="searchFullLoadingMoreResults"><div id="searchFullLoadingMoreResultsCell" data-i18n="searchLoadingMore"></div></div>
+        <div id="searchFullResultsContainer">
+          <div id="searchFullNoResultsFound" data-i18n="searchNoResults"></div>
+          <div id="searchFullScrollBar"><div class="scrollBarItemFill"></div></div>
+          <div id="searchFullResults" class="searchFullResultsListItem-container">
+
+            <app-search-full-results-list id="searchFullResults" class="searchFullResultsListItem-list searchFullResultsListItem-anim-normal">
+              <template>
+                <app-search-full-results-list-item class="searchFullResultsListItem-cell"> <!-- see also searchFullResultsListItemExtendedTemplate below -->
+                  <div class="searchFullResultsListItemContent">
+                    <div class="searchFullResultsMatch"></div>
+                    <div class="searchFullResultsType"></div>
+                  </div>
+                </app-search-full-results-list-item>
+              </template>
+            </app-search-full-results-list>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <template id="searchFullResultsListItemExtendedTemplate"> <!-- more extended version of the full search results -->
+    <div class="searchFullResultsListItemContent">
+      <div class="searchFullResultsTime"></div>
+      <div class="searchFullResultsLogo"></div>
+      <div class="searchFullResultsMatch"></div>
+      <div class="searchFullResultsType"></div>
+      <div class="searchFullResultsLocked"></div>
+    </div>
+    <div class="searchFullResultsListItemSynopsis">
+      <div class="searchFullResultsListItemInfo">
+        <div class="searchFullResultsDuration"></div>
+        <div class="searchFullResultsIcons"></div>
+        <div class="searchFullResultsRating" style="background-image:url()"></div>
+      </div>
+      <div class="searchFullResultsSynopsis"></div>
+      <div class="searchFullResultsImage"><img src="" class="poster" /></div>
+    </div>
+  </template>
+  <app-search-full-query-call-to-action-list id="ctaSearchFullQuery" class="callToActionList" data-screen="ctaSearchFullQuery"></app-search-full-query-call-to-action-list>
+</app-search-full-query>

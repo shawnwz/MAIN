@@ -1,0 +1,886 @@
+<html>
+	<head>
+		<title>
+			StormTest Test Log
+		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><style type="text/css">
+			p {margin: 0;font-family: "Arial";margin-bottom: 4px;}
+.ts {color:blue;font-style:italic;font-size:80%;margin-right:10px;font-weight:normal;}
+.meta{display:none;}
+.hidden{display:none;}
+.console .msg {color:gray;}
+.msg { margin-left: 20px;}
+.error {color:red;font-weight:bold;}
+.warning {color:orange;}
+.info {color:green;}
+.enter {color:black;}
+.return {color:grey;}
+.serial{color:#8B7765}
+.observe{color:#8B475D}
+.tracelevel {display: inline-block;width:5em;}
+.commenterror{color:red;font-weight:bold;}
+.commentwarning{color:orange}
+.commentinfo{color:#800080}
+.commentoff{color:#800080}
+.commentverbose{color:#c060c0}
+.comment{color:#800080}
+.modulename {display: inline-block;font-size: 60%;width:7em;display:none;}
+.debug {margin-left:0em;}
+.VideoFile { border-right-style:dotted; border-right-color:Black}
+.logviewer .nodetitle{cursor: pointer;min-height: 22px;line-height: 22px;font-weight: bold;font-family: monospace;padding-left: 18px;background: url("treeview-sprite.gif") no-repeat scroll 0 -4000px transparent;}
+.logviewer .collapsed .nodetitle {background: url("treeview-sprite.gif") no-repeat scroll 0 -6400px transparent;}
+.logviewer .nodetitle-pass {color: blue;}
+.logviewer .nodetitle-fail {color: red;}
+.logviewer .nodetitle-warn {color: orange;}
+.logviewer .nodetitle-serial {color: #8B7765;}
+.logviewer .nodetitle-observe {color: #8B475D;}
+.logviewer .nodetitle-console {color: gray;}
+.logviewer .nodetitle-verbose {color: #c060c0;}
+.logviewer .nodetitle-entry {color: blue;}
+.logviewer .nodecontent{position: relative;border: 1px solid;border-radius: 5px 5px 5px 5px;padding: 5px;margin-left: 7px;}
+.logviewer .collapsed .nodecontent {display:none;}
+.logviewer .nodecomment {display:none;}
+.logviewer .nodestyle {display:none;}
+.outerpad { margin-top: 50px; margin-bottom: 10px;}
+form img { cursor: pointer; }
+.openall { background: url("treeview-sprite.gif") no-repeat scroll 0 -6400px transparent; padding-left: 25px; padding-right: 20px; cursor: pointer;}
+.closeall { background: url("treeview-sprite.gif") no-repeat scroll 0 -4000px transparent; padding-left: 25px; padding-right: 20px; cursor: pointer;}
+.fixedTop {position: fixed; left: 14px; top: 0px; background: white; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;border: 1px solid; border-radius: 5px 5px 5px 5px; z-index:999;}
+.fixedRight {position: fixed; right: 10px; top: 18px; background: white; padding-right: 10px; padding-top: 10px; padding-bottom: 0px;border: 1px solid; border-radius: 5px 5px 5px 5px; z-index:999;}
+.fixedRightSummary {position: fixed; right: 10px; top: 0px; background: white; padding-right: 10px; z-index:999;font-family:verdana; font-size:80%;}
+.fixedRightMainLog {position: fixed; right: 10px; top: 0px; background: white; padding-right: 10px; z-index:999;font-family:verdana; font-size:80%;}
+.pages{ font-family:verdana; font-size:80%;}
+.pageNo { border:1px solid #CBCBCB; margin:1px 1px; padding:1px 1px;}
+.currentpage { font-weight: bold;}
+a:visited { color:#0000EE;}
+.disabled { color:#CBCBCB;}
+
+		</style>
+		<style type="text/css">
+			@import url(userstyles.css)
+		</style>
+		<script type="text/javascript" src="logpages.js">
+
+		</script><script type="text/javascript">
+			    var verboseClass=[]
+    var enterClass =[]
+    var returnClass =[]
+    var errorClass =[]
+    var consoleClass  = []
+    var serialClass =[]
+    var infoClass =[]
+    var serialObserverClass = []
+    var warningClassLong = []
+    var warningClassShort = []
+    var warningClass = []
+    var allNodes = []
+    function concatCollection(obj1,obj2){
+		var i;
+		var arr = new Array();
+		var len1 = obj1.length;
+		var len2 = obj2.length;
+		for (i=0; i<len1; i++)
+		{
+			arr.push(obj1[i]);
+		}
+		for (i=0; i<len2; i++)
+		{
+			arr.push(obj2[i]);
+		}
+		return arr;
+	}
+	onload = function () {
+        var i, nodeTitle;
+	    if (document.getElementsByClassName == undefined) {
+	        document.getElementsByClassName = function (className) {
+	            var hasClassName = new RegExp("(?:^|\\s)" + className + "(?:$|\\s)");
+	            var allElements = document.getElementsByTagName("*");
+	            var results = [];
+
+	            var element;
+	            for (var i = 0; (element = allElements[i]) != null; i++) {
+	                var elementClass = element.className;
+	                if (elementClass && elementClass.indexOf(className) != -1 && hasClassName.test(elementClass))
+	                    results.push(element);
+	            }
+	            return results;
+	        }
+	    }
+	    verboseClass = concatCollection(document.getElementsByClassName("verbose"), document.getElementsByClassName("commentverbose"));
+	    enterClass = document.getElementsByClassName("enter");
+	    returnClass = document.getElementsByClassName("return");
+	    errorClass = concatCollection(document.getElementsByClassName("error"), document.getElementsByClassName("commenterror"));
+	    consoleClass = document.getElementsByClassName("console");
+	    serialClass = document.getElementsByClassName("serial");
+	    serialObserverClass = document.getElementsByClassName("observe");
+	    infoClass = concatCollection(document.getElementsByClassName("info"), document.getElementsByClassName("commentinfo"));
+	    warningClass = concatCollection(document.getElementsByClassName("warning"), document.getElementsByClassName("commentwarning"));
+	    var nodeTitleClass = document.getElementsByClassName("nodetitle");
+	    for(i=0;nodeTitleClass[i]!=null;i++){
+	       nodeTitleClass[i].onclick = handleNodeClick;
+		}
+        var nodeStyleClass = document.getElementsByClassName("nodestyle");
+        for(i=0;nodeStyleClass[i]!=null;i++){
+            nodeTitle = nodeStyleClass[i].parentNode.children[0];
+            if (!String.prototype.trim)
+            {
+                UpdateClass('add',nodeTitle,'nodetitle-' + nodeStyleClass[i].innerHTML.replace(/^\s+|\s+$/g,'')); 
+            }
+            else 
+            {
+                UpdateClass('add',nodeTitle,'nodetitle-' + nodeStyleClass[i].innerHTML.trim());
+            }
+        }
+        var nodeCommentClass = document.getElementsByClassName("nodecomment");
+        for(i=0;nodeCommentClass[i]!=null;i++){
+            nodeTitle = nodeCommentClass[i].parentNode.children[0];
+            if (nodeCommentClass[i].innerHTML != '') {
+                nodeTitle.innerHTML = nodeTitle.innerHTML + " : " + nodeCommentClass[i].innerHTML;
+            }
+        }
+        allNodes = document.getElementsByClassName("node");
+        loadNodeImages(document.getElementById("outerpad"))
+		
+        CreatePageLinks();
+        CreateSummaryLink();
+
+		if (usingStormTestLogViewer)
+		{
+			if (showInfoFlag)
+			{
+				showInfo();
+			}
+			else
+			{
+				hideInfo();
+			}
+			
+			if (showConsoleFlag)
+			{
+				showConsole();
+			}
+			else
+			{
+				hideConsole();
+			}
+			
+			if (showVerboseFlag)
+			{
+				showVerbose();
+			}
+			else
+			{
+				hideVerbose();
+			}
+			
+			if (showErrorFlag)
+			{
+				showError();
+			}
+			else
+			{
+				hideError();
+			}
+			
+			if (showWarningFlag)
+			{
+				showWarning();
+			}
+			else
+			{
+				hideWarning();
+			}
+
+		}
+		else if (sessionStorageAvailable())
+		{
+		    if (getFromSessionStorage("showVerbose") == "False")
+		    {
+		        obj = document.getElementById("imgVerbose")
+		        if (obj != null)
+		        {
+		            obj.checked = false;
+		            processVerbose(obj);
+		        }
+		    }
+		
+		    if (getFromSessionStorage("showInfo") == "False")
+		    {
+		        obj = document.getElementById("imgInfo")
+		        if (obj != null)
+		        {
+		            obj.checked = false;
+		            processInfo(obj);
+		        }
+		    }
+		
+		    if (getFromSessionStorage("showWarning") == "False")
+		    {
+		        obj = document.getElementById("imgWarning")
+		        if (obj != null)
+		        {
+		            obj.checked = false;
+		            processWarning(obj);
+		        }
+		    }
+		
+		    if (getFromSessionStorage("showError") == "False")
+		    {
+		        obj = document.getElementById("imgError")
+		        if (obj != null)
+		        {
+		            obj.checked = false;
+		            processError(obj);
+		        }
+		    }
+		
+		    if (getFromSessionStorage("showConsole") == "False")
+		    {
+		        obj = document.getElementById("imgConsole")
+		        if (obj != null)
+		        {
+		            obj.checked = false;
+		            processConsole(obj);
+		        }
+		    }
+			
+		    if (getFromSessionStorage("showSerial") == "False")
+		    {
+		        obj = document.getElementById("imgSerial");
+		        if (obj != null)
+		        {
+		            obj.checked = false;
+		            processSerial(obj);
+		        }
+		    }
+		}
+	
+		var locationHash;
+		if (!String.prototype.trim) {
+		    locationHash = location.hash.slice(1).replace(/^\s+|\s+$/g,'');
+		} else {
+			locationHash = location.hash.slice(1).trim();
+		}
+		nodeIdsToReopen = getFromSessionStorage(window.location.pathname);
+		removeFromSessionStorage(window.location.pathname);
+		
+		if (nodeIdsToReopen) {
+			var nodes = document.getElementsByClassName("node");
+			nodeIdsSplit = nodeIdsToReopen.split(",");
+			for(i=0;nodes[i]!=null;i++){
+				for(j=0;j<nodeIdsSplit.length;j++) {
+					if (nodeIdsSplit[j] == nodes[i].getAttribute("nodeId")) {
+					    expandNode(nodes[i]);
+					    if ((locationHash) && (locationHash == nodeIdsSplit[j]))
+					    {
+					        nodes[i].scrollIntoView();
+					    }
+						break;
+					}
+				}
+			}
+		}
+		
+		if (locationHash) {
+		    var nodes = document.getElementsByClassName("node");
+		    for(i=0;nodes[i]!=null;i++){
+		        if (nodes[i].getAttribute("nodeId") == locationHash) {
+		            startNode = nodes[i];
+		            nodeToExpand = startNode;
+		            while (nodeToExpand != null){
+		                startNode.scrollIntoView();
+		                if (nodeToExpand.className != null && nodeToExpand.className == "node collapsed")
+		                {
+		                    expandNode(nodeToExpand);
+		                }
+		                nodeToExpand = nodeToExpand.parentNode;
+		            }
+		            startNode.scrollIntoView();
+		        }
+		    }
+		}
+	}
+	
+	var usingStormTestLogViewer = false;
+	var usingLogViewerSessionStorage = false;
+	var showInfoFlag = true;
+	var showConsoleFlag = true;
+	var showSerialFlag = true;
+	var showVerboseFlag = true;
+	var showErrorFlag = true;
+	var showWarningFlag = true;
+	var showPagesFlag = true;
+
+	function setHidden(info, console, serial, verbose, error, warning, pages)
+	{
+		<!-- Only ST Log Viewer will call this function. -->
+		usingStormTestLogViewer = true;
+		showInfoFlag = info;
+		showConsoleFlag = console;
+		showSerialFlag = serial;
+		showVerboseFlag = verbose;
+		showErrorFlag = error;
+		showWarningFlag = warning;
+        showPagesFlag = pages;
+	}
+
+	function setUsingLogViewerStorage(value)
+	{
+	    usingLogViewerSessionStorage = value;
+	}
+
+    function openAllNodes(){
+        for (var i=0; allNodes[i] != null;i++){
+            expandNode(allNodes[i]);
+        }
+    }
+
+    function closeAllNodes(){
+        for (var i=0; allNodes[i] != null;i++){
+            collapseNode(allNodes[i]);
+        }
+    }
+
+    function hideControls()
+    {
+        UpdateClass("add", document.getElementById("fixedTop"), "hidden");
+        UpdateClass("add", document.getElementById("fixedRight"), "hidden");
+        var rightSummary = document.getElementById("fixedRightSummary");
+        if (rightSummary != undefined)
+        {
+            UpdateClass("add",rightSummary , "hidden");
+        }
+        var rightMainLog = document.getElementById("fixedRightMainLog");
+        if (rightMainLog != undefined)
+        {
+            UpdateClass("add",rightMainLog , "hidden");
+        }
+        UpdateClass("remove", document.getElementById("outerpad"), "outerpad");
+        return 1;
+    }
+
+	function expandNode(node) {
+	    UpdateClass('remove',node,'collapsed');
+	    loadNodeImages(node);
+	    node.expanded = true;
+		rememberOpenedNode(node);
+	}
+	function collapseNode(node) {
+	    UpdateClass('add',node,'collapsed');
+	    node.expanded = false;
+		forgetOpenedNode(node);
+	}
+	function handleNodeClick() {
+	   var node = this.parentNode;
+	   if (node.expanded === undefined || node.expanded == false) {
+	       expandNode(node);
+	   } else {
+	       collapseNode(node);
+	   }
+	}
+	
+	function loadNodeImages(nodeDiv) {
+        var i, imgNodeId, imgSrc;
+	    var divNodeId = nodeDiv.getAttribute("nodeId");
+	    if (nodeDiv.imagesLoaded === undefined) {
+	        var imgArray = nodeDiv.getElementsByTagName("img");
+	        for(i=0;i<imgArray.length;i++) {
+	            imgNodeId = imgArray[i].getAttribute("nodeId");
+	            if (imgNodeId != null && imgNodeId != divNodeId) {
+	                continue;
+	            }
+                imgSrc = imgArray[i].getAttribute("src");
+                if (imgSrc === null || imgSrc == '') {
+                    imgArray[i].src = imgArray[i].getAttribute("_src");
+                }
+            }
+            nodeDiv.imagesLoaded = true;
+	    }
+    }
+
+	function rememberOpenedNode(node) {
+		if (sessionStorageAvailable()) {
+			nodeIdToAdd = node.getAttribute("nodeId");
+			nodeIds = getFromSessionStorage(window.location.pathname);
+			if (nodeIds == null) {
+				nodeIds = nodeIdToAdd.concat(",");
+			} else {
+				nodeIds = nodeIds.concat(nodeIdToAdd.concat(","));
+			}
+			setInSessionStorage(window.location.pathname, nodeIds);
+		}
+	}
+	
+	function forgetOpenedNode(node) {
+		if (sessionStorageAvailable()) {
+			nodeIdToRemove = node.getAttribute("nodeId");
+			nodeIds = getFromSessionStorage(window.location.pathname);
+			if (nodeIds != null) {
+				splitNodeIds = nodeIds.split(",");
+				nodeIds = "";
+				for (i=0;i<splitNodeIds.length;i++) {
+					if (splitNodeIds[i] != "" && nodeIdToRemove != splitNodeIds[i]) {
+						nodeIds = nodeIds.concat(splitNodeIds[i], ",");
+					}
+				}
+				setInSessionStorage(window.location.pathname, nodeIds);
+			}
+		}
+	}
+	
+	function processConsole(obj){
+		if( obj.checked == true ){
+			obj.src = "showLevel.png";
+			obj.checked = false;
+			showConsole();
+			setInSessionStorage("showConsole", "True");
+		}
+		else{
+			obj.src = "hideLevel.png";
+			obj.checked = true;
+			hideConsole();
+			setInSessionStorage("showConsole", "False");
+		}
+
+	}
+	function processSerial(obj){
+		if(obj.checked == true )
+		{
+			obj.src = "showLevel.png";
+			obj.checked = false;
+			showSerial();
+			setInSessionStorage("showSerial", "True");
+		}
+		else{
+			obj.src = "hideLevel.png";
+			obj.checked = true;
+			hideSerial();
+			setInSessionStorage("showSerial", "False");
+		}
+
+	}
+	function processInfo(obj)
+	{
+		if(obj.checked == true ){
+			obj.src = "showLevel.png";
+			obj.checked = false;
+			showInfo();
+			setInSessionStorage("showInfo", "True");
+		}
+		else{
+			obj.src = "hideLevel.png";
+			obj.checked = true;
+			hideInfo();
+			setInSessionStorage("showInfo", "False");
+		}
+	}
+    
+    function showInfo()
+    {
+        for(var i=0;infoClass[i]!=null;i++){
+            UpdateClass('remove',infoClass[i],'hidden');
+        }
+    }
+    
+    function hideInfo()
+    {
+        for(var i=0;infoClass[i]!=null;i++){
+            UpdateClass('add',infoClass[i],'hidden');
+        }
+    }
+
+    function showConsole()
+    {
+		for(var i=0;consoleClass[i]!=null;i++){
+			UpdateClass('remove',consoleClass[i],'hidden');
+		}
+    }
+
+    function hideConsole()
+    {
+		for(var i=0;consoleClass[i]!=null;i++){
+			UpdateClass('add',consoleClass[i],'hidden');
+		}
+    }
+    
+    function showSerial()
+    {
+		for(var i=0;serialClass[i]!=null;i++){
+			UpdateClass('remove',serialClass[i],'hidden');
+        }
+        for(var i=0;serialObserverClass[i]!=null;i++){
+			UpdateClass('remove',serialObserverClass[i],'hidden');
+		}
+	}
+
+    function hideSerial()
+    {
+		for(var i=0;serialClass[i]!=null;i++){
+			UpdateClass('add',serialClass[i],'hidden');
+        }
+        for(var i=0;serialObserverClass[i]!=null;i++){
+			UpdateClass('add',serialObserverClass[i],'hidden');
+		}
+	}
+    
+    function showWarning()
+    {
+		for(var i=0;warningClass[i]!=null;i++){
+			UpdateClass('remove',warningClass[i],'hidden');
+		}
+	}    
+    
+    function hideWarning()
+    {
+		for(var i=0;warningClass[i]!=null;i++){
+			UpdateClass('add',warningClass[i],'hidden');
+		}
+	}    
+
+    function showError()
+    {
+		for(var i=0;errorClass[i]!=null;i++){
+			UpdateClass('remove',errorClass[i],'hidden');
+		}
+	}
+
+    function hideError()
+    {
+		for(var i=0;errorClass[i]!=null;i++){
+			UpdateClass('add',errorClass[i],'hidden');
+		}
+	}
+
+    function showVerbose()
+    {
+		for(var i=0;verboseClass[i]!=null;i++){
+			UpdateClass('remove',verboseClass[i],'hidden');
+		}
+		for(var i=0;enterClass[i]!=null;i++){
+			UpdateClass('remove',enterClass[i],'hidden');
+		}
+		for(var i=0;returnClass[i]!=null;i++){
+			UpdateClass('remove',returnClass[i],'hidden');
+		}    
+    }
+
+    function hideVerbose()
+    {
+		for(var i=0;verboseClass[i]!=null;i++){
+			UpdateClass('add',verboseClass[i],'hidden');
+		}
+		for(var i=0;enterClass[i]!=null;i++){
+			UpdateClass('add',enterClass[i],'hidden');
+		}
+		for(var i=0;returnClass[i]!=null;i++){
+			UpdateClass('add',returnClass[i],'hidden');
+		}    
+    }
+
+    
+    function processWarning(obj){
+		if(obj.checked == true ){
+			obj.src = "showLevel.png";
+			obj.checked = false;
+			showWarning();
+			setInSessionStorage("showWarning", "True");
+		}
+		else{
+			obj.src = "hideLevel.png";
+			obj.checked = true;
+			hideWarning();
+			setInSessionStorage("showWarning", "False");
+		}
+	}
+    
+	function processError(obj){
+		if(obj.checked == true ){
+			obj.src = "showLevel.png";
+			obj.checked = false;
+			showError();
+			setInSessionStorage("showError", "True");
+		}
+		else{
+			obj.src = "hideLevel.png";
+			obj.checked = true;
+			hideError();
+			setInSessionStorage("showError", "False");
+		}
+	}
+	function processVerbose(obj){
+		if(obj.checked == true ){
+			obj.src = "showLevel.png";
+			obj.checked = false;
+			showVerbose();
+			setInSessionStorage("showVerbose", "True");
+		}
+		else{
+			obj.src = "hideLevel.png";
+			obj.checked = true;
+            hideVerbose();
+            setInSessionStorage("showVerbose", "False");
+		}
+	}
+    
+    function scrollElement(id)
+    {
+        document.getElementById(id).scrollIntoView();
+    }
+
+    function sessionStorageAvailable()
+    {
+        return window.sessionStorage || usingLogViewerSessionStorage;
+    }
+
+    function getSessionStorage()
+    {
+        if (usingLogViewerSessionStorage)
+        {
+            return window.external;
+        }
+        else if (window.sessionStorage)
+        {
+            return window.sessionStorage;
+        }
+    }
+
+    function setInSessionStorage(key, value)
+    {
+        if (sessionStorageAvailable())
+        {
+            try
+            {
+                getSessionStorage().setItem(key, value);
+            }
+            catch (err) {  }
+        }
+    }
+
+	function removeFromSessionStorage(key)
+    {
+        if (sessionStorageAvailable())
+        {
+            try
+            {
+                getSessionStorage().removeItem(key);
+            }
+            catch (err) { }
+        }
+    }
+	
+    function getFromSessionStorage(key)
+    {
+        if (sessionStorageAvailable())
+        {
+            try
+            {
+                return getSessionStorage().getItem(key);
+            }
+            catch (err) { }
+        }
+    }
+
+	function UpdateClass(a,o,c1,c2)
+    {
+		switch (a){
+		case 'swap':
+			o.className=!UpdateClass('check',o,c1)?o.className.replace(c2,c1):o.className.replace(c1,c2);
+		break;
+		case 'add':
+			if(!UpdateClass('check',o,c1)){o.className+=o.className?' '+c1:c1;}
+		break;
+		case 'remove':
+			var rep=o.className.match(' '+c1)?' '+c1:c1;
+			o.className=o.className.replace(rep,'');
+		break;
+		case 'check':
+			return new RegExp('\\b'+c1+'\\b').test(o.className)
+		break;
+		}
+	}	
+	function CreatePageLinks()
+	{
+	    if (showPagesFlag == false)
+	    {   // Nothing to create. It's not going to be shown.
+	        return;
+	    }
+	    // Create the page tags based of the value of pageContents.
+	    // hideControls the pagination area
+	    var pagination = document.getElementById("fixedRight");
+
+	    // Get the total page number:
+	    if (totalPages === null)
+	    {	// There is not Total defined. Exit here
+	        return;
+	    }
+	    else if (totalPages == 1)
+	    {
+	        // There is only 1 page, don't show the pages links
+	        return;
+	    }
+	    var totalPageNo = totalPages;
+
+	    // Find current page number from div id=currentPage
+	    var currentPage = document.getElementById("currentPage");
+	    if (currentPage === null)
+	    {	// There are no multiple pages. Exit here
+	        return;
+	    }
+
+        // Max the pages visible on the screen : 6
+	    var maxPagesVisibles = 6;
+
+	    // Find the divId= fixedRight
+	    UpdateClass("remove",pagination , "hidden");
+	    UpdateClass("add",pagination , "pages");
+
+	    var firstpage = document.createElement("A");
+	    firstpage.innerHTML = "&nbsp;<< first&nbsp;"
+	    var prevPage = document.createElement("A");
+	    prevPage.innerHTML = "&nbsp;< prev&nbsp;"
+
+
+	    var thispage = document.createElement("A");
+	    thispage.innerHTML = "&nbsp;"+ currentPage.innerHTML + "&nbsp;"
+	    UpdateClass("add",thispage , "currentpage");
+
+	    var fileName = location.pathname.substring(location.pathname.lastIndexOf("/")+1, location.pathname.lastIndexOf("."));
+	    var index = fileName.lastIndexOf("_");
+	    if (index != -1)
+	    {
+	        fileName = fileName.substring(0, fileName.lastIndexOf("_"));
+	    }
+	    // First page does not need a link to First and previous.
+	    // For the rest, add the proper link
+	    var currentPageNo = parseInt(currentPage.innerHTML);
+	    if (currentPageNo != 1)
+	    {
+	        // Add First and previous links
+	        firstpage.href = fileName +  ".html";
+	        if (currentPageNo == 2)
+	        {
+	            prevPage.href = firstpage.href;
+	        }
+	        else
+	        {
+	            prevPage.href = fileName + "_" + (currentPageNo-1) + ".html" ;
+	        }	        
+	        pagination.appendChild(firstpage);
+	        pagination.appendChild(prevPage);
+		
+	    }
+	    else
+	    {
+	        pagination.appendChild(firstpage);
+	        pagination.appendChild(prevPage);
+	        UpdateClass("add",firstpage , "disabled");
+	        UpdateClass("add",prevPage , "disabled");
+	    }		
+
+	    var initPosition = 1;
+	    if (totalPageNo < maxPagesVisibles)
+	    {
+	        // Do nothing. There are less pages than the max allowed. We display all of them.
+	    }
+	    else if ((maxPagesVisibles-3+currentPageNo) > totalPageNo)
+	    {
+	        initPosition = totalPageNo - maxPagesVisibles + 1;
+        }
+	    else if ((currentPageNo -2) > 0)
+        {
+	        initPosition = currentPageNo-2;
+	    }
+	    
+	    var lastPosition = initPosition + maxPagesVisibles - 1;
+	    if (lastPosition > totalPageNo)
+	    {
+	        lastPosition = totalPageNo;
+	    }
+	    for (i = initPosition; i <=lastPosition ; i++) 
+	    {
+	        var nextpageNo = document.createElement("A");
+			
+	        if (i == currentPageNo)
+	        {
+	            pagination.appendChild(thispage);
+	        }
+	        else
+	        {
+	            nextpageNo.innerHTML = "&nbsp;"+ (i) + "&nbsp;"
+	            if (i ==1)
+	            {
+	                nextpageNo.href = firstpage.href;
+	            }
+	            else
+	            {
+	                nextpageNo.href = fileName +  "_" + i + ".html";
+	            }
+	            pagination.appendChild(nextpageNo);
+	            UpdateClass("add",nextpageNo , "pageNo");
+	        }
+	    }
+		
+	    // Create the Next and Last anchors
+	    var nextpage = document.createElement("A");
+	    nextpage.innerHTML = "&nbsp;next >&nbsp;"
+	    var lastPage = document.createElement("A");
+	    lastPage.innerHTML = "&nbsp;last >>&nbsp;"
+	    var nextPageNumber = currentPageNo + 1
+
+
+	    if (lastPosition != totalPageNo)
+        {
+            var dots = document.createElement("SPAN");
+            dots.innerHTML = "...";
+            pagination.appendChild(dots);
+	    }
+
+	    // Put the next page (if any)
+	    if (totalPageNo > currentPageNo)
+	    {
+	        nextpage.href = fileName +  "_" + nextPageNumber + ".html";	
+	        lastPage.href = fileName + "_" + totalPageNo + ".html";	
+	    }
+
+	    pagination.appendChild(nextpage);
+	    pagination.appendChild(lastPage);
+		
+	    if (totalPageNo == currentPageNo)
+	    {
+	        UpdateClass("add",nextpage , "disabled");
+	        UpdateClass("add",lastPage , "disabled");
+	    }
+	}
+	function CreateSummaryLink()
+	{
+	    // Check if there is any nodes: node collapsed
+	    var collapsedNodes = document.getElementsByClassName("node collapsed");
+	    if (collapsedNodes.length == 0)
+	    {
+	        // Do Nothing. No summary present
+	    }
+	    else
+	    {
+	        var summary = document.getElementById("fixedRightSummary");		
+	        if (summary != null)
+	        {
+	            var summaryAnchor = document.createElement("A");
+	            summaryAnchor.innerHTML = "Summary"
+	            summaryAnchor.href = "summary.html"
+	            summary.appendChild(summaryAnchor)
+	        }
+	    }
+	}
+
+		</script><script type="text/javascript" src="userjs.js">
+
+		</script>
+	</head>
+	<body>
+		<div class="fixedTop" id="fixedTop">
+			<form name="LogFile">
+				<img src="showLevel.png" id="imgError" onclick="processError(this);" /> &nbsp; Error &nbsp; <img src="showLevel.png" id="imgWarning" onclick="processWarning(this);" /> &nbsp; Warning &nbsp; <img src="showLevel.png" id="imgInfo" onclick="processInfo(this);" /> &nbsp; Info &nbsp; <img src="showLevel.png" id="imgVerbose" onclick="processVerbose(this);" /> &nbsp; Verbose &nbsp; <img src="showLevel.png" id="imgConsole" onclick="processConsole(this);" /> &nbsp; Console &nbsp; <img src="showLevel.png" id="imgSerial" onclick="processSerial(this);" /> &nbsp; Serial &nbsp; <span onclick="openAllNodes();" class="openall">Open All</span><span onclick="closeAllNodes();" class="closeall">Close All</span>
+			</form>
+		</div>
+		<div id = "logviewer" class = "logviewer">
+			<div class="nodecontent outerpad" id="outerpad">

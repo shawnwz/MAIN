@@ -1,0 +1,183 @@
+:not(.Rel8Theme) .onlyRel6Theme { display: block; }
+
+:not(.Rel8Theme) .onlyRel8Theme { display: none; }
+
+
+
+.Rel8Theme .onlyRel6Theme { display: none; }
+
+.Rel8Theme .onlyRel8Theme { display: block; }
+
+
+
+.Rel8Theme #search {
+
+	/* background-image: url('searchbg.jpg'); */
+
+}
+
+.Rel8Theme #searchField {
+
+  position: absolute;
+
+  height: 46px;
+
+  width: 716px;
+
+  left: 203px;
+
+  top: 0;
+
+  background-color: rgba(40,40,40,0.9);
+  -webkit-transition: -webkit-transform 500ms linear;
+
+}
+
+.Rel8Theme #searchField #searchEntry {
+
+  line-height: 45px;
+
+  font-size: 30px;
+
+  text-align: center;
+
+}
+
+.Rel8Theme #searchField #searchEntry #searchEntryText {
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  line-height: 40px;
+
+  padding: 0;
+
+}
+
+.Rel8Theme #searchField #searchEntry #searchEntryText .searchEntryInfo {
+
+	color: #666666;
+
+}
+
+.Rel8Theme #searchField #searchEntry #searchEntryText .searchEntryTerm {
+
+	color: #dadada;
+
+}
+
+.Rel8Theme #searchField #searchEntry #searchKeyTitleBlinker {
+
+  line-height: 45px;
+
+}
+
+.Rel8Theme #searchKeys {
+
+  position: absolute;
+
+  height: 100px;
+
+  width: 600px;
+
+  left: 261px;
+
+  top: 52px;
+
+  padding-top: 2px;
+
+}
+
+.Rel8Theme #searchKeys #searchKeysTable {
+
+}
+
+.Rel8Theme #searchKeys .searchKeys-row {
+
+  width: 600px;
+
+  height: 45px;
+
+  font-size: 30px;
+
+}
+
+.Rel8Theme #searchKeys .searchKeys-item {
+
+	width: 46px;
+
+	height: 45px;
+
+	text-align: center;
+
+	float: left;
+
+	line-height: 40px;
+
+}
+
+.Rel8Theme #searchButtons {
+
+  position: absolute;
+
+  height: 46px;
+
+  width: 300px;
+
+  left: 411px;
+
+  top: 160px;
+
+}
+
+.Rel8Theme #searchButtons .searchButtonsList-item {
+
+  position: absolute;
+
+  width: 75px;
+
+  height: 35px;
+
+  text-align: center;
+
+  line-height: 32px;
+
+  font-size: 15px;
+
+}
+
+.Rel8Theme #searchButtons .searchButtonsList-item .searchButtonItem {
+
+  height: 35px;
+
+  margin: 2px;
+
+  background: #1d1d1d;
+
+  width: 65px;
+
+  color: #dadada;
+
+}
+
+.Rel8Theme #searchButtons .searchButtonsList-item.searchButtonBackspace .searchButtonItem {
+
+  background-image: url('../../images/common/icons/backspace.png');
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+}
+
+.Rel8Theme #searchKeys .searchKeysTable.focused .searchKeys-item.focused,
+
+.Rel8Theme #searchButtons .searchButtonsList.focused .searchButtonsList-item.focused .searchButtonItem {
+
+  background-color: #cd3b3b;
+
+  border: 3px solid #fff;
+
+}
+

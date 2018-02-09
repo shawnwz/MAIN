@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<script src="./Surf.js"></script>
+
+<link rel="stylesheet" href="./surf.css">
+
+<app-surf id="surfScan" class="oxygen-transition-none-prepareDisplay oxygen-transition-none-bringIn">
+
+    <!-- TODO: This needs to be re-added when genre's / favourites mode is enabled : <div id="surfScanFavListTitle">Favourite channels</div> -->
+    <div id="topGradient"></div>
+    <!-- app-toggle-panel/app-clock <div class="clock"></div> --> 
+    
+    <div id="surfScanBar">
+      <div id="surfScanProgListBg">
+        <div id="surfScanProgListGapFiller"></div>
+
+        <!-- channel stack -->
+        <app-surf-channel-list id="surfScanChanList" data-oxy-anim="true" data-orientation = "Vertical" data-cyclic class="surfScanChannelStack-container channelStack-anim-fadeOut">
+          <template>
+            <app-surf-channel-list-item class="surfScanChannelStack-cell">
+              <span class="surfScanChannelStack-channelLogo" style="background-image: url('');"></span>
+              <div class="surfScanChannelStack-channelNameCont"><span class="surfScanChannelStack-channelName"></span></div>
+              <span class="surfScanChannelStack-channelFavorite"></span>
+            </app-surf-channel-list-item>
+          </template>
+        </app-surf-channel-list>
+
+        <!-- reverse epg -->
+        <div id="pastEventsLabel"></div>
+        <div id="surfScanProgListContLeft" class="surfScanProgList pastEvents-inactive" data-oxy-anim="true">
+					<app-surf-past-events-list id="surfPastEventsList" class="" data-orientation="horizontal" >
+						<template>
+							<app-surf-past-events-list-item class="pastEvents-cell">
+								<div class="surfScanDayLabel"></div>
+								<span class="surfScanStartTime">
+									<span class="surfScanStartTimeText"></span>
+									<span class="surfScanStartTimeAmPm"></span>
+								</span>
+                                                                <span class="surfScanProgInfo">
+                                                                        <span class="surfScanProgTitle"></span>
+                                                                        <span class="surfScanProgDescription"></span>
+                                                                </span>
+								<div class="surfScanIcons"></div>
+							</app-surf-past-events-list-item>
+						</template>
+					</app-surf-past-events-list>
+				</div>
+
+        <!-- #surfScanChannelBox: class helpers [fav, locked, radio]-->
+        <app-surf-channel-box id="surfScanChannelBox">
+          <div id="surfScanChannelBoxLogo" class="" data-oxy-anim="true"></div>
+					<div class="channelNameCont"><span id="surfScanChannelBoxName" class="channelName"></span></div>
+          <div id="surfScanChannelBoxShadow"></div>
+          <div class="iconFavSelected"></div>
+          <div class="iconAudio"></div>
+          <div class="channelNumber"></div>
+        </app-surf-channel-box>
+
+        <!-- current epg -->
+        <div id="currentEventsLabel"></div>
+        <app-html-selector id="surfScanProgListContRight" class="surfScanProgList" data-oxy-anim="true" data-default="surfEvents" data-unique>
+
+          <app-surf-player-bar id="surfScanPlayerBar" style="display:none" data-selector="surfPlayer">
+            <div class="title">title</div>                                                   
+            <div class="subTitle">subTitle</div>                                             
+            <div id="surfScanPlayerStatus" class="playbackStatus">0:05<span class="divider">|</span>0:31</div>                        
+            <div class="buffer">                                                                
+              <div id="surfScanFill" class="bufferFill"></div>                                  
+            </div>                                                                              
+            <div id="surfScanPlayIndicator" class="positionIndicator iconArrowPointer"></div>   
+          </app-surf-player-bar>
+
+          <app-surf-future-events-list id="surfFutureEventsList" class="" data-orientation="horizontal" data-selector="surfEvents">
+            <template>
+              <app-surf-future-events-list-item class="currentEvents-cell">
+                <div class="surfScanDayLabel"></div>
+                <span class="surfScanStartTime">
+                  <span class="surfScanStartTimeText"></span>
+                  <span class="surfScanStartTimeAmPm"></span>
+                </span>
+                <span class="surfScanProgInfo">
+                  <span class="surfScanProgTitle"></span>
+                  <span class="surfScanProgDescription"></span>
+                </span>
+                <div class="surfScanIcons"></div>
+              </app-surf-future-events-list-item>
+            </template>
+          </app-surf-future-events-list>
+
+				</app-html-selector> <!-- surfScanProgListContRight -->
+      </div> <!-- surfScanProgListBg -->
+			
+      <!-- app-surf-mini-synopsis: class helpers [show][miniSynopsis][synopsisMovie][cc hd dolby subs] -->
+			<app-surf-mini-synopsis id="surfScanMiniSynopsis">
+				<div class="synopsisTitle"></div>
+				<div class="synopsisBottom">
+					<div class="synopsisDescription"></div>
+					<div class="miniSynopsisIcons"></div>
+				</div>
+            </app-surf-mini-synopsis>
+			
+    </div> <!-- surfScanBar -->
+    <div class="logo"></div> 
+    <app-surf-call-to-action-list id="ctaSurfScan" class="callToActionList" data-screen="ctaSurfScan"></app-surf-call-to-action-list>
+</app-surf>

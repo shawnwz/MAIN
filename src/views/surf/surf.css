@@ -1,0 +1,135 @@
+/**
+ * CSS rules used by this view
+ */
+
+/* additional changes 
+.currentEvents-list,
+.pastEvents-list {
+	width: 37200px; 
+}
+.events-cell-outofview {
+	visibility: hidden;
+}
+.currentEvents-list { left:-517px; }
+.pastEvents-list { margin-left: 100px; }
+.currentEvents-list .currentEvents-cell.secondVisible { padding-left: 145px }
+.currentEvents-list .currentEvents-cell.secondVisible .listLabel { display: none }
+.pastEvents-list .pastEvents-cell.secondVisible { padding-right: 145px }
+.pastEvents-list .pastEvents-cell.secondVisible .surfScanIcons { right: 145px }
+.surfScanDayLabel {
+	position: absolute;
+	top: -88px;
+	width: 370px;
+	opacity: 0;
+	font-family: fontLight;
+	font-size: 30px;
+	text-transform: uppercase
+}
+app-surf-events-list-item:not(.firstVisible).showLabel .surfScanDayLabel { opacity: 1 }
+*/
+
+/* 
+ * Rel8Theme - DISABLED
+ */
+.disabledRel8Theme #surfScanBar.synopsisView { -webkit-transform: translate3d(0, 130px, 0) }
+.disabledRel8Theme #surfScanBar.synopsisView app-surf-mini-synopsis {   -webkit-transform: translate3d(0, -260px, 0); }
+.disabledRel8Theme #surfScanBar.right #surfScanProgListBg { -webkit-transform: translate3d(0, 0, 0); }
+.disabledRel8Theme #currentEventsLabel {
+	width: 347px;
+}
+.disabledRel8Theme #pastEventsLabel {
+	width: 347px;
+}
+.disabledRel8Theme #surfScanChanList {
+	left: 1100px;
+}
+.disabledRel8Theme .surfScanChannelStack-cell {
+	width: 95px;
+	height: 87px;
+}
+.disabledRel8Theme #surfScanProgListContLeft { margin-left: 40px; }
+.disabledRel8Theme .currentEvents-list,
+.disabledRel8Theme .pastEvents-list {
+	top: 106px;
+}
+.disabledRel8Theme .currentEvents-cell,
+.disabledRel8Theme .pastEvents-cell {
+	width: 347px;
+	height: 101px;
+}
+.disabledRel8Theme .surfScanProgInfo {
+	width: 347px;
+}
+.disabledRel8Theme .surfScanProgSubText {
+	width: 347px;
+}
+.disabledRel8Theme .surfScanStartTime {
+  font-size: 28px;
+	top: -33px;
+	margin-left: 15px;
+}
+.disabledRel8Theme .surfScanStartTimeAmPm {
+  font-size: 28px;
+}
+.disabledRel8Theme .surfScanBuffer {
+	width: 347px;
+}
+.disabledRel8Theme #surfScanChannelBox {
+	top: 95px;
+	left: 1086px;
+	width: 120px;
+	height: 125px;
+}
+.disabledRel8Theme #surfScanChannelBox .channelNameCont {
+	width: 120px;
+	height: 125px;
+	line-height: 125px;
+}
+.disabledRel8Theme #surfScanChannelBoxShadow {
+	display: none !important;
+}
+.disabledRel8Theme app-surf-mini-synopsis {
+	bottom: -50px;
+	padding-left: 213px
+}
+.disabledRel8Theme app-surf-mini-synopsis .miniSynopsisIcons {
+	top: -32px;
+	right: 0px;
+}
+.disabledRel8Theme app-surf-mini-synopsis .miniSynopsisIcons span.iconHD { /*width: 27px*/ }
+.disabledRel8Theme .miniSynopsis {
+	position: relative;
+	font-family: fontRegular;
+	/*height: 210px;*/
+	visibility: hidden;
+  bottom: 375px;
+	-webkit-transition: none;
+}
+.disabledRel8Theme .miniSynopsis .synopsisTitle {
+	margin-bottom: 10px;
+	color: #ffffff;
+}
+.disabledRel8Theme .miniSynopsis .synopsisDescription {
+	margin-top: 5px;
+	width: 915px;
+	/*height: 104px;*/
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
+	padding-top: 6px;
+	padding-bottom: 10px;
+	color: #ffffff;
+}
+.disabledRel8Theme .miniSynopsis.show { visibility: visible }
+.disabledRel8Theme .currentEvents-list { left:-522px; }
+.disabledRel8Theme .currentEvents-list .currentEvents-cell.secondVisible { padding-left: 120px }
+.disabledRel8Theme .pastEvents-list .pastEvents-cell.secondVisible { padding-right: 120px }
+.disabledRel8Theme .pastEvents-list .pastEvents-cell.secondVisible .surfScanIcons { right: 120px }
+.disabledRel8Theme .surfScanChannelStack-list {
+	top:-138px;
+}
+.disabledRel8Theme .surfScanDayLabel {
+	top: -70px;
+	width: 347px;
+	font-size: 28px;
+	margin-left: 15px;
+}

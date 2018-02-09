@@ -1,0 +1,9 @@
+cmd /c npm install gulp --save-dev
+cmd /c npm install fs --save-dev
+cmd /c npm install del --save-dev
+cmd /c npm install gulp-eslint --save-dev
+cmd /c npm install gulp-csslint --save-dev
+cmd /c npm install gulp-csslint-report --save-dev
+cmd /c npm install gulp-print --save-dev
+cmd /c npm install gulp-chmod  --save-dev
+cmd /c npm install gulp-sync --save-dev

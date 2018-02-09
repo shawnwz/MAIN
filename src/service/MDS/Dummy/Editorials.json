@@ -1,0 +1,229 @@
+{
+    "total_records": 1,
+    "version": "20161230054657",
+    "editorials": [
+        {
+            "nls": {
+                "Title": "0b9d3f372d413733354d010d010d00"
+            },
+            "Title": "@midnight",
+            "duration": 1537,
+            "technicals": [
+                {
+                    "nls": {
+                        "Title": "0b9d3f372d413733354d010d010d00"
+                    },
+                    "Title": "@midnight",
+                    "Actors": [
+                        "Emilia Clarke",
+                        "Lena Heady",
+                        "Iain Glen"
+                    ],
+                    "duration": 1537,
+                    "CUST_SeasonNumber": "4",
+                    "episodeNumber": 31,
+                    "Description": "Chris Hardwick leads celebrity contestants down the internet wormhole, and challenges them to prove who's the funniest by slashing absurd news and posts from social media.",
+                    "title": "@midnight/S04/E31/BTV/Noel Fielding, Kristen Schaal, Rich F/9386871-BTV",
+                    "media": { },
+                    "id": "9386871-BTV",
+                    "deviceType": [ ],
+                    "provider": "FOXTEL",
+                    "Categories": [
+                        "TV SHOWS - COMEDY"
+                    ],
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Noel Fielding, Kristen Schaal, Rich Fulcher",
+                    "ServiceLongName": "COM",
+                    "Language": "eng",
+                    "Countries": [
+                        "US"
+                    ],
+                    "ContentWarning": [
+                        "a"
+                    ],
+                    "Directors": [
+                        "Alan Taylor"
+                    ],
+                    "mainContentRef": "9386871",
+                    "Synopsis": "Chris Hardwick leads three celebrity contestants down the ultimate internet wormhole, and challenges them to prove who's the funniest by slashing the most absurd news and posts that social media has to offer.",
+                    "Rating": {
+                        "code": "MA15+",
+                        "precedence": 0,
+                        "Title": "Label for MA15+"
+                    },
+                    "products": [
+                        {
+                            "startPurchase": 1377957600,
+                            "LicenseDuration": "3283200",
+                            "endValidity": 1504101600,
+                            "startValidity": 1377957600,
+                            "rentalDuration": "2678400",
+                            "voditems": [
+                                {
+                                    "node": "LYS020560475",
+                                    "_id": "000000390924-F-P-PDL",
+                                    "CUST_UsePromoStandardAspect": "false",
+                                    "title": "Angry Boys/S01/E01/VOD/Episode 1/000000390924-F-PPV-PDL",
+                                    "nodeRefs": [
+                                        "LYS020560475"
+                                    ],
+                                    "contentRef": "000000390924-F-P-PDL",
+                                    "period": {
+                                        "duration": 126144000,
+                                        "start": 1377957600,
+                                        "end": 1504101600
+                                    },
+                                    "CUST_UsePromoSquareImage": "false",
+                                    "deviceType": [ ],
+                                    "provider": "FOXTEL",
+                                    "DisplayPriority": 128,
+                                    "previewDate": 1377957600,
+                                    "id": "000000390924-F-P-PDL",
+                                    "publishToEndUserDevices": true,
+                                    "CUST_TileText": ";_;_"
+                                }
+                            ],
+                            "price": {
+                                "startPurchase": 1377957600,
+                                "currency": "AUD",
+                                "endPurchase": 1504101600,
+                                "value": 2.95
+                            },
+                            "title": "Angry Boys/Episode 1/9065943",
+                            "endPurchase": 1504101600,
+                            "PrivateMetadata": "1009065943",
+                            "regions": [
+                                "FOXTEL"
+                            ],
+                            "TitleForProduct": "Angry Boys",
+                            "deviceType": [ ],
+                            "provider": "FOXTEL",
+                            "_id": "PROD000000390924-F-PPV-PDL",
+                            "type": "multiple",
+                            "id": "PROD000000390924-F-PPV-PDL"
+                        }
+                    ],
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:3"
+                    ],
+                    "seriesRef": "317986",
+                    "CUST_SortTitle": "@midnight",
+                    "companyId": "FOXTEL",
+                    "Year": 2016
+                },
+                {
+                    "nls": {
+                        "Title": "0b9d3f372d413733354d010d010d00"
+                    },
+                    "CUST_RetentionPeriod": "672",
+                    "PrivateMetadata": "ext_event_id=13206746",
+                    "CUST_FileSize": "424966856",
+                    "duration": 1481,
+                    "CUST_SeasonNumber": "4",
+                    "episodeNumber": 31,
+                    "AudioMode": "Stereo",
+                    "Description": "Chris Hardwick leads celebrity contestants down the internet wormhole, and challenges them to prove who's the funniest by slashing absurd news and posts from social media.",
+                    "seriesRef": "317986",
+                    "media": {
+                        "drmId": "ON287476.ts",
+                        "format": "AV_EncryptedTS",
+                        "frameDuration": "0",
+                        "drmInstanceName": "CCA_PDL",
+                        "fileName": "ON287476_9386871-F-PDL/ON287476.ts",
+                        "bitRate": "",
+                        "id": "LYS029157483"
+                    },
+                    "Title": "@midnight",
+                    "CUEndDate": 1483102800.0,
+                    "id": "9386871-F-PDL",
+                    "deviceType": [
+                        "iQ3-HD",
+                        "iQ3-SD"
+                    ],
+                    "provider": "FOXTEL",
+                    "CUStartDate": 1480685400.0,
+                    "profileRef": "LYS000000399",
+                    "Categories": [
+                        "TV SHOWS - COMEDY"
+                    ],
+                    "Definition": "SD",
+                    "CUST_DispSEpNum": "true",
+                    "Episode": "Noel Fielding, Kristen Schaal, Rich Fulcher",
+                    "ServiceLongName": "COM",
+                    "Language": "eng",
+                    "Countries": [
+                        "US"
+                    ],
+                    "Colour": "Colour",
+                    "ContentWarning": [
+                        "a"
+                    ],
+                    "mainContentRef": "9386871",
+                    "Synopsis": "Chris Hardwick leads three celebrity contestants down the ultimate internet wormhole, and challenges them to prove who's the funniest by slashing the most absurd news and posts that social media has to offer.",
+                    "Audio": [
+                        "eng-Standard"
+                    ],
+                    "Rating": {
+                        "code": "MA15+",
+                        "precedence": 0,
+                        "Title": "Label for MA15+"
+                    },
+                    "ContentType": "TV_EPS",
+                    "DvbCategories": [
+                        "0:0:2:3"
+                    ],
+                    "companyId": "FOXTEL",
+                    "CUST_SortTitle": "@midnight",
+                    "Aspect": "Widescreen",
+                    "Year": 2016,
+                    "title": "@midnight/S04/E31/VOD/Noel Fielding, Kristen Schaa/9386871-F-SUB-PDL"
+                }
+            ],
+            "programmes": [
+              { 
+                "period": {
+                  "start": 1483282000,
+                  "end":   1483282339
+                }
+              }
+             ],
+            "id": "9386871",
+            "episodeNumber": 31,
+            "Description": "Chris Hardwick leads celebrity contestants down the internet wormhole, and challenges them to prove who's the funniest by slashing absurd news and posts from social media.",
+            "companyId": "FOXTEL",
+            "media": { },
+            "CUST_SeasonNumber": "4",
+            "deviceType": [ ],
+            "provider": "FOXTEL",
+            "Categories": [
+                "TV SHOWS - COMEDY"
+            ],
+            "CUST_DispSEpNum": "true",
+            "Episode": "Noel Fielding, Kristen Schaal, Rich Fulcher",
+            "Language": "eng",
+            "Countries": [
+                "US"
+            ],
+            "ContentWarning": [
+                "a"
+            ],
+            "Synopsis": "Chris Hardwick leads three celebrity contestants down the ultimate internet wormhole, and challenges them to prove who's the funniest by slashing the most absurd news and posts that social media has to offer.",
+            "Rating": {
+                "code": "MA15+",
+                "precedence": 0,
+                "Title": "Label for MA15+"
+            },
+            "ContentType": "TV_EPS",
+            "DvbCategories": [
+                "0:0:2:3"
+            ],
+            "seriesRef": "317986",
+            "CUST_SortTitle": "@midnight",
+            "Year": 2016,
+            "title": "@midnight/S04/E31/Noel Fielding, Kristen Schaal, Rich Fulche/9386871",
+            "_id": "9386871|FOXTEL"
+        }
+    ]
+
+}

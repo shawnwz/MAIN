@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<script src="./SearchQuery.js"></script>
+
+<link rel="stylesheet" href="./searchQuery.css">
+
+<app-search-query id="searchQuery" class="">
+
+<div class="onlyRel8Theme">
+      <div id="searchOffline">
+        <div id="tileNoIPImg"></div>
+        <div id="tileNoIPTitle" data-i18n="F0451Title"></div>
+        <div id="tileNoIPText" data-i18n="F0451Description"></div>
+      </div>
+      <div id="searchContent" class="show">
+            <div id="searchField">
+                <app-search-entry-text-t9 id="searchEntry"></app-search-entry-text-t9>
+            </div>
+
+            <div id="searchQueryKeys">
+              <app-search-keys-table id="searchKeysTable" class="searchKeysTable"
+                      data-row-id="searchKeys-row-"
+                      data-row-class="searchKeys-row">
+                <template>
+                  <app-search-keys-table-cell class="searchKeys-item"></app-search-keys-table-cell>
+                </template>
+              </app-search-keys-table>
+            </div>
+
+            <div id="searchQueryButtons">
+              <app-search-buttons-list id="searchButtonsList" class="searchButtonsList"
+                      data-row-id="searchButtonsList-row-"
+                      data-row-class="searchButtonsList-row">
+                <template>
+                  <app-search-buttons-list-item class="searchButtonsList-item">
+                    <div class="searchButtonItem"></div>
+                  </app-search-buttons-list-item>
+                </template>
+              </app-search-buttons-list>
+            </div>
+
+        <div id="searchRecentPopular">
+          <div class="searchRecent">
+            <div class="searchRecentPopularLabel" data-i18n="searchRecentSearches"></div>
+            <div id="searchRecentResults" class="searchRecentPopularListContainer recentSearches-container">
+
+              <app-search-recent-list id="searchSearchRecent" class="recentSearches-list recentSearches-anim-normal"> <!--style="top:-55px;" -->
+                <template>
+                  <app-search-recent-list-item class="recentSearches-cell">
+                    <div class="searchRecentPopularMatch"></div>
+                  </app-search-recent-list-item>
+                </template>
+              </app-search-recent-list>
+            </div>
+          </div>
+          <div class="searchPopular">
+            <div class="searchRecentPopularLabel" data-i18n="searchPopularSearches"></div>
+            <div id="searchPopularResults" class="searchRecentPopularListContainer popularSearches-container">
+              <app-search-popular-list id="searchSearchPopular" class="popularSearches-list popularSearches-anim-normal"> <!--style="top:-55px;" -->
+                <template>
+                  <app-search-popular-list-item class="popularSearches-cell">
+                    <div class="searchRecentPopularMatch"></div>
+                  </app-search-popular-list-item>
+                </template>
+              </app-search-popular-list>
+            </div>
+          </div>
+        </div>
+
+        <div id="searchLoadingResults"></div>
+        <div id="searchLoadingMoreResults"><div id="searchLoadingMoreResultsCell" data-i18n="searchLoadingMore"></div></div>
+        <div id="searchQueryResultsContainer">
+          <div id="searchSuggested" data-i18n="searchSuggested"></div>
+          <div id="searchDidYouMean" data-i18n="searchDidYouMean"></div>
+          <div id="searchNoResultsFound" data-i18n="searchNoSuggestions"></div>
+          <div id="searchScrollBar"><div class="scrollBarItemFill"></div></div>
+          <div id="searchResults" class="searchResultsListItem-container">
+            <app-search-results-list id="searchSearchResults">
+                <template>
+                    <app-search-results-list-item class="searchResultsListItem-cell">
+                      <div class="searchResultsListItemContent">
+                        <div class="searchResultsLogo"></div>
+                        <div class="searchResultsMatch"></div>
+                        <div class="searchResultsType"></div>
+                        <div class="searchResultsLocked"></div>
+                      </div>
+                    </app-search-results-list-item>
+                </template>
+            </app-search-results-list>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--onlyRel6Theme-->
+<div class="onlyRel6Theme">
+  <div id="searchBalloonTooltip"></div>
+  <div id="searchTitle">Search</div>
+  <div id="searchFilterText">
+    <span id="searchInfoPart1"></span>
+    <span id="searchFilterTextTerm"></span>
+    <span id="searchInfoPart2"></span>
+  </div>
+  <!-- searchContent: helper classes [loadingResults, showResults, loadingMoreResults] -->
+  <div id="searchContent" class="">
+    <div id="searchKeyContainer" class="searchKeyList-container">
+
+			<app-search-key-list id="searchKeyList" class="searchKeyList-list searchKeyList-anim-normal">
+				<template>
+					<app-search-key-list-item class="searchKeyList-cell">
+				    <span class="letter"></span>
+          </app-search-key-list-item>
+				</template>
+			</app-search-key-list>
+
+    </div>
+		<app-search-key-title id="searchKeyTitle"></app-search-key-title>
+    <div id="searchRecentPopular">
+      <div class="searchRecent">
+        <div class="searchRecentPopularLabel" data-i18n="searchRecentSearches"></div>
+        <div id="searchQueryRecent" class="searchRecentPopularListContainer">
+
+          <app-search-recent-list id="searchSearchRecent" class="recentSearches-list recentSearches-anim-normal"> <!--style="top:-55px;" -->
+            <template>
+              <app-search-recent-list-item class="recentSearches-cell">
+                <div class="searchRecentPopularMatch"></div>
+              </app-search-recent-list-item>
+            </template>
+          </app-search-recent-list>
+
+        </div>
+      </div>
+      <div class="searchPopular">
+        <div class="searchRecentPopularLabel" data-i18n="searchPopularSearches"></div>
+        <div id="searchQueryPopular" class="searchRecentPopularListContainer">
+
+          <app-search-popular-list id="searchSearchPopular" class="popularSearches-list popularSearches-anim-normal"> <!--style="top:-55px;" -->
+            <template>
+              <app-search-popular-list-item class="popularSearches-cell">
+						    <div class="searchRecentPopularMatch"></div>
+              </app-search-popular-list-item>
+            </template>
+          </app-search-popular-list>
+
+        </div>
+      </div>
+    </div>
+    <div id="searchLoadingResults"></div>
+    <div id="searchLoadingMoreResults"><div id="searchLoadingMoreResultsCell" data-i18n="searchLoadingMore"></div></div>
+    <div id="searchResultsContainer">
+      <div id="searchSuggested" data-i18n="searchSuggested"></div>
+      <div id="searchDidYouMean" data-i18n="searchDidYouMean"></div>
+      <div id="searchNoResultsFound" data-i18n="searchNoSuggestions"></div>
+      <div id="searchScrollBar"><div class="scrollBarItemFill"></div></div>
+      <div id="searchResults" class="searchResultsListItem-container">
+        <app-search-results-list id="searchSearchResults">
+            <template>
+                <app-search-results-list-item class="searchResultsListItem-cell">
+                  <div class="searchResultsListItemContent">
+                    <div class="searchResultsLogo"></div>
+                    <div class="searchResultsMatch"></div>
+                    <div class="searchResultsType"></div>
+                    <div class="searchResultsLocked"></div>
+                  </div>
+                </app-search-results-list-item>
+            </template>
+        </app-search-results-list>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <template id="searchKeyTitleTemplate">
+    <div id="searchEntryTextT9"></div>
+  </template>
+
+
+  <template id="SearchRecentListItemTemplate">
+    <div class="searchRecentPopularMatch"></div>
+  </template>
+
+  <template id="SearchPopularListItemTemplate">
+    <div class="searchRecentPopularMatch"></div>
+  </template>
+
+  <template id="searchKeysCellTemplate">
+      <span class='text'></span>
+  </template>
+
+<app-search-query-call-to-action-list id="ctaSearch" class="callToActionList" data-screen="ctaSearchQuery"></app-search-query-call-to-action-list>
+</app-search-query>

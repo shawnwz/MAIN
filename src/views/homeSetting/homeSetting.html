@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<script src="./HomeSetting.js"></script>
+
+<link rel="stylesheet" href="./homeSetting.css">
+
+<app-home-setting class="oxygen-transition-none-prepareDisplay oxygen-transition-none-bringIn">
+
+	<!--grid from home-->
+	<div id="gridView">
+		<app-home-settings-grid id="settingsGridMenu"
+			data-config="./views/homeSetting/screenConfig/settings.json"
+			data-row-id="settingsGridMenu-row-"
+			data-row-class="GridMenu-row">
+			<template>
+				<app-home-grid-cell id="settingsMenuItem" class="epgMenu-item" data-path-name="Gridable"></app-home-grid-cell>
+			</template>
+		</app-home-settings-grid>
+		<div class="homeLogo"></div> 
+	</div>
+<!--grid from home-->
+</app-home-setting >
