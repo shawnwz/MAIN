@@ -73,6 +73,25 @@ app.views.Settings.prototype.createdCallback = function createdCallback () {
 		}
 	}, this);
 
+	$util.Events.on('homeTransponder:checkSignalStatus', function() {
+		var isSignalAvaliable = $service.tuner.Signal.getSignalStatus(),
+		 	_dialog = {};
+		if (isSignalAvaliable) {
+			// navigate to home trasponder
+			$util.ControlEvents.fire("app-settings:homeTransponder", "show");
+			$util.Events.fire("scr:navigate:to", { "id": "installerHomeTransView", "title": "installerSatelliteHomeTitle" });
+			 
+		} else {
+       _dialog = {
+		            title    : $util.Translations.translate("F0100Title"),
+		            text     : $util.Translations.translate("F0100Description"),
+		            subText  : "",
+		            errorCode: "F0100"
+				 };
+	        $util.ControlEvents.fire(":dialogNoSignal", "show", _dialog);
+	        $util.ControlEvents.fire(":dialogNoSignal", "focus");
+		}
+	});
 
 	this.onkeydown = this._onKeyDown;
 	this.onfocus = this._onFocus;

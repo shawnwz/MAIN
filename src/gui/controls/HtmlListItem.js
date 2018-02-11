@@ -137,11 +137,6 @@ app.gui.controls.HtmlListItem.prototype._onSelect = function _onSelect () {
     this.logEntry();
     var parent = this._parent;
 
-    this.setAttribute("selected", "");
-    if (this._focusClass) {
-        this.classList.add(this._focusClass);
-    }
-
     if (parent) {
         if (parent._delayChange) {
             if (parent._delayChangeTimer) { // cancel previous delay
@@ -153,6 +148,11 @@ app.gui.controls.HtmlListItem.prototype._onSelect = function _onSelect () {
         } else {
             parent.fireControlEvent("change", parent);
         }
+    }
+
+    this.setAttribute("selected", "");
+    if (this._focusClass) {
+        this.classList.add(this._focusClass);
     }
     this.logExit();
 };

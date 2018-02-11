@@ -7,14 +7,20 @@ app.screenConfig.settings.INSTALLER_SETUP = {
 			{
 				id    : "lnbSetup",
 				text  : "installerSatelliteLNBTitle",
-				data  : {},
-				events: []
+				events: [
+                    {
+                        "name": "scr:navigate:to",
+                        "data": { "id": "installerLNBView", "title": "installerSatelliteLNBTitle" }
+                    }
+                ]
 			},
 			{
 				id    : "homeTransponder",
 				text  : "installerSatelliteHomeTitle",
 				data  : {},
-				events: []
+				events: [{
+                        "name": "homeTransponder:checkSignalStatus"
+                    }]
 			},
 			{
 				id    : "fullSystemReset",

@@ -30,13 +30,17 @@ app.gui.controls.GuideFutureGrid.prototype._scroll = function _scroll(offset, fa
 	var gridSpan = this.gridSpan,
 		gridStart = this.gridStart,
 		limit = this.upperLimit,
-		actualOffset = offset;
+		actualOffset = offset,
+		end = 0;
 
 	if ((gridStart + gridSpan + actualOffset) > limit) { // limit to end of grid
 		actualOffset = limit - gridStart - gridSpan;
+		if (fastMode === true && actualOffset === 0) {
+            end = 2;
+	    }
 	}
 
-	this.superCall(actualOffset, fastMode);
+	this.superCall(actualOffset, fastMode, end);
 
 	this.logExit();
 };
@@ -56,7 +60,7 @@ Object.defineProperty(app.gui.controls.GuideFutureGrid.prototype, "zeroOffset", 
  */
 Object.defineProperty(app.gui.controls.GuideFutureGrid.prototype, "upperLimit", {
 	get: function get() {
-		var limit = Date.now() + (7 * 24 * 3600 * 1000); // one week
+		var limit = Date.now() + (14 * 24 * 3600 * 1000); // one week
 		return (limit - this._gridSpanBuffer - (limit % this._gridSpanBuffer)); // round to buffer
 	}
 });

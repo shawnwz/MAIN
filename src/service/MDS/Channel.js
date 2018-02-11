@@ -5,8 +5,9 @@ $service.MDS.Channel = (function Channel() {
 	/* global console: true*/
 
 	var _cache = {}, testSOList;
+	var cachedChannels = [];
 
-	testSOList = [ //@hdk: temp only!!!
+	var testSOList = [ //@hdk: temp only!!!
 		"http://test-vod-st1.content.foxtel.com.au/mount1/nagradrop/hdvod/ON149191/ON149191.ism/manifest",
 		"http://test-vod-st1.content.foxtel.com.au/mount1/nagradrop/hdvod/ON155470/ON155470.ism/manifest",
 		"http://test-vod-st1.content.foxtel.com.au/mount1/nagradrop/hdvod/ON156318/ON156318.ism/manifest",
@@ -112,10 +113,13 @@ $service.MDS.Channel = (function Channel() {
 		var promise = null,
 			promises = [];
 
+		cachedChannels = [];
+
 	  o5.platform.btv.PersistentCache.beginBatch();
 
 		if (data && data.length > 0) {
 			data.forEach(function (service, i, array) {
+				cachedChannels.push(service);
 				promises.push(_cacheService(service));
 			});
 		}
@@ -188,9 +192,14 @@ $service.MDS.Channel = (function Channel() {
 		return _cache[channelId] || null;
 	}
 
+	function getAllChannels() {
+		return cachedChannels;
+	}
+
 	return {
 		init           : init,
-		getForChannelId: getForChannelId
+		getForChannelId: getForChannelId,
+		getAllChannels: getAllChannels
 	};
 }());
 

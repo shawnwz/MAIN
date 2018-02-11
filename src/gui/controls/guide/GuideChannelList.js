@@ -33,7 +33,23 @@ app.gui.controls.GuideChannelList.prototype.createdCallback = function createdCa
 		this.fireControlEvent("page:next");
 		this.fireControlEvent("select", 0);
 	}, this);
-	this.onControlEvent("selectChannel", function (channel, genre) {
+	$util.ControlEvents.on("app-guide:reverseEpgEventsInner", "exit:up", function () {
+		this.fireControlEvent("page:previous");
+		this.fireControlEvent("select", this._maxItemNb - 1);
+	}, this);
+	$util.ControlEvents.on("app-guide:reverseEpgEventsInner", "exit:down", function () {
+		this.fireControlEvent("page:next");
+		this.fireControlEvent("select", 0);
+	}, this);
+	$util.ControlEvents.on("app-guide:futureEpgEventsInner", "exit:up", function () {
+		this.fireControlEvent("page:previous");
+		this.fireControlEvent("select", this._maxItemNb - 1);
+	}, this);
+	$util.ControlEvents.on("app-guide:futureEpgEventsInner", "exit:down", function () {
+		this.fireControlEvent("page:next");
+		this.fireControlEvent("select", 0);
+	}, this);
+	this.onControlEvent("selectChannel", function (channel, genre, star) {
  		var channelIndex;
 
  		if (genre === "genre_Favourites") {
@@ -47,6 +63,8 @@ app.gui.controls.GuideChannelList.prototype.createdCallback = function createdCa
  		}
  		if (channelIndex >= 0) {
  			this.fireControlEvent("select", channelIndex % this._maxItemNb);
+ 		} else if (star) {
+ 			$util.ControlEvents.fire("app-guide", "noselectChannel");
  		}
 	});
  	this.onControlEvent("selectPage", function (channel, genre) {
@@ -69,6 +87,18 @@ app.gui.controls.GuideChannelList.prototype.createdCallback = function createdCa
  				this._pageIndex = pageIndex;
  			}
  		}
+ 	}, this);
+ 	this.onControlEvent("getGenreChannel", function (genere) {
+ 		var filtered = [],
+	        favouriteChannels = [];
+	    if (genere === "genre_Favourites") {
+	    	favouriteChannels = o5.platform.btv.Favourites.getAllFavouriteChannels();
+		    favouriteChannels.forEach(function (item) {
+			    filtered = filtered.concat(item.getChannels());
+		    });
+		    this._favChannels = filtered;
+		    $util.ControlEvents.fire("app-guide", "genreFavourites", filtered.length);
+	    }
  	}, this);
 	this.logExit();
 };

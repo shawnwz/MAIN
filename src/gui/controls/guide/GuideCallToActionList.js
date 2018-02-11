@@ -55,8 +55,16 @@ app.gui.controls.GuideCallToActionList.prototype._fetch = function _fetch(progra
 		*/
 		
 		//items.push("ctaRecord");
+
+		
 		if (gridViewVisible) {
-			items.push("ctaSkip24H");
+		    if (programme.isReverse === true && (new Date().getTime() - programme.progStartDate) >= 27 * 3600 * 1000) {
+			    items.push("ctaFfwdSkip");
+		    } else if (programme.isInFuture === true && (programme.progEndDate - new Date().getTime()) >= 14 * 24 * 3600 * 1000) {
+			    items.push("ctaRwdSkip");
+		    } else {
+			    items.push("ctaSkip24H");
+		    }
 		}
 
 		if (programme.isMovie !== true) {
@@ -69,6 +77,9 @@ app.gui.controls.GuideCallToActionList.prototype._fetch = function _fetch(progra
 	}
 
     items.push("ctaPageUpDown");
+    if (!channelViewVisible) {
+    	items.push("ctaStar");
+    }
 	this.fireControlEvent("populate", items);
 	this.fireControlEvent("show");
 

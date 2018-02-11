@@ -40,7 +40,15 @@ app.screenConfig.settings.INTERNET_CONNECTION = {
             {
                 id    : "networkTest",
                 text  : "settingsMenuTitleNetworkTest",
-                events: []
+                events: [
+                    {
+                        "name": "scr:navigate:to",
+                        "data": { "id": "settingsNetworkTestView", "title": "settingsMenuTitleNetworkTest", "footerClassList": ["ctaClose"] }
+                    },
+                    {
+                	"name": "settings:startNetworkRequest"
+                    }
+                ]
             },
             {
                 id    : "internetSpeedTest",

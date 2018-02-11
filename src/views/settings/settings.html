@@ -21,7 +21,7 @@
 <script src="./screenConfig/InternetConnection.js"></script>
 <script src="./screenConfig/ParentalControl.js"></script>
 <script src="./screenConfig/NetworkSettings.js"></script>
-
+<script src="./screenConfig/HomeTransponder.js"></script>
 <script src="./screenConfig/TerrestrialChannels.js"></script>
 
 <script src="./screenConfig/StartScan.js"></script>
@@ -32,6 +32,7 @@
 <script src="./screenConfig/WifiOptions.js"></script>
 <script src="./screenConfig/PinControl.js"></script>
 <script src="./screenConfig/InstallerSetup.js"></script>
+<script src="./screenConfig/LNB.js"></script>
 
 
 <!--components -->
@@ -590,93 +591,66 @@
 
 
 
-    <div id="installerLNBView" class="oxygen-transition-none-hide">
+	<div id="installerLNBView" class="oxygen-transition-none-hide">
 
         <div class="settingsList">
 
-            <ul>
+            <app-settings-list id="installerLNBViewList"
 
-                <li>
+            		data-config="app.screenConfig.settings.LNB">
 
-                    <div class="settingsListLabel" data-i18n="installerLNBPower"></div>
+                <template>
 
-                    <div id="installerLNBPower" class="settingsListValue"></div>
+                  <app-settings-list-item class="settings-list-item">
 
-                </li>
+                    <div class="settingsListLabel"></div>
 
-                <li class="noArrows">
+                    <div id="" class="settingsListValue"></div>
 
-                    <div class="settingsListLabel" data-i18n="installerLNBKHz"></div>
+                  </app-settings-list-item>
 
-                    <div id="installerLNB22KHz" class="settingsListValue"></div>
+                </template>
 
-                </li>
+            </app-settings-list>
 
-                <li class="noArrows">
+		</div>
 
-                    <div class="settingsListLabel" data-i18n="installerLNBLoFreq"></div>
-
-                    <div id="installerLNBLoFreq" class="settingsListValue"></div>
-
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
+   	</div>
 
 
 
     <div id="installerHomeTransView" class="oxygen-transition-none-hide">
 
-        <div class="settingsList">
+        <div id="settingsListStatusContainer" class="settingsList">
 
-            <ul>
-
-                <li id="installerHome1">
-
-                    <div id="installerHomeTrans1Label" class="settingsListLabel"></div>
-
-                    <div id="installerHomeTrans1" class="settingsListValue"></div>
-
-                </li>
-
-                <li id="installerHome2">
-
-                    <div id="installerHomeTrans2Label" class="settingsListLabel" ></div>
-
-                    <div id="installerHomeTrans2" class="settingsListValue"></div>
-
-                </li>
-
-                <li id="installerHome3" class="noArrows">
-
-                    <div id="installerHomeTrans3Label" class="settingsListLabel"></div>
-
-                    <div id="installerHomeTrans3" class="settingsListValue"></div>
-
-                </li>
-
-                <li id="installerHome4">
-
-                    <div id="installerHomeTrans4Label" class="settingsListLabel"></div>
-
-                    <div id="installerHomeTrans4" class="settingsListValue"></div>
-
-                </li>
-
-                <li id="installerHome5">
-
-                    <div id="installerHomeTrans5Label" class="settingsListLabel"></div>
-
-                    <div id="installerHomeTrans5" class="settingsListValue"></div>
-
-                </li>
-
-            </ul>
+            <div id="installerHomeTransScrollBar" class="settingsScroll"><div class="scrollBarItemFill"></div></div>
 
         </div>
+        <app-settings-home-transponder id="homeTransponder">
+
+        <div class="settingsList">
+
+            <app-settings-list id="installerHomeTransViewList"
+
+                    data-config="app.screenConfig.settings.HOME_TRANS"
+
+                    data-scrollbar="installerHomeTransScrollBar">
+
+                <template>
+
+                  <app-settings-list-item class="settings-list-item">
+
+                    <div class="settingsListLabel"></div>
+
+                    <div id="" class="settingsListValue"></div>
+
+                  </app-settings-list-item>
+
+                </template>
+
+            </app-settings-list>
+        </div>
+        </app-settings-home-transponder>
 
     </div>
 
@@ -1129,51 +1103,31 @@
 
     <!-- #settingsNetworkTestView: class helpers [testing-modem, testing-foxtel, fail-modem, fail-foxtel, connected] -->
 
-    <div id="settingsNetworkTestView" class="testing-modem oxygen-transition-none-hide">
-
-        <div id="settingsNetworkTestBorder"></div>
-
-        <div id="settingsNetworkTestTestingModem">
-
-            <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestTestingModem"></div>
-
-            <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem"></span></div>
-
-        </div>
-
-        <div id="settingsNetworkTestTestingFoxtel">
-
-            <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestTestingFoxtel"></div>
-
-            <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem"></span></div>
-
-        </div>
-
-        <div id="settingsNetworkTestFailModem">
-
-            <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestFailModem"></div>
-
-            <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem"></span></div>
-
-        </div>
-
-        <div id="settingsNetworkTestFailFoxtel">
-
-            <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestFailFoxtel"></div>
-
-            <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem"></span></div>
-
-        </div>
-
-        <div id="settingsNetworkTestConnected">
-
-            <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestConnected"></div>
-
-            <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem"></span></div>
-
-        </div>
-
-    </div>
+<div id="settingsNetworkTestView" class="fail-foxtel oxygen-transition-none-bringOut oxygen-transition-none-hide">
+		<app-settings-network-test id = "settingsNetworkTest">
+            <div id="settingsNetworkTestBorder"></div>
+            <div id="settingsNetworkTestTestingModem">
+                <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestTestingModem">Testing...</div>
+                <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem">GATEWAY</span></div>
+            </div>
+            <div id="settingsNetworkTestTestingFoxtel">
+                <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestTestingFoxtel">Testing...</div>
+                <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem">GATEWAY</span></div>
+            </div>
+            <div id="settingsNetworkTestFailModem">
+                <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestFailModem">Connection from iQ3 to Gateway unsuccessful</div>
+                <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem">GATEWAY</span></div>
+            </div>
+            <div id="settingsNetworkTestFailFoxtel">
+                <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestFailFoxtel">Connection from Gateway to Foxtel unsuccessful</div>
+                <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem">GATEWAY</span></div>
+            </div>
+            <div id="settingsNetworkTestConnected">
+                <div class="settingsNetworkTestText" data-i18n="settingsNetworkTestConnected">All good! Your iQ3 is connected to Foxtel</div>
+                <div class="settingsNetworkTestImg"><span data-i18n="settingsNetworkTestModem">GATEWAY</span></div>
+            </div>
+		</app-settings-network-test>
+</div>
 
 
 
@@ -1685,7 +1639,13 @@
     </app-settings-input-text>
 
   </template>
-
+ <template id="settingsNumericInputTemplate">
+<div class="control">
+    <app-settings-numeric-input>
+        <span class= "inputText"></span>
+    </app-settings-numeric-input>
+</div>
+  </template>
   <template id="settingsTextTemplate">
     <app-settings-text class="noArrows listView-cell   ">
 		<div class="settingsListLabel " data-i18n="settingsMenuSystemManufacturer">Manufacturer</div>

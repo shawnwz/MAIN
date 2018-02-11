@@ -25,6 +25,7 @@
     "pashText3a": "NEW EPISODE",
     "pashText3b": "MADE FOR FOXTEL",
     "searchLoadingMore":"Loading More Results",
+    "dialogSearchFilter":"Filter Results",
     "genre_1_all":"1. All Channels",
     "genre_2_FTA":"2. Channels 9, 7, 10, ABC, SBS",
     "genre_3_Entertainment":"3. Entertainment",
@@ -53,5 +54,6 @@
     "settingsMenuTitleTcpIPConfig":"IP Configuration (Ethernet)",
     "settingsRestrictionsNonClassifiedFooter":"Non-classified programmes like Sport and News occasionally contain violent or controversial content.",
     "settingsMenuDownloadControlTitle":"Download Control",
-    "settingsDownloadControlBandwidthQuality":"Bandwidth Quality"
+    "settingsDownloadControlBandwidthQuality":"Bandwidth Quality",
+    "callToActionStar":"Favourites"
 }

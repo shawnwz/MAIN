@@ -1,7 +1,7 @@
 "use strict";
 var reminderAdvancedTimeOptions = $service.settings.Notifications.getReminderAdvancedTimeOptions(),
 	reminderAdvancedTimeIndex = 0,
-	reminderAdvancedTimeValue = 30,
+	reminderAdvancedTimeValue = 60,
 	deleteConfirmationOptions = $service.settings.Notifications.getDeleteConfirmationOptions(),
 	deleteConfirmationIndex = 0,
 	deleteConfirmationValue = "unviewed",
@@ -77,7 +77,7 @@ app.screenConfig.settings.NOTIFICATIONS = {
 
 	text   : "notifications",
 	defaultitem: {
-		settingsNoticationsReminder: 30,
+		settingsNoticationsReminder: 60,
 		settingsNoticationsDelete  : "unviewed",
 		settingsNoticationsIpVideo : true,
 		settingsNoticationsBannner : 10,

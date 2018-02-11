@@ -19,17 +19,22 @@ app.gui.controls.GuideReverseGrid.prototype.createdCallback = function createdCa
  */
 app.gui.controls.GuideReverseGrid.prototype._scroll = function _scroll(offset, fastMode) {
 	this.logEntry();
-
 	var gridStart = this.gridStart,
 		limit = this.lowerLimit,
+		end = 0,
 		actualOffset = offset;
-
+    if (gridStart <= limit && offset < 0 && offset !== -24 * 3600 * 1000) {
+    	return;
+    }
 	if ((gridStart + actualOffset) < limit) { // limit to start of grid
 		actualOffset = limit - gridStart;
+		if (fastMode === true && actualOffset === 0) {
+            end = 1;
+	    }
 	}
 
-	this.superCall(actualOffset, fastMode);
-
+	this.superCall(actualOffset, fastMode, end);
+	
 	this.logExit();
 };
 
@@ -57,7 +62,7 @@ Object.defineProperty(app.gui.controls.GuideReverseGrid.prototype, "upperLimit",
  */
 Object.defineProperty(app.gui.controls.GuideReverseGrid.prototype, "lowerLimit", {
 	get: function get() {
-		var limit = Date.now() - (24 * 3600 * 1000); // 24 hrs in the past
+		var limit = Date.now() - (27 * 3600 * 1000); // 27 hrs in the past
 		return (limit - this._gridSpanBuffer - (limit % this._gridSpanBuffer)); // round to buffer
 	}
 });
@@ -155,7 +160,7 @@ Object.defineProperty(app.gui.controls.GuideReverseGridCell.prototype, "itemData
 				if (data.isClosedCaptioned !== undefined && data.isClosedCaptioned === true) { // if (data.closedCaptionsAvailable && subtitlesEnabled) {
 					html += '<span class="epgCellIcon iconCC">CC</span>';
 				}
-				if ((data.isStartOver === true || data.isCatchUp === true ) && data.isReverse === true ) {
+				if ((data.isStartOver === true || data.isCatchUp === true) && data.isReverse === true) {
 					html += '<span class="epgCellIcon iconPlay"></span>';
 				}
 			}

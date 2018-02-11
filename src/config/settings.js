@@ -104,7 +104,7 @@ $config.addDefaultSettings({
 	 * {Int}
 	 */
 	"settings.notifications.reminder.advanced.time": {
-		value   : 30,
+		value   : 60,
 		override: false
 	},
 
@@ -321,6 +321,30 @@ $config.addDefaultSettings({
 	 */
 	"settings.tcpIp.secondaryDns": {
 		value   : "0.0.0.0",
+		override: false
+	},
+
+	/*
+	 * {Boolean}
+	 */
+	"settings.installer.lnb.power": {
+		value   : true,
+		override: false
+	},
+
+	/*
+	 * {Boolean}
+	 */
+	"settings.installer.lnb.frequencyCommand": {
+		value   : false,
+		override: false
+	},
+
+	/*
+	 * {String}
+	 */
+	"settings.installer.lnb.highBandLowFrequency": {
+		value   : "10.7",
 		override: false
 	}
 });

@@ -17,13 +17,58 @@ app.gui.controls.GuideGrid.prototype.createdCallback = function createdCallback(
 	$util.ControlEvents.on("app-guide:epgChannelStack", "page:next", function() {
 	}, this);
 
-	$util.ControlEvents.on("app-guide:ctaGuide", "ctaSkip24H", function(key) {
+    $util.ControlEvents.on("app-guide:guidegrid", "ctaSkip24H", function(key) {
 		if (this.focused) {
-			//var gridStart = this.gridStart;
-			if (key === "FastForward") {
+			if (key === "FastForward" || key === "Forward") {
 				this.fireControlEvent("scroll", 24 * 3600 * 1000, true);
 			} else if (key === "Rewind") {
 				this.fireControlEvent("scroll", -24 * 3600 * 1000, true);
+			}
+		}
+	}, this);
+	$util.ControlEvents.on("app-guide:ctaGuide", "ctaFfwdSkip", function(key) {
+		if (this.focused) {
+			//var gridStart = this.gridStart;
+			if (key === "FastForward" || key === "Forward") {
+				this.fireControlEvent("scroll", 24 * 3600 * 1000, true);
+			}
+		}
+	}, this);
+	$util.ControlEvents.on("app-guide:ctaGuide", "ctaRwdSkip", function(key) {
+		if (this.focused) {
+			//var gridStart = this.gridStart;
+			if (key === "Rewind") {
+				this.fireControlEvent("scroll", -24 * 3600 * 1000, true);
+			}
+		}
+	}, this);
+	$util.ControlEvents.on("app-guide:guidegrid", "ctaStar", function() {
+		if (this.focused) {
+			var selectedItem = this._selectedItem,
+		        serviceId;
+
+            if (selectedItem) {
+                serviceId = selectedItem._data.serviceId;
+            }
+			$util.ControlEvents.fire("app-guide", "clear");
+			$util.ControlEvents.fire("app-guide:epgChannelStack", "selectPage", serviceId, "genre_Favourites");
+            $util.ControlEvents.fire("app-guide", "starChannel");
+			$util.ControlEvents.fire("app-guide:epgChannelStack", "fetch", "genre_Favourites");
+			$util.ControlEvents.fire("app-guide:epgChannelStack", "selectChannel", serviceId, "genre_Favourites", true);
+		}
+	}, this);
+
+	$util.ControlEvents.on("app-guide:guidegrid", "noselectChannel", function() {
+		if (this.focused) {
+			if (!$config.getConfigValue("settings.tv.guide.now.and.next")) {
+                $util.ControlEvents.fire("app-guide", "futureGrid");
+                $util.ControlEvents.fire("app-guide:futureEpgEventsInner", "select", 0, 0); // select one after next //@ "middle" instead? since 3 might not exist?
+                $util.ControlEvents.fire("app-guide:futureEpgEventsInner", "focus");
+			} else {
+				$util.ControlEvents.fire("app-guide", "nowNextGrid");
+                $util.ControlEvents.fire("app-guide:nowNextGrid", "select", 0, 0); // select now event
+                $util.ControlEvents.fire("app-guide:nowNextGrid", "focus");
+                $util.ControlEvents.fire("app-guide:nowNextGrid", "noChannel");
 			}
 		}
 	}, this);
@@ -81,7 +126,6 @@ app.gui.controls.GuideGrid.prototype._change = function _change() {
  */
 app.gui.controls.GuideGrid.prototype._fetch = function _fetch(channels) {
 	this.logEntry();
-
 	var channelList = channels,
 		r, clen, service,
 		promises = [],
@@ -139,28 +183,28 @@ app.gui.controls.GuideGrid.prototype._update = function _update(offset) {
 		start, end,
 		me = this;
 
-	for (r = 0; r < clen; r++) {
-		service = this._channels[r];
-		rlen = this._rows[r].length;
+		for (r = 0; r < clen; r++) {
+			service = this._channels[r];
+			rlen = this._rows[r].length;
 
-		if (service && service.serviceId) {
-			if (offset < 0) { // prepend: use first cell to get fetch time
-				//@hdk ask for one more if selected is first
-				data = rlen ? this._rows[r][0].itemData : null;
-				start = this._gridStart;
-				end = rlen ? data.startTime : this._gridEnd; // startTime of first cell or full range if no cells
-			} else { // append: use last cell as fetch time
-				//@hdk ask for one more if selected is last
-				data = rlen ? this._rows[r][rlen - 1].itemData : null;
-				start = rlen ? data.endTime : this._gridStart; // endTime of last cell or full range if no cells
-				end = (this._gridEnd > start) ? this._gridEnd : start + this._gridSpanBuffer;
+			if (service && service.serviceId) {
+				if (offset < 0) { // prepend: use first cell to get fetch time
+					//@hdk ask for one more if selected is first
+					data = rlen ? this._rows[r][0].itemData : null;
+					start = this._gridStart;
+					end = rlen ? data.startTime : this._gridEnd; // startTime of first cell or full range if no cells
+				} else { // append: use last cell as fetch time
+					//@hdk ask for one more if selected is last
+					data = rlen ? this._rows[r][rlen - 1].itemData : null;
+					start = rlen ? data.endTime : this._gridStart; // endTime of last cell or full range if no cells
+					end = (this._gridEnd > start) ? this._gridEnd : start + this._gridSpanBuffer;
+				}
+				
+				promises.push($service.EPG.Event.byTime(service, start, end, true).catch(function() {
+					return []; // do something?
+				}));
 			}
-
-			promises.push($service.EPG.Event.byTime(service, start, end, true).catch(function() {
-				return []; // do something?
-			}));
 		}
-	}
 
 	Promise.all(promises).then(function(datas) {
 		me.fireControlEvent(offset < 0 ? "prepend" : "append", datas);
@@ -172,9 +216,8 @@ app.gui.controls.GuideGrid.prototype._update = function _update(offset) {
 /**
  * @method _scroll
  */
-app.gui.controls.GuideGrid.prototype._scroll = function _scroll(offset, fastMode) {
+app.gui.controls.GuideGrid.prototype._scroll = function _scroll(offset, fastMode, end) {
 	this.logEntry();
-
 	if (!this._fastMode && fastMode) { // switch to fast
 		this.parentElement.classList.add('gridEpg-fast-horizontal');
 		this._sliderElem.classList.add("noAnimation");
@@ -190,7 +233,14 @@ app.gui.controls.GuideGrid.prototype._scroll = function _scroll(offset, fastMode
 		clearTimeout(this._fastModeTimer);
 		this._fastModeTimer = setTimeout(function() {
 			me._scroll(0, false); // redraw
-			me.fireControlEvent("select:column", "middle"); // select somewhere in the middle
+			if (end === 1) {
+				me.fireControlEvent("select:column", "first"); // select somewhere in the middle
+			} else if (end === 2) {
+				me.fireControlEvent("select:column", "last");
+			} else {
+				me.fireControlEvent("select:column", "middle"); // select somewhere in the middle
+			}
+			
 		}, 500);
 	} else {
 		this._scrolledPix = Math.floor((this._pixUnit * (this.zeroOffset - this._gridStart)) / (60 * 1000));

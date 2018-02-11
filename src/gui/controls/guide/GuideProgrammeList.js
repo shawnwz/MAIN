@@ -21,6 +21,7 @@ app.gui.controls.GuideProgrammeList.prototype.createdCallback = function created
 	this._service = null;
   	this._progList = document.querySelector('#epgChannelViewProgList');
   	this._noProgCell = document.querySelector('#epgChannelViewNoProgCell');
+  	this._pinDialog = document.querySelector('#dialogPinEntryH');
 
 	// fetch events when Prev list changes
 	$util.ControlEvents.on("app-guide:epgChannelViewChanListPrev", "populated", function (ctrl, event) {
@@ -63,9 +64,12 @@ app.gui.controls.GuideProgrammeList.prototype.createdCallback = function created
 			$util.ControlEvents.fire("app-video", "setSrc", channelToTune);
             $util.Events.fire("app:navigate:to", "surf");
             setTimeout(function () {
-				if (o5.platform.ca.ParentalControl.isChannelLocked(me._service.serviceId)) {
-            		$util.ControlEvents.fire(":dialogPinEntryH", "show");
-					$util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });
+            	//var isMaster = o5.platform.system.Preferences.get("/users/current/isMaster", true);
+				if (o5.platform.ca.ParentalControl.isChannelLocked(me._service.serviceId) || selectedEvent.ratingBlocked === true) {
+            		if (me._pinDialog.visible === false) {
+            			$util.ControlEvents.fire(":dialogPinEntryH", "show");
+						$util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });
+					}
         		}
 			}, 500);
 		} else {
@@ -197,7 +201,10 @@ app.gui.controls.GuideProgrammeList.prototype._fetch = function _fetch(service, 
  */
 app.gui.controls.GuideProgrammeList.prototype._populate = function _populate(events, time, event) {
 	this.logEntry();
-	var index = -1, keys,
+	var index = -1,
+		keys,
+		i = 0,
+		length = 0,
 		actualTime = time;
 
 	if (!events || events.length === 0) { // no events
@@ -216,7 +223,8 @@ app.gui.controls.GuideProgrammeList.prototype._populate = function _populate(eve
 				return (Math.abs(events[c].startTime - actualTime) < Math.abs(events[p].startTime - actualTime) ? Number(c) : p);
 			}, 0);
 		} else {
-			for (var i = 0, length = events.length; i < length; i++){
+			length = events.length;
+			for (i = 0; i < length; i++) {
 				if (events[i].id === event.id) {
 					index = i;
 					break;

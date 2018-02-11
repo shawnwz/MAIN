@@ -43,6 +43,7 @@ var Launch = (function () {
 		$actions.settings.ChannelBlocking.init();
 		$actions.settings.PinControl.init();
 		$actions.settings.ViewRestrictions.init();
+		$actions.settings.LNB.init();
 		$actions.app.OTVControlApp.init();
 		$actions.app.LaunchAppUtil.init();
 	}

@@ -120,6 +120,20 @@ app.gui.controls.DialogPinEntryH.prototype.attachedCallback = function attachedC
 };
 
 /**
+ * @method _populate
+ */
+app.gui.controls.DialogPinEntryH.prototype._populate = function _populate (args) {
+	this.logEntry();
+	if (args && args.attempts) {
+		this._attempts = args.attempts;
+		this.superCall();
+	} else {
+		this.superCall(args);
+	}
+	this.logExit();
+};
+
+/**
  * @method _focus
  */
 app.gui.controls.DialogPinEntryH.prototype._focus = function _focus () {

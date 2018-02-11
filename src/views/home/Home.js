@@ -69,7 +69,7 @@ app.views.Home.prototype.createdCallback = function createdCallback() {
 	this._spinnerTimer = null;
 	this.onshow = this._onShow;
 	this.onfocus = this._onFocus;
-
+	this.onhide = this._onHide;
 	$util.Translations.update(this);
 	this.logExit();
 };

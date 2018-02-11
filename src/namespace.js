@@ -20,7 +20,8 @@ self.$service = {
 	settings: {},
 	SDP     : {},
 	MDS     : {},
-	scan    : {}
+	scan    : {},
+	tuner 	: {}
 };
 self.$actions = {
 	Navigate: {},

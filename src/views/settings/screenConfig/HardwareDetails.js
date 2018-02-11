@@ -12,8 +12,10 @@ app.screenConfig.settings.HARDWARE_DETAILS = {
                     type      : "settingsText",
                     isEditable: false,
                     isTitle   : true,
-                    get       : function get() {
-                        return " ";
+                    get         : function get() {
+				                    return {
+										text: " "
+									};
                     },
                     events: []
                 }
@@ -66,8 +68,10 @@ app.screenConfig.settings.HARDWARE_DETAILS = {
                     type      : "settingsText",
                     isEditable: false,
                     isTitle   : true,
-                    get       : function get() {
-                        return " ";
+                    get         : function get() {
+				                    return {
+										text: " "
+									};
                     },
                     events: []
                 }

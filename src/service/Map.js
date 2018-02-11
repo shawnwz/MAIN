@@ -171,37 +171,48 @@ $service.Map = (function Map () {
 		return "standard";
 	}
 
-	function isBlocked (mapped) {
+	function _getParentalRating (rating) {
+		var _ratingsType = [ "none", "ratingPG", "ratingM", "ratingMA", "ratingAV", "ratingR" ],
+			i = 0;
 
-		var rating = mapped.rating,
-			type = mapped.type,
-			ratingType = mapped.ratingType;
+		if (rating) {
+			for (i = 0; i < _ratingsType.length; i++) {
+				if (_ratingsType[i].toLowerCase() === rating.toString().toLowerCase()) {
+					return i;
+				}
+			}
+		}
+		
+		return -1;
+		}
+		
+	function isBlocked (programRating, savedRating) {
+		var _ratingsTransLookup = {
+				"g"     : "ratingPG",
+				"pg"    : "ratingPG",
+				"pg/pgr": "ratingPG",
+				"m"     : "ratingM",
+				"ma"    : "ratingMA",
+				"ma15+" : "ratingMA",
+				"av"    : "ratingAV",
+				"r"     : "ratingR"
+			},
+			_itemRatingIndex,
+			_savedRatingIndex;
 
-		if (rating === undefined || type === undefined) {
+		if (programRating === undefined) {
 			return false;
 		}
-		
-		if (typeof rating === "string" && rating.indexOf('(') === 0) { // remove brackets
-			rating = rating.substring(1, (rating.length - 1));
-		}
-		
-		var savedRating = (ratingType === "ADULT") ? _getAdultFilteringRating() : _getParentalRating(),
-			itemRating = (type === 'name') ? _epgHelper.getRatingByName(rating) : _epgHelper.getRatingById(rating),
-			itemRatingValue = _obj.get(itemRating, 'value', null); // set undefined as null so we can log it
 
-		if (itemRatingValue === null) {
-			// log that we didn't get a rating but then treat as Not Classified
-			console.warn("_getParentalBlock: Unable to find rating " + type + " [" + rating + "]");
-			itemRatingValue = 0;
-		}
+		//_itemRatingIndex = _getParentalRating(_ratingsTransLookup[programRating.toString().toLowerCase()]);
+		_itemRatingIndex = _getParentalRating(_ratingsTransLookup[programRating.toString().toLowerCase()] || "none");
+		_savedRatingIndex = _getParentalRating(savedRating);
 
-		// check if we need to ask for a PIN on not classified content, but only when the type is not adult filtering
-		if (_pinNonClassified && itemRatingValue === 0 && ratingType !== "ADULT") {
-			return true; //NC BLOCKED
+		if (_itemRatingIndex >= _savedRatingIndex) {
+			return true;
 		}
 		
-		// check if content rating is hired that saved rating value (unless the saved rating is "None")
-		return (itemRatingValue >= savedRating.value && savedRating.id !== "0");
+		return false;
 	}
 	
 	/**
@@ -256,7 +267,9 @@ $service.Map = (function Map () {
 				"standard": { "width": 273, "height": 153, "perColumn": 2  },
 				"tall"    : { "width": 212, "height": 315, "perColumn": 1  }
 			},
-			channel = o5.platform.btv.EPG.getChannelByServiceURI("tv://channel." + mapped.channelTag);
+			channel = o5.platform.btv.EPG.getChannelByServiceURI("tv://channel." + mapped.channelTag),
+			_pinRequiredRating = $config.getConfigValue("settings.viewrestrictions.pin.entry.for.classified.program");
+			//_hideInfoRating = $config.getConfigValue("settings.viewrestrictions.hide.info.posters.for.classified.program");
 
 		// make sure we have these legacy duplicates //@hdk to remove later??
 		mapped.channel = mapped.channel || mapped.channelTag;
@@ -337,6 +350,7 @@ $service.Map = (function Map () {
 
 		if (mapped.rating) {
 			mapped.ratingImage = _ratingsLookup[mapped.rating.toString().toLowerCase()];
+			mapped.ratingBlocked = isBlocked(mapped.rating, _pinRequiredRating);
 		}
 
 		mapped.titleText = _getTitleText(mapped);

@@ -6,12 +6,12 @@ app.gui.controls.DialogAcquiring = function DialogAcquiring () {};
 o5.gui.controls.Control.registerAppControl(app.gui.controls.DialogAcquiring, app.gui.controls.HtmlDialogContainer);
 
 app.gui.controls.DialogAcquiring.prototype.createdCallback = function createdCallback () {
-//	this.logEntry();
+	this.logEntry();
 	this.superCall();
-
-//  this._fill = this.querySelector('#volumeBarFill');
-	
-//	this.logExit();
+	this._title.textContent = "";
+	this._text.textContent = "";
+	this._errorCode.textContent = "";
+	this.logExit();
 };
 
 /**
@@ -40,6 +40,8 @@ app.gui.controls.DialogAcquiring.prototype._hide = function _hide () {
 	this.superCall();
 	this.logExit();
 };
+
+
 
 /**
  * @method _onKeyDown

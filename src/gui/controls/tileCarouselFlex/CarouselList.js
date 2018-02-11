@@ -22,12 +22,12 @@ app.gui.controls.CarouselList.prototype.createdCallback = function createdCallba
     this.onControlEvent("populate", this._populate);
     this.onControlEvent("fetch", this._fetch);
     this.onControlEvent("enter", this._enter);
+    this.onControlEvent("remove", this._remove);
     this.onControlEvent("focus", function () {
         this.logEntry();
         var selectedItem = this.selectedItem;
-        //this.superCall();
-        if (selectedItem && selectedItem._carouselRow) {
-                selectedItem._carouselRow.fireControlEvent("change", selectedItem._carouselRow);
+        if (selectedItem && selectedItem._carouselRow && selectedItem._carouselRow.selectedItem && selectedItem._carouselRow.selectedItem._onSelect) {
+            selectedItem._carouselRow.selectedItem._onSelect();
         }
         this.logExit();
     }, this);
@@ -89,6 +89,32 @@ app.gui.controls.CarouselList.prototype._enter = function _enter (node) {
 };
 
 /**
+ * @method _remove
+ * @public
+ */
+app.gui.controls.CarouselList.prototype._remove = function _remove (node) {
+    this.logEntry();
+        var selectedRow = node ? node.selectedRow : null,
+            selectedCell = selectedRow ? selectedRow.selectedItem : null,
+            data = selectedCell ? selectedCell.itemData : null,
+            _dialog = {};
+
+        _dialog = {
+            title    : $util.Translations.translate("dialogDeleteEventTitle"),
+            text     : $util.Translations.translate("dialogDeleteEventText"),
+            subText  : "",
+            errorCode: ""
+        };
+
+    if (data && node.selectedItem.itemData.title === "Continue Watching") {
+        if (data.source !== "MDS" && data.source !== "DISCO") {
+            $util.ControlEvents.fire(":dialogGenericErrorH", "show", _dialog);
+        }
+    }
+    this.logExit();
+};
+
+/**
  * @method _change
  * @public
  */
@@ -102,9 +128,6 @@ app.gui.controls.CarouselList.prototype._change = function _change (ctrl) {
         this._focusWindow.classList.add("asset-" + data.assetType);
     }
     this.superCall(ctrl);
-    if (selectedItem && selectedItem._carouselRow) {
-            selectedItem._carouselRow.fireControlEvent("change", selectedItem._carouselRow);
-    }
     this.logExit();
 };
 
@@ -206,6 +229,14 @@ app.gui.controls.CarouselList.prototype._onKeyDown = function _onKeyDown (e) {
             this.fireControlEvent("enter", this);
             handled = true;
             break;
+        case "Yellow":
+            this.fireControlEvent("remove", this);
+            handled = true;
+            break;
+        case "Blue":
+            //set reminder - instead record
+            console.log("carousellist: key Blue");
+            break;
         default:
             handled = this.superCall(e);
             break;
@@ -264,8 +295,7 @@ app.gui.controls.CarouselListItem.prototype.attachedCallback = function attached
               str = "",
               strLine2 = "",
               strLine3 = "",
-              i = 7,
-              component, componentMenu;
+              i = 7;
 
             while (i--) {
                 str = "dateWeekdayShort" + i;
@@ -325,18 +355,6 @@ app.gui.controls.CarouselListItem.prototype.attachedCallback = function attached
 
                 me._infoSubTitle.innerHTML = str;
             }
-
-            // update footer button to content in active view, selected carousel
-            if (data && me.itemData && me.classList.contains("focused")) {
-                componentMenu = document.querySelector('#portalMenu');
-                component = (componentMenu && componentMenu.selectedItem) ? componentMenu.selectedItem.itemData : null;
-                if (component && component.displayName) {
-                        if (o5.gui.viewManager.activeView.localName.endsWith(component.displayName.toLowerCase()) === true) {
-                            $util.ControlEvents.fire("app-home:ctaHome", "fetch", { "component": component, "carousel": me.itemData, "content": data });
-                        }
-                }
-            }
-
         });
 
         // populate the row
@@ -372,4 +390,26 @@ Object.defineProperty(app.gui.controls.CarouselListItem.prototype, "itemData", {
     }
 });
 
+/**
+ * @method onSelect
+ */
+app.gui.controls.CarouselListItem.prototype._onSelect = function _onSelect () {
+    this.logEntry();
+    this.superCall(); // Must call the superCall() first
+    if (this._carouselRow && this._carouselRow.selectedItem) {
+            if (this._carouselRow.selectedItem._onSelect) {
+                this._carouselRow.selectedItem._onSelect();
+            }
+    }
+    this.logExit();
+};
+
+/**
+ * @method onSelect
+ */
+app.gui.controls.CarouselListItem.prototype._onDeselect = function _onDeselect () {
+    this.logEntry();
+    this.superCall();
+    this.logExit();
+};
 

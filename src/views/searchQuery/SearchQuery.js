@@ -14,6 +14,7 @@ app.views.SearchQuery.prototype.createdCallback = function createdCallback () {
 	this._recentList = this.querySelector("#searchSearchRecent");
 	this._popularList = this.querySelector("#searchSearchPopular");
 	this._resultsList = this.querySelector("#searchSearchResults");
+	this._searchResults = this.querySelector("#searchResults");
 	this._searchContent = this.querySelector("#searchContent");
 	this._searchDidYouMean = this.querySelector("#searchDidYouMean");
 	this._searchNoResultsFound = this.querySelector("#searchNoResultsFound");
@@ -28,6 +29,7 @@ app.views.SearchQuery.prototype.createdCallback = function createdCallback () {
 	this._focusedElem = null;
 	this._themeName = $config.getConfigValue("settings.view.theme");
 	this._keyboardType = null;
+	this._isFullScreenMode = false;
 
 	/* when we toggle the Results and Popular/Recent, we set focus to key-list, otherwise we
 	 * run the risk that the focus remains on a hidden control.
@@ -301,6 +303,16 @@ app.views.SearchQuery.prototype.createdCallback = function createdCallback () {
 			this._searchSuggested.classList.add("show");
 			this._searchNoResultsFound.classList.remove("show");
 			$util.ControlEvents.fire("app-search-query:ctaSearch", "add", "ctaFullSearch");
+			if (this._isFullScreenMode === true) {
+				this._searchResults.style.overflow = "visible";
+				this._searchResults.style.top = "5px";
+				//list._listElem.children[list._listElem.children.length - 1].style.opacity = "0.1";
+				this._resultsList._listElem.classList.add("searchResultsListLast-Item");
+			} else {
+				this._searchResults.style.overflow = "hidden";
+				this._searchResults.style.top = "60px";
+				this._resultsList._listElem.classList.remove("searchResultsListLast-Item");
+			}
 		} else {
 			this._searchSuggested.classList.remove("show");
 			this._searchNoResultsFound.classList.add("show");
@@ -364,18 +376,21 @@ app.views.SearchQuery.prototype.createdCallback = function createdCallback () {
     }, this);
 
     $util.ControlEvents.on("app-search-query", "modeFull", function() {
-		//this._searchField.style.display = "none";
+    	this._isFullScreenMode = true;
+		this._searchSuggested.classList.add("fullScreenMode");
 		this._searchField.classList.add("fullScreenMode");
 		this._searchQueryKeys.classList.add("fullScreenMode");
 		this._searchQueryButtons.classList.add("fullScreenMode");
 		this._searchQueryResultsContainer.classList.add("fullScreenMode");
 		this._searchQueryResultsContainer.style.height = "625px";
 		this._resultsList.style.height = "585px";
+		//this._resultsList.style.top = "50px";
 		this._resultsListContainer.style.height = "585px";
 	}, this);
 
 	$util.ControlEvents.on("app-search-query", "modeOrigin", function() {
-		//this._searchField.style.display = "none";
+		this._isFullScreenMode = false;
+		this._searchSuggested.classList.remove("fullScreenMode");
 		this._searchField.classList.remove("fullScreenMode");
 		this._searchQueryKeys.classList.remove("fullScreenMode");
 		this._searchQueryButtons.classList.remove("fullScreenMode");

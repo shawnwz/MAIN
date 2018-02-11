@@ -51,12 +51,12 @@ $config.addDefaultSettings({
 				constellation        : 2,
 				hierarchyPriority    : 0,
 				tunerBandwidth       : 1,
-				endFrequency         : 0,
-				frequency            : 226500,
+				endFrequency         : 564500,
+				frequency            : 177500,
 				networkId            : 1
 			},
 			"Foxtel_LIVE_SATELLITE": {
-				frequency      : 12136000,
+				frequency      : 12438000,
 				symbolRate     : 27800,
 				fecInner       : 3,
 				networkId      : 1,

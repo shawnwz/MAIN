@@ -26,17 +26,10 @@ app.gui.controls.SurfEventsList.prototype.createdCallback = function createdCall
 		}
 	}, this);
 
-	$util.ControlEvents.on(":dialogPinEntryH", "focus", function (data) {
-		if (data && data.id === "surf") {
-			$util.ControlEvents.on(":dialogPinEntryH-pin", "correct", function() {
-				CCOM.UserAuth.setCurrentUserProfile(o5.platform.ca.PINHandler.getLocalMasterPin());
-   			 });
-		}
-	}, this);
-
-  this._surfScanBar = document.querySelector('#surfScanBar');
-  this._surfScanProgListContLeft = this._surfScanBar.querySelector('#surfScanProgListContLeft');
-  this._surfScanProgListContRight = this._surfScanBar.querySelector('#surfScanProgListContRight');
+ 	this._surfScanBar = document.querySelector('#surfScanBar');
+ 	this._surfScanProgListContLeft = this._surfScanBar.querySelector('#surfScanProgListContLeft');
+ 	this._surfScanProgListContRight = this._surfScanBar.querySelector('#surfScanProgListContRight');
+ 	this._pinDialog = document.querySelector('#dialogPinEntryH');
 
 	this.logExit();
 };
@@ -63,6 +56,7 @@ app.gui.controls.SurfEventsList.prototype._onKeyDown = function _onKeyDown(e) {
 	switch (e.key) {
 		case "Ok":
 		case "Enter":
+			var me = this;
 			if (this.selectedItem.itemData.isEndCell === true) {
 				console.log("endCell: TV guide");
                 $util.Events.fire("app:navigate:to", "home-menu");
@@ -73,22 +67,33 @@ app.gui.controls.SurfEventsList.prototype._onKeyDown = function _onKeyDown(e) {
                 e.stopImmediatePropagation();
 			} else {
 				if (this.selectedItem.itemData.isRadio) {
-					if (o5.platform.ca.ParentalControl.isChannelLocked(this.selectedItem.itemData.channel)) {
-						$util.ControlEvents.fire("app-surf:surfScanChanList", "tune");
-						$util.ControlEvents.fire(":dialogPinEntryH", "show");
-        				$util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });
-					} else {
-						$util.ControlEvents.fire("app-surf:ctaSurfScan", "ctaFullDetails");
-					}
+					$util.ControlEvents.fire("app-surf:surfScanChanList", "tune");
+					setTimeout(function () {
+						//var isMaster = o5.platform.system.Preferences.get("/users/current/isMaster", true);
+
+						if (o5.platform.ca.ParentalControl.isChannelLocked(me.selectedItem.itemData.channel) || me.selectedItem.itemData.ratingBlocked === true) {
+							if (me._pinDialog.visible === false) {
+								$util.ControlEvents.fire(":dialogPinEntryH", "show");
+    							$util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });
+    						}
+						} else {
+							$util.ControlEvents.fire("app-surf:ctaSurfScan", "ctaFullDetails");
+						}
+					}, 500);
 				} else if (this.selectedItem.itemData.isOnNow === true) {
-					if (o5.platform.ca.ParentalControl.isChannelLocked(this.selectedItem.itemData.channel)) {
-						$util.ControlEvents.fire("app-surf:surfScanChanList", "tune");
-						$util.ControlEvents.fire(":dialogPinEntryH", "show");
-        				$util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });
-					} else {
-						$util.ControlEvents.fire("app-surf:surfScanChanList", "tune");
-						$util.ControlEvents.fire("app-surf", "hide");
-					}
+					$util.ControlEvents.fire("app-surf:surfScanChanList", "tune");
+					setTimeout(function () {
+						//var isMaster = o5.platform.system.Preferences.get("/users/current/isMaster", true);
+
+						if (o5.platform.ca.ParentalControl.isChannelLocked(me.selectedItem.itemData.channel) || me.selectedItem.itemData.ratingBlocked === true) {
+							if (me._pinDialog.visible === false) {
+								$util.ControlEvents.fire(":dialogPinEntryH", "show");
+    							$util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });
+    						}
+						} else {
+							$util.ControlEvents.fire("app-surf", "hide");
+						}
+					}, 500);
 				} else {
 					$util.ControlEvents.fire("app-surf:ctaSurfScan", "ctaFullDetails");
 				}

@@ -173,6 +173,33 @@ $service.EPG.Event = (function Event () {
 		return promise;
 	}
 
+	function _getMDSEventsByTime (data, startTime, stopTime) {
+		var promise;
+
+		if (!data || !startTime || !stopTime || (stopTime < startTime)) { // invalid (dont reject, it will never succeed)
+			promise = Promise.resolve([]);
+		} else {
+			promise = new Promise(function (resolve, reject) {
+				var events = [],
+					length = data.length;
+
+				for (var i = 0; i < length; i++) {
+					if (data[i].startTime <  stopTime && data[i].endTime > startTime) {
+						events.push(data[i]);
+					}
+				}
+
+				if (events && events.length > 0) {
+					// console.log("_getCachedEventsByCount(): "+events.length);
+					resolve(events);
+				} else {
+					reject([]);
+				}
+			});
+		}
+		return promise;
+	}
+
 	/**
 	 * get number of events for given time from Persistent Cache
 	 */
@@ -184,6 +211,42 @@ $service.EPG.Event = (function Event () {
 		} else {
 			promise = new Promise(function (resolve, reject) {
 				var events = o5.platform.btv.PersistentCache.getEventByCount(service.serviceId, time, count);
+
+				if (events && events.length > 0) {
+					// console.log("_getCachedEventsByCount(): "+events.length);
+					resolve(events);
+				} else {
+					reject([]);
+				}
+			});
+		}
+		return promise;
+	}
+
+	function _getMDSEventsByCount (data, time, count) {
+		var promise;
+
+		if (!data || !time || !count) { // invalid (dont reject, it will never succeed)
+			promise = Promise.resolve([]);
+		} else {
+			promise = new Promise(function (resolve, reject) {
+				var events = [],
+					length = data.length,
+					i = 0;
+
+				if (count < 0) {
+					for (i = 0; (i < length && events.length < Math.abs(count)); i++) {
+						if (data[i].endTime <=  time) {
+							events.push(data[i]);
+						}
+					}
+				} else if (count > 0) {
+					for (i = 0; (i < length && events.length < count); i++) {
+						if (data[i].endTime >  time) {
+							events.push(data[i]);
+						}
+					}
+				}
 
 				if (events && events.length > 0) {
 					// console.log("_getCachedEventsByCount(): "+events.length);
@@ -210,18 +273,16 @@ $service.EPG.Event = (function Event () {
 				return data;
 			},
 			function (data) { // no cached events: try to fetch from MDS
-				return [];
 
-/*
 				console.warn("Failed to get programmes for [" + service.serviceId + "] from Persistent cache: try MDS");
 				return _getMDSEvents(service, startTime, stopTime).then(function (data) { // got MDS events and they are cached: try cache again
 							//console.log("Cached "+data.length+" programmes for ["+service.serviceId+"] in Persistent cache");
-							return _getCachedEventsByTime(service, startTime, stopTime);
+							return _getMDSEventsByTime(data, startTime, stopTime);
 						}).catch(function (data) { // most likely MDS didnt have the events either
 							console.warn("Failed to get newly cached programmes for [" + service.serviceId + "] in Persistent cache", data);
 							return [];
 						});
-*/
+
 			}).then(function (data) {
 				if (data.length === 0) { // final step: did we get any events?
 					if (withHolder) {
@@ -252,18 +313,16 @@ $service.EPG.Event = (function Event () {
 				return data;
 			},
 			function(data) { // no cached events: try to fetch from MDS
-				return [];
 
-/*
 				console.warn("Failed to get programmes for [" + service.serviceId + "] from Persistent cache: try MDS");
 				return _getMDSEvents(service, time).then(function (data) { // got MDS events and they are cached: try cache again
 							console.log("Cached " + data.length + " programmes for [" + service.serviceId + "] in Persistent cache");
-							return _getCachedEventsByCount(service, time, count);
+							return _getMDSEventsByCount(data, time, count);
 						}).catch(function (data) { // most likely MDS didnt have the events either
 							console.warn("Failed to get newly cached programmes for [" + service.serviceId + "] in Persistent cache", data);
 							return [];
 						});
-*/
+
 			}).then(function (data) {
 				if (data.length === 0) { // final step: did we get any events?
 					if (withHolder) {

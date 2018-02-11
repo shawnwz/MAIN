@@ -30,6 +30,7 @@ app.views.Surf.prototype.createdCallback = function createdCallback () {
 	// this._channelStack = this.querySelector('app-surf-channel-list');
 	this._surfScanMiniSynopsis = this.querySelector('app-surf-mini-synopsis');
 	this._dialog = document.querySelector('#dialogGenericErrorH');
+	this._pinDialog = document.querySelector('#dialogPinEntryH');
 	this._audioCCOptiondialog = document.querySelector('#audioAndCCOptionsDialog');
 	this._surfScanChannelList = document.querySelector('app-surf-channel-list');
 
@@ -193,9 +194,47 @@ app.views.Surf.prototype.createdCallback = function createdCallback () {
 			this._service = data;
 			clearTimeout(this._fetchTimeout);
 			this._fetchTimeout = setTimeout(function () {
-			$util.ControlEvents.fire("app-surf", "fetch", data);
-			$util.ControlEvents.fire("app-surf:surfFutureEventsList", "focus"); // reset focus back to future
+				$util.ControlEvents.fire("app-surf", "fetch", data);
+				$util.ControlEvents.fire("app-surf:surfFutureEventsList", "focus"); // reset focus back to future
 			}, 500);
+		}
+	}, this);
+
+	$util.ControlEvents.on(":dialogPinEntryH", "focus", function (data) {
+		if (data && data.id === "surf") {
+			$util.ControlEvents.on(":dialogPinEntryH-pin", "correct", function() {
+				CCOM.UserAuth.setCurrentUserProfile(o5.platform.ca.PINHandler.getLocalMasterPin());
+				 });
+		}
+	}, this);
+
+	$util.ControlEvents.on("lockerManager", "lockerStatusUpdate", function (e) {
+		var i = 0,
+			len = e.lockerStatusInfo.lockInfo.length,
+			isMaster = o5.platform.system.Preferences.get("/users/current/isMaster", true),
+			me = this;
+		for (i = 0; i < len; i++) {
+			if (e.lockerStatusInfo.lockInfo[i].lockerCode === "CHLK") {
+				setTimeout(function () {
+					if (me._pinDialog.visible === false) {
+                    	$util.ControlEvents.fire(":dialogPinEntryH", "show");
+                		$util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });
+                	}
+                }, 500);
+				break;
+			} else if (e.lockerStatusInfo.lockInfo[i].lockerCode === "PCLK") {
+				setTimeout(function () {
+			    	if (me._pinDialog.visible === false) {
+				    	if (isMaster) {
+				    		$util.ControlEvents.fire(":dialogPinEntryH", "show", { attempts: 1 });
+				    	} else {
+				    		$util.ControlEvents.fire(":dialogPinEntryH", "show");
+				    	}
+	                	$util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });
+	                }
+                }, 500);
+				break;
+			}
 		}
 	}, this);
 

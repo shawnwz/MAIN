@@ -148,11 +148,18 @@ app.gui.controls.SettingsList.prototype._onKeyDown = function _onKeyDown (e) {
     switch (e.key) {
         case "ArrowRight":
             if (this.selectedItem) {
-                child = this.selectedItem.querySelector("app-settings-toggle-list");
-                if (child) { // pass on the key
-                    child.onkeydown(e);
-                    if (this._configObj) {
-                        this._configObj.currentitem[child.id.toString().slice(0, -("Action".length))] = child.selectedItem._data.value;
+                if (this.selectedItem && this.selectedItem._data.data.type === "settingsNumericInput") {
+                    child = this.selectedItem.querySelector("app-settings-numeric-input");
+                    if (child) { // pass on the key
+                        child.onkeydown(e, this.selectedItem.itemData.data.get());
+                    }
+                } else {
+                    child = this.selectedItem.querySelector("app-settings-toggle-list");
+                    if (child) { // pass on the key
+                        child.onkeydown(e);
+                        if (this._configObj) {
+                            this._configObj.currentitem[child.id.toString().slice(0, -("Action".length))] = child.selectedItem._data.value;
+                        }
                     }
                 }
             }
@@ -161,13 +168,21 @@ app.gui.controls.SettingsList.prototype._onKeyDown = function _onKeyDown (e) {
 
         case "ArrowLeft":
             if (this.selectedItem) {
-                child = this.selectedItem.querySelector("app-settings-toggle-list");
-                if (child) { // pass on the key
-                    child.onkeydown(e);
-                    if (this._configObj) {
-                        this._configObj.currentitem[child.id.toString().slice(0, -("Action".length))] = child.selectedItem._data.value;
+                if (this.selectedItem && this.selectedItem._data.data.type === "settingsNumericInput") {
+                    child = this.selectedItem.querySelector("app-settings-numeric-input");
+                    if (child) { // pass on the key
+                        child.onkeydown(e, this.selectedItem.itemData.data.get());
+                    }
+                } else {
+                    child = this.selectedItem.querySelector("app-settings-toggle-list");
+                    if (child) { // pass on the key
+                        child.onkeydown(e);
+                        if (this._configObj) {
+                            this._configObj.currentitem[child.id.toString().slice(0, -("Action".length))] = child.selectedItem._data.value;
+                        }
                     }
                 }
+
             }
             handled = true;
             break;
@@ -216,7 +231,36 @@ app.gui.controls.SettingsList.prototype._onKeyDown = function _onKeyDown (e) {
                     handled = this.superCall(e);
                 }
                 break;
- 
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9":
+        case "0":
+        case ".":
+          if (this.selectedItem && this.selectedItem._data.data.type === "settingsNumericInput") {
+                child = this.selectedItem.querySelector("app-settings-numeric-input");
+                if (child) { // pass on the key
+                        child.onkeydown(e, this.selectedItem.itemData.data.get());
+                    }
+                handled = true;
+            }
+            break;
+        case "ArrowUp":
+        case "ArrowDown":
+        if (this.selectedItem && this.selectedItem._data.data.type === "settingsNumericInput") {
+                child = this.selectedItem.querySelector("app-settings-numeric-input");
+                if (child) { // pass on the key
+                        child.onkeydown(e, this.selectedItem.itemData.data.get());
+                    }
+                //handled = true;
+            }
+            handled = this.superCall(e);
+            break;
         default:
             handled = this.superCall(e);
             break;
@@ -319,6 +363,8 @@ Object.defineProperty(app.gui.controls.SettingsListItem.prototype, "itemData", {
                 item = this.querySelector("app-settings-text");
               this._value.innerHTML = $util.Translations.translate(data.data.get().text);
               this._value.dataset.i18n = data.data.get().text;
+            } else if (data.data.type === "settingsNumericInput") {
+                item = this.querySelector("app-settings-numeric-input");
             }
 
             if (item) {
@@ -327,23 +373,32 @@ Object.defineProperty(app.gui.controls.SettingsListItem.prototype, "itemData", {
                 setTimeout(function() { // give it some time to attach
                     if (item.fireControlEvent) {
                         item.fireControlEvent("show");
-                        item.fireControlEvent("populate", data.data.get(), data.data.getSelectedIndex());
-
+                       // item.fireControlEvent("populate", data.data.get(), data.data.getSelectedIndex());
+                        if (data.data.type === "settingsNumericInput") {
+                        	 item.fireControlEvent("populate", data);
+                        } else if (data.data.type === "settingsToggle") {
+                        	 item.fireControlEvent("populate", data.data.get(), data.data.getSelectedIndex());
+                        }
                         if (data.data.events) { // register for change after populate so we only get notified when it actually changes
                             item.onControlEvent("change", function(list) {
                                 var selectedItem = list ? list.selectedItem : null,
                                     itemData = selectedItem ? selectedItem.itemData : null;
-                                    this.ownerDocument.activeElement._configObj.currentitem[data.id] = itemData.value;
+                                    if (itemData) {
+                                        this.ownerDocument.activeElement._configObj.currentitem[data.id] = itemData.value;
+                                    }
                                     if (this.ownerDocument.activeElement._configObj.footerClassList.indexOf("ctaResetDefaults") !== -1) {
                                     this._footer = document.querySelector("#callToAction");
                                     this._footer.classList.remove("ctaResetDefaults");
                                     this._footer.classList.add("ctaUndoChanges");
                                     document.querySelector("#ctaUndoChanges").children[1].innerHTML = $util.Translations.translate(document.querySelector("#ctaUndoChanges").children[1].attributes.getNamedItem("data-i18n").value);
                                 }
-                                data.data.events.forEach(function(ev) {
-                                    console.log(ev.name, itemData.value);
-                                    $util.Events.fire(ev.name, itemData.value);
-                                });
+                                if (itemData) {
+                                        data.data.events.forEach(function(ev) {
+                                        console.log(ev.name, itemData.value);
+                                        $util.Events.fire(ev.name, itemData.value);
+                                    });
+                                }
+
                             });
                         }
                     }

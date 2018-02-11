@@ -106,6 +106,7 @@ app.views.Video.prototype.attachedCallback = function attachedCallback () {
  * @private
  */
 app.views.Video.prototype._onLoad = function _onLoad () {
+	var tuner = null;
     app.views.Video.prototype.videoPlayer = this.children.fullScreenVideo;
     this.videoPlayer.addEventListener('seeking', this.showVideoBuffering.bind(this));
     this.videoPlayer.addEventListener('seeked', this.onVideoSeek.bind(this));
@@ -117,7 +118,11 @@ app.views.Video.prototype._onLoad = function _onLoad () {
     this.videoPlayer.addEventListener('play', this.onPlay.bind(this));
     this.videoPlayer.addEventListener('pause', this.onPause.bind(this));
     this.videoPlayer.addEventListener('ended', this.onEnd.bind(this));
-
+    this.videoPlayer._video._player.addEventListener("onLockerStatusUpdate", function (e) {
+        $util.ControlEvents.fire("lockerManager", "lockerStatusUpdate", e);
+    });
+    tuner =  new o5.platform.output.Tuner(this.videoPlayer);
+    $service.tuner.Signal.init(tuner);
 };
 
 /**

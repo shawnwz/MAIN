@@ -16,10 +16,10 @@ app.screenConfig.callToAction = [
   { id: "ctaOptions",             key: ["Yellow"],    btn: "btnOptions",    text: "Options" },
   { id: "ctaChannelView",         key: ["Green"],      btn: "btnGreen",      text: "callToActionChannelView" },
   { id: "ctaGridView",            key: ["Green"],      btn: "btnGreen",      text: "callToActionGridView" },
-  { id: "ctaFfwdSkip",            key: ["FastForward"], btn: "btnFfwdSkip",   text: "+ 24 Hours" },
+  { id: "ctaFfwdSkip",            key: [ "FastForward", "Forward" ], btn: "btnFfwdSkip",   text: "+ 24 Hours" },
   { id: "ctaRwdSkip",             key: ["Rewind"],     btn: "btnRwdSkip",    text: "- 24 Hours" },
   { id: "ctaPageLeftRight",       key: [ "FastForward", "Rewind" ],    btn: "btnSkip",       text: "Page Left/Right" },
-  { id: "ctaSkip24H",             key: [ "FastForward", "Rewind" ],    btn: "btnSkip",       text: "callToActionSkip24H" },
+  { id: "ctaSkip24H",             key: [ "FastForward", "Forward", "Rewind" ],    btn: "btnSkip",       text: "callToActionSkip24H" },
   { id: "ctaPageUpDown",          key: [ "ChannelDown", "ChannelUp" ], btn: "btnPageUpDown", text: "callToActionPageUpDown" },
   { id: "ctaClear",               key: ["Back"],       btn: "btnBack",       text: "Clear" },
   { id: "ctaUndoChanges",         key: ["Red"],        btn: "btnRed",        text: "Undo Changes" },
@@ -48,6 +48,7 @@ app.screenConfig.callToAction = [
   { id: "ctaFavourite",           key: ["Star"],       btn: "btnStar",       text: "callToActionFavourite" },
   { id: "ctaUnFavourite",         key: ["Star"],       btn: "btnStar",       text: "callToActionUnFavourite" },
   { id: "ctaUnFavouriteAll",      key: ["Red"],        btn: "btnRed",        text: "callToActionUnFavouriteAll" },
+  { id: "ctaStar",                key: [ "Star", "Favorites", "Record" ],       btn: "btnStar",       text: "callToActionStar" },
 
   // Reminder Specific
   { id: "ctaSetReminder",         key: ["Blue"],      btn: "btnBlue",      text: "callToActionSetReminder" },

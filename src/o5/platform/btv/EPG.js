@@ -401,7 +401,8 @@ o5.platform.btv.EPG.refresh = function refresh () {
     this.catchUpServiceIdTable = {};
     this.gatewayServiceIdTable = {};
 
-    services = this._getServicesArrayFromCCOM();
+    //services = this._getServicesArrayFromCCOM();
+    services = $service.MDS.Channel.getAllChannels();
     cachedChannels = this.epgRAMCache.getServices();
     if (cachedChannels && cachedChannels.length > 0) {
         services = services.concat(cachedChannels);

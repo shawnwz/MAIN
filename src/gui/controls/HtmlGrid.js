@@ -216,13 +216,13 @@ app.gui.controls.HtmlGrid.prototype._populate = function _populate (items) {
 		row.forEach(function(data, c) {
 			var elem = this.newItem(data);
 
-			div.appendChild(elem); // append before setting itemData, so we can acess parent when we set it
-			elem.itemRowIndex = r;
-			elem.itemColIndex = c;
-			elem.itemData = data;
+		    div.appendChild(elem); // append before setting itemData, so we can acess parent when we set it
+		    elem.itemRowIndex = r;
+		    elem.itemColIndex = c;
+		    elem.itemData = data;
 
-			this._rows[r].push(elem);
-			this._itemNb++;
+		    this._rows[r].push(elem);
+		    this._itemNb++;
 		}, this);
 	}, this);
 
@@ -293,14 +293,12 @@ app.gui.controls.HtmlGrid.prototype._update = function _update (offset) {
  */
 app.gui.controls.HtmlGrid.prototype._scroll = function _scroll (offset, fastMode) {
 	this.logEntry();
-
 	var gridStart = this._gridStart + offset,
 		gridEnd = gridStart + this.gridSpan;
-
 	if (gridStart < this.lowerLimit) { // got to the start of the grid
-		this.fireControlEvent("exit:left", this);
+		this.fireControlEvent("exit:left", this, fastMode);
 	} else if (gridEnd > this.upperLimit) { // got to the end of the grid
-		this.fireControlEvent("exit:right", this);
+		this.fireControlEvent("exit:right", this, fastMode);
 	} else if (fastMode) { // fast mode: just update start time, dont update
 		this.gridStart = this._gridStart + offset;
 		this.fireControlEvent("updated", this); // pretend update for the outside world

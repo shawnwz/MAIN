@@ -28,6 +28,10 @@ $util.defaultKeyHandler = function defaultKeyHandler (e) {
 				$util.ControlEvents.fire("app-surf", "favorite");
 				e.stopImmediatePropagation();
 			}
+			if (o5.gui.viewManager.activeView.localName === "app-guide") {
+				$util.ControlEvents.fire("app-guide", "getFavourites");
+				e.stopImmediatePropagation();
+			}
 //			$util.ControlEvents.fire(":dialogPinEntryH", "show");
 //			$util.ControlEvents.fire(":dialogPinEntryH", "focus");
 //			handled = true;

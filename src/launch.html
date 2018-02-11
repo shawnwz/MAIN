@@ -54,6 +54,7 @@
     <script src="./actions/settings/PinControl.js"></script>
     <script src="./actions/app/OTVControlApp.js"></script>
     <script src="./actions/app/LaunchAppUtil.js"></script>
+    <script src="./actions/settings/LNB.js"></script>
     <!-- services -->
     <script src="./service/SDP/Base.js"></script>
     <script src="./service/SDP/FoxtelSignon.js"></script>
@@ -75,6 +76,7 @@
     <script src="./service/MDS/Episode.js"></script>
     <script src="./service/MDS/Editorial.js"></script>
     <script src="./service/scan/DVBScanUtil.js"></script>
+     <script src="./service/tuner/Signal.js"></script>
     
 
     <!-- settings -->
@@ -92,6 +94,7 @@
     <script src="./service/settings/ChannelBlocking.js"></script>
     <script src="./service/settings/WifiService.js"></script>
     <script src="./service/settings/NetworkTestService.js"></script>
+    <script src="./service/settings/InstallerService.js"></script>
 
 
 
@@ -163,7 +166,8 @@
     <script src="./gui/controls/dialog/DialogStandby.js"></script>
     <script src="./gui/controls/dialog/DialogSubGenre.js"></script>
     <script src="./gui/controls/dialog/DialogTcpIpConfig.js"></script>
-    <script src="./gui/controls/dialog/DialogTcpIpError.js"></script>    
+    <script src="./gui/controls/dialog/DialogTcpIpError.js"></script>
+    <script src="./gui/controls/dialog/DialogNoSignal.js"></script>      
 
     <!-- channel entry -->
     <script src="./gui/controls/channelEntry/ChannelEntryListItem.js"></script>
@@ -218,7 +222,9 @@
 	<script src="./gui/controls/settings/SettingsEthernetMenuList.js"></script>
 	<script src="./gui/controls/settings/SettingsWifi.js"></script>
 	<script src="./gui/controls/settings/SettingsInputText.js"></script>
+	<script src="./gui/controls/settings/SettingsNumericInput.js"></script>
 	<script src="./gui/controls/settings/SettingsInternetStatusOverlay.js"></script>
+	<script src="./gui/controls/settings/SettingsHomeTransponder.js"></script>
 
    <!-- TCP IP List view -->    
 	<script src="./views/settings/screenConfig/TcpIPConfig.js"></script>
@@ -814,6 +820,24 @@
       </template>
     </app-html-dialog>
 
+	<app-html-dialog id="dialogNoSignal">
+      <template>
+        <app-dialog-no-signal id="#{dialog.name}" class="dialogConfirm">
+          <div>
+            <div class="dialogBody">
+              <div class="title dialogTitle">#{dialog.title}</div>
+              <div class="text dialogText">#{dialog.text}</div>
+              <div class="subText dialogSubText">#{dialog.subText}</div>
+            </div>
+            <div class="dialogCta">
+              <span class="backAction"><span class="btnBack"></span><span class="txtBack" data-i18n="#{dialog.backTranslationKey}"></span></span>
+              <span class="errorCode">#{dialog.errorCode}</span>
+            </div>
+          </div>
+        </app-dialog-no-signal>
+      </template>
+    </app-html-dialog>
+ 
     <app-html-dialog id="DialogTcpIpError">
       <template>
         <app-dialog-tcp-ip-error id="#{dialog.name}" class="dialogConfirm">
@@ -856,13 +880,13 @@
         <app-dialog-acquiring id="#{dialog.name}" class="dialogConfirm">
           <div>
             <div class="dialogBody">
-              <div class="dialogTitle">#{dialog.title}</div>
-              <div class="dialogText">#{dialog.text}<span class="percentageComplete">0</span></div>
-              <div class="dialogSubText">#{dialog.subText}</div>
+              <div class="title dialogTitle">#{dialog.title}</div>
+              <div class="text dialogText">#{dialog.text}<span class="percentageComplete">0</span></div>
+              <!--<div class="subText dialogSubText">#{dialog.subText}</div>-->
             </div>
             <div class="dialogCta">
-              <span class="okAction"><span class="btnSelect"></span><span class="txtSelect" data-i18n="#{dialog.okTranslationKey}"></span></span>
-              <span class="backAction"><span class="btnBack"></span><span class="txtBack" data-i18n="#{dialog.backTranslationKey}"></span></span>
+              <!--<span class="okAction"><span class="btnSelect"></span><span class="txtSelect" data-i18n="#{dialog.okTranslationKey}"></span></span>
+              <span class="backAction"><span class="btnBack"></span><span class="txtBack" data-i18n="#{dialog.backTranslationKey}"></span></span> -->
               <span class="errorCode">#{dialog.errorCode}</span>
             </div>
           </div>

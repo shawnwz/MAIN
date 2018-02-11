@@ -30,11 +30,15 @@ app.views.Guide.prototype.createdCallback = function createdCallback () {
     this._viewSlider = this.querySelector('#epgViewsSlider');
     this._nnfSlider = this.querySelector('#epgViewNowNextFutureSlider');
 
+    this._pinDialog = document.querySelector('#dialogPinEntryH');
+
     this._genre = "";
     this._startTime = undefined;
     this._startChannel = "";
     this._navFromSurf = false;
     this._homeBgSolid = this.querySelector('#homeBgSolid');
+    this._favdialog = document.querySelector('#dialogGenericErrorH');
+    this._pressFav = false;
 
     $util.ControlEvents.on("app-guide", "sortListings", function () {
         this._epgGenreMenu.innerHTML = "PROGRAMME LISTINGS";
@@ -333,7 +337,12 @@ app.views.Guide.prototype.createdCallback = function createdCallback () {
                     $util.ControlEvents.fire("app-guide", "futureGrid");
                     $util.ControlEvents.fire("app-guide:futureEpgEventsInner", "fetch", this._channels);
                     setTimeout(function () {
-                        $util.ControlEvents.fire("app-guide:futureEpgEventsInner", "select", this._rowIndex, 3); // select one after next //@ "middle" instead? since 3 might not exist?
+                        if (me.starguide && me._colIndex !== -1) {
+                            me.starguide = false;
+                            $util.ControlEvents.fire("app-guide:futureEpgEventsInner", "select", me._rowIndex, me._colIndex);
+                        } else {
+                            $util.ControlEvents.fire("app-guide:futureEpgEventsInner", "select", me._rowIndex, 3); // select one after next //@ "middle" instead? since 3 might not exist?
+                        }
                         $util.ControlEvents.fire("app-guide:futureEpgEventsInner", "focus");
                     }, 100);
                 } else {
@@ -341,15 +350,22 @@ app.views.Guide.prototype.createdCallback = function createdCallback () {
                     $util.ControlEvents.fire("app-guide:reverseEpgEventsInner", "fetch", this._channels);
                     $util.ControlEvents.fire("app-guide:futureEpgEventsInner", "fetch", this._channels);
                     setTimeout(function () {
-                        $util.ControlEvents.fire("app-guide:reverseEpgEventsInner", "select", this._rowIndex, 3); // select one after next //@ "middle" instead? since 3 might not exist?
+                        if (me.starguide && me._colIndex !== -1) {
+                            me.starguide = false;
+                            $util.ControlEvents.fire("app-guide:reverseEpgEventsInner", "select", me._rowIndex, me._colIndex);
+                        } else {
+                            $util.ControlEvents.fire("app-guide:reverseEpgEventsInner", "select", me._rowIndex, 3); // select one after next //@ "middle" instead? since 3 might not exist?
+                        }
                         $util.ControlEvents.fire("app-guide:reverseEpgEventsInner", "focus");
                     }, 100);
                 }
             } else {
+                this.starguide = false;
                 $util.ControlEvents.fire("app-guide:nowNextGrid", "clear");
                 $util.ControlEvents.fire("app-guide:nowNextGrid", "fetch", this._channels);
             }
         } else {
+            this.starguide = false;
             if (this._startTime > Date.now()) {
                 $util.ControlEvents.fire("app-guide", "futureGrid");
                 $util.ControlEvents.fire("app-guide:reverseEpgEventsInner", "reset");
@@ -496,9 +512,12 @@ app.views.Guide.prototype.createdCallback = function createdCallback () {
                 $util.ControlEvents.fire("app-video", "setSrc", channelToTune);
                 $util.Events.fire("app:navigate:to", "surf");
                 setTimeout(function () {
-                    if (o5.platform.ca.ParentalControl.isChannelLocked(me._channel.serviceId)) {
-                        $util.ControlEvents.fire(":dialogPinEntryH", "show");
-                        $util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });
+                    //var isMaster = o5.platform.system.Preferences.get("/users/current/isMaster", true);
+                    if (o5.platform.ca.ParentalControl.isChannelLocked(me._channel.serviceId) || me._event.ratingBlocked === true) {
+                        if (me._pinDialog.visible === false) {
+                            $util.ControlEvents.fire(":dialogPinEntryH", "show");
+                            $util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });
+                        }
                     }
                 }, 500);
             } else {
@@ -581,24 +600,34 @@ app.views.Guide.prototype.createdCallback = function createdCallback () {
         $util.ControlEvents.fire("app-guide:epgChannelViewChanListPrev", "back");
     }, this);
     $util.ControlEvents.on("app-guide:reverseEpgEventsInner", "exit:right", function () {
+        var fastmode = [].slice.call(arguments, 1);
         if (!$config.getConfigValue("settings.tv.guide.now.and.next")) {
             $util.ControlEvents.fire("app-guide", "futureGrid");
             $util.ControlEvents.fire("app-guide:futureEpgEventsInner", "select", this._rowIndex, 3); // select one after next //@ "middle" instead? since 3 might not exist?
             $util.ControlEvents.fire("app-guide:futureEpgEventsInner", "focus");
         } else {
             $util.ControlEvents.fire("app-guide", "nowNextGrid");
-            $util.ControlEvents.fire("app-guide:nowNextGrid", "select", this._rowIndex, 0); // select now event
+            if (fastmode[0] === true) {
+                $util.ControlEvents.fire("app-guide:nowNextGrid", "select", this._rowIndex, 1); // select next event
+            } else {
+                $util.ControlEvents.fire("app-guide:nowNextGrid", "select", this._rowIndex, 0); // select now event
+            }
             $util.ControlEvents.fire("app-guide:nowNextGrid", "focus");
         }
     }, this);
     $util.ControlEvents.on("app-guide:futureEpgEventsInner", "exit:left", function () {
+        var fastmode = [].slice.call(arguments, 1);
         if (!$config.getConfigValue("settings.tv.guide.now.and.next")) {
             $util.ControlEvents.fire("app-guide", "reverseGrid");
             $util.ControlEvents.fire("app-guide:reverseEpgEventsInner", "select", this._rowIndex, -2); // select previous event //@ "middle" instead? since -2 might not exist?
             $util.ControlEvents.fire("app-guide:reverseEpgEventsInner", "focus");
         } else {
             $util.ControlEvents.fire("app-guide", "nowNextGrid");
-            $util.ControlEvents.fire("app-guide:nowNextGrid", "select", this._rowIndex, 1); // select next event
+            if (fastmode[0] === true) {
+                $util.ControlEvents.fire("app-guide:nowNextGrid", "select", this._rowIndex, 0); // select now event
+            } else {
+                $util.ControlEvents.fire("app-guide:nowNextGrid", "select", this._rowIndex, 1); // select next event
+            }
             $util.ControlEvents.fire("app-guide:nowNextGrid", "focus");
         }
     }, this);
@@ -626,7 +655,7 @@ app.views.Guide.prototype.createdCallback = function createdCallback () {
             }
             if (toTune) {
                 $util.ControlEvents.fire("app-guide:epgChannelViewChanListPrev", "fetch", this._genre, index);
-                $util.ControlEvents.fire("app-video", "setSrc", channel);  
+                $util.ControlEvents.fire("app-video", "setSrc", channel);
             }
     	} else {
             if (this._genre === "genre_Favourites" && !$service.settings.FavouriteService.isChannleFavourite(channel)) {
@@ -644,6 +673,73 @@ app.views.Guide.prototype.createdCallback = function createdCallback () {
  		}
    	}, this);
 
+    $util.ControlEvents.on("app-guide:ctaGuide", "ctaSkip24H", function(key) {
+        if (!$config.getConfigValue("settings.tv.guide.now.and.next")) {
+            $util.ControlEvents.fire("app-guide:guidegrid", "ctaSkip24H", key);
+        } else {
+            $util.ControlEvents.fire("app-guide:nowNextGrid", "ctaSkip24H", key);
+        }
+    }, this);
+
+    $util.ControlEvents.on("app-guide:ctaGuide", "ctaStar", function(key) {
+        if (key === "Star" || key === "Favorites" || key === "Record") {
+            $util.ControlEvents.fire("app-guide:epgChannelStack", "getGenreChannel", "genre_Favourites");
+        }
+    }, this);
+    $util.ControlEvents.on("app-guide", "favdialog", function(action) {
+        var _dialog = {};
+
+        _dialog = {
+            title    : $util.Translations.translate("F0124Title"),
+            text     : $util.Translations.translate("F0124Description"),
+            subText  : "",
+            errorCode: ""
+        };
+
+        if (action === "show") {
+            $util.ControlEvents.fire(":dialogGenericErrorH", "show", _dialog);
+        } else {
+            $util.Events.fire("app:navigate:to", "settings");
+            $util.ControlEvents.fire("app-settings", "fetch", { "id": "settingsFavChannelsView", "title": "Favourite Channels" });
+            $util.ControlEvents.fire("app-settings:favScreen", "fetch");
+        }
+    }, this);
+
+    $util.ControlEvents.on("app-guide", "genreFavourites", function (length) {
+        if (length > 0) {
+            if (!$config.getConfigValue("settings.tv.guide.now.and.next")) {
+                $util.ControlEvents.fire("app-guide:guidegrid", "ctaStar");
+            } else {
+                $util.ControlEvents.fire("app-guide:nowNextGrid", "ctaStar");
+            }
+        } else if (this._favdialog.visible === false) {
+            $util.ControlEvents.fire("app-guide", "favdialog", "show");
+        } else {
+            $util.ControlEvents.fire("app-guide", "favdialog", "jumpToSettingAndHide");
+        }
+        
+    }, this);
+
+    $util.ControlEvents.on("app-guide", "getFavourites", function() {
+        if (this._pressFav === false) {
+            $util.ControlEvents.fire("app-guide:epgChannelStack", "getGenreChannel", "genre_Favourites");
+        }
+        this._pressFav = false;
+    }, this);
+    $util.ControlEvents.on("app-guide", "noselectChannel", function() {
+        if (!$config.getConfigValue("settings.tv.guide.now.and.next")) {
+            $util.ControlEvents.fire("app-guide:guidegrid", "noselectChannel");
+        } else {
+            $util.ControlEvents.fire("app-guide:nowNextGrid", "noselectChannel");
+        }
+    }, this);
+    $util.ControlEvents.on("app-guide:nowNextGrid", "noChannel", function () {
+        this._colIndexNowNext = 0;
+    }, this);
+    $util.ControlEvents.on("app-guide", "starChannel", function () {
+        this.starguide = true;
+    }, this);
+
     this._focusedElem = null; // focused element
     this._spinnerTimer = null;
     this._rowIndex = 0; // selected row
@@ -659,6 +755,7 @@ app.views.Guide.prototype.createdCallback = function createdCallback () {
     this.onload = this._onLoad;
     this.onshow = this._onShow;
     this.onhide = this._onHide;
+    this.starguide = false;
 
     this.logExit();
 };
@@ -729,6 +826,9 @@ app.views.Guide.prototype._onHide = function _onHide () {
 	if (!this._orgiMuteState && o5.platform.system.Device.getMuteState()) {
         o5.platform.system.Device.setUnmuteAudio();
     }
+    if (this._favdialog.visible === true) {
+        $util.ControlEvents.fire(":dialogGenericErrorH", "hide");
+    }
 	this.logExit();
 };
 
@@ -743,6 +843,9 @@ app.views.Guide.prototype._onKeyDown = function _onKeyDown (e) {
 		e.stopImmediatePropagation();
 		e.preventDefault();
 	} else {
+        if (e.key === "Star" || e.key === "Favorites" || e.key === "Record") {
+            this._pressFav = true;
+        }
 		$util.ControlEvents.fire("app-guide:ctaGuide", "key:down", e);
 	}
 	this.logExit();

@@ -38,23 +38,25 @@ Object.defineProperty(app.gui.controls.SettingsChannelMenuChannelItem.prototype,
 		this._channel = channel;
 		this._channelName.innerText = (channel && channel.serviceName) ? channel.serviceName : "";
 		this._channelNumber.innerText = (channel && channel.logicalChannelNum) ? channel.logicalChannelNum : "";
-		if (this._type === "FAV_ITEM") {
-			isChannelFav = $service.settings.FavouriteService.isChannleFavourite(this._channel);
-			if (isChannelFav) {
-				this.classList.add("fav");
-				this._isFav = true;
-			} else {
-				this.classList.remove("fav");
-				this._isFav = false;
-			}
-		} else if (this._type === "CHANNEL_BLOCKED_ITEM") {
-			  isChannelBloacked = $service.settings.ChannelBlocking.isChannelLocked(this._channel);
-			  if (isChannelBloacked) {
-				this.classList.add("blocked");
-				this._blocked = true;
-			} else {
-				this.classList.remove("blocked");
-				this._blocked = false;
+		if (this._channel && this._channel.serviceId) {
+			if (this._type === "FAV_ITEM") {
+				isChannelFav = $service.settings.FavouriteService.isChannleFavourite(this._channel);
+				if (isChannelFav) {
+					this.classList.add("fav");
+					this._isFav = true;
+				} else {
+					this.classList.remove("fav");
+					this._isFav = false;
+				}
+			} else if (this._type === "CHANNEL_BLOCKED_ITEM") {
+				  isChannelBloacked = $service.settings.ChannelBlocking.isChannelLocked(this._channel);
+				  if (isChannelBloacked) {
+					this.classList.add("blocked");
+					this._blocked = true;
+				} else {
+					this.classList.remove("blocked");
+					this._blocked = false;
+				}
 			}
 		}
 	}

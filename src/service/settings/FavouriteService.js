@@ -73,9 +73,11 @@ $service.settings.FavouriteService = (function FavouriteService() {
 		function isChannleFavourite(channel) {
 			var i,
 				len = favoriteChannelList.length;
-			for (i = 0; i < len; i++) {
-				if (favoriteChannelList[i].serviceId === channel.serviceId) {
-					return true;
+			if (channel && channel.serviceId) {
+				for (i = 0; i < len; i++) {
+					if (favoriteChannelList[i].serviceId === channel.serviceId) {
+						return true;
+					}
 				}
 			}
 			return false;

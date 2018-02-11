@@ -17,6 +17,54 @@ app.gui.controls.GuideNowNextGrid.prototype.createdCallback = function createdCa
 	$util.ControlEvents.on("app-guide:epgChannelStack", "page:next", function() {
 	}, this);
 
+	$util.ControlEvents.on("app-guide:nowNextGrid", "ctaSkip24H", function(key) {
+		if (this.focused) {
+			var selectedItem = this._selectedItem,
+			    rowIndex = 0;
+            if (selectedItem) {
+                rowIndex = selectedItem.itemRowIndex;
+            }
+			if (key === "FastForward" || key === "Forward") {
+				$util.ControlEvents.fire("app-guide", "futureGrid");
+                $util.ControlEvents.fire("app-guide:futureEpgEventsInner", "select", rowIndex, 3); // select one after next //@ "middle" instead? since 3 might not exist?
+                $util.ControlEvents.fire("app-guide:futureEpgEventsInner", "focus");
+				$util.ControlEvents.fire("app-guide:futureEpgEventsInner", "scroll", 24 * 3600 * 1000, true);
+			} else if (key === "Rewind") {
+				$util.ControlEvents.fire("app-guide", "reverseGrid");
+                $util.ControlEvents.fire("app-guide:reverseEpgEventsInner", "select", rowIndex, -2); // select previous event //@ "middle" instead? since -2 might not exist?
+                $util.ControlEvents.fire("app-guide:reverseEpgEventsInner", "focus");
+                $util.ControlEvents.fire("app-guide:reverseEpgEventsInner", "scroll", -24 * 3600 * 1000, true);
+			}
+		} else {
+			$util.ControlEvents.fire("app-guide:guidegrid", "ctaSkip24H", key);
+		}
+	}, this);
+
+	$util.ControlEvents.on("app-guide:nowNextGrid", "ctaStar", function() {
+		if (this.focused) {
+			var selectedItem = this._selectedItem,
+		        serviceId;
+
+            if (selectedItem) {
+                serviceId = selectedItem._data.serviceId;
+            }
+			$util.ControlEvents.fire("app-guide", "clear");
+			$util.ControlEvents.fire("app-guide:epgChannelStack", "selectPage", serviceId, "genre_Favourites");
+			$util.ControlEvents.fire("app-guide:epgChannelStack", "fetch", "genre_Favourites");
+			$util.ControlEvents.fire("app-guide:epgChannelStack", "selectChannel", serviceId, "genre_Favourites", true);
+		} else {
+			$util.ControlEvents.fire("app-guide:guidegrid", "ctaStar");
+		}
+	}, this);
+
+	$util.ControlEvents.on("app-guide:nowNextGrid", "noselectChannel", function() {
+		if (this.focused) {
+            $util.ControlEvents.fire("app-guide:nowNextGrid", "select", 0, 0);
+		} else {
+			$util.ControlEvents.fire("app-guide:guidegrid", "noselectChannel");
+		}
+	}, this);
+
 	this._hiddenClass = "hide";
 
 	this._fetchTimeout = null;

@@ -80,6 +80,60 @@ app.gui.controls.CarouselRowListItem.prototype.createdCallback = function create
     this.logExit();
 };
 
+
+/**
+ * @method onSelect
+ */
+app.gui.controls.CarouselRowListItem.prototype._onSelect = function _onSelect () {
+    this.logEntry();
+    var that,
+        carouselListItem = null,
+        carouselListItemSelected = null,
+        viewWindow = null,
+        viewWindowActive = null,
+        componentMenu = null,
+        component = null;
+
+    this.superCall();
+
+    that = this;
+    carouselListItem = that;
+    viewWindow = that;
+    while ((viewWindow = viewWindow.parentElement) && (viewWindow.nodeName !== 'O5-VIEW-WINDOW')) {
+        //
+    }
+    if (viewWindow && viewWindow.childElementCount === 1) {
+        viewWindowActive = Array.prototype.slice.call(viewWindow.children[0].attributes).find(function(item) {
+                //console.log(item.name + ': '+ item.value);
+                return (item.name === "active");
+        });
+
+        // only set footer to active view
+        if (viewWindowActive) {
+            while ((carouselListItem = carouselListItem.parentElement) && (carouselListItem.nodeName !== 'APP-CAROUSEL-LIST-ITEM')) {
+                //
+            }
+            if (carouselListItem) {
+                    carouselListItemSelected = Array.prototype.slice.call(carouselListItem.attributes).find(function(item) {
+                        //console.log(item.name + ': '+ item.value);
+                        return (item.name === "selected");
+                    });
+
+                    //only set the footer to seleted carousel
+                    if (carouselListItemSelected) {
+                            componentMenu = document.querySelector('#portalMenu');
+                            component = (componentMenu && componentMenu.selectedItem) ? componentMenu.selectedItem.itemData : null;
+                            if (component && component.displayName) {
+                                $util.ControlEvents.fire("app-home:ctaHome", "fetch", { "component": component, "carousel": carouselListItem.itemData, "content": this.itemData });
+                            }
+                    }
+            }
+        }
+    }
+
+    this.logExit();
+};
+
 /**
  * @property channel
  * @public

@@ -100,10 +100,12 @@ $service.settings.ChannelBlocking = (function ChannelBlocking() {
         isChannelLocked: function isChannelBlocked(channel) {
             var i,
 				len = blockedChannelList.length;
-            for (i = 0; i < len; i++) {
-                if (blockedChannelList[i] === channel.serviceId) {
-					return true;
-				}
+            if (channel && channel.serviceId) {
+            	for (i = 0; i < len; i++) {
+	                if (blockedChannelList[i] === channel.serviceId) {
+						return true;
+					}
+	            }
             }
             return false;
         }
