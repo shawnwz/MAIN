@@ -1,0 +1,105 @@
+#portalBreadcrumb {
+    text-transform: uppercase;
+    color: #DCDCDC;
+    font-size: 26pt;
+    font-family: fontLight;
+    padding: 30px 42px 30px 42px;
+    width: 1280px;
+    display: block;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    position: absolute;
+    top: 0px;
+    display: none;
+}
+#portalBreadcrumb.show {
+  display: block !important;
+}
+#portalMenu {
+  height: 97px;
+  width: 1280px;
+  display: inline-block;
+  padding: 0px 20px 0 20px;
+}
+app-portal-menu-list-item {
+  position: relative;
+  margin: 0px 0 0 42px;
+  height: 78px;
+  line-height: 109px;
+  display: inline-block;
+  font-family: fontLight;
+  font-size: 40px;
+  color: #999;
+  white-space: nowrap;
+  align-content: center;
+  vertical-align: middle;
+  box-sizing: content-box;
+}
+.Rel8Theme app-portal-menu-list-item {
+  margin-left: 0px;
+  padding: 0px 20px 20px 20px;
+}
+app-home #homeSlider,
+app-home app-html-tab-group {
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  will-change: transform;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+app-home app-html-tab-group {
+    position: absolute;
+    width: 1280px;
+    height: 1170px; /* plus 450 for move */
+}
+app-home[data-tab="home"].upMenu #homeSlider,
+app-home[data-tab="libary"].upMenu #homeSlider,
+app-home[data-tab="on demand"].upMenu #homeSlider,
+app-home[data-tab="store"].upMenu #homeSlider,
+app-home[data-tab="apps"].upMenu #homeSlider,
+app-home[data-tab="search"].upMenu #homeSlider,
+app-home[data-tab="home"].upMenu app-html-tab-group,
+app-home[data-tab="libary"].upMenu app-html-tab-group,
+app-home[data-tab="on demand"].upMenu app-html-tab-group,
+app-home[data-tab="store"].upMenu app-html-tab-group,
+app-home[data-tab="apps"].upMenu app-html-tab-group,
+app-home[data-tab="search"].upMenu app-html-tab-group {
+  -webkit-transform: translate3d(0, -100px, 0);
+}
+#portalMenu:focus app-portal-menu-list-item[selected] {
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #b5300b), color-stop(100%, #c7531e))
+}
+app-portal-menu-list-item[selected] {
+  color: #ffffff;
+  z-index: 2;
+}
+app-portal-menu-list-item.portal-menu-item-search .portalMenuItemText,
+app-portal-menu-list-item.portal-menu-item-settings .portalMenuItemText {
+  display: none;
+}
+app-portal-menu-list-item.portal-menu-item-search {
+  background-image: url("../../images/common/icons/search_idle.png");
+  background-repeat: no-repeat;
+  background-position: center 35px;
+  width: 40px;
+}
+app-portal-menu-list-item.portal-menu-item-settings {
+  background-image: url("../../images/common/icons/settings_idle.png");
+  background-repeat: no-repeat;
+  background-position: center 35px;
+  width: 40px;
+}
+#portalMenu:focus app-portal-menu-list-item.portal-menu-item-search[selected] {
+  background: url("../../images/common/icons/search_focused.png") no-repeat center 35px, -webkit-gradient(linear, left top, right bottom, color-stop(0, #b5300b), color-stop(100%, #c7531e))
+}
+#portalMenu:focus app-portal-menu-list-item.portal-menu-item-settings[selected] {
+  background: url("../../images/common/icons/settings_focused.png") no-repeat center 35px, -webkit-gradient(linear, left top, right bottom, color-stop(0, #b5300b), color-stop(100%, #c7531e))
+}
+.Rel8Theme #homeNavDivider {
+  top: 97px;
+  z-index: 0;
+}
+.Rel8Theme #homeNavGradient { top: 0; height: 97px; }
+.Rel8Theme #homeNavDivider,
+.Rel8Theme #homeNavGradient { transition: -webkit-transform 300ms linear 200ms; will-change: transform; }
+.Rel8Theme .breadcrumb #homeNavDivider,
+.Rel8Theme .breadcrumb #homeNavGradient { -webkit-transform: translateY(-20px); }
+

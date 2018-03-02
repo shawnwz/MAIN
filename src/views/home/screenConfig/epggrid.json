@@ -1,0 +1,236 @@
+[
+  [
+    {
+      "name":"genre_all",
+      "key": "1",
+      "events":[
+        {
+          "control":"app-guide",
+          "event":"fetch",
+          "data": {
+            "genre":"genre_all",
+            "channel":"",
+            "starTime":""
+          }
+        },
+        {
+          "control":"app-guide",
+          "event":"navigate:to",
+          "data":"guide"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "name":"genre_FTA",
+      "key": "2",
+      "events":[
+        {
+          "control":"app-guide",
+          "event":"fetch",
+          "data": {
+            "genre":"genre_FTA",
+            "channel":"",
+            "starTime":""
+          }
+        },
+        {
+          "control":"app-guide",
+          "event":"navigate:to",
+          "data":"guide"
+        }
+      ]
+    },
+    {
+      "name":"genre_Kids & Family",
+      "key": "7",
+      "events":[
+        {
+          "control":"app-guide",
+          "event":"fetch",
+          "data": {
+            "genre":"genre_Kids & Family",
+            "channel":"",
+            "starTime":""
+          }
+        },
+        {
+          "control":"app-guide",
+          "event":"navigate:to",
+          "data":"guide"
+        }
+      ]
+    }
+
+  ],
+  [
+    {
+      "name":"genre_Entertainment",
+      "key": "3",
+      "events":[
+        {
+          "control":"app-guide",
+          "event":"fetch",
+          "data": {
+            "genre":"genre_Entertainment",
+            "channel":"",
+            "starTime":""
+          }
+        },
+        {
+          "control":"app-guide",
+          "event":"navigate:to",
+          "data":"guide"
+        }
+      ]
+    },
+    {
+      "name":"genre_Music & Radio",
+      "key": "8",
+      "events":[
+        {
+          "control":"app-guide",
+          "event":"fetch",
+          "data": {
+            "genre":"genre_Music & Radio",
+            "channel":"",
+            "starTime":""
+          }
+        },
+        {
+          "control":"app-guide",
+          "event":"navigate:to",
+          "data":"guide"
+        }
+      ]
+    }
+
+  ],
+  [
+    {
+      "name":"genre_Movies",
+      "key": "4",
+      "events":[
+        {
+          "control":"app-guide",
+          "event":"fetch",
+          "data": {
+            "genre":"genre_Movies",
+            "channel":"",
+            "starTime":""
+          }
+        },
+        {
+          "control":"app-guide",
+          "event":"navigate:to",
+          "data":"guide"
+        }
+      ]
+    },
+    {
+      "name":"genre_Special Interest",
+      "key": "9",
+      "events":[
+        {
+          "control":"app-guide",
+          "event":"fetch",
+          "data": {
+            "genre":"genre_Special Interest",
+            "channel":"",
+            "starTime":""
+          }
+        },
+        {
+          "control":"app-guide",
+          "event":"navigate:to",
+          "data":"guide"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "name":"genre_Sport",
+      "key": "5",
+      "events":[
+        {
+          "control":"app-guide",
+          "event":"fetch",
+          "data": {
+            "genre":"genre_Sport",
+            "channel":"",
+            "starTime":""
+          }
+        },
+        {
+          "control":"app-guide",
+          "event":"navigate:to",
+          "data":"guide"
+        }
+      ]
+    },
+    {
+      "name":"genre_hd",
+      "key": "0",
+      "events":[
+        {
+          "control":"app-guide",
+          "event":"fetch",
+          "data": {
+            "genre":"genre_hd",
+            "channel":"",
+            "starTime":""
+          }
+        },
+        {
+          "control":"app-guide",
+          "event":"navigate:to",
+          "data":"guide"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "name":"genre_News & Documentaries",
+      "key": "6",
+      "events":[
+        {
+          "control":"app-guide",
+          "event":"fetch",
+          "data": {
+            "genre":"genre_News & Documentaries",
+            "channel":"",
+            "starTime":""
+          }
+        },
+        {
+          "control":"app-guide",
+          "event":"navigate:to",
+          "data":"guide"
+        }
+      ]
+    },
+    {
+      "name":"tvGuideFavourites",
+      "key": "Favourites",
+      "events":[
+        {
+          "control":"app-guide",
+          "event":"fetch",
+          "data": {
+            "genre":"tvGuideFavourites",
+            "channel":"",
+            "starTime":""
+          }
+        },
+        {
+          "control":"app-guide",
+          "event":"navigate:to",
+          "data":"guide"
+        }
+      ]
+    }
+  ]
+]

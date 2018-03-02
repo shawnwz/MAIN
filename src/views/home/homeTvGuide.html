@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<script src="HomeTvGuide.js"></script>
+
+<app-home-tv-guide>
+
+  <app-home-epg-grid id="epgGridMenu"
+            data-config="./views/home/screenConfig/epggrid.json"
+            data-row-id="epgGridMenu-row-"
+            data-row-class="GridMenu-row">
+    <template>
+      <app-home-grid-cell id="epgMenuItem" class="epgMenu-item" data-path-name="Gridable"></app-home-grid-cell>
+    </template>
+  </app-home-epg-grid>
+
+
+</app-home-tv-guide>

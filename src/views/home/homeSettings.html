@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<script src="HomeSettings.js"></script>
+
+<app-home-settings>
+
+  <app-home-settings-grid id="settingsGridMenu"
+            data-config="./views/home/screenConfig/settings.json"
+            data-row-id="settingsGridMenu-row-"
+            data-row-class="GridMenu-row">
+    <template>
+      <app-home-grid-cell id="settingsMenuItem" class="epgMenu-item" data-path-name="Gridable"></app-home-grid-cell>
+    </template>
+  </app-home-settings-grid>
+
+</app-home-settings>

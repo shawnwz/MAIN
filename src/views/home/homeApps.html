@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<script src="HomeApps.js"></script>
+
+<app-home-apps>
+
+  <div class="onlyRel6Theme">
+    <div id="tileView" class="tileDefault">
+      <div id="tiles">
+        <app-tile-mosaic-page-list id="homeMosaicTiles"></app-tile-mosaic-page-list>
+        <app-tile-mosaic-scrollbar id="homeTilesScrollBar"></app-tile-mosaic-scrollbar>
+      </div>
+    </div>
+  </div>
+
+  <div class="onlyRel8Theme">
+    <app-carousel-view-list id="carouselView">
+      <template>
+        <app-carousel-view-list-item></app-carousel-view-list-item>
+      </template>
+    </app-carousel-view-list>
+  </div>
+
+</app-home-apps>
