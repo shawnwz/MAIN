@@ -19,6 +19,7 @@ app.gui.controls.Keyboard.prototype.createdCallback = function createdCallback()
     this._keyboardInstruction = this.querySelector("#keyboardInstruction");
     this._keyboardCta = this.querySelector("#keyboardCta");
     this._isCapsEnable = false;
+    this._keyBoardType = "";
     $util.Translations.update();
     this.logExit();
 };
@@ -76,7 +77,7 @@ app.gui.controls.Keyboard.prototype.attachedCallback = function attachedCallback
                     this._keyInputBox.fireControlEvent("removeChar");
                     break;
                 case "done":
-                    $util.Events.fire("keyboard:done", this._keyInputBox.itemData);
+                    this.fireControlEvent("keyboard:done", { type : this._keyBoardType, data: this._keyInputBox.itemData });
                     this.fireControlEvent("hide");
                     break;
                 default:
@@ -109,6 +110,7 @@ app.gui.controls.Keyboard.prototype._populate = function _populate(configData) {
         if (configData.ctaClass) {
             this._keyboardCta.className = configData.ctaClass;
         }
+        this._keyBoardType = configData.type;
     }
     this._keyBoardGrid.fireControlEvent("populate");
     this.logExit();

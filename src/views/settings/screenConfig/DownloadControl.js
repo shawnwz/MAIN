@@ -1,10 +1,10 @@
 "use strict";
 var downloadBufferSizeOptions = $service.settings.IpNetwork.getDownloadBufferSizeOptions(),
 	downloadBufferSizeIndex = 0,
-	downloadBufferSizeValue = 0,
+	downloadBufferSizeValue = "small",
 	bandwidthQualityOptions = $service.settings.IpNetwork.getBandwidthQualityOptions(),
 	bandwidthQualityIndex = 0,
-	bandwidthQualityValue = 0,
+	bandwidthQualityValue = "best",
 	getdownloadBufferSizeOptions = function() {
 		downloadBufferSizeOptions.some(function (element, index) {
 			if (element.value === $config.getConfigValue("settings.ipnetwork.download.buffer.size")) {

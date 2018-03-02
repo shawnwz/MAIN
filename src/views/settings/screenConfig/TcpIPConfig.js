@@ -1,58 +1,100 @@
 "use strict";
-var ipconfigOptions = $service.settings.IpNetwork.getDhcpStatusOptions(),
-	notAvailableText,
-	ipconfigIndex = 0,
+var tcpIpconfigOptions = $service.settings.IpNetwork.getDhcpStatusOptions(),
+	tcpIpUnknownText,
+	tcpIpconfigIndex = 0,
+	tcpIpDefaultValueForMenuItems = "0.0.0.0",
 	//macAddress = o5.platform.system.Network.getMacAddress(),
 	tcpIpMenuData = {},
-	isSelectable = false,
-	isDhcpOptionSelected,
+	tcpIpIsDhcpOptionSelected,
 	// eslint-disable-next-line no-unused-vars
-	ipconfigValue = 0,
 	getIpconfigIndex = function () {
-		ipconfigOptions.some(function (element, index) {
+		tcpIpconfigOptions.some(function (element, index) {
 			if (element.value === o5.platform.system.Preferences.get("settings.tcpIp.IpConfig")) {
-				ipconfigIndex = index;
-				ipconfigValue = element.value;
+				tcpIpconfigIndex = index;
 				return true;
 			}
 		});
 	},
 	gettcpIpMenuData = function () {
+		var ipInterface,
+			ipAddress,
+			subnetMask,
+			gateway,
+			dnsServers,
+			primaryDns,
+			secondaryDns,
+			macAddress = $service.settings.IpNetwork.getMacAddress() || tcpIpUnknownText,
+			_isDhcpEnabled = $service.settings.IpNetwork.isDhcpEnabled(),
+			_isEthernetAvailable = o5.platform.system.Network.isEthernetAvailable();
 		tcpIpMenuData = {};
-		isDhcpOptionSelected = o5.platform.system.Preferences.get("settings.tcpIp.IpConfig");
-		notAvailableText = $util.Translations.translate("notAvailable");
-		if (isDhcpOptionSelected) {
-			var ipInterface = o5.platform.system.Network.getInterfaceByType(o5.platform.system.Network.InterfaceType.INTERFACE_TYPE_WIRED) || notAvailableText,
-				ipAddress = o5.platform.system.Network.getIpAddress(ipInterface) || notAvailableText,
-				subnetMask = o5.platform.system.Network.getSubnetMask(ipInterface) || notAvailableText,
-				gateway = o5.platform.system.Network.getGateway(ipInterface) || notAvailableText,
-				//macAddress = o5.platform.system.Network.getMacAddress(),
-				dnsServers = o5.platform.system.Network.getDnsServers(ipInterface) || notAvailableText,
-				primaryDns = notAvailableText,
-				secondaryDns = notAvailableText;
+		tcpIpIsDhcpOptionSelected = o5.platform.system.Preferences.get("settings.tcpIp.IpConfig");
+		tcpIpUnknownText = $util.Translations.translate("unknown");
+		if (tcpIpIsDhcpOptionSelected) {
+			ipInterface = o5.platform.system.Network.getInterfaceByType(o5.platform.system.Network.InterfaceType.INTERFACE_TYPE_WIRED) || tcpIpUnknownText;
+			ipAddress = o5.platform.system.Network.getIpAddress(ipInterface) || tcpIpUnknownText;
+			subnetMask = o5.platform.system.Network.getSubnetMask(ipInterface) || tcpIpUnknownText;
+			gateway = o5.platform.system.Network.getGateway(ipInterface) || tcpIpUnknownText;
+			dnsServers = o5.platform.system.Network.getDnsServers(ipInterface) || tcpIpUnknownText;
+			primaryDns = tcpIpUnknownText;
+			secondaryDns = tcpIpUnknownText;
 				if (dnsServers && dnsServers[0]) {
 					primaryDns = dnsServers[0];
 				}
 				if (dnsServers && dnsServers[1]) {
 					secondaryDns = dnsServers[1];
 				}
-				isSelectable = false;
 			tcpIpMenuData = {
+				isSelectable  : false,
 				ipAddress     : ipAddress,
 				subnetMask    : subnetMask,
 				defaultGateway: gateway,
 				primaryDns    : primaryDns,
-				secondaryDns  : secondaryDns
+				secondaryDns  : secondaryDns,
+				macAddress    : macAddress
 			};
+			if (_isEthernetAvailable === false) {
+				tcpIpMenuData = {
+					isSelectable  : false,
+					ipAddress     : tcpIpUnknownText,
+					subnetMask    : tcpIpUnknownText,
+					defaultGateway: tcpIpUnknownText,
+					primaryDns    : tcpIpUnknownText,
+					secondaryDns  : tcpIpUnknownText,
+					macAddress    : macAddress
+				};
+			}
+			if (_isDhcpEnabled === false && _isEthernetAvailable === true) {
+				tcpIpMenuData = {
+					isSelectable  : false,
+					ipAddress     : tcpIpDefaultValueForMenuItems,
+					subnetMask    : tcpIpDefaultValueForMenuItems,
+					defaultGateway: tcpIpDefaultValueForMenuItems,
+					primaryDns    : tcpIpDefaultValueForMenuItems,
+					secondaryDns  : tcpIpDefaultValueForMenuItems,
+					macAddress    : macAddress
+				};
+			}
 		} else {
-				isSelectable = true;
 			tcpIpMenuData = {
+				isSelectable  : true,
 				ipAddress     : o5.platform.system.Preferences.get("settings.tcpIp.IpAddress") || $config.getConfigValue("settings.tcpIp.IpAddress"),
 				subnetMask    : o5.platform.system.Preferences.get("settings.tcpIp.subnetMask") || $config.getConfigValue("settings.tcpIp.subnetMask"),
 				defaultGateway: o5.platform.system.Preferences.get("settings.tcpIp.defaultGateway") || $config.getConfigValue("settings.tcpIp.defaultGateway"),
 				primaryDns    : o5.platform.system.Preferences.get("settings.tcpIp.primaryDns") || $config.getConfigValue("settings.tcpIp.primaryDns"),
-				secondaryDns  : o5.platform.system.Preferences.get("settings.tcpIp.secondaryDns") || $config.getConfigValue("settings.tcpIp.secondaryDns")
+				secondaryDns  : o5.platform.system.Preferences.get("settings.tcpIp.secondaryDns") || $config.getConfigValue("settings.tcpIp.secondaryDns"),
+				macAddress    : macAddress
 			};
+			if ((_isDhcpEnabled === true && _isEthernetAvailable === true) || (_isEthernetAvailable === false)) {
+				tcpIpMenuData = {
+					isSelectable  : true,
+					ipAddress     : tcpIpDefaultValueForMenuItems,
+					subnetMask    : tcpIpDefaultValueForMenuItems,
+					defaultGateway: tcpIpDefaultValueForMenuItems,
+					primaryDns    : tcpIpDefaultValueForMenuItems,
+					secondaryDns  : tcpIpDefaultValueForMenuItems,
+					macAddress    : macAddress
+				};
+			}
 		}
 	};
 
@@ -62,19 +104,19 @@ gettcpIpMenuData();
 
 app.screenConfig.settings.TCPIP = {
 		defaultitem: {
-			ipConfig: ipconfigIndex
+			ipConfig: tcpIpconfigIndex
 		},
 		saveditem: {
-			ipConfig: ipconfigIndex
+			ipConfig: tcpIpconfigIndex
 		},
 		currentitem: {
-			ipConfig: ipconfigIndex
+			ipConfig: tcpIpconfigIndex
 		},
 		footerClassList: [],
 		getMenu        : function getMenu() {
 			getIpconfigIndex();
 			gettcpIpMenuData();
-			this.saveditem.ipConfig = ipconfigIndex;
+			this.saveditem.ipConfig = tcpIpconfigIndex;
 			return [
 				{
 					id  : "ipConfig",
@@ -83,10 +125,10 @@ app.screenConfig.settings.TCPIP = {
 						type        : "settingsToggle",
 						isSelectable: true,
 						get         : function get() {
-							return ipconfigOptions;
+							return tcpIpconfigOptions;
 						},
 						getSelectedIndex: function getSelectedIndex() {
-							return ipconfigIndex;
+							return tcpIpconfigIndex;
 						},
 						events: []
 					}
@@ -96,7 +138,7 @@ app.screenConfig.settings.TCPIP = {
 	                text: $util.Translations.translate("settingsMenuTcpIPAddress"),
 					data: {
 						type        : "settingsInputText",
-						isSelectable: isSelectable,
+						isSelectable: tcpIpMenuData.isSelectable,
 						get         : function get() {
 							
 							return tcpIpMenuData.ipAddress;
@@ -109,7 +151,7 @@ app.screenConfig.settings.TCPIP = {
 	                text: $util.Translations.translate("settingsMenuTcpIPSubnet"),
 					data: {
 						type        : "settingsInputText",
-						isSelectable: isSelectable,
+						isSelectable: tcpIpMenuData.isSelectable,
 						get         : function get() {
 							return tcpIpMenuData.subnetMask;
 						}
@@ -121,7 +163,7 @@ app.screenConfig.settings.TCPIP = {
 	                text: $util.Translations.translate("settingsMenuTcpIPGateway"),
 					data: {
 						type        : "settingsInputText",
-						isSelectable: isSelectable,
+						isSelectable: tcpIpMenuData.isSelectable,
 						get         : function get() {
 							return tcpIpMenuData.defaultGateway;
 						}
@@ -133,7 +175,7 @@ app.screenConfig.settings.TCPIP = {
 	                text: $util.Translations.translate("settingsMenuTcpIPPrimaryDNS"),
 					data: {
 						type        : "settingsInputText",
-						isSelectable: isSelectable,
+						isSelectable: tcpIpMenuData.isSelectable,
 						get         : function get() {
 							return tcpIpMenuData.primaryDns;
 						}
@@ -145,28 +187,24 @@ app.screenConfig.settings.TCPIP = {
 	                text: $util.Translations.translate("settingsMenuTcpIPSecondaryDNS"),
 					data: {
 						type        : "settingsInputText",
-						isSelectable: isSelectable,
+						isSelectable: tcpIpMenuData.isSelectable,
 						get         : function get() {
 							return tcpIpMenuData.secondaryDns;
 						}
 					
 					}
+				},
+				{
+					id  : "MacAddress",
+	                text: $util.Translations.translate("settingsMenuTcpIPMACAddress"),
+					data: {
+	                    type        : "settingsText",
+						isSelectable: tcpIpMenuData.isSelectable,
+						get         : function get() {
+							return tcpIpMenuData.macAddress;
+						}
+					}
 				}
-				// {
-					// id  : "MacAddress",
-	                // text: "Mac Address",
-					// data: {
-	                    // type      : "settingsText",
-						// isSelectable: false,
-						// get       : function get() {
-							// return {
-	                            // text : (macAddress === undefined) ? "unknown" : macAddress,
-								// value: macAddress
-							// };
-						// },
-						// events: []
-					// }
-				// }
 			];
 		}
 };

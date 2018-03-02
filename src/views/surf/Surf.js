@@ -202,7 +202,7 @@ app.views.Surf.prototype.createdCallback = function createdCallback () {
 
 	$util.ControlEvents.on(":dialogPinEntryH", "focus", function (data) {
 		if (data && data.id === "surf") {
-			$util.ControlEvents.on(":dialogPinEntryH-pin", "correct", function() {
+			$util.ControlEvents.on(":dialogPinEntryH-pin", "readyToNavigate", function() {
 				CCOM.UserAuth.setCurrentUserProfile(o5.platform.ca.PINHandler.getLocalMasterPin());
 				 });
 		}

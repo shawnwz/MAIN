@@ -6,32 +6,32 @@ app.gui.controls.DialogAudioAndCcOptions = function DialogAudioAndCcOptions () {
 o5.gui.controls.Control.registerAppControl(app.gui.controls.DialogAudioAndCcOptions, app.gui.controls.HtmlDialogContainer);
 
 app.gui.controls.DialogAudioAndCcOptions.prototype.createdCallback = function createdCallback () {
-	this.logEntry();
-	this.superCall();
-	this._player = document.querySelector('#videoView').videoPlayer;
-	this._textTracks = this._player.textTracks;
-	this._audioTracks = this._player.audioTracks;
-	this._currentAudioLangIndex = 0;
-	this._audioLang = this.querySelector('#audioAndCcOptionsAudioLang');
-	this._ccStatus = false;
-	this._getCurrentCCStatus = function () { //TBD: Current CC status should be retreived from current content or get/set from setting/config?
-		for (var i = 0; i < this._textTracks.length; i++) {
-			if (this._textTracks[i].mode === "showing") {
-				return "On";
-			}
-		}
-		return "Off";
-	};
-	this._getCurrentAudioLang = function () {
+  this.logEntry();
+  this.superCall();
+  this._player = document.querySelector('#videoView').videoPlayer;
+  this._textTracks = this._player.textTracks;
+  this._audioTracks = this._player.audioTracks;
+  this._currentAudioLangIndex = 0;
+  this._audioLang = this.querySelector('#audioAndCcOptionsAudioLang');
+  this._ccStatus = false;
+  this._getCurrentCCStatus = function () { //TBD: Current CC status should be retreived from current content or get/set from setting/config?
+    for (var i = 0; i < this._textTracks.length; i++) {
+      if (this._textTracks[i].mode === "showing") {
+        return "On";
+      }
+    }
+    return "Off";
+  };
+  this._getCurrentAudioLang = function () {
 
-		for (var i = 0; i < this._audioTracks.length; i++) {
+    for (var i = 0; i < this._audioTracks.length; i++) {
             if (this._audioTracks[i].enabled && this._audioTracks[i].language) {
-            	this._currentAudioLangIndex = i;
+              this._currentAudioLangIndex = i;
                 return this._audioTracks[i].language;
             }
         }
         return "eng";
-	};
+  };
     $util.ControlEvents.on([
         ":audioAndCcOptionsCc",
         ":audioAndCcOptionsAudioLang"
@@ -78,25 +78,25 @@ app.gui.controls.DialogAudioAndCcOptions.prototype.createdCallback = function cr
         }
     }, this);
 
-	this.logExit();
+  this.logExit();
 };
 
 /**
  * @method _store
  */
 app.gui.controls.DialogAudioAndCcOptions.prototype._store = function _store () {
-	this.logEntry();
-	console.log("dialog settings not stored");
-	this.logExit();
+  this.logEntry();
+  console.log("dialog settings not stored");
+  this.logExit();
 };
 
 /**
  * @method _show
  */
 app.gui.controls.DialogAudioAndCcOptions.prototype._show = function _show () {
-	this.logEntry();
-	this.superCall();
-	this.logExit();
+  this.logEntry();
+  this.superCall();
+  this.logExit();
 };
 
 /**
@@ -123,17 +123,17 @@ app.gui.controls.DialogAudioAndCcOptions.prototype._focus = function _focus () {
  * @method _hide
  */
 app.gui.controls.DialogAudioAndCcOptions.prototype._hide = function _hide () {
-	this.logEntry();
-	this.superCall();
-	this.logExit();
+  this.logEntry();
+  this.superCall();
+  this.logExit();
 };
 
 /**
  * @method _onKeyDown
  */
 app.gui.controls.DialogAudioAndCcOptions.prototype._onKeyDown = function _onKeyDown () {
-	this.logEntry();
-	this.logExit();
+  this.logEntry();
+  this.logExit();
 };
 
 /**
@@ -195,7 +195,7 @@ app.gui.controls.AudioAndCcOptionsAudio.prototype.createdCallback = function cre
  */
 app.gui.controls.AudioAndCcOptionsAudio.prototype._reset = function _reset (data) {
     this.logEntry();
-    this._clear();
+    this.fireControlEvent("clear");
     this._data = data;
     this.textContent = $util.constants.AUDIO_LANGUAGE[data] || data;
     this.logExit();

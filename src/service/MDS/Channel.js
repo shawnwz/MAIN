@@ -4,10 +4,10 @@ $service.MDS.Channel = (function Channel() {
 
 	/* global console: true*/
 
-	var _cache = {}, testSOList;
-	var cachedChannels = [];
-
-	var testSOList = [ //@hdk: temp only!!!
+  var _cache = {},
+  	  _cachedChannels = [];
+/*
+  var testSOList = [ //@hdk: temp only!!!
 		"http://test-vod-st1.content.foxtel.com.au/mount1/nagradrop/hdvod/ON149191/ON149191.ism/manifest",
 		"http://test-vod-st1.content.foxtel.com.au/mount1/nagradrop/hdvod/ON155470/ON155470.ism/manifest",
 		"http://test-vod-st1.content.foxtel.com.au/mount1/nagradrop/hdvod/ON156318/ON156318.ism/manifest",
@@ -24,21 +24,22 @@ $service.MDS.Channel = (function Channel() {
 		"http://test-vod-st1.content.foxtel.com.au/mount1/nagradrop/hdvod/ON185601/ON185601.ism/manifest",
 		"http://test-vod-st1.content.foxtel.com.au/mount1/nagradrop/hdvod/ON185602/ON185602.ism/manifest"
 	];
+*/
 
 	/**
 	 * @method _fetchDummies
 	 */
-	function _fetchDummies() {
+  function _fetchDummies(token) {
 		var url = "./service/MDS/Dummy/Channels.json";
 		console.log("Use dummy channels");
-		return $util.fetch(url, $service.MDS.config.timeout);
+    return $util.fetchToken(url, $service.MDS.config.timeout, token);
 	}
 	
 
 	/**
 	 * @method _fetchData
 	 */
-	function _fetchData() {
+  function _fetchData(token) {
 
 		var config = {};
 
@@ -70,7 +71,7 @@ $service.MDS.Channel = (function Channel() {
 		];
 		config.limit = 9999;
 
-		return $service.MDS.Base.fetch(config);
+    return $service.MDS.Base.fetch(config, token);
 	}
 
 	/**
@@ -102,7 +103,7 @@ $service.MDS.Channel = (function Channel() {
 						reject(arg);
 					}
 				}
-			)
+      );
 		});
 	}
 	
@@ -110,27 +111,26 @@ $service.MDS.Channel = (function Channel() {
 	 * @method _cacheData
 	 */
 	function _cacheData(data) {
-		var promise = null,
-			promises = [];
+    var promises = [];
 
-		cachedChannels = [];
+		_cachedChannels = [];
 
 	  o5.platform.btv.PersistentCache.beginBatch();
 
 		if (data && data.length > 0) {
 			data.forEach(function (service, i, array) {
-				cachedChannels.push(service);
+				_cachedChannels.push(service);
 				promises.push(_cacheService(service));
 			});
 		}
 
 		return Promise.all(promises)
-			.then(function (allData) {
+      .then(function (/* allData */) {
 							o5.platform.btv.PersistentCache.commitBatch();
 							console.log("cached " + data.length + " channels from MDS");
 							return data;
 						},
-						function(data) {
+            function(/* data */) {
                             o5.platform.btv.PersistentCache.cancelBatch();
 							console.log("Failed to cache channels from MDS", data);
 							return [];
@@ -193,7 +193,7 @@ $service.MDS.Channel = (function Channel() {
 	}
 
 	function getAllChannels() {
-		return cachedChannels;
+		return _cachedChannels;
 	}
 
 	return {

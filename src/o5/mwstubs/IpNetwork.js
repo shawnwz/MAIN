@@ -291,7 +291,7 @@ CCOM.IpNetwork = new (function IpNetwork ()
 					CCOM.stubs.raiseEvent(this._id, this._MY_NAME_SPACE, this._EVENT_CONNECT_TO_WIRELESS_NETWORK_OK, {
 						target : this,
 						handle : hd1,
-						details : this.wirelessDetails
+						details : this.wirelessDetails[i]
 					});
 					return hd1;
 				}

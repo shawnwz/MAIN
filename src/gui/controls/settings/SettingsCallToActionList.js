@@ -58,11 +58,43 @@ app.gui.controls.SettingsCallToActionList.prototype._fetch = function _fetch(nod
         } else if (node.id === "settingsWifiMenuList") {
         	items = ["ctaClose"];
         } else if (node.id === "settingswifiConnectionList") {
-        	items = [ "ctaClose", "ctaConnect", "ctaTCPIPSettings" ];
+        	if (node.wifiItem.ssid === o5.platform.system.Preferences.get($util.constants.WIFI_CONFIG_PATH.SSID, true)) {
+        		items = [ "ctaClose", "ctaNetworkDetails", "ctaTCPIPSettings" ];
+        	} else {
+        		items = [ "ctaClose", "ctaConnect" ];
+        	}
         } else if (node.id === "networkConnectionTest") {
             items = ["ctaClose"];
         } else if (node.id === "EthernetConnection") {
             items = [ "ctaClose", "ctaNetworkDetails" ];
+      } else if (node.id === "settingsNetworkDetailsViewList") {
+            items = ["ctaClose"];
+			if (o5.platform.system.Network.isEthernetAvailable()) {
+			items.push("ctaTCPIPSettings");
+			items.push("ctaRenewDHCP");
+			}
+        } else if (node.id === "settingsScan") {
+            if (node.screen === "startScan") {
+                items = ["ctaCancel"];
+            } else {
+                items = ["ctaClose"];
+            }
+        } else if (node.id === "settingsTVGuideViewList" ||
+                    node.id === "settingsPictureViewList" ||
+                    node.id === "settingsAudioLanguageViewList" ||
+                    node.id === "settingsPrivacyViewList" ||
+                    node.id === "settingsPinControlViewList" ||
+                  //node.id === "settingsBluetoothViewList" ||
+                    node.id === "settingsNotificationsList" ||
+                    node.id === "settingsViewingRestrictionsViewList" ||
+                  //node.id === "settingsSystemDetailsViewList" ||
+                  //node.id === "settingsHardwareDetailsViewList" ||
+                    node.id === "installerLNBViewList" ||
+                    node.id === "installerHomeTransViewList" ||
+                    node.id === "settingsDownloadControlViewList") {
+            items = [ "ctaClose", "ctaResetDefaults" ];
+        } else {
+            items = ["ctaClose"];
         }
     }
 

@@ -77,7 +77,7 @@
     <script src="./service/MDS/Editorial.js"></script>
     <script src="./service/scan/DVBScanUtil.js"></script>
      <script src="./service/tuner/Signal.js"></script>
-    
+
 
     <!-- settings -->
     <script src="./service/settings/AV.js"></script>
@@ -110,6 +110,8 @@
     <script src="./gui/controls/HtmlScrollList.js"></script>
     <script src="./gui/controls/HtmlFlexList.js"></script>
     <script src="./gui/controls/HtmlPagedList.js"></script>
+    <script src="./gui/controls/HtmlTab.js"></script>
+    <script src="./gui/controls/HtmlTabGroup.js"></script>
     <script src="./gui/controls/HtmlTable.js"></script>
     <script src="./gui/controls/HtmlGrid.js"></script>
     <script src="./gui/controls/HtmlSelector.js"></script>
@@ -167,7 +169,7 @@
     <script src="./gui/controls/dialog/DialogSubGenre.js"></script>
     <script src="./gui/controls/dialog/DialogTcpIpConfig.js"></script>
     <script src="./gui/controls/dialog/DialogTcpIpError.js"></script>
-    <script src="./gui/controls/dialog/DialogNoSignal.js"></script>      
+    <script src="./gui/controls/dialog/DialogNoSignal.js"></script>
 
     <!-- channel entry -->
     <script src="./gui/controls/channelEntry/ChannelEntryListItem.js"></script>
@@ -213,21 +215,23 @@
     <script src="./gui/controls/settings/SettingsNetworkTest.js"></script>
     <script src="./gui/controls/settings/SettingsLicences.js"></script>
     <script src="./gui/controls/settings/SettingsChannelList.js"></script>
-	<script src="./gui/controls/settings/SettingsCategoryList.js"></script>
-	<script src="./gui/controls/settings/SettingsChannelMenuCategoryItem.js"></script>
-	<script src="./gui/controls/settings/SettingsChannelMenuChannelItem.js"></script>
-	<script src="./gui/controls/settings/SettingsChannelMenu.js"></script>
-	<script src="./gui/controls/settings/SettingsWifiConnectionList.js"></script>
-	<script src="./gui/controls/settings/SettingsWifiMenuList.js"></script>
-	<script src="./gui/controls/settings/SettingsEthernetMenuList.js"></script>
-	<script src="./gui/controls/settings/SettingsWifi.js"></script>
-	<script src="./gui/controls/settings/SettingsInputText.js"></script>
-	<script src="./gui/controls/settings/SettingsNumericInput.js"></script>
-	<script src="./gui/controls/settings/SettingsInternetStatusOverlay.js"></script>
-	<script src="./gui/controls/settings/SettingsHomeTransponder.js"></script>
+  <script src="./gui/controls/settings/SettingsCategoryList.js"></script>
+  <script src="./gui/controls/settings/SettingsChannelMenuCategoryItem.js"></script>
+  <script src="./gui/controls/settings/SettingsChannelMenuChannelItem.js"></script>
+  <script src="./gui/controls/settings/SettingsChannelMenu.js"></script>
+  <script src="./gui/controls/settings/SettingsWifiConnectionList.js"></script>
+  <script src="./gui/controls/settings/SettingsWifiMenuList.js"></script>
+  <script src="./gui/controls/settings/SettingsEthernetMenuList.js"></script>
+  <script src="./gui/controls/settings/SettingsWifi.js"></script>
+  <script src="./gui/controls/settings/SettingsInputText.js"></script>
+  <script src="./gui/controls/settings/SettingsNumericInput.js"></script>
+  <script src="./gui/controls/settings/SettingsInternetStatusOverlay.js"></script>
+  <script src="./gui/controls/settings/SettingsHomeTransponder.js"></script>
+  <script src="./gui/controls/settings/NetworkConnectionDetailsList.js"></script>
+  <script src="./gui/controls/settings/SettingsWifiStatusOverlay.js"></script>
 
-   <!-- TCP IP List view -->    
-	<script src="./views/settings/screenConfig/TcpIPConfig.js"></script>
+   <!-- TCP IP List view -->
+  <script src="./views/settings/screenConfig/TcpIPConfig.js"></script>
 
     <!-- guide view -->
     <script src="./gui/controls/guide/GuideCallToActionList.js"></script>
@@ -271,10 +275,12 @@
     <script src="./gui/controls/homeMenu/HomeGridCell.js"></script>
     <script src="./gui/controls/portalMenu/PortalMenuList.js"></script>
     <script src="./gui/controls/portalMenu/PortalBreadcrumb.js"></script>
-    <script src="./gui/controls/tileCarouselFlex/JumpoffList.js"></script>
-    <script src="./gui/controls/tileCarouselFlex/JumpoffListItem.js"></script>
-    <script src="./gui/controls/tileCarouselFlex/CarouselList.js"></script>
-    <script src="./gui/controls/tileCarouselFlex/CarouselRowList.js"></script>
+    <script src="gui/controls/carousel/CarouselViewList.js"></script>
+    <script src="gui/controls/carousel/JumpoffList.js"></script>
+    <script src="gui/controls/carousel/HeroesList.js"></script>
+    <script src="gui/controls/carousel/GenreList.js"></script>
+    <script src="gui/controls/carousel/CarouselList.js"></script>
+    <script src="gui/controls/carousel/CarouselRowList.js"></script>
 
     <script src="./gui/controls/tileMosaic/TileMosaicPageList.js"></script>
     <script src="./gui/controls/tileMosaic/TileMosaicPageListItem.js"></script>
@@ -312,7 +318,7 @@
   <app-toggle-panel data-show-event="spinner:show" data-hide-event="spinner:hide" class="hidden">
     <div id="spinner"></div>
   </app-toggle-panel>
-    
+
   <!-- #volume: class helpers [volume-muted, volume-hide]-->
   <app-html-volume-bar id="volume" class="volume-hide">
     <div id="volumeIcon"></div>
@@ -320,40 +326,40 @@
     <div id="volumeMuteValue" data-i18n="volumeMute">MUTE</div>
   </app-html-volume-bar>
    <div id="Oxy-Notifications">
-   	<div id="Oxy-Notifications-0" class="notification"></div>
-   	</div>
-	<app-keyboard id="keyboardBg">
-    		<div id="keyboardBalloonTooltip"></div>
-        	<div id="keyboardContainer">
-            	<div id="keyboardTitle"></div>
-            	<div id="keyboardTextBox"></div>
-            	<div id="keyboardInstruction"></div>
-      			<div class="control-textbox-keyboard control-textbox-keyboard-active" style="left: 0px; top: 0px;">
-				    <app-keyboard-grid  id="keyboardGrid" data-row-id="keyborad-row-" data-row-class="keyborad-row-">
-	     				<template>
-		     				<app-keyboard-grid-cell class = "control-textbox-keyboard-key">
-		     					<div data-abc="true" class ="cellText"></div>
-		     				</app-keyboard-grid-cell>
-	     				</template>
-	     			</app-keyboard-grid>
-    			</div>
-       			<div class="control control-focused"><label></label>
-       			<div class="control-textbox">
-					<app-html-input-text-box id="foxtelKeyboardInput" class="control-textbox-input-highlight" contenteditable="true">
-					</app-html-input-text-box>
-				</div>
-				</div>
-   			</div>
-       		<div id="keyboardCta">
+    <div id="Oxy-Notifications-0" class="notification"></div>
+    </div>
+  <app-keyboard id="keyboardBg">
+        <div id="keyboardBalloonTooltip"></div>
+          <div id="keyboardContainer">
+              <div id="keyboardTitle"></div>
+              <div id="keyboardTextBox"></div>
+              <div id="keyboardInstruction"></div>
+            <div class="control-textbox-keyboard control-textbox-keyboard-active" style="left: 0px; top: 0px;">
+            <app-keyboard-grid  id="keyboardGrid" data-row-id="keyborad-row-" data-row-class="keyborad-row-">
+              <template>
+                <app-keyboard-grid-cell class = "control-textbox-keyboard-key">
+                  <div data-abc="true" class ="cellText"></div>
+                </app-keyboard-grid-cell>
+              </template>
+            </app-keyboard-grid>
+          </div>
+            <div class="control control-focused"><label></label>
+            <div class="control-textbox">
+          <app-html-input-text-box id="foxtelKeyboardInput" class="control-textbox-input-highlight" contenteditable="true">
+          </app-html-input-text-box>
+        </div>
+        </div>
+        </div>
+          <div id="keyboardCta">
             <span id="ctaKeyboardClose"><span class="btnBack"></span><span data-i18n="callToActionBack"></span></span>
             <span id="ctaKeyboardDelete"><span class="btnYellow"></span><span data-i18n="callToActionDelete"></span></span>
             <span id="ctaChangeKeyboard"><span class="btnBlue"></span><span data-i18n="callToActionChangeKeyboard"></span></span>
             <span id="ctaShowPassword"><span class="btnGreen"></span><span class = "btnText" data-i18n="callToActionShowPassword"></span></span>
-        	</div>
-	</app-keyboard>
+          </div>
+  </app-keyboard>
 
   <div id="dialog">
-  	<!-- div: class helpers [show-dialog overlay]-->
+    <!-- div: class helpers [show-dialog overlay]-->
     <app-html-dialog id="genreDialog" class="overlay list-dialog">
       <template>
         <app-dialog-genre id="showGenre">
@@ -495,7 +501,7 @@
           </div>
           <div class="dialogCta">
             <span>
-              <span class="btnBack"></span><span data-i18n="callToActionExit"></span></span>
+              <span class="btnBack"></span><span data-i18n="callToActionClose"></span></span>
           </div>
         </app-dialog-search-filter>
       </template>
@@ -644,7 +650,7 @@
             </span>
             <span>
               <span class="btnBack"></span><span data-i18n="callToActionBack"></span></span>
-					</div>
+          </div>
         </app-dialog-audio-and-cc-options>
       </template>
     </app-html-dialog>
@@ -669,12 +675,12 @@
           <div id="tcpIpDialogTitle" class="dialogTitle" data-i18n="settingsMenuTitleTcpIPConfig"></div>
           <div id="tcpIpDialogBody"class ="dialogBody">
             <app-dialog-tcp-ip-list id="tcpIPConfigList" data-config="app.screenConfig.settings.TCPIP">
-	            <template>
-	              <app-dialog-tcp-ip-list-item class="tcpIpConfigListItem">
-	               <span class= "tcpIpListItemLabel"></span>
+              <template>
+                <app-dialog-tcp-ip-list-item class="tcpIpConfigListItem">
+                 <span class= "tcpIpListItemLabel"></span>
                    <span class= "tcpIpListItemValue"></span>
-	              </app-dialog-tcp-ip-list-item>
-	            </template>
+                </app-dialog-tcp-ip-list-item>
+              </template>
             </app-dialog-tcp-ip-list>
             </div>
           <div id="tcpIpDialogCta" class="dialogCta">
@@ -684,11 +690,12 @@
               <span class="btnSelect"></span>
               <span data-i18n="callToActionSaveSettings"></span>
             </span>
-            <!-- <span>
+            <span>
               <span class="btnYellow"></span>
               <span data-i18n="callToActionUndoChanges"></span>
-            </span> -->
-            <span id="tcpIpErrorCode" class="errorCode">F0200</span>
+            </span>
+            <!-- error code span is kept commented for further reference depending on the dynamic requirements-->
+            <!-- <span id="tcpIpErrorCode" class="errorCode">F0200</span> -->
           </div>
         </app-dialog-tcp-ip-config>
       </template>
@@ -820,7 +827,7 @@
       </template>
     </app-html-dialog>
 
-	<app-html-dialog id="dialogNoSignal">
+  <app-html-dialog id="dialogNoSignal">
       <template>
         <app-dialog-no-signal id="#{dialog.name}" class="dialogConfirm">
           <div>
@@ -837,7 +844,7 @@
         </app-dialog-no-signal>
       </template>
     </app-html-dialog>
- 
+
     <app-html-dialog id="DialogTcpIpError">
       <template>
         <app-dialog-tcp-ip-error id="#{dialog.name}" class="dialogConfirm">
@@ -907,7 +914,7 @@
             <div id="dialogPinEntryTitle" class="title dialogTitle"></div>
             <div id="dialogPinEntryText" class="text dialogText"></div>
             <div class="subText dialogText"></div>
-						<app-html-pin-entry id="dialogPinEntryH-pin" class="pinEntrySelection pinEntry-clear" data-digitsnb="4"></app-html-pin-entry>
+            <app-html-pin-entry id="dialogPinEntryH-pin" class="pinEntrySelection pinEntry-clear" data-digitsnb="4"></app-html-pin-entry>
           </div>
           <div class="dialogCta">
             <span><span class="btnBack"></span><span class="txtBack" data-i18n="callToActionClose">Close</span></span>
@@ -964,7 +971,7 @@
               </div>
             </div>
             <div id="purchasePin">
-							<app-html-pin-entry id="purchaseDialogWithPin-pin" class="pinEntrySelection pinEntry-clear" data-digitsnb="4"></app-html-pin-entry>
+              <app-html-pin-entry id="purchaseDialogWithPin-pin" class="pinEntrySelection pinEntry-clear" data-digitsnb="4"></app-html-pin-entry>
               <div id="purchasePinText" class="text" data-i18n="#{dialog.data.errorCode}PinConfirm"></div>
             </div>
           </div>
@@ -1083,7 +1090,7 @@
               </div>
             </div>
             <div id="purchasePin">
-							<app-html-pin-entry id="orderDialogWithPin-pin" class="pinEntrySelection pinEntry-clear" data-digitsnb="4"></app-html-pin-entry>
+              <app-html-pin-entry id="orderDialogWithPin-pin" class="pinEntrySelection pinEntry-clear" data-digitsnb="4"></app-html-pin-entry>
               <div id="purchasePinText" class="text" data-i18n="#{dialog.errorCode}PinConfirm"></div>
             </div>
           </div>
@@ -1143,7 +1150,7 @@
             <div class="dialogBody">
               <div class="dialogTitle" data-i18n="#{dialog.errorCode}Title"></div>
               <div class="dialogText" data-i18n="#{dialog.errorCode}Description"></div>
-							<app-html-pin-entry id="pinsDoMatch-pin" class="pinEntrySelection pinEntry-correct" data-digitsnb="4" data-entry="****"></app-html-pin-entry>
+              <app-html-pin-entry id="pinsDoMatch-pin" class="pinEntrySelection pinEntry-correct" data-digitsnb="4" data-entry="****"></app-html-pin-entry>
             </div>
             <div class="dialogCta">
               <span class="backAction"><span class="btnBack"></span><span class="txtBack" data-i18n="callToActionClose"></span></span>

@@ -7,50 +7,140 @@ app-carousel-row-list {
     overflow: hidden;
     will-change: transform;
 }
-app-jumpoff-list div {
-    display: -webkit-inline-flex;
+#heroesList-List,
+#jumpoffList-List {
     height: 100%;
     width: 100%;
-    justify-content: space-between;
+    text-align: center;
 }
-.jump-list {
-    display: block;
-    margin-top: 50px;
-    margin-left: 55px;
-    margin-right: 55px;
-    position: relative;
-    height: 102px;
+#genreList-List {
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: visible;
+    -webkit-transition: -webkit-transform 300ms ease-in-out;
     will-change: transform;
+    width: 7000px;
 }
-.jumpoff-item {
-    color: #ffffff;
-    width: 215px;
+.heroes-list,
+.jumpoff-list,
+.genre-list {
+    display: block;
+    position: relative;
+    will-change: transform;
+    width: 1280px;
+}
+.heroes-list {
+    height: 207px;
+    margin-bottom: 30px;
+}
+.jumpoff-list {
     height: 102px;
-    line-height: 102px;
-    background-color: #333333;
+    overflow: hidden;
+}
+.genre-list {
+    height: 50px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.heroes-item,
+.jumpoff-item,
+.genre-item {
+    color: #ffffff;
+    background-color: #222222;
     text-align: center;
     display: inline-block;
+}
+.heroes-item {
+    width: 350px;
+    height: 207px;
+    line-height: 207px;
+    background-image: url("../images/common/NoImage-Landscape.png");
+    margin: 0 10px;
+    background-position: center;
+    background-size: 350px 207px;
+    background-repeat: no-repeat;
+    -webkit-transform: scale(1, 1);
+    transition: -webkit-transform 300ms linear;
+}
+.genre-item,
+.jumpoff-item {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 10px;
+    margin: 0 2px;
+}
+.genre-item {
+    width: 185px;
+    height: 50px;
+    line-height: 50px;
+}
+.jumpoff-item {
+    width: 180px;
+    height: 65px;
+    line-height: 65px;
+}
+.heroes-item[selected],
+.jumpoff-item[selected],
+.genre-item[selected] {
+    background-color: #333333;
+}
+app-carousel-view-list[selected] app-carousel-view-list-item[selected] .heroes-item[selected] {
+    -webkit-transform: scale(1.1, 1.1);
+    border: 3px solid #fff;
+}
+app-carousel-view-list[selected] app-carousel-view-list-item[selected] .jumpoff-item[selected],
+app-carousel-view-list[selected] app-carousel-view-list-item[selected] .genre-item[selected] {
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #b5300b), color-stop(100%, #c7531e))
+}
+#genreList-ListFocus {
+    position: absolute;
+    height: 60px;
+    width: 10px;
+    top: 0px;
+    left: 50px;
+}
+app-carousel-view-list-item {
+    position: absolute;
+    width: 100%;
 }
 #carouselView {
     position: absolute;
     transition: -webkit-transform 300ms linear;
     width: 100%;
-    height: 720px;
+    height: 1060px; /* plus 340 for move */
     top: 100px;
     overflow: hidden;
 }
+#carouselView-List {
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  will-change: transform;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+#carouselView-List,
 #carouselTiles {
     width: 100%;
     height: 720px;
 }
+#carouselView-ListFocus {
+    width: 100%;
+    height: 10px; /* only small, it should line up with the top only */
+    /*background-color: yellow;
+        opacity: 0.3;*/
+    position: absolute;
+    top: 30px;
+}
 app-carousel-list app-carousel-list-item .carouselTileInfo {
     margin-left: 65px;
+        margin-bottom: 10px;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
     will-change: transform;
 }
-app-carousel-list[selected] app-carousel-list-item[selected] .carouselTileInfo {
+app-carousel-view-list[selected] app-carousel-list[selected] app-carousel-list-item[selected] .carouselTileInfo {
     visibility: visible;
     opacity: 1;
 }
@@ -72,13 +162,14 @@ app-carousel-list-item {
     transform: translateY(0px);
     will-change: transform;
 }
-app-carousel-list[selected] app-carousel-list-item[selected] ~ app-carousel-list-item {
-    transform: translateY(70px);
+app-carousel-view-list[selected] app-carousel-list[selected] app-carousel-list-item[selected] ~ app-carousel-list-item {
+    transform: translateY(90px);
 }
 app-carousel-row-list-item {
     position: relative;
     width: 273px;
 }
+app-heroes-list-item .tileGradient,
 app-carousel-row-list-item .tileGradient {
     position: absolute;
     top: auto;
@@ -91,16 +182,16 @@ app-carousel-row-list-item .tileGradient {
     background-repeat: repeat-x;
     background-position: bottom left
 }
+#carouselView-List #carouselTiles.noJumpList app-jumpoff-list { display: none; }
 #carouselView #carouselTiles.noJumpList app-jumpoff-list { display: none; }
+#carouselView-List #carouselTiles.hideJumpList app-jumpoff-list { display: none; }
 #carouselView #carouselTiles.hideJumpList app-jumpoff-list { display: none; }
 .carousel-title {
     height: 40px;
     line-height: 40px;
     font-family: fontSemiBold;
     font-size: 28px;
-    margin-bottom: 0px;
     margin-left: 65px;
-    margin-top: 20px;
     will-change: transform;
 }
 app-carousel-list-item.asset-tv app-carousel-row-list-item,
@@ -124,8 +215,7 @@ app-carousel-list-item.asset-movie app-carousel-row-list-item {
     background-image: url("../images/common/NoImage-Portrait.png");
     background-size: 175px 262px;
 }
-app-jumpoff-list[selected] app-jumpoff-list-item[selected],
-app-carousel-list[selected] app-carousel-list-item[selected] app-carousel-row-list-item[selected] {
+app-carousel-view-list[selected] app-carousel-view-list-item[selected] app-carousel-list-item[selected] app-carousel-row-list-item[selected] {
     border: 3px solid #fff;
     -webkit-transform: scale(1.1, 1.1);
 }
@@ -171,9 +261,7 @@ app-carousel-list {
   left: 0px;
   width: 1280px;
   height: 700px;
-  overflow: hidden;
   display: block;
-  margin-top: 20px;
 }
 app-carousel-list-item {
   width: 1550px;
@@ -181,7 +269,6 @@ app-carousel-list-item {
   display: block;
   position: absolute;
 }
-app-carousel-list-item[selected] { margin-top: -30px; }
 app-carousel-list-item.asset-tv { height: 240px; }
 app-carousel-list-item.asset-movie { height: 350px; }
 app-carousel-list-item.asset-tv app-carousel-row-list { height: 190px; }
@@ -206,7 +293,7 @@ app-carousel-list-item.asset-tv .carouselListRow-ListFocus { width: 300px; }
 app-carousel-list-item.asset-movie .carouselListRow-ListFocus { width: 195px; }
 
 /* tileChannelName make sure the text show in the middle */
-.tileChannelName { 
+.tileChannelName {
     position:absolute; height:100%; width:100%;
     display: table;
 }
@@ -258,7 +345,7 @@ app-carousel-list-item.asset-movie app-carousel-row-list-item .tileProgressIndic
 
 .tile .tileProgressIndicator .tileProgress {
     margin-right: 10px;
-    
+
   background-color: grey;
 }
 

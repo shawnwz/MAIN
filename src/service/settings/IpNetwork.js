@@ -79,11 +79,34 @@ $service.settings.IpNetwork = (function IpNetwork() {
 
 		/**
 		 * @method isDhcpEnabled
-		 * @private
+		 * @public
 		 * @param {Boolean} returns true if DHCP is enabled, Otherwise false.
 		 */
 		isDhcpEnabled: function isDhcpEnabled () {
 			return o5.platform.system.Network.isDhcpEnabled();
+		},
+
+		/**
+		 * @method getMacAddress
+		 * @public
+		 * returns{string} the mac address.
+		 */
+		getMacAddress: function getMacAddress () {
+			var ethernet,
+				wifi,
+				macAddress = o5.platform.system.Network.getRealMacAddress();
+			if (macAddress === null) {
+				ethernet = o5.platform.system.Network.getNetworkByType(o5.platform.system.Network.NetworkType.ETHERNET);
+		        macAddress = ethernet.mac || null;
+			}
+			if (macAddress === null) {
+				wifi = o5.platform.system.Network.getNetworkByType(o5.platform.system.Network.NetworkType.WIFI);
+		        macAddress = wifi.mac || null;
+			}
+			if (macAddress) { // formatting CCOM format- 20-D5-BF-C4-97-54 and UI display format- 20:D5:BF:C4:97:54
+				macAddress = macAddress.split('-').join(':');
+			}
+			return macAddress;
 		},
 
         /**

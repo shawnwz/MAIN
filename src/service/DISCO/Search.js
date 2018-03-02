@@ -12,7 +12,7 @@ $service.DISCO.Search = (function Search () {
         var config = {};
 
         if (term !== undefined && !term) { // resolve an empty list
-            return new Promise(function (resolve, reject) {
+            return new Promise(function (resolve/* , reject */) {
                 console.warn("Unable to search with empty term");
                 resolve([]);
             });
@@ -199,8 +199,8 @@ $service.DISCO.Search = (function Search () {
         });
     }
 
-    function fetchPopular() {
-        return _fetchData($service.DISCO.COMMANDS.POPULAR, 4).then(_mapPopularData,
+    function fetchPopular(nb) {
+        return _fetchData($service.DISCO.COMMANDS.POPULAR, nb).then(_mapPopularData,
                 function (data) {
                     console.log("Unable to fetch popular from DISCO: " + data);
                     return [];
@@ -221,7 +221,7 @@ $service.DISCO.Search = (function Search () {
     function fetchDidyoumean (term, offset) {
         var param = { "offset": offset, "fields": ["suggestedSpellings"] };
 
-        return _fetchData( $service.DISCO.COMMANDS.DIDYOUMEAN, 25, term, param).then(function (data) {
+        return _fetchData($service.DISCO.COMMANDS.DIDYOUMEAN, 25, term, param).then(function (data) {
                 var cache = [];
                 if (data && data.suggestedSpellings) {
                     data.suggestedSpellings.forEach(function (value) {

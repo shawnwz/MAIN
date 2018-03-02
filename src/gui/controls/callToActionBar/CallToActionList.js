@@ -36,6 +36,25 @@ app.gui.controls.CallToActionList.prototype._populate = function _populate(arr) 
 	this.logExit();
 };
 
+/**
+ * @method hasId
+ */
+app.gui.controls.CallToActionList.prototype._hasId = function _hasId(itemId) {
+    this.logEntry();
+    var i, len = this._itemNb;
+
+    // create list of current item ids, add the new one and repopulate
+    for (i = 0; i < len; i++) {
+        if (this._data[i].id === itemId) { // exists already
+            return true; // nothing more to do
+        }
+
+    }
+    this.logExit();
+    return false;
+
+
+};
 
 /**
  * @method _add

@@ -13,14 +13,14 @@ $service.settings.AV = (function AV () {
          * @return {Object}
          */
         getResolutionOptions: function getResolutionOptions () {
-            var obj, key, resolutions = o5.platform.output.AV.VideoResolution(), // eslint-disable-line new-cap
-            videoCapabilities = CCOM.System.hdmiVideoFormat,
+            var /*obj, key, */resolutions = o5.platform.output.AV.VideoResolution(); // eslint-disable-line new-cap
+           /* videoCapabilities = CCOM.System.hdmiVideoFormat,
             arrOptions = [{ id: "resAuto", value: "auto", text: "preferred" }];
             if (videoCapabilities) {
                 for (key in resolutions) {
                     if (resolutions.hasOwnProperty(key)) {
                             if (resolutions[key] & videoCapabilities) { /*eslint no-bitwise: off*/
-                        obj = {};
+                        /*obj = {};
                         obj.id = "res" + key.slice(18, key.length).toLowerCase();
                         obj.value = resolutions[key];
                         obj.text = key.slice(18, key.length).toLowerCase();
@@ -31,33 +31,34 @@ $service.settings.AV = (function AV () {
                 }
             }
             return arrOptions;
-            }
+            }*/
                 return [
                 {
                     id   : "resAuto",
                     value: "auto",
-                    text : "preferred"
+                    text : $util.Translations.translate("preferred")
                 },
                 {
                     id   : "res1080i",
                     value: resolutions.HDMI_VIDEO_FORMAT_1080I,
-                    text : "1080i-50Hz"
+                    text : $util.Translations.translate("1080i-50Hz")
                 },
                 {
                     id   : "res1080p",
                     value: resolutions.HDMI_VIDEO_FORMAT_1080P,
-                    text : "1080p-50Hz"
-                },
-                {
-                    id   : "res720p",
-                    value: resolutions.HDMI_VIDEO_FORMAT_720P,
-                    text : "720p-50Hz"
+                    text : $util.Translations.translate("1080p-50Hz")
                 },
                 {
                     id   : "res576p",
                     value: resolutions.HDMI_VIDEO_FORMAT_576P,
-                    text : "576p"
+                    text : $util.Translations.translate("576p")
+                },
+                {
+                    id   : "res720p",
+                    value: resolutions.HDMI_VIDEO_FORMAT_720P,
+                    text : $util.Translations.translate("720p-50Hz")
                 }
+
             ];
 
         },

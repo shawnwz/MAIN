@@ -19,7 +19,7 @@ app.gui.controls.GuideCallToActionList.prototype.createdCallback = function crea
 /**
  * @method _fetch
  */
-app.gui.controls.GuideCallToActionList.prototype._fetch = function _fetch(programme) {
+app.gui.controls.GuideCallToActionList.prototype._fetch = function _fetch(programme, ctrl) {
 	this.logEntry();
 	var items = [],
 		synopsisVisible,
@@ -60,8 +60,11 @@ app.gui.controls.GuideCallToActionList.prototype._fetch = function _fetch(progra
 		if (gridViewVisible) {
 		    if (programme.isReverse === true && (new Date().getTime() - programme.progStartDate) >= 27 * 3600 * 1000) {
 			    items.push("ctaFfwdSkip");
-		    } else if (programme.isInFuture === true && (programme.progEndDate - new Date().getTime()) >= 14 * 24 * 3600 * 1000) {
-			    items.push("ctaRwdSkip");
+		    } else if (programme.isInFuture === true && ctrl 
+		               && (programme.progEndDate >= ctrl.upperLimit 
+		               || ((ctrl.upperLimit - ctrl.gridStart - ctrl.gridSpan === 0)
+		                    && programme.progEndDate > ctrl._gridVisibleEnd))) {
+		    	items.push("ctaRwdSkip");
 		    } else {
 			    items.push("ctaSkip24H");
 		    }

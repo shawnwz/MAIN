@@ -57,7 +57,7 @@ app.gui.controls.SettingsStartScan.prototype._appendChildren = function _setChil
 app.gui.controls.SettingsStartScan.prototype._updateStatus = function _updateStatus() {
 	var noOfChannelTuned = Number(o5.platform.system.Preferences.get($util.constants.TERRESTRIAL_CHANNEL_TUNED_NO));
 	if (noOfChannelTuned) {
-		this._scanningStatusText.innerHTML = noOfChannelTuned + $util.Translations.translate("alreadyTunedChannels");
+		this._scanningStatusText.innerHTML = noOfChannelTuned + " " + $util.Translations.translate("alreadyTunedChannels");
 	}
 };
 

@@ -21,7 +21,7 @@ app.gui.controls.GuideListingsGenreFilter.prototype.createdCallback = function c
  */
 app.gui.controls.GuideListingsGenreFilter.prototype._reset = function _reset (genre) {
     this.logEntry();
-    this._clear();
+    this.fireControlEvent("clear");
     this.innerHTML = '<span>' + genre + '</span>';
     this.logExit();
 };
@@ -50,7 +50,7 @@ app.gui.controls.GuideListingsSubGenreFilter.prototype.createdCallback = functio
  */
 app.gui.controls.GuideListingsSubGenreFilter.prototype._reset = function _reset (genre) {
     this.logEntry();
-    this._clear();
+    this.fireControlEvent("clear");
     this.innerHTML = '<span class="icon-subcategory">' + genre + '</span>';
     this.logExit();
 };

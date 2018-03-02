@@ -12,8 +12,37 @@ app.gui.controls.SettingsToggleList.prototype.createdCallback = function created
 	this.logEntry();
 	this.superCall();
 	this._wrapped = true;
+	this._deafultIndex = 0;
+	this._savedIndex = 0;
 	this._visibleClass = "show";
 	this.logExit();
+};
+
+/**
+ * @method attachedCallback
+ */
+app.gui.controls.SettingsToggleList.prototype.attachedCallback = function attachedCallback() {
+    this.logEntry();
+    this.superCall();
+    // $util.ControlEvents.on("app-settings:ctaSettingsMenu", "ctaUndoChanges", function() {
+    	// this.fireControlEvent("select", this._savedIndex);
+    // });
+    // $util.ControlEvents.on("app-settings:ctaSettingsMenu", "ctaResetDefaults", function() {
+    	// this.fireControlEvent("select", this._deafultIndex);
+    // });
+    this.logExit();
+};
+
+/**
+ * @method _populate
+ * simply populate the DOM with all items
+ */
+app.gui.controls.SettingsToggleList.prototype._populate = function _populate(arr, savedIndex, deafultIndex) {
+    this.logEntry();
+    this.superCall(arr, savedIndex);
+    this._savedIndex = savedIndex;
+    this._defaultIndex = deafultIndex || 0;
+    this.logExit();
 };
 
 /**

@@ -19,7 +19,7 @@ $service.DISCO.Base = (function Base() {
         SEARCHPRESTO : "/sd/foxtel/taps/assets/search/prefix?prod=FOXTELPRESTO",
         POPULAR      : "/sd/foxtel/cores/assets-foxtel/search?prod=FOXTELIQ3&rid=POPULAR1&fx=*%3A*", //@hdk what is fx?
         MLT          : "/sd/foxtel/cores/assets-foxtel/search?prod=FOXTELIQ3&rid=MLT1",
-        SUGGESTIQ3   : "/sd/foxtel/cores/assets-foxtel/autoSuggest?prod=FOXTELIQ3&rid=AUTO1&fl=*",
+        SUGGESTIQ3   : "/sd/foxtel/taps/assets/search/autosuggest?prod=FOXTELIQ3&rid=AUTO3&fl=*",
         SUGGESTPRESTO: "/sd/foxtel/cores/assets-foxtel/autoSuggest?prod=FOXTELPRESTO&rid=AUTO1&fl=*",
         GENERIC      : "&fxid=021b249b41458a01f7fa8379f6c271eea0d41d8cd98f00b204e9800998ecf8427e" +  // idm + aid + hwid (02=foxtel)
       "&hwid=d41d8cd98f00b204e9800998ecf8427e" + // hardcoded hardware id. Looks like the returned results are not affected by this id.
@@ -77,11 +77,10 @@ $service.DISCO.Base = (function Base() {
      * @method fetch
      * @param  {Object} config - configuration object - see getDISCOUrl for details
      */
-    function fetch(config, callback) {
+    function fetch(config, token) {
         var url = _getDISCOUrl(config);
-        console.log("DISCO fetch url: ");
-        console.log(url);
-        return $util.fetch(url, $service.DISCO.config.timeout, callback);
+        console.log("DISCO fetch url: ", url);
+        return $util.fetchToken(url, $service.DISCO.config.timeout, token);
     }
 
     /**

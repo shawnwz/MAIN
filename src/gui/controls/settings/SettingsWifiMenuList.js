@@ -59,6 +59,17 @@ app.gui.controls.SettingsWifiMenuList.prototype._populate = function _populate(c
 };
 
 /**
+ * @method _focus
+ * @private
+ */
+app.gui.controls.SettingsWifiMenuList.prototype._focus = function _focus () {
+    this.logEntry();
+    this.superCall();
+    $util.ControlEvents.fire("app-settings:ctaSettingsMenu", "fetch", this);
+    this.logExit();
+};
+
+/**
  * @class app.gui.controls.SettingsWifiCell
  */
 

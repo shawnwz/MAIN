@@ -77,6 +77,6 @@ app.screenConfig.callToAction = [
   { id: "ctaSecurity",            key: ["Red"],        btn: "btnRed",        text: "Network Security Settings" },
   { id: "ctaWifiSettings",        key: ["Select"],     btn: "btnSelect",     text: "WiFi Settings" },
   { id: "ctaForget",              key: ["Yellow"],     btn: "btnYellow",     text: "Forget this network" },
-  { id: "ctaRenewDHCP",           key: ["Green"],      btn: "btnGreen",      text: "Renew DHCP Lease" },
-  { id: "ctaTCPIPSettings",       key: ["Red"],        btn: "btnRed",        text: "TCP/IP Settings" }
+  { id: "ctaTCPIPSettings",       key: ["Red"],        btn: "btnRed",        text: "TCP/IP Settings" },
+  { id: "ctaRenewDHCP",           key: ["Green"],      btn: "btnGreen",      text: "Renew DHCP Lease" }
 ];

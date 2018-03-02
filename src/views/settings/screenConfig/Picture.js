@@ -4,8 +4,8 @@ var resolutionOptions = $service.settings.AV.getResolutionOptions(),
 	resolutionValue = 0,
 	aspectModeOptions = $service.settings.AV.getAspectModesOptions(),
 	aspectModeIndex = 0,
-	// eslint-disable-next-line no-unused-vars
-	aspectModeValue = 0,
+	//PILLAR_BOX = 0 and STRETCH = 1 obtained from o5.platform.output.AV.VideoAspectMode()
+	aspectModeValue = 1,
 	hdcpStatus,
 
 	/*themeOptions = $service.settings.AV.getThemeOptions(),
@@ -46,7 +46,7 @@ getAspectModeIndex();
 app.screenConfig.settings.PICTURE = {
 	component      : "settingsConfig",
     text           : "pictureSettings",
-	defaultitem    : { settingsMenuPictureHDOutput: "auto", settingsMenuPicture43: aspectModeValue },
+	defaultitem    : { settingsMenuPictureHDOutput: "auto", settingsMenuPicture43: 1 },
 	saveditem      : { settingsMenuPictureHDOutput: resolutionValue, settingsMenuPicture43: aspectModeValue },
 	currentitem    : { settingsMenuPictureHDOutput: resolutionValue, settingsMenuPicture43: aspectModeValue },
 	resetDefaults  : "settings:picture:resetDefaults",

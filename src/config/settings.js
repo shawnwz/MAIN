@@ -184,7 +184,7 @@ $config.addDefaultSettings({
      * {String}
      */
     "settings.tv.guide.background.audio": {
-        value   : true,
+        value   : "backgroundVision",
         override: false
     },
 

@@ -177,3 +177,15 @@ app.gui.controls.GuideMiniSynopsis.prototype._populate = function _populate (dat
 	}
 	this.logExit();
 };
+
+app.gui.controls.GuideMiniSynopsis.prototype._reset = function _reset () {
+	this.logEntry();
+	this._title.innerHTML = "";
+	this._epName.innerHTML = "";
+	this._synopsisTime.innerHTML = "";
+	this._ratings.innerHTML = "";
+	this._icons.innerHTML = "";
+	this._description.textContent = "";
+	this._timeRemaining.innerHTML = "";
+	this.logExit();
+};

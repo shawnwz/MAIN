@@ -69,9 +69,8 @@ app.gui.controls.SurfEventsList.prototype._onKeyDown = function _onKeyDown(e) {
 				if (this.selectedItem.itemData.isRadio) {
 					$util.ControlEvents.fire("app-surf:surfScanChanList", "tune");
 					setTimeout(function () {
-						//var isMaster = o5.platform.system.Preferences.get("/users/current/isMaster", true);
-
-						if (o5.platform.ca.ParentalControl.isChannelLocked(me.selectedItem.itemData.channel) || me.selectedItem.itemData.ratingBlocked === true) {
+						var isMaster = o5.platform.system.Preferences.get("/users/current/isMaster", true);
+						if (!isMaster && (o5.platform.ca.ParentalControl.isChannelLocked(me.selectedItem.itemData.channel) || me.selectedItem.itemData.ratingBlocked === true)) {
 							if (me._pinDialog.visible === false) {
 								$util.ControlEvents.fire(":dialogPinEntryH", "show");
     							$util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });
@@ -83,9 +82,8 @@ app.gui.controls.SurfEventsList.prototype._onKeyDown = function _onKeyDown(e) {
 				} else if (this.selectedItem.itemData.isOnNow === true) {
 					$util.ControlEvents.fire("app-surf:surfScanChanList", "tune");
 					setTimeout(function () {
-						//var isMaster = o5.platform.system.Preferences.get("/users/current/isMaster", true);
-
-						if (o5.platform.ca.ParentalControl.isChannelLocked(me.selectedItem.itemData.channel) || me.selectedItem.itemData.ratingBlocked === true) {
+						var isMaster = o5.platform.system.Preferences.get("/users/current/isMaster", true);
+						if (!isMaster && (o5.platform.ca.ParentalControl.isChannelLocked(me.selectedItem.itemData.channel) || me.selectedItem.itemData.ratingBlocked === true)) {
 							if (me._pinDialog.visible === false) {
 								$util.ControlEvents.fire(":dialogPinEntryH", "show");
     							$util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });

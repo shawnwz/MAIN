@@ -13,15 +13,14 @@ app.gui.controls.HtmlInputTextBox.prototype.createdCallback = function createdCa
     this.superCall();
     this._data = "";
     this._isMasked = true;
-    this._maskChar = "*";
+    this._maskChar = "\u00B7";
 
     this._getNodeIndex = function(s) {
-        var sel = s || window.getSelection(),
-        	nodeIndex,
-        	validNodes;
-		validNodes = Array.prototype.slice.call(sel.focusNode.parentElement.childNodes).filter(function (node) { return node.length; });
-		nodeIndex = validNodes.indexOf(sel.focusNode) + sel.extentOffset;
-        return nodeIndex;
+        var sel = s || window.getSelection();
+
+        return Array.prototype.slice.call(sel.focusNode.parentElement.childNodes)
+            .filter(function (node) { return node.length; }) // remove empty nodes
+            .indexOf(sel.focusNode) + sel.extentOffset;
     };
 
     this.logExit();

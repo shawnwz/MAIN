@@ -26,7 +26,7 @@ app.views.Video.prototype.createdCallback = function createdCallback () {
         this.isRecover = isRecover;
         if (data.uri.substring(0, 5) === "tv://") { //set channelToTune, to be update if there are other protocols when tune to a channel
             this.channelToTune = data;
-            if (this.videoPlayer.src !== data.uri) {
+            if (this.videoPlayer && this.videoPlayer.src !== data.uri) {
                 this.videoPlayer.src = data.uri;
                 $util.ControlEvents.fire("app-video", "channelChanged", data);//for surf to update current channel
         }

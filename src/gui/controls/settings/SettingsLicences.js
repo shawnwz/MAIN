@@ -30,8 +30,10 @@ app.gui.controls.SettingsLicences.prototype.createdCallback = function createdCa
  */
 app.gui.controls.SettingsLicences.prototype._fetchLincences = function _fetchLincences() {
 	this.logEntry();
-	var licencesText = $service.settings.Licences.getfoxtelLicences();
+	var licencesText = $service.settings.Licences.getfoxtelLicences(), footerData = {};
 	this._licenceContainer.innerHTML = licencesText;
+	footerData.id = this.id;
+    $util.ControlEvents.fire("app-settings:ctaSettingsMenu", "fetch", footerData);
 	this._focus();
 	this.logExit();
 };

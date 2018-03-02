@@ -153,7 +153,7 @@ $util.constants = {
 	//Parental Control
     MAX_PIN_DIGITS                            : 4,
     MAX_PIN_ENTRY_ATTEMPTS                    : 3,
-    PIN_DIALOG_SHOW_TIME                      : 60000,
+    PIN_DIALOG_SHOW_TIME                      : 600,
     MASTER_EXPIRATION_TIME                    : 28800,
     CHANNEL_LOCK_STATUS_CACHE_LIMIT           : 300,
     CHANNEL_OR_PROGRAM_LOCK_STATUS_CACHE_LIMIT: 600,
@@ -170,10 +170,29 @@ $util.constants = {
 		AVERAGE: 2,
 		HIGH   : 3
 	},
+	
+	SECURITY_TYPE : {
+            "WEP" : "WEP",
+            "WPA" : "WPA",
+            "WPA2": "WPA2",
+            "OPEN": "OPEN",
+            "WPS" : "WPS"
+       },
+	WIFI_CONFIG_PATH : {
+		IPV4: '/network/ipconfig/interfaces/interface1/ipv4',
+    	NETMASK: '/network/ipconfig/interfaces/interface1/netmask',
+    	GATEWAY: '/network/ipconfig/interfaces/interface1/gateway',
+    	DNS: '/network/ipconfig/interfaces/interface1/dns',
+    	SSID: '/network/ipconfig/interfaces/interface1/wirelessConfig/ssid',
+    	SECURITY: '/network/ipconfig/interfaces/interface1/wirelessConfig/security',
+    	ENCRYPTION: '/network/ipconfig/interfaces/interface1/wirelessConfig/encryption',
+    	KEY: '/network/ipconfig/interfaces/interface1/wirelessConfig/key'
+	},
 
-	INTERNET_STATUS_OVERLAY_dISPLAY_MODE: {
+	INTERNET_STATUS_OVERLAY_DISPLAY_MODE: {
 		DHCP  : "DHCP",
 		TCP_IP: "TCP_IP"
 	}
+	
 };
 /*eslint-enable camelcase*/

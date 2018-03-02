@@ -49,10 +49,8 @@ app.gui.controls.GuideTimelineList.prototype._populate = function _populate(fast
 	this.logEntry();
 
 	var arr = [],
-		startTime = this._grid.gridStart,
-		endTime = this._grid.gridEnd,
-		zeroOffset = this._grid.zeroOffset,
- 		left = Math.floor((this._pixUnit * (startTime - zeroOffset)) / (60 * 1000));
+		startTime = this._grid._gridVisibleStart,
+		endTime = this._grid.gridEnd;
 
 	while (startTime < endTime) {
 		arr.push(startTime);
@@ -62,7 +60,7 @@ app.gui.controls.GuideTimelineList.prototype._populate = function _populate(fast
 	this.superCall(arr);
 
 	if (!fastMode) {
-		this._listElem.style.left = left + "px";
+		this._listElem.style.left = "0px";
 		this._listElem.style.webkitTransform = "translate3d(" + this._grid._scrolledPix + "px, 0px, 0px)";
 	}
 

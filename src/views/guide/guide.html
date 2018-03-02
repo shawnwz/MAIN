@@ -17,7 +17,7 @@
   <!-- #epg: class helpers [channelView listingsView mainView mainViewSynopsis][mainViewMenu][reverseEpg nowNextEpg futureEpg] -->
 
   <div id="epg" class="oxygen-transition-none-prepareDisplay oxygen-transition-none-bringIn" data-oxy-anim="true"> <!-- oxygen-transition-none-hide -->
-    <div id="homeBgSolid"></div>
+    <div id="BgSolid"></div>
     <div id="epgPipInViewLeft" class="opaqueBg">
 
       <div id="epgInnerPipInViewLeft"></div>
@@ -44,7 +44,7 @@
 
     </div>
 
-    
+
 
     <div id="epgCommon">
 
@@ -106,13 +106,13 @@
 
         <app-guide-prev-channel-stack-list id="epgChannelViewChanListPrev" class="epgChannelViewChannelList" data-orientation = "Horizontal" data-cyclic>
 
-					<template>
+          <template>
 
-						<app-guide-prev-channel-stack-list-item class="prevChannelStack-cell">
+            <app-guide-prev-channel-stack-list-item class="prevChannelStack-cell">
 
-							<span class="prevChannelStack-channelNum"></span>
+              <span class="prevChannelStack-channelNum"></span>
 
-							<span class="prevChannelStack-channelLogo"></span>
+              <span class="prevChannelStack-channelLogo"></span>
 
               <div class="prevChannelStack-channelNameCont"><span class="prevChannelStack-channelName"></span></div>
 
@@ -120,23 +120,23 @@
 
               <span class="fav"></span>
 
-						</app-guide-prev-channel-stack-list-item>
+            </app-guide-prev-channel-stack-list-item>
 
-					</template>
+          </template>
 
-				</app-guide-prev-channel-stack-list>
+        </app-guide-prev-channel-stack-list>
 
 
 
         <app-guide-next-channel-stack-list id="epgChannelViewChanListNext" class="epgChannelViewChannelList" data-orientation = "Horizontal" data-cyclic>
 
-					<template>
+          <template>
 
-						<app-guide-next-channel-stack-list-item class="nextChannelStack-cell">
+            <app-guide-next-channel-stack-list-item class="nextChannelStack-cell">
 
-							<span class="nextChannelStack-channelNum"></span>
+              <span class="nextChannelStack-channelNum"></span>
 
-							<span class="nextChannelStack-channelLogo"></span>
+              <span class="nextChannelStack-channelLogo"></span>
 
               <div class="nextChannelStack-channelNameCont"><span class="nextChannelStack-channelName"></span></div>
 
@@ -144,11 +144,11 @@
 
               <span class="fav"></span>
 
-						</app-guide-next-channel-stack-list-item>
+            </app-guide-next-channel-stack-list-item>
 
-					</template>
+          </template>
 
-				</app-guide-next-channel-stack-list>
+        </app-guide-next-channel-stack-list>
 
 
 
@@ -158,9 +158,9 @@
 
       <div id="epgChannelViewProgList" data-oxy-anim="true">
 
-				<app-guide-programme-list id="epgChannelProgList" class="progList-list progList-anim-normal" data-orientation = "Vertical">
+        <app-guide-programme-list id="epgChannelProgList" class="progList-list progList-anim-normal" data-orientation = "Vertical">
 
-					<template>
+          <template>
 
             <app-guide-programme-list-item class="progList-cell">
 
@@ -184,11 +184,11 @@
 
             </app-guide-programme-list-item>
 
-					</template>
+          </template>
 
         </app-guide-programme-list>
 
-			</div>
+      </div>
 
 
 
@@ -200,7 +200,7 @@
 
     </div>
 
-    
+
 
     <!-- #epgListingsView: class helpers [AtoZ time] -->
 
@@ -376,17 +376,17 @@
 
       <div id="epgViewsSlider" data-oxy-anim="true" class="nowNextFuture">
 
-        
+
 
         <div id="epgViewReverseCont" data-oxy-anim="true" data-oxy-anim-vertical="false" class="">
 
 
 
-          <div id="reverseEpgContainer" class="reverseEpg" style="width: 3132px; -webkit-transform: translate3d(0px, 0, 0);"> 
+          <div id="reverseEpgContainer" class="reverseEpg" style="width: 3132px; -webkit-transform: translate3d(0px, 0, 0);">
 
             <div id="reverseEpgEvents" class="eventsContainer" style="width: 3132px; height: 550px;">
 
-              <app-guide-reverse-grid id="reverseEpgEventsInner" class="eventsInner reverseEpg-normal" 
+              <app-guide-reverse-grid id="reverseEpgEventsInner" class="eventsInner reverseEpg-normal"
 
                       style="-webkit-transform: translate3d(0,0,0); width: 3132px;"
 
@@ -422,17 +422,17 @@
 
         </div>
 
-        
+
 
         <div id="epgViewChannelsCont">
 
           <div id="epgViewChannelList" data-oxy-anim="false">
 
-            <app-guide-channel-list id="epgChannelStack" class="epgChannelStack-list epgChannelStack-anim-normal" 
+            <app-guide-channel-list id="epgChannelStack" class="epgChannelStack-list epgChannelStack-anim-normal"
 
-                    data-min-items="10" data-max-items="10" 
+                    data-min-items="10" data-max-items="10"
 
-                    data-cyclic 
+                    data-cyclic
 
                     data-orientation="vertical"> <!-- style="top:-55px;" -->
 
@@ -444,7 +444,7 @@
 
                   <span class="epgChannelStack-channelLogo"></span>
 
-		      				<div class="epgChannelStack-channelNameCont"><span class="epgChannelStack-channelName"></span></div>
+                  <div class="epgChannelStack-channelNameCont"><span class="epgChannelStack-channelName"></span></div>
 
              <!-- <span class="iconLocked"></span>
 
@@ -510,7 +510,7 @@
 
                 <div id="futureEpgEvents" class="eventsContainer" style="width: 3132px; height: 550px;">
 
-                  <app-guide-future-grid id="futureEpgEventsInner" class="eventsInner futureEpg-normal" 
+                  <app-guide-future-grid id="futureEpgEventsInner" class="eventsInner futureEpg-normal"
 
                           style="-webkit-transform: translate3d(0,0,0); width: 3132px;"
 
@@ -558,7 +558,7 @@
 
 
 
-	<app-guide-call-to-action-list id="ctaGuide" class="callToActionList" data-screen="ctaGuide"></app-guide-call-to-action-list>
+  <app-guide-call-to-action-list id="ctaGuide" class="callToActionList" data-screen="ctaGuide"></app-guide-call-to-action-list>
 
 
 
@@ -596,7 +596,7 @@
 
   </template>
 
-		
+
 
 </app-guide>
 

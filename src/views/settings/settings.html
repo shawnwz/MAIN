@@ -34,7 +34,6 @@
 <script src="./screenConfig/InstallerSetup.js"></script>
 <script src="./screenConfig/LNB.js"></script>
 
-
 <!--components -->
 
 
@@ -417,7 +416,7 @@
         </div>
 
     </div>
-    
+
      <div id="settingsViewingRestrictionsView" class="oxygen-transition-none-hide">
 
         <div class="settingsList">
@@ -425,7 +424,7 @@
             <app-settings-list id="settingsViewingRestrictionsViewList"
 
             		data-config="app.screenConfig.settings.VIEW_RESTRICTIONS">
-            		
+
             		<div class = "settingsViewRestrictionsFirstSubTitle" id="viewingRestrictionsFirstSubTitle" data-i18n="settingsRestrictionsClassifiedSubTitle"></div>
 
                 <template>
@@ -439,12 +438,12 @@
                   </app-settings-list-item>
 
                 </template>
-                
+
             </app-settings-list>
 
 		</div>
     </div>
-    
+
 	<div id="settingsInternetConnectionMenu"  class="oxygen-transition-none-hide ">
     	  <app-settings-table id="settingsInternetConnectionMenuGrid"    class="settingsGridMenu" data-config="app.screenConfig.settings.INTERNET_CONNECTION"
                     data-row-id="gridMenu-row-"    data-row-class="gridMenu-row" data-col-count ="1">
@@ -1027,10 +1026,10 @@
                 <span id="EthernetConnectionText" data-i18n="settingsEthernetEthernet"></span>
                 <span id="connectionStatus" data-i18n="settingsEthernetConnected"></span>
               </app-settings-ethernet-menu-list-item>
-      
+
               <app-settings-ethernet-menu-list-item id='networkConnectionTest' class="networkTest listView-cell"  data-index="1" style="top:67px;" data-i18n="settingsEthernetNetworkTest">
               </app-settings-ethernet-menu-list-item>
-    
+
          </div>
      </app-settings-ethernet-menu-list>
 	</div>
@@ -1065,8 +1064,8 @@
 					</template>
 			</app-settings-wifi-connection-list>
         </div>
-       <!-- #settingsWifiConnect: class helpers [connecting, fail, connected] -->
-        <div id="settingsWifiConnect">
+        <app-settings-wifi-status-overlay id="settingsWifiConnect">
+        <!-- #settingsWifiConnect: class helpers [connecting, fail, connected] -->
             <div id="settingsWifiConnecting">
                 <div id="settingsWifiConnectingImg"></div>
                 <div class="settingsWifiConnectText" data-i18n="settingsWifiConnecting"></div>
@@ -1095,7 +1094,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </app-settings-wifi-status-overlay>
 	</app-settings-wifi>
 </div>
 
@@ -1306,7 +1305,7 @@
 
         <div class="settingsList">
 
-            <app-settings-list id="settingsNetworkDetailsViewList"
+            <app-network-connection-details-list id="settingsNetworkDetailsViewList"
 
             		data-config="app.screenConfig.settings.NETWORKSETTINGS"
 
@@ -1326,7 +1325,7 @@
 
                 </template>
 
-            </app-settings-list>
+            </app-network-connection-details-list>
 
 		</div>
 		<app-settings-internet-status-overlay id="settingsDHCPRenewal">
@@ -1652,7 +1651,7 @@
 		<div id="settingsMenuSystemManufacturer" class="settingsListValue">Pace</div>
 	</li>
   </template>
-  <div id="callToAction" class="ctaClose " x-screen="ctaSettings" style="display: block;">
+  <div id="callToAction"  x-screen="ctaSettings" style="display: block;">
         <div class="ctaWrapper">
             <span id="ctaOrder"><span class="btnSelect"></span><span data-i18n="callToActionOrder">callToActionOrder</span></span>
             <span id="ctaClose"><span class="btnBack"></span><span data-i18n="callToActionClose">callToActionClose</span></span>

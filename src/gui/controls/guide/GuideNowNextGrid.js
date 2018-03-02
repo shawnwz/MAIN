@@ -114,10 +114,17 @@ app.gui.controls.GuideNowNextGrid.prototype._fetch = function _fetch(channels) {
 			}
 		}
 
+		if (this.focused) {
+			$util.ControlEvents.fire("app-guide", "startLoading");
+		}
+
 		Promise.all(promises).then(function(data) {
 			me._readyToFetch = true;
 			me._clearFetchTimeout();
 			me._fetchTimeout = setTimeout(function () {
+				if (me.focused) {
+					$util.ControlEvents.fire("app-guide", "stopLoading");
+				}
 				me._readyToFetch = false;
 				me.fireControlEvent("populate", data);
 			}, me._FETCHTIMEOUT);

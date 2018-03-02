@@ -432,12 +432,25 @@ body #pageContainer {
 }
 .show { display: block }
 .hide { display: none }
+.percentage {
+        position: absolute;
+    top: 0;
+    width: 1280px;
+    height: 162px;
+        line-height: 162px;
+        text-align: center;
+}
 .spinner {
-    width: 162px;
+    width: 1280px;
     height: 162px;
     background: transparent url('../images/player/buffering-spinner.png');
     -webkit-animation: buffering-spin 1s infinite linear;
     will-change: transform;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        position: absolute;
+    top: 0;
+        display: inherit;
 }
 @-webkit-keyframes buffering-spin { from {
 -webkit-transform: rotate(0deg)
@@ -484,7 +497,7 @@ body #pageContainer {
     height: 820px;
     background: url("../images/home/bg.png") repeat-y;
 }
-#homeBgSolid {
+#BgSolid {
     position: absolute;
     top: 0;
     right: 0;
@@ -711,17 +724,18 @@ body #pageContainer {
     font-size: 27px;
     top: 158px
 }
-.homeLogo {
+#homeLogo {
     position: absolute;
-    bottom: 35px;
+    top: auto;
     right: 55px;
+    bottom: 35px;
+    left: auto;
+    background: url("../images/common/foxtel-logo-small.png") no-repeat;
+    background-size: 100% 100%;
     width: 95px;
     height: 37px; /* new logo */
-    z-index: 5;
-    background: url("../images/common/foxtel-logo-small.png") no-repeat;
-    background-size: 100% 100%
+    z-index: 5
 }
-
 #surfScan {
     position: absolute;
     top: auto;
@@ -1263,7 +1277,7 @@ body #pageContainer {
 .surfScanProgTitle,
 .surfScanProgDescription {
     overflow: hidden;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
     display: block;
 }
 
@@ -4880,15 +4894,17 @@ to { -webkit-transform: rotate(360deg) }
     width: 100px;
     height: 53px;
     font-size: 18px;
-    display: table;
-    table-layout: fixed
+    display: flex;
+    align-items: center
 }
 .epgChannelStack-channelName {
-    display: table-cell;
     vertical-align: middle;
     max-height: 100%;
-    overflow: hidden;
-    white-space: normal
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .epgChannelStack-channelNum {
     position: absolute;
@@ -5159,8 +5175,8 @@ to { -webkit-transform: rotate(360deg) }
 }
 #epgChannelProgList { /* added */
     position: absolute;
-    top: -38px;
-    bottom: 728px;
+    top: -28px;
+    bottom: 738px;
     left: 0px;
     height: 766px;
     width: 670px;
@@ -5866,7 +5882,6 @@ to { -webkit-transform: rotate(360deg) }
     left: 80px;
     height: 99px;
     z-index: 5;
-    display: none
 }
 #settingsGridMenu.show,
 #epgGridMenu.show { display: inherit }
@@ -5900,14 +5915,10 @@ to { -webkit-transform: rotate(360deg) }
     width: 560px;
     -webkit-box-sizing: border-box;
 }
-#settingsGridMenu[selected] .GridMenu-row app-home-grid-cell.focused, /* added */
-#epgGridMenu[selected] /*#epgMenu*/ .GridMenu-row app-home-grid-cell.focused { background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #b5300b), color-stop(100%, #c7531e)) }
+#settingsGridMenu[selected] app-home-grid-cell[selected], /* added */
+#epgGridMenu[selected] app-home-grid-cell[selected] { background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #b5300b), color-stop(100%, #c7531e)) }
 #settingsGridMenu .GridMenu-row app-home-grid-cell:nth-of-type(1), /* added */
-#epgGridMenu /*#epgMenu*/ .GridMenu-row app-home-grid-cell:nth-of-type(1) { margin-right: 2px }
-/*app-html-table #epgMenu .GridMenu-row.fullWidth app-home-grid-cell {
-    width: 100%;
-    margin: 0
-}*/
+#epgGridMenu .GridMenu-row app-home-grid-cell:nth-of-type(1) { margin-right: 2px }
 #epgGridMenu .GridMenu-row:nth-of-type(1) app-home-grid-cell {
     width: 100%;
     margin: 0
@@ -6387,12 +6398,12 @@ app-html-dialog { /* added */
     border-bottom: 2px solid #343434
 }
 #tcpIPConfigDialog .dialogBody #tcpIPConfigList .tcpIpConfigListItem {
+    border-top: 2px solid #343434;
     font-size: 24px;
     width: 100%;
     height: 52px;
     line-height: 52px;
     color: #ccc;
-    margin-bottom: 5px;
     display: block;
     overflow: hidden;
 }
@@ -6415,7 +6426,6 @@ app-html-dialog { /* added */
     height: 56px;
     width: 375px;
     line-height: 56px;
-	background-color: #545252;
     text-align: center
 }
 #tcpIPConfigDialog .dialogBody #tcpIPConfigList .tcpIpConfigListItem.focused span:nth-of-type(2) {
@@ -6438,7 +6448,7 @@ app-html-dialog { /* added */
     height: 76px;
     line-height: 76px;
     background-color: #242424;
-	font-family: sans-serif;
+    font-family: fontLight;
     -webkit-box-sizing: border-box
 }
 #settingsTCPIPSetting { text-transform: uppercase }
@@ -8604,12 +8614,14 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
 }
 #tileSpinner {
     position: absolute;
-    top: 0;
+    top: 162px;
     right: 0;
     bottom: 0;
     left: 0;
     margin: auto;
-    display: none
+    display: none;
+    line-height: 160px;
+    font-size: 2em;
 }
 #tileEmpty {
     position: absolute;
@@ -8831,6 +8843,8 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
     text-overflow: ellipsis;
     white-space: nowrap
 }
+
+.settingsList>app-network-connection-details-list,
 .settingsList>app-settings-list {
     position: absolute;
     padding: 0;
@@ -8838,6 +8852,8 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
     list-style-type: none;
     white-space: nowrap
 }
+
+.settingsList>app-network-connection-details-list app-settings-list-item,
 .settingsList>app-settings-list app-settings-list-item {
     width: 1120px;
     height: 67px;
@@ -8857,6 +8873,7 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
 }
 .settingsList>app-settings-list app-settings-list-item.noBorder { border-top: none }
 
+.settingsList>app-network-connection-details-list app-settings-list-item.noArrows div.settingsListValue,
 .settingsList>app-settings-list app-settings-list-item.noArrows div.settingsListValue,
 
 .settingsList>app-settings-list app-settings-list-item.noArrows div.settingsListValue .control-button { background: none }
@@ -8865,7 +8882,7 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
 
 .settingsList>app-settings-list app-settings-list-item.noArrows div.settingsListValue .control-button.focused,
 
-.settingsList>app-settings-list app-settings-list-item.noArrows div.settingsListValue.control-focused,
+.settingsList>app-settings-list app-settings-list-item.noArrows div.settingsListValue .control-focused,
 
 .settingsList>app-settings-list app-settings-list-item.noArrows .control-focused app-settings-numeric-input,
 
@@ -8874,18 +8891,23 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
     color: #dadada;
     background: url("../images/settings/settings-list-hi-no-arrows.png") no-repeat
 }
+.settingsList>app-network-connection-details-list app-settings-list-item.noArrows div.settingsListValue,
 .settingsList>app-settings-list app-settings-list-item.noArrows div.settingsListValue { margin-top: -70px }
 
 .settingsList>app-settings-list app-settings-list-item.noArrows div.settingsListValue .control-button { margin-top: -2px }
 
+.settingsList>app-network-connection-details-list app-settings-list-item.noArrows div.settingsListLabel,
 .settingsList>app-settings-list app-settings-list-item.noArrows div.settingsListLabel { float: none }
 
+.settingsList>app-network-connection-details-list app-settings-list-item div.settingsListLabel,
 .settingsList>app-settings-list app-settings-list-item div.settingsListLabel {
 
     height: 100%;
     line-height: 67px;
     float: left
 }
+
+.settingsList>app-network-connection-details-list app-settings-list-item .settingsListValue,
 .settingsList>app-settings-list app-settings-list-item .settingsListValue {
 
     overflow: hidden;
@@ -9254,7 +9276,7 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
     white-space: nowrap;
     height: 469px;
     width: 693px;
-		top: 0;
+        top: 0;
 }
 #settingsFavChannelsList #settingsFavChannelsList-List {
     will-change: transform;
@@ -9741,54 +9763,54 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
     color: #dadada
 }*/
 .settingsEthernetMenuFocus {
-	background: url("../images/settings/wifi-signal-hi.png") no-repeat right;
-	color: #dadada
+    background: url("../images/settings/wifi-signal-hi.png") no-repeat right;
+    color: #dadada
 }
 #settingsEthernetMenu app-settings-ethernet-menu-list-item.networkTest {
   margin-top: 50px;
 }
-#settingsEthernetMenu app-settings-ethernet-menu-list-item.service { 
-	padding-left: 0 
+#settingsEthernetMenu app-settings-ethernet-menu-list-item.service {
+    padding-left: 0
 }
 #settingsEthernetMenu app-settings-ethernet-menu-list-item.service span {
-	float: right;
-	font-size: 20px;
-	margin-right: 20px;
-	height: 100%;
-	line-height: 67px
+    float: right;
+    font-size: 20px;
+    margin-right: 20px;
+    height: 100%;
+    line-height: 67px
 }
 #EthernetImage {
-	content: ' ';
-	display: block;
-	float: left;
-	margin-right: 20px;
-	width: 84px;
-	height: 100%;
-	margin-left: -30px;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-color: #151515
+    content: ' ';
+    display: block;
+    float: left;
+    margin-right: 20px;
+    width: 84px;
+    height: 100%;
+    margin-left: -30px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: #151515
 }
 #connectionStatus {
-	margin-right: 30px;
-	float: right;
-	visibility: visible;
+    margin-right: 30px;
+    float: right;
+    visibility: visible;
 }
 #settingsEthernetMenuList.ethernetDisconnected #connectionStatus {
-	visibility: hidden;
+    visibility: hidden;
 }
 #settingsEthernetMenu app-settings-ethernet-menu-list-item.service.serviceWifi:before {
-	background-position: -5px -3px;
-	background-image: url("../images/settings/wifi-signal-3.png")
+    background-position: -5px -3px;
+    background-image: url("../images/settings/wifi-signal-3.png")
 }
-#settingsEthernetMenuList app-settings-ethernet-menu-list-item #EthernetImage { 
-	background-color: #176122;
-	background-image: url("../images/settings/ethernet-on.png"); 
-	background-size: cover 
+#settingsEthernetMenuList app-settings-ethernet-menu-list-item #EthernetImage {
+    background-color: #176122;
+    background-image: url("../images/settings/ethernet-on.png");
+    background-size: cover
 }
-#settingsEthernetMenuList.ethernetDisconnected app-settings-ethernet-menu-list-item #EthernetImage { 
-	background-image: url("../images/settings/ethernet-off.png"); 
-	background-size: cover 
+#settingsEthernetMenuList.ethernetDisconnected app-settings-ethernet-menu-list-item #EthernetImage {
+    background-image: url("../images/settings/ethernet-off.png");
+    background-size: cover
 }
 .wifiConfigHi {
     background: url("../images/settings/wifi-signal-hi.png") no-repeat right;
@@ -9991,14 +10013,14 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
     margin: 0;
     list-style-type: none;
     white-space: nowrap;
-		height: 483px;
+        height: 483px;
     width: 655px;
 }
 #settingsWifiList #settingswifiConnectionList-List {
     position: absolute;
 }
 #settingsWifiList #settingswifiConnectionList-ListFocus {
-		height: 483px;
+        height: 483px;
     width: 655px;
 }
 #settingsWifiList app-settings-wifi-connection-list-item {
@@ -10009,8 +10031,9 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
     margin-bottom: 2px;
     background-color: #222
 }
-#settingsWifiList app-settings-wifi-connection-list-item.listView-focused { background-image: url("../images/settings/wifi-signal-hi.png") }
-#settingsWifiList app-settings-wifi-connection-list-item.listView-focused span.setingsWifiListConnected { color: #dadada }
+
+app-settings-wifi-connection-list.settingswifiConnectionList-focused app-settings-wifi-connection-list-item.listView-focused { background-image: url("../images/settings/wifi-signal-hi.png") }
+app-settings-wifi-connection-list.settingswifiConnectionList-focused app-settings-wifi-connection-list-item.listView-focused span.setingsWifiListConnected { color: #dadada }
 #settingsWifiList app-settings-wifi-connection-list-item.connected:after {
     content: 'Connected';
     float: right;
@@ -10825,7 +10848,7 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
 }
 
 .SpacialCharKeyboard #keyborad-row-4 app-keyboard-grid-cell{
-	margin-top: 50.76px;
+    margin-top: 50.76px;
 }
 .control-textbox-keyboard-key.hidden {
     width: 388px;
@@ -10964,7 +10987,6 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
     width: 1280px;
     height: 720px;
     overflow: hidden;
-    display: none; /* added */
 }
 #searchHomeContent,
 #searchContent {
@@ -10980,7 +11002,7 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
     display: none
 }
 .Rel8Theme #searchHomeContent{ /* added */
-    top: 60px;
+    top: 125px; /* 60px; */
     height: 585px;
     background-color: transparent;
 }
@@ -11029,7 +11051,7 @@ app-tile-mosaic-page-list[selected] app-tile-mosaic-page-list-item.focused app-t
 #searchHomeRecentPopular .searchRecent { width: 560px }
 #searchHomeRecentPopular .searchPopular { width: 560px }
 .Rel8Theme #searchHomeRecentPopular { /* added */
-    top: 225px;
+    top: 230px;
     left: 42px;
     width: 1066px;
 }
@@ -11490,9 +11512,6 @@ app-search-key-list.focused .searchKeyList-focused>.letter.searchKeySpace {
     height: 53px;
     /*border-top: 2px solid #2d2d2d;*/
 }
-.searchResultsListLast-Item app-search-results-list-item:last-child {
-    opacity: 0.1
-}
 #searchSearchResults-List, /* added */
 #searchFullResults-List { /* added */
     will-change: transform;
@@ -11506,11 +11525,6 @@ app-search-key-list.focused .searchKeyList-focused>.letter.searchKeySpace {
 #searchSearchResults-ListFocus { /* added */
   width: 1163px;
   height: 585px;
-}
-#searchSearchRecent-ListFocus, 
-#homeSearchRecent-ListFocus {
-    width: 500px;
-    height: 218px;
 }
 app-search-results-list.focused .searchResultsListItem-cell.searchResultsListItem-focused .searchResultsListItemContent {
     background-image: url("../images/search/results-list-hi.png");
@@ -11665,7 +11679,7 @@ app-search-results-list.focused .searchResultsListItem-cell.searchResultsListIte
     position: relative;
     float: left;
     width: 504px;
-    height: 258px;
+    height: 100%;
     margin-right: 2px;
     line-height: 120%
 }
@@ -11684,7 +11698,7 @@ app-search-results-list.focused .searchResultsListItem-cell.searchResultsListIte
     left: 0;
     font-family: fontLight;
     font-size: 26px;
-    color: #999;
+    color: #ccc;
     line-height: 120%;
     padding-left: 20px;
     width: 220px;
@@ -11693,7 +11707,6 @@ app-search-results-list.focused .searchResultsListItem-cell.searchResultsListIte
 .searchRecentPopularListContainer {
     position: absolute;
     top: 47px;
-    height: 218px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -11710,7 +11723,6 @@ app-search-results-list.focused .searchResultsListItem-cell.searchResultsListIte
     list-style-type: none;
     white-space: nowrap;
     width: 560px; /* 100%; */
-    height: 218px;
 }
 .searchRecentPopularListItem,
 .popularSearches-cell,
@@ -11721,7 +11733,7 @@ app-search-results-list.focused .searchResultsListItem-cell.searchResultsListIte
     width: 560px; /* 100%; */
     height: 53px;
     line-height: 53px;
-    /*background-color: #1d1d1d;*/
+    background-color: #1d1d1d;
     margin-bottom: 2px;
 }
 .Rel8Theme .searchRecentPopularListItem,
@@ -11752,13 +11764,11 @@ app-search-recent-list.focused .recentSearches-cell.recentSearches-focused,
 .searchRecentPopularList-cell.searchRecentList-focused,
 .searchRecentList-cell.searchRecentList-focused { background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #b5300b), color-stop(100%, #c7531e)) }
 .Rel8Theme .searchRecentPopularListItem.popularSearches-focused,
-.Rel8Theme app-search-popular-list.focused .popularSearches-cell.popularSearches-focused,
 .Rel8Theme .recentSearches-cell.popularSearches-focused,
 .Rel8Theme .searchRecentPopularList-cell.popularSearches-focused,
 .Rel8Theme .searchRecentList-cell.popularSearches-focused,
 .Rel8Theme .searchRecentPopularListItem.recentSearches-focused,
 .Rel8Theme .popularSearches-cell.recentSearches-focused,
-.Rel8Theme app-search-recent-list.focused .recentSearches-cell.recentSearches-focused,
 .Rel8Theme .searchRecentPopularList-cell.recentSearches-focused,
 .Rel8Theme .searchRecentList-cell.recentSearches-focused,
 .Rel8Theme .searchRecentPopularListItem.searchRecentPopularList-focused,
@@ -11771,9 +11781,14 @@ app-search-recent-list.focused .recentSearches-cell.recentSearches-focused,
 .Rel8Theme .recentSearches-cell.searchRecentList-focused,
 .Rel8Theme .searchRecentPopularList-cell.searchRecentList-focused,
 .Rel8Theme .searchRecentList-cell.searchRecentList-focused { /* added */
-  background-color: #cd3b3b;
+  /*background-color: #cd3b3b;*/
   border: 3px solid #fff;
 }
+.Rel8Theme app-search-popular-list[selected] app-search-popular-list-item[selected],
+.Rel8Theme app-search-recent-list[selected] app-search-recent-list-item[selected] {
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #b5300b), color-stop(100%, #c7531e))
+}
+
 .searchRecentPopularListItem.popularSearches-focused .searchRecentPopularRating,
 app-search-popular-list.focused .popularSearches-cell.popularSearches-focused .searchRecentPopularRating,
 .recentSearches-cell.popularSearches-focused .searchRecentPopularRating,
@@ -12253,12 +12268,12 @@ to { -webkit-transform: rotate(360deg) }
     left: auto;
     z-index: 2;
 }
-.pastEvents-cell.radio-Cell { 
+.pastEvents-cell.radio-Cell {
     left: -700px;
     width: 950px;
 }
 
-.currentEvents-cell.radio-Cell { 
+.currentEvents-cell.radio-Cell {
     width: 950px;
     padding-left: 145px;
 }

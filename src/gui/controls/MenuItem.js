@@ -26,7 +26,8 @@ app.gui.controls.MenuItem.prototype.createdCallback = function createdCallback()
 app.gui.controls.MenuItem.prototype.update = function update(data) {
 	this.logEntry();
 	if (data) {
-		this.textContent = data.text;
+		this.textContent = $util.Translations.translate(data.text);
+		this.dataset.i18n = data.text;
 		this.classList.remove("hidden");
 	} else {
 		this.textContent = "";

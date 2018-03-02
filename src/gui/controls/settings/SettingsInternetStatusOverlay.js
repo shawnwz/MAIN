@@ -111,12 +111,12 @@ app.gui.controls.SettingsInternetStatusOverlay.prototype._showDialogBasedOnId = 
 app.gui.controls.SettingsInternetStatusOverlay.prototype._handleDisplayMode = function _handleDisplayMode () {
 	var me = this;
 	this._clearTimeOut();
-	if (this._renewMode === $util.constants.INTERNET_STATUS_OVERLAY_dISPLAY_MODE.DHCP) {
+	if (this._renewMode === $util.constants.INTERNET_STATUS_OVERLAY_DISPLAY_MODE.DHCP) {
 		this._showDialogBasedOnId(this._overlayClasses.RENEWING);
     		this._renewTimeout = setTimeout(function () {
  				me._showDialogBasedOnId(me._overlayClasses.FAIL);
     		}, this._RENEWING_TIMEOUT);
-	} else if (this._renewMode === $util.constants.INTERNET_STATUS_OVERLAY_dISPLAY_MODE.TCP_IP) {
+	} else if (this._renewMode === $util.constants.INTERNET_STATUS_OVERLAY_DISPLAY_MODE.TCP_IP) {
 		this._showDialogBasedOnId(this._overlayClasses.UPDATING);
 		this._updateTimeout = setTimeout(function () {
 			me._showDialogBasedOnId(me._overlayClasses.UPDATINGFAIL);
@@ -148,9 +148,9 @@ app.gui.controls.SettingsInternetStatusOverlay.prototype._registerCallBacks = fu
 	var me = this;
 	o5.platform.system.Network.StateChange.setIpReceivedCallBack(function () {
 			me._clearTimeOut();
-			if (me._renewMode === $util.constants.INTERNET_STATUS_OVERLAY_dISPLAY_MODE.DHCP) {
+			if (me._renewMode === $util.constants.INTERNET_STATUS_OVERLAY_DISPLAY_MODE.DHCP) {
 				me._showDialogBasedOnId(me._overlayClasses.RENEWED);
-			} else if (me._renewMode === $util.constants.INTERNET_STATUS_OVERLAY_dISPLAY_MODE.TCP_IP) {
+			} else if (me._renewMode === $util.constants.INTERNET_STATUS_OVERLAY_DISPLAY_MODE.TCP_IP) {
 				me._hide();
 			}
 		});

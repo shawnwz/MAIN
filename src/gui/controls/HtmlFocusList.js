@@ -18,14 +18,6 @@ app.gui.controls.HtmlFocusList.prototype.createdCallback = function createdCallb
 
     this._wrapped = false;
 
-    // the window in which the highlited element should be
-    this._focusWindow = this.querySelector("#" + this.id + "-ListFocus");
-	
-    if (this._focusWindow === null) { // only append if not yet created
-        this._focusWindow = this.ownerDocument.createElement("div");
-        this.appendChild(this._focusWindow);
-    }
-
     this._focusClass = this.id + '-focused';
     this._blurClass = this.id + '-blurred';
 
@@ -59,8 +51,6 @@ app.gui.controls.HtmlFocusList.prototype.attachedCallback = function attachedCal
     this.logEntry();
     this.superCall();
     if (this.id) {
-        this._focusWindow.id = this.id + "-ListFocus";
-
         this.onControlEvent("focus", this._focus);
         this.onControlEvent("change", this._change);
         this.onControlEvent("select", this._select);
@@ -269,12 +259,9 @@ app.gui.controls.HtmlFocusList.prototype._populate = function _populate(arr, ind
     this.superCall(arr);
 
     var len = this._itemNb,
-        acutalIndex = index;
+      acutalIndex = index || 0;
 
-    acutalIndex = acutalIndex || 0;
-    acutalIndex = (acutalIndex < 0 ? ((acutalIndex % len) + len) : (acutalIndex % len)); // wrap if needed
-
-    this.selectedItem = acutalIndex;
+    this.selectedItem = (acutalIndex < 0 ? ((acutalIndex % len) + len) : (acutalIndex % len)); // wrap if needed
     this.logExit();
 };
 
@@ -423,36 +410,42 @@ app.gui.controls.HtmlFocusList.prototype._onBlur = function _onBlur() {
 app.gui.controls.HtmlFocusList.prototype._onKeyDown = function _onKeyDown(e) {
     this.logEntry();
 
-    var handled = true;
+	var handled = false;
 
     switch (e.key) {
         case "Back":
         case "backspace":
             this.fireControlEvent("back", this);
+            handled = true;
             break;
         case "ArrowDown":
             if (this._orientation === "Horizontal" || !this._next(e.repeat)) {
                 this.fireControlEvent("exit:down", this);
             }
+            handled = true;
             break;
         case "ArrowUp":
             if (this._orientation === "Horizontal" || !this._previous(e.repeat)) {
                 this.fireControlEvent("exit:up", this);
             }
+            handled = true;
             break;
         case "ArrowLeft":
             if (this._orientation === "Vertical" || !this._previous(e.repeat)) {
                 this.fireControlEvent("exit:left", this);
             }
+            handled = true;
             break;
         case "ArrowRight":
             if (this._orientation === "Vertical" || !this._next(e.repeat)) {
                 this.fireControlEvent("exit:right", this);
             }
+            handled = true;
             break;
         case "Ok":
         case "Enter":
             this.fireControlEvent("enter", this);
+            handled = true;
             break;
         default:
             handled = false;

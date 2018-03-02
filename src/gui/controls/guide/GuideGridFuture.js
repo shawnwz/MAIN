@@ -10,6 +10,7 @@ o5.gui.controls.Control.registerAppControl(app.gui.controls.GuideFutureGrid, app
  */
 app.gui.controls.GuideFutureGrid.prototype.createdCallback = function createdCallback() {
 	this.logEntry();
+	this._fetchCount = 0;
 	this.superCall();
  	this.onControlEvent("scrollToTime", function (startTime) {
             var startTimeOffset = (startTime - this._gridSpanBuffer - (startTime % this._gridSpanBuffer)),
@@ -42,6 +43,29 @@ app.gui.controls.GuideFutureGrid.prototype._scroll = function _scroll(offset, fa
 
 	this.superCall(actualOffset, fastMode, end);
 
+	this.logExit();
+};
+
+app.gui.controls.GuideFutureGrid.prototype._fetch = function _fetch(channels) {
+	this.logEntry();
+	this._fetchCount = this._fetchCount + 1;
+	if (this._isFocused && this._fetchCount > 0) {
+		$util.ControlEvents.fire("app-guide", "startLoading");
+	}
+	this.superCall(channels);
+	this.logExit();
+};
+
+app.gui.controls.GuideFutureGrid.prototype._populate = function _populate(ctrl) {
+	this.logEntry();
+	this._fetchCount = this._fetchCount - 1;
+	if (this._fetchCount <= 0) {
+		this._fetchCount = 0;
+		if (this._isFocused) {
+			$util.ControlEvents.fire("app-guide", "stopLoading");
+		}
+		this.superCall(ctrl);
+	}
 	this.logExit();
 };
 
@@ -135,7 +159,7 @@ Object.defineProperty(app.gui.controls.GuideFutureGridCell.prototype, "itemData"
 			this._title.dataset.stop = data.progEndDate;
 
 			width = this._getWidth(data.progStartDate, data.progEndDate);
-			left  = this._getWidth(parent.zeroOffset, data.progStartDate);
+			left  = this._getWidth(parent._gridStart, data.progStartDate);
 			duration = data.duration;
 			titleLeft = 0;
 			titleRight = 0;

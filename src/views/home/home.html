@@ -1,46 +1,74 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 
-<script src="./Home.js"></script>
+<script src="Home.js"></script>
 
-<link rel="stylesheet" href="./home.css">
+<link rel="stylesheet" href="portal.css">
+<link rel="stylesheet" href="search.css">
 
-<app-home id="home" class="oxygen-transition-none-prepareDisplay oxygen-transition-none-bringIn home-view">
-	<app-tile-view id="tileViewHome" data-feature="home"></app-tile-view>
-	<div class="onlyRel6Theme">
-        <div id="tileView" class="tileDefault">
-            <div id="tiles">
-                <app-tile-mosaic-page-list id="homeMosaicTiles"></app-tile-mosaic-page-list>
-                <app-tile-mosaic-scrollbar id="homeTilesScrollBar"></app-tile-mosaic-scrollbar>
-            </div>
-        </div>
-    </div>
+<app-home id="pageContainer" class="oxygen-transition-none-prepareDisplay oxygen-transition-none-bringIn">
 
-    <div class="onlyRel8Theme">
-        <div id="carouselView">
-            <div id="carouselTiles">
-                <app-jumpoff-list id="homeJumpoffList" class="jump-list" data-orientation="horizontal"></app-jumpoff-list>
-                <app-carousel-list id="homeCarouselList">
-                  <template>
-                      <app-carousel-list-item>
-                          <p class="carousel-title"></p>
-                          <app-carousel-row-list></app-carousel-row-list>
-                          <div class="carouselTileInfo">
-                          	<p class="carouselTileInfoTitle"></p>
-                            <p class="carouselTileInfoSubTitle"></p>
-                          </div>
-                      </app-carousel-list-item>
-                  </template>
-                </app-carousel-list>
-            </div>
-        </div>
-    </div>
-   <template id="carouselCellTemplate">
-    <div class="tileGradient"></div>
-    <p class="asset-title"></p>
-    <p class="asset-channelName"></p>
-  </template>
-  
+  <div id="homeMenu">
+    <div id="homeBg"></div>
+    <div id="BgSolid"></div>
+
+    <div id="homeSlider">
+      <div id="homeNavDivider"></div>
+      <div id="homeNavGradient"></div>
+
+      <div class="onlyRel6Theme">
+        <app-home-breadcrumb id="homeNavBreadcrumb" data-menu-breadcrumb="true"></app-home-breadcrumb>
+        <app-home-list id="homeNavMenu" data-menu-main="true">
+          <template>
+            <app-home-list-item class="menu-main-item">
+              <span class="homeMenuItemText"></span>
+              <span class="homeNavHi">
+                <span class="hiLeft"></span>
+                <div class="hiMiddle"></div>
+                <span class="hiRight"></span>
+              </span>
+            </app-home-list-item>
+          </template>
+        </app-home-list>
+
+        <app-home-sub-menu-list id="homeSubNavMenu" data-menu-sub="true">
+          <template>
+            <app-home-sub-menu-list-item class="menu-sub-item">
+              <span class="homeSubMenuItemText"></span>
+            </app-home-sub-menu-list-item>
+          </template>
+        </app-home-sub-menu-list>
+      </div>
+
+      <div class="onlyRel8Theme">
+        <app-portal-menu-list id="portalMenu">
+          <template>
+            <app-portal-menu-list-item class="portal-menu-list-item">
+               <span class="portalMenuItemText"></span>
+            </app-portal-menu-list-item>
+          </template>
+        </app-portal-menu-list>
+        <!-- <app-portal-breadcrumb id="portalBreadcrumb"></app-portal-breadcrumb> -->
+      </div>
+    </div> <!--homeSlider-->
+
+    <div id="collectionTitle"></div>
+    <div id="collectionDescription"></div>
+  </div>
+
+  <app-html-tab-group id="homeMenuTabs">
+    <app-html-tab id="homeHomeTab"     data-src="./views/home/homeHome.html"     data-selector="home"     ></app-html-tab>
+    <app-html-tab id="homeTvguideTab"  data-src="./views/home/homeTvGuide.html"  data-selector="tv guide" ></app-html-tab>
+    <app-html-tab id="homeLibraryTab"  data-src="./views/home/homeLibrary.html"  data-selector="library"  ></app-html-tab>
+    <app-html-tab id="homeOndemandTab" data-src="./views/home/homeOnDemand.html" data-selector="on demand"></app-html-tab>
+    <app-html-tab id="homeStoreTab"    data-src="./views/home/homeStore.html"    data-selector="store"    ></app-html-tab>
+    <app-html-tab id="homeAppsTab"     data-src="./views/home/homeApps.html"     data-selector="apps"     ></app-html-tab>
+    <app-html-tab id="homeSearchTab"   data-src="./views/home/homeSearch.html"   data-selector="search"   ></app-html-tab>
+    <app-html-tab id="homeSettingsTab" data-src="./views/home/homeSettings.html" data-selector="settings" ></app-html-tab>
+  </app-html-tab-group>
+
+  <!-- This is the tile page 'view' container - it contains the spinner and non connected text -->
+  <!--#tilePage: helpers [noIP,loading,empty]-->
   <div id="tilePage" class="oxygen-transition-none-hide">
     <div id="tileNoIP">
       <div id="tileNoIPImg"></div>
@@ -48,7 +76,7 @@
       <div id="tileNoIPText" data-i18n="F0501TileText">Connect your iQ3 to the internet to receive the full experience. Go to Settings/Help for more information.</div>
       <div id="tileNoIPErrorCode">F0501</div>
     </div>
-    <div id="tileSpinner" class="spinner"></div>
+    <div id="tileSpinner"><span class="percentage"></span><span class="spinner"></span></div>
     <div id="tileEmpty">
       <div id="tileEmptyTitle" data-i18n="tileEmptyTitle">There&rsquo;s nothing here!</div>
       <div id="tileEmptyText" data-i18n="tileEmptyText">There are currently no movies or TV shows to display here. Check back again later.</div>
@@ -65,6 +93,48 @@
       <div id="tileEmptyError" data-i18n="tileEmptyRestartErrCode">F0504</div>
     </div>
   </div>
-  <app-home-call-to-action-list id="ctaHome" class="callToActionList" data-screen="ctaHomepage"></app-home-call-to-action-list>
-  <div class="homeLogo"></div> 
+
+  <app-home-call-to-action-list id="ctaHomeMenu" class="callToActionList" data-screen="ctaHomepage"></app-home-call-to-action-list>
+
+  <div id="homeLogo"></div>
+
+  <template id="searchKeyTitleTemplate">
+    <div id="searchEntryTextT9"></div>
+  </template>
+
+  <template id="SearchRecentListItemTemplate">
+    <div class="searchRecentPopularMatch"></div>
+  </template>
+
+  <template id="SearchPopularListItemTemplate">
+    <div class="searchRecentPopularMatch"></div>
+  </template>
+
+  <template id="searchKeysCellTemplate">
+      <span class='text'></span>
+  </template>
+
+  <template id="carouselListTemplate">
+    <app-carousel-list id="carouselList" data-fetcher="True">
+      <template>
+        <app-carousel-list-item></app-carousel-list-item>
+      </template>
+    </app-carousel-list>
+  </template>
+
+  <template id="carouselListItemTemplate">
+    <p class="carousel-title"></p>
+    <app-carousel-row-list></app-carousel-row-list>
+    <div class="carouselTileInfo">
+      <p class="carouselTileInfoTitle"></p>
+      <p class="carouselTileInfoSubTitle"></p>
+    </div>
+  </template>
+
+  <template id="carouselCellTemplate">
+    <div class="tileGradient"></div>
+    <p class="asset-title"></p>
+    <p class="asset-channelName"></p>
+  </template>
+
 </app-home>

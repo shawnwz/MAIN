@@ -2,20 +2,16 @@
 app.screenConfig.settings.NETWORKSETTINGS = {
 	component      : "settingsConfig",
     text           : "settingsMenuTitleNetworkSettings",
-	footerClassList: [ "ctaClose", "ctaTCPIPSettings", "ctaRenewDHCP" ],
 	getMenu        : function getMenu() {
 		var connectionStatus = $service.settings.IpNetwork.getNetworkConnectionStatus(),
 			ipInterface = o5.platform.system.Network.getInterfaceByType(connectionStatus.interfaceType),
 			ipAddress = o5.platform.system.Network.getIpAddress(ipInterface),
 			subnetMask = o5.platform.system.Network.getSubnetMask(ipInterface),
 			gateway = o5.platform.system.Network.getGateway(ipInterface),
-			macAddress = o5.platform.system.Network.getRealMacAddress(),
+			macAddress = $service.settings.IpNetwork.getMacAddress(),
 			dnsServers = o5.platform.system.Network.getDnsServers(ipInterface),
 			wifiNetworkNamemenuItem = "",
 			networkSettingsDetails = [];
-			if (macAddress) { // formatting CCOM format- 20-D5-BF-C4-97-54 and UI display format- 20:D5:BF:C4:97:54
-				macAddress = macAddress.split('-').join(':');
-			}
 			networkSettingsDetails = [
 			{
 				id  : "settingsMenuNetworkSettingsInterfaceStatus",

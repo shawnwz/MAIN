@@ -42,7 +42,7 @@ app.gui.controls.SynopsisStatusActionsList.prototype._populate = function _popul
         i,
         dataReady = false;
 
-    this._clear();
+    this.fireControlEvent("clear");
     if (editorial) {
         this._currentContent = editorial; //this._currentContent was stored to be used in player
         if (editorial.multipleVersions && editorial.multipleVersions.length > 0) {

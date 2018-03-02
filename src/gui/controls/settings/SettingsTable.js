@@ -42,7 +42,7 @@ app.gui.controls.SettingsTable.prototype._onKeyDown = function _onKeyDown (e) {
 		    	} else {
 		    	    this.superCall(e);
 		    	}
-		    	
+
 		    	break;
 		default:
 			this.superCall(e);
@@ -58,8 +58,9 @@ app.gui.controls.SettingsTable.prototype._fetch = function _fetch() {
 	var objs = this._config ? this._config.split('.') : [],
 		configObj = null,
 		arr,
-		footer = document.querySelector("#callToAction");
-	footer.classList = [];
+        footerData = {};
+		//footer = document.querySelector("#ctaSettingsMenu");
+	//footer.classList = [];
 	this.fireControlEvent("clear");
 	objs.forEach(function(obj) {
 		if (configObj) { // concat with previous
@@ -79,15 +80,10 @@ app.gui.controls.SettingsTable.prototype._fetch = function _fetch() {
 	});
 
 	if (configObj && configObj.getMenu) {
-
+        footerData.id = this.id;
+        $util.ControlEvents.fire("app-settings:ctaSettingsMenu", "fetch", footerData);
 		arr = configObj.getMenu();
 		this.fireControlEvent("populate", arr);
-		if (configObj.footerClassList) {
-			configObj.footerClassList.forEach(function(e) {
-				footer.classList.add(e);
-				document.querySelector("#" + e).children[1].innerHTML = $util.Translations.translate(document.querySelector("#" + e).children[1].attributes.getNamedItem("data-i18n").value);
-			});
-		}
 	}
 	if (configObj && configObj.handleAction) {
 	    this._handleAction = configObj.handleAction();

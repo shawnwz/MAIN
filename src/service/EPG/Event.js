@@ -110,12 +110,12 @@ $service.EPG.Event = (function Event () {
 				});
 			}).then(function (okayNum) {
 				o5.platform.btv.PersistentCache.commitBatch();
-				console.log("Cached " + okayNum + " of " + data.length + " programmes for " + service.serviceId + " in Persistent cache");
+				//console.log("Cached " + okayNum + " of " + data.length + " programmes for " + service.serviceId + " in Persistent cache");
 				return data;
 			},
 			function (result) {
 				o5.platform.btv.PersistentCache.cancelBatch();
-				console.warn("Failed to CACHE programme for [" + service.serviceId + "] from MDS", result);
+				//console.warn("Failed to CACHE programme for [" + service.serviceId + "] from MDS", result);
 				return data;
 			});
 		}
@@ -139,11 +139,11 @@ $service.EPG.Event = (function Event () {
 			progStopTime = (stopTime ? stopTime : startTime) + (24 * 3600 * 1000);
 
 			promise = $service.MDS.Programme.fetch(service, progStartTime, progStopTime).then(function (data) { // got it: cache it
-				console.log("Got " + data.length + " programmes for [" + service.serviceId + "] from MDS");
+				//console.log("Got " + data.length + " programmes for [" + service.serviceId + "] from MDS");
 				return _cacheEvents(service, data);
 			},
 			function (data) { // failed to fetch from MDS
-				console.warn("Failed to get programmes for [" + service.serviceId + "] from MDS", data);
+				//console.warn("Failed to get programmes for [" + service.serviceId + "] from MDS", data);
 				return [];
 			});
 		}
@@ -163,7 +163,7 @@ $service.EPG.Event = (function Event () {
 				var events = o5.platform.btv.PersistentCache.getEventByTime(service.serviceId, startTime, stopTime);
 
 				if (events && events.length > 0) {
-					// console.log("_getCachedEventsByTime(): "+events.length);
+					// //console.log("_getCachedEventsByTime(): "+events.length);
 					resolve(events);
 				} else {
 					reject([]);
@@ -190,7 +190,7 @@ $service.EPG.Event = (function Event () {
 				}
 
 				if (events && events.length > 0) {
-					// console.log("_getCachedEventsByCount(): "+events.length);
+					// //console.log("_getCachedEventsByCount(): "+events.length);
 					resolve(events);
 				} else {
 					reject([]);
@@ -213,7 +213,7 @@ $service.EPG.Event = (function Event () {
 				var events = o5.platform.btv.PersistentCache.getEventByCount(service.serviceId, time, count);
 
 				if (events && events.length > 0) {
-					// console.log("_getCachedEventsByCount(): "+events.length);
+					// //console.log("_getCachedEventsByCount(): "+events.length);
 					resolve(events);
 				} else {
 					reject([]);
@@ -249,7 +249,7 @@ $service.EPG.Event = (function Event () {
 				}
 
 				if (events && events.length > 0) {
-					// console.log("_getCachedEventsByCount(): "+events.length);
+					// //console.log("_getCachedEventsByCount(): "+events.length);
 					resolve(events);
 				} else {
 					reject([]);
@@ -269,30 +269,30 @@ $service.EPG.Event = (function Event () {
 			promise = Promise.reject([]);
 		} else {
 			promise = _getCachedEventsByTime(service, startTime, stopTime).then(function (data) { // got cached events: done
-				// console.log("Got "+data.length+" programmes for ["+service.serviceId+"] from Persistent cache");
+				// //console.log("Got "+data.length+" programmes for ["+service.serviceId+"] from Persistent cache");
 				return data;
 			},
 			function (data) { // no cached events: try to fetch from MDS
 
-				console.warn("Failed to get programmes for [" + service.serviceId + "] from Persistent cache: try MDS");
+				//console.warn("Failed to get programmes for [" + service.serviceId + "] from Persistent cache: try MDS");
 				return _getMDSEvents(service, startTime, stopTime).then(function (data) { // got MDS events and they are cached: try cache again
-							//console.log("Cached "+data.length+" programmes for ["+service.serviceId+"] in Persistent cache");
+							////console.log("Cached "+data.length+" programmes for ["+service.serviceId+"] in Persistent cache");
 							return _getMDSEventsByTime(data, startTime, stopTime);
 						}).catch(function (data) { // most likely MDS didnt have the events either
-							console.warn("Failed to get newly cached programmes for [" + service.serviceId + "] in Persistent cache", data);
+							//console.warn("Failed to get newly cached programmes for [" + service.serviceId + "] in Persistent cache", data);
 							return [];
 						});
 
 			}).then(function (data) {
 				if (data.length === 0) { // final step: did we get any events?
 					if (withHolder) {
-						console.warn("No events: get placeholder events for [" + service.serviceId + "]");
+						//console.warn("No events: get placeholder events for [" + service.serviceId + "]");
 						return _getPlaceHolderEvents(service, startTime, stopTime, -1);
 					}
 				}
 				return data;
 			}).catch(function (data) {
-				console.warn("Catch: Failed to get programmes for [" + service.serviceId + "]", data);
+				//console.warn("Catch: Failed to get programmes for [" + service.serviceId + "]", data);
 				return [];
 			});
 		}
@@ -309,30 +309,30 @@ $service.EPG.Event = (function Event () {
 			promise = Promise.resolve([]);
 		} else {
 			promise = _getCachedEventsByCount(service, time, count).then(function (data) { // got cached events: done
-				// console.log("Got "+data.length+" programmes for ["+service.serviceId+"] from Persistent cache");
+				// //console.log("Got "+data.length+" programmes for ["+service.serviceId+"] from Persistent cache");
 				return data;
 			},
 			function(data) { // no cached events: try to fetch from MDS
 
-				console.warn("Failed to get programmes for [" + service.serviceId + "] from Persistent cache: try MDS");
+				//console.warn("Failed to get programmes for [" + service.serviceId + "] from Persistent cache: try MDS");
 				return _getMDSEvents(service, time).then(function (data) { // got MDS events and they are cached: try cache again
-							console.log("Cached " + data.length + " programmes for [" + service.serviceId + "] in Persistent cache");
+							//console.log("Cached " + data.length + " programmes for [" + service.serviceId + "] in Persistent cache");
 							return _getMDSEventsByCount(data, time, count);
 						}).catch(function (data) { // most likely MDS didnt have the events either
-							console.warn("Failed to get newly cached programmes for [" + service.serviceId + "] in Persistent cache", data);
+							//console.warn("Failed to get newly cached programmes for [" + service.serviceId + "] in Persistent cache", data);
 							return [];
 						});
 
 			}).then(function (data) {
 				if (data.length === 0) { // final step: did we get any events?
 					if (withHolder) {
-						console.warn("No events: get placeholder events for [" + service.serviceId + "]");
+						//console.warn("No events: get placeholder events for [" + service.serviceId + "]");
 						return _getPlaceHolderEvents(service, time, -1, count);
 					}
 				}
 				return data;
 			}).catch(function (data) {
-				console.warn("Catch: Failed to get programmes for [" + service.serviceId + "]", data);
+				//console.warn("Catch: Failed to get programmes for [" + service.serviceId + "]", data);
 				return [];
 			});
 		}

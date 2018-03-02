@@ -4,7 +4,7 @@ app.screenConfig.settings.SCAN_COMPLETE = {
         return [
             {
                 id    : "viewGuide",
-                text  : "[ViewTVGuide]",
+                text  : "settingsMenuScanResultsGuide",
                 events: [
                     {
                         name: "settings:scan:reset"

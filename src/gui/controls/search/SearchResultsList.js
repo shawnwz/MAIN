@@ -75,14 +75,14 @@ app.gui.controls.SearchResultsList.prototype._onKeyDown = function _onKeyDown(e)
 	switch (e.key) {
 
 		case "ArrowDown":
-			if (this._selectedItem.itemIndex === 3 && this._isFullScreenMode === false) {
-				//$util.ControlEvents.fire("app-search-query:searchKeysTable", "hide");
-				//$util.ControlEvents.fire("app-search-query:searchButtonsList", "hide");
-				$util.ControlEvents.fire("app-search-query", "modeFull");
+			if (this._selectedItem.itemIndex === 3 && this._itemNb > 4 && this._isFullScreenMode === false) {
+				//$util.ControlEvents.fire("app-home-search:searchKeysTable", "hide");
+				//$util.ControlEvents.fire("app-home-search:searchButtonsList", "hide");
+				$util.ControlEvents.fire("app-home-search", "modeFull");
 				this.fireControlEvent("populate", this._cache, 3);
 				this._isFullScreenMode = true;
 			} else if (this._selectedItem.itemIndex === this._itemNb - 1 && this._isFetchingMore === false) {
-				$util.ControlEvents.fire("app-search-query:searchSearchResults", "showMore");
+				$util.ControlEvents.fire("app-home-search:searchSearchResults", "showMore");
 				this._isFetchingMore = true;
 				this._fetchMore(this._itemNb);
 			}
@@ -90,12 +90,12 @@ app.gui.controls.SearchResultsList.prototype._onKeyDown = function _onKeyDown(e)
 			break;
 
 		case "ArrowUp":
-			if (this._selectedItem.itemIndex === 3 && this._isFullScreenMode === true) {
-				//$util.ControlEvents.fire("app-search-query:searchKeysTable", "show");
-				//$util.ControlEvents.fire("app-search-query:searchButtonsList", "show");
-				$util.ControlEvents.fire("app-search-query", "modeOrigin");
+			if (this._selectedItem.itemIndex === 4 && this._isFullScreenMode === true) {
+				//$util.ControlEvents.fire("app-home-search:searchKeysTable", "show");
+				//$util.ControlEvents.fire("app-home-search:searchButtonsList", "show");
+				$util.ControlEvents.fire("app-home-search", "modeOrigin");
 				this.fireControlEvent("populate", this._cache);
-				this.fireControlEvent("select", 2);
+				this.fireControlEvent("select", 3);
 				this._isFullScreenMode = false;
 			} else {
 				this.superCall(e);
@@ -103,9 +103,9 @@ app.gui.controls.SearchResultsList.prototype._onKeyDown = function _onKeyDown(e)
 			break;
 		case "Back":
 			if (this._isFullScreenMode === true) {
-				//$util.ControlEvents.fire("app-search-query:searchKeysTable", "show");
-				//$util.ControlEvents.fire("app-search-query:searchButtonsList", "show");
-				$util.ControlEvents.fire("app-search-query", "modeOrigin");
+				//$util.ControlEvents.fire("app-home-search:searchKeysTable", "show");
+				//$util.ControlEvents.fire("app-home-search:searchButtonsList", "show");
+				$util.ControlEvents.fire("app-home-search", "modeOrigin");
 				this.fireControlEvent("populate", this._cache);
 				this.fireControlEvent("select", 2);
 				this._isFullScreenMode = false;

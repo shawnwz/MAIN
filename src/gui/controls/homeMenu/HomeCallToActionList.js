@@ -17,40 +17,18 @@ app.gui.controls.HomeCallToActionList.prototype.createdCallback = function creat
 /**
  * @method _fetch
  */
-app.gui.controls.HomeCallToActionList.prototype._fetch = function _fetch(data) {
+app.gui.controls.HomeCallToActionList.prototype._fetch = function _fetch(node) {
 	this.logEntry();
-	var layout = null,
-		items = [];
+	var layout = node && node.nodeLayoutInfo ? node.nodeLayoutInfo.toUpperCase() : null,
+		control = node && node.localName ? node.localName : null,
+		items = [],
+		data = null;
 
-	if (data) {
-		layout = data.component && data.component.nodeLayoutInfo ? data.component.nodeLayoutInfo.toUpperCase() : null;
-	}
 	if (layout) {
 		//@hdk make this more dynamic per selected item!
 		//@hdk should we change the screen too? ctaHomepage, ctaSettings, ctaGuide. The position is slighlty different
 		if (layout === "MENU_NODE") {
-			items = ["ctaInfo"];
-			if (data.carousel && data.content) {
-				switch (data.carousel.title) {
-					case "Continue Watching":
-						if (data.content.source !== "MDS" && data.content.source !== "DISCO") {
-							items.push("ctaRemove");
-						}
-						break;
-					case "Live TV - On Now":
-					case "Coming Up on Live TV":
-					case "Movies on Tonight":
-					case "Sports this Week":
-						items.push("ctaSetReminder");
-						break;
-					case "Top Picks for you":
-					case "Last Chance":
-					case "Last Coming Soon to Foxtel":
-						break;
-					default:
-						break;
-				}
-			}
+			//items = ["ctaInfo"];
 		} else if (layout === "MENU_LIBRARY_RENTED") {
 			items = [ "ctaDel", "ctaKeep" ];
 		} else if (layout === "MENU_LIBRARY_SCHEDULED") {
@@ -61,10 +39,22 @@ app.gui.controls.HomeCallToActionList.prototype._fetch = function _fetch(data) {
 			items = ["ctaSortListings"];
 		} else if (layout === "MENU_APPS") {
 			items = ["ctaLaunchApp"];
-		} else if (layout === "MENU_SEARCH") {
-			items = [ "ctaFullSearch", "ctaClearRecent" ];
+		} else if (layout === "MENU_SEARCH") { // HomeSearch footer should reviewed by Jason
+			items = ["ctaClearRecent"];
 		} else if (layout === "MENU_SETTINGS") {
 			// nothing?
+		}
+	}
+
+	if (control === "app-carousel-row-list-item") {
+		// used by carousel views
+		data = node.itemData;
+		items = ["ctaInfo"];
+		if (data && data.startTime && data.startTime > Date.now()) {
+			items.push("ctaSetReminder");
+		}
+		if (data && data.source === "REMINDER_NOT_SURE") { // Need to confirm the source later
+			items.push("ctaRemove");
 		}
 	}
 

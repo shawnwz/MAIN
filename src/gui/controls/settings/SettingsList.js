@@ -12,7 +12,7 @@ o5.gui.controls.Control.registerAppControl(app.gui.controls.SettingsList, app.gu
 app.gui.controls.SettingsList.prototype.createdCallback = function createdCallback() {
     this.logEntry();
     this.superCall();
-
+	this.isScrStateDefault = true;
     this._wrapped = true;
     this.orientation = "vertical";
 
@@ -26,33 +26,10 @@ app.gui.controls.SettingsList.prototype.createdCallback = function createdCallba
             if (data.button) {
                 // enter new screen
                 //this.fireControlEvent("populate");
-            } else {
-                // store all values and go back
-                this.fireControlEvent("back");
             }
         }
     });
-	$util.Translations.update(this);
-    this.logExit();
-};
-
-/**
- * @method _onFocus
- * @private
- */
-app.gui.controls.SettingsList.prototype._onFocus = function _onFocus() {
-    this.logEntry();
-    this.superCall();
-    this.logExit();
-};
-
-/**
- * @method _onBlur
- * @private
- */
-app.gui.controls.SettingsList.prototype._onBlur = function _onBlur() {
-    this.logEntry();
-    this.superCall();
+  $util.Translations.update(this);
     this.logExit();
 };
 
@@ -64,12 +41,13 @@ app.gui.controls.SettingsList.prototype._fetch = function _fetch() {
     var objs = this._config ? this._config.split('.') : [],
       configObj = null,
       footer = null,
-      arr;
+      arr,
+      footerData = {};
 
     this.fireControlEvent("clear");
 
-    footer = document.querySelector("#callToAction");
-    footer.classList = [];
+    footer = document.querySelector("#ctaSettingsMenu");
+   // footer.classList = [];
 
     objs.forEach(function(obj) {
         if (configObj) { // concat with previous
@@ -81,14 +59,14 @@ app.gui.controls.SettingsList.prototype._fetch = function _fetch() {
         }
     });
     if (configObj && configObj.getMenu) {
+        footerData.id = this.id;
+        $util.ControlEvents.fire("app-settings:ctaSettingsMenu", "fetch", footerData);
         arr = configObj.getMenu();
-        this.fireControlEvent("populate", arr);
         this._configObj = configObj;
-        if (this._configObj.footerClassList) {
-            this._configObj.footerClassList.forEach(function(e) {
-                footer.classList.add(e);
-                document.querySelector("#" + e).children[1].innerHTML = $util.Translations.translate(document.querySelector("#" + e).children[1].attributes.getNamedItem("data-i18n").value);
-            });
+        this.fireControlEvent("populate", arr);
+
+        if (this.isScrStateDefault && footer._hasId("ctaResetDefaults")) {
+        	footer._remove("ctaResetDefaults");
         }
     }
     this.logExit();
@@ -100,8 +78,22 @@ app.gui.controls.SettingsList.prototype._fetch = function _fetch() {
  */
 app.gui.controls.SettingsList.prototype._populate = function _populate(arr) {
     this.logEntry();
+	var tempDefaultValues,
+	tempCurrentValues,
+	objKey;
     this.superCall(arr);
     this.fireControlEvent("select", 0);
+    this.isScrStateDefault = true;
+	tempDefaultValues = this._configObj ? this._configObj.defaultitem : {};
+	tempCurrentValues = this._configObj ? this._configObj.saveditem : {};
+    for (objKey in tempDefaultValues) {
+    	 if (tempDefaultValues.hasOwnProperty(objKey)) {
+	        if (!(tempDefaultValues[objKey] === tempCurrentValues[objKey])) {
+	        	this.isScrStateDefault = false;
+	        	break;
+	        }
+	    }
+    }
     this.logExit();
 };
 
@@ -123,15 +115,6 @@ app.gui.controls.SettingsList.prototype._select = function _select(item) {
         this.superCall(item);
     }
 
-    this.logExit();
-};
-
-/**
- * @method _change
- */
-app.gui.controls.SettingsList.prototype._change = function _change(list) {
-    this.logEntry();
-    this.superCall(list);
     this.logExit();
 };
 
@@ -198,38 +181,26 @@ app.gui.controls.SettingsList.prototype._onKeyDown = function _onKeyDown (e) {
             break;
 
         case "Red":
-                this._footer = document.querySelector("#callToAction");
-                if (this._footer.classList.contains("ctaResetDefaults")) {
+                this._footer = document.querySelector("#ctaSettingsMenu");
+                if (this._footer._hasId("ctaResetDefaults")) {
                     $util.Events.fire(this._configObj.resetDefaults, this._configObj.defaultitem);
-                    this._footer.classList.remove("ctaResetDefaults");
+                    this._footer._remove("ctaResetDefaults");
                     this.fireControlEvent("populate", this._configObj.getMenu());
                     handled = true;
-                } else if (this._footer.classList.contains("ctaUndoChanges")) {
+                } else if (this._footer._hasId("ctaUndoChanges")) {
                     $util.Events.fire(this._configObj.undoChanges, this._configObj.saveditem);
-                    this._footer.classList.remove("ctaUndoChanges");
-                    this._footer.classList.add("ctaResetDefaults");
                     this.fireControlEvent("populate", this._configObj.getMenu());
+                    this._footer._remove("ctaUndoChanges");
+                    if (!this.isScrStateDefault) {
+                    	this._footer._add("ctaResetDefaults");
+                    }
                     handled = true;
-                } else if (this._footer.classList.contains("ctaTCPIPSettings")) {
-					$util.ControlEvents.fire(":tcpIPConfigDialog", "show");
-					setTimeout(function() {
-						$util.ControlEvents.fire(":tcpIPConfigDialog", "setIndex", 0);
-					}, 70);
-
-	                handled = true;
                 } else {
                     handled = this.superCall(e);
                 }
                 break;
          case "Green":
-                this._footer = document.querySelector("#callToAction");
-                if (this._footer.classList.contains("ctaRenewDHCP")) { //under-Implementation. helps to generate dynamic ip to enable the testing on STB
-					$util.Events.fire("setDhcpStatus", true);
-					$util.ControlEvents.fire("app-settings:settingsDHCPRenewal", "show", $util.constants.INTERNET_STATUS_OVERLAY_dISPLAY_MODE.DHCP);
-                    handled = true;
-               } else {
                     handled = this.superCall(e);
-                }
                 break;
         case "1":
         case "2":
@@ -271,10 +242,10 @@ app.gui.controls.SettingsList.prototype._onKeyDown = function _onKeyDown (e) {
     this.logExit();
 };
 
-o5.gui.controls.Control.definePropertyWithDataAttribute(app.gui.controls.SettingsList.prototype, 'type',	{
-	get: function () {
-		return "List";
-	}
+o5.gui.controls.Control.definePropertyWithDataAttribute(app.gui.controls.SettingsList.prototype, 'type',  {
+  get: function () {
+    return "List";
+  }
 });
 
 
@@ -350,10 +321,10 @@ Object.defineProperty(app.gui.controls.SettingsListItem.prototype, "itemData", {
                 this.classList.add("unselectable");
             }
             if (data.data.isTitle === true) {
-            	this.classList.add("settingsSubTitleLeft");
+              this.classList.add("settingsSubTitleLeft");
             }
             if (data.data.isFooter === true) {
-            	this.classList.add("settingsFooter");
+              this.classList.add("settingsFooter");
             }
             if (data.data.type === "settingsToggle") {
                 item = this.querySelector("app-settings-toggle-list");
@@ -375,9 +346,9 @@ Object.defineProperty(app.gui.controls.SettingsListItem.prototype, "itemData", {
                         item.fireControlEvent("show");
                        // item.fireControlEvent("populate", data.data.get(), data.data.getSelectedIndex());
                         if (data.data.type === "settingsNumericInput") {
-                        	 item.fireControlEvent("populate", data);
+                           item.fireControlEvent("populate", data);
                         } else if (data.data.type === "settingsToggle") {
-                        	 item.fireControlEvent("populate", data.data.get(), data.data.getSelectedIndex());
+                           item.fireControlEvent("populate", data.data.get(), data.data.getSelectedIndex());
                         }
                         if (data.data.events) { // register for change after populate so we only get notified when it actually changes
                             item.onControlEvent("change", function(list) {
@@ -386,12 +357,13 @@ Object.defineProperty(app.gui.controls.SettingsListItem.prototype, "itemData", {
                                     if (itemData) {
                                         this.ownerDocument.activeElement._configObj.currentitem[data.id] = itemData.value;
                                     }
-                                    if (this.ownerDocument.activeElement._configObj.footerClassList.indexOf("ctaResetDefaults") !== -1) {
-                                    this._footer = document.querySelector("#callToAction");
-                                    this._footer.classList.remove("ctaResetDefaults");
-                                    this._footer.classList.add("ctaUndoChanges");
-                                    document.querySelector("#ctaUndoChanges").children[1].innerHTML = $util.Translations.translate(document.querySelector("#ctaUndoChanges").children[1].attributes.getNamedItem("data-i18n").value);
+                                    this._footer = document.querySelector("#ctaSettingsMenu");
+                                    if (this._footer._hasId("ctaResetDefaults")) {
+                                        this._footer = document.querySelector("#ctaSettingsMenu");
+                                        this._footer._remove("ctaResetDefaults");
+                                    //document.querySelector("#ctaUndoChanges").children[1].innerHTML = $util.Translations.translate(document.querySelector("#ctaUndoChanges").children[1].attributes.getNamedItem("data-i18n").value);
                                 }
+                                this._footer._add("ctaUndoChanges");
                                 if (itemData) {
                                         data.data.events.forEach(function(ev) {
                                         console.log(ev.name, itemData.value);

@@ -10,10 +10,10 @@ o5.gui.controls.Control.registerAppControl(app.gui.controls.HomeSubMenuList, app
  * @private
  */
 app.gui.controls.HomeSubMenuList.prototype.createdCallback = function createdCallback() {
-	this.logEntry();
-	this.superCall();
-	this.orientation = "horizontal";
-	this.logExit();
+  this.logEntry();
+  this.superCall();
+  this.orientation = "horizontal";
+  this.logExit();
 };
 
 /**
@@ -21,22 +21,22 @@ app.gui.controls.HomeSubMenuList.prototype.createdCallback = function createdCal
  * @public
  */
 app.gui.controls.HomeSubMenuList.prototype._populate = function _populate(node) {
-	this.logEntry();
-	this._clear();
+  this.logEntry();
+  this.fireControlEvent("clear");
 
-	var items = (node && node._subNodes && node._subNodesNb) ? node._subNodes : null,
-		data = [],
-		key;
+  var items = (node && node._subNodes && node._subNodesNb) ? node._subNodes : null,
+    data = [],
+    key;
 
-	if (items) {
-		// eslint-disable-next-line guard-for-in
-		for (key in items) {
-			data.push(items[key]);
-		}
-		this.superCall(data);
-		this.fireControlEvent("select", 0);
-	}
-	this.logExit();
+  if (items) {
+    // eslint-disable-next-line guard-for-in
+    for (key in items) {
+      data.push(items[key]);
+    }
+    this.superCall(data);
+    this.fireControlEvent("select", 0);
+  }
+  this.logExit();
 };
 
 
@@ -53,28 +53,28 @@ o5.gui.controls.Control.registerAppControl(app.gui.controls.HomeSubMenuListItem,
  * @private
  */
 app.gui.controls.HomeSubMenuListItem.prototype.createdCallback = function createdCallback() {
-	this.logEntry();
-	this.superCall();
-	this._floatItem = true;
+  this.logEntry();
+  this.superCall();
+  this._floatItem = true;
   this._text = this.querySelector('.homeSubMenuItemText');
-	this.logExit();
+  this.logExit();
 };
 
 /**
  * @property itemData
  */
 Object.defineProperty(app.gui.controls.HomeSubMenuListItem.prototype, "itemData", {
-	get: function get() {
-		return this._data;
-	},
-	set: function set(data) {
-		this._data = data;
+  get: function get() {
+    return this._data;
+  },
+  set: function set(data) {
+    this._data = data;
 
-		if (data) {
-			this._text.textContent = data.displayName;
-		} else {
-			this._text.textContent = "item" + this.itemIndex;
-		}
-	}
+    if (data) {
+      this._text.textContent = data.displayName;
+    } else {
+      this._text.textContent = "item" + this.itemIndex;
+    }
+  }
 });
 

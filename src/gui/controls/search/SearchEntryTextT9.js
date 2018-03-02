@@ -126,7 +126,7 @@ app.gui.controls.SearchEntryTextT9.prototype._kickTimer = function _kickTimer() 
 			me._searchKeyTitleText.innerHTML = "<div class='searchT9tapPopup'>" + me._term + "</div>";
 		}
 		if (me._T9Letter >= "0" && me._T9Letter <= "9") {
-			$util.ControlEvents.fire("app-search-query:searchKeysTable", "focus");
+			$util.ControlEvents.fire("app-home-search:searchKeysTable", "focus");
 			me._T9Letter = "";
 		}
 	}, 1000);

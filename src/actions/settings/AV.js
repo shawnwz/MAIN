@@ -13,9 +13,13 @@ $actions.settings.AV = (function AV() {
 	 */
 	function setResolution(resolution) {
 		if (resolution === AUTO) {
-			// TODO: need to handle business logic for auto resolution
+			var hdmiCapList = CCOM.System.hdmiVideoFormat,
+                closestPower = Math.pow(2, Math.ceil(Math.log(hdmiCapList) / Math.log(2))),
+                hdmiCap = (closestPower > hdmiCapList) ? closestPower / 2 : closestPower;
+
 			// FP1-157 Advanced Settings - Picture Settings
 			o5.platform.system.Preferences.set("/users/preferences/autoResolution", true, true);
+			o5.platform.output.AV.setResolution(hdmiCap);
 			return;
 		}
 
@@ -29,27 +33,17 @@ $actions.settings.AV = (function AV() {
 			this.HDMI_VIDEO_FORMAT_2160P = 128;
 			this.HDMI_VIDEO_FORMAT_4320P = 256;*/
 
-		console.log("o5.platform.output.AV.setResolution " + resolution);
 		o5.platform.system.Preferences.set("/users/preferences/autoResolution", false, true);
 		return o5.platform.output.AV.setResolution(resolution);
 	}
 
 	/**
-	 * @method setResolution
+	 * @method setAspectMode
 	 * @private
-	 * @param {Enum} resolution
+	 * @param {Enum} aspectMode
 	 * @return {Boolean}
 	 */
 	function setAspectMode(aspectMode) {
-		if (aspectMode === AUTO) {
-			// TODO: need to handle business logic for auto resolution
-			// FP1-157 Advanced Settings - Picture Settings
-			return;
-		}
-
-		/*	this.HDMI_VIDEO_ASPECT_MODE_PILLAR_BOX = 0;
-			this.HDMI_VIDEO_ASPECT_MODE_STRETCH = 1;*/
-		console.log("o5.platform.output.AV.setHDVideoAspectMode " + aspectMode);
 		return o5.platform.output.AV.setHDVideoAspectMode(aspectMode);
 	}
 
@@ -70,12 +64,8 @@ $actions.settings.AV = (function AV() {
 	 * @return {Boolean}
 	 */
 	function savePictureItems(saveitems) {
-		var ret = true;
-		ret = setResolution(saveitems.settingsMenuPictureHDOutput);
-		if (ret) {
-			ret = setAspectMode(saveitems.settingsMenuPicture43);
-		}
-		return ret;
+		setResolution(saveitems.settingsMenuPictureHDOutput);
+		setAspectMode(saveitems.settingsMenuPicture43);
 	}
 
 	/**
@@ -85,7 +75,6 @@ $actions.settings.AV = (function AV() {
 	 * @return {Boolean}
 	 */
 	function setSpdifOutput(audioFormat) {
-		console.log("/system/devices/audmgr/spdifFormat " + audioFormat);
 		return o5.platform.system.Preferences.set("/system/devices/audmgr/spdifFormat", audioFormat, true);
 	}
 
@@ -96,7 +85,6 @@ $actions.settings.AV = (function AV() {
 	 * @return {Boolean}
 	 */
 	function setSpdifDelay(delayInMs) {
-		console.log("o5.platform.output.AV.setAudioDelay " + delayInMs);
 		return o5.platform.output.AV.setAudioDelay(delayInMs);
 	}
 
@@ -106,7 +94,6 @@ $actions.settings.AV = (function AV() {
 	 */
 	function setSpdifAttenuation(value) {
 		// TODO: FP1-158 Advanced Settings - Audio & Language
-		console.log("/system/devices/audmgr/pcmAttenuation" + value);
 		return o5.platform.system.Preferences.set("/system/devices/audmgr/pcmAttenuation", value, true);
 	}
 
@@ -117,7 +104,6 @@ $actions.settings.AV = (function AV() {
 	 * @return {Boolean}
 	 */
 	function setHdmiOutput(audioFormat) {
-		console.log("o5.platform.output.AV.setAudioType " + audioFormat);
 		return o5.platform.output.AV.setAudioType(audioFormat);
 	}
 
@@ -128,7 +114,6 @@ $actions.settings.AV = (function AV() {
 	 * @return {Boolean}
 	 */
 	function setPreferredLanguage(lang) {
-		console.log("o5.platform.system.Device.setPreferredLanguages " + lang);
 		return o5.platform.system.Device.setPreferredLanguages([lang]);
 	}
 
@@ -139,21 +124,11 @@ $actions.settings.AV = (function AV() {
 	 * @return {Boolean}
 	 */
 	function saveAudioItems(saveitems) {
-		var ret = true;
-		ret = setSpdifOutput(saveitems.settingsMenuAudioLanguageSpdifOutput);
-		if (ret) {
-			ret = setSpdifDelay(saveitems.settingsMenuAudioLanguageSpdifDelay);
-		}
-		if (ret) {
-			ret = setSpdifAttenuation(saveitems.settingsMenuAudioLanguageSpdifAttenuation);
-		}
-		if (ret) {
-			ret = setHdmiOutput(saveitems.settingsMenuAudioLanguageHdmiOutput);
-		}
-		if (ret) {
-			ret = setPreferredLanguage(saveitems.settingsMenuAudioLanguagePreferredLanguage);
-		}
-		return ret;
+		setSpdifOutput(saveitems.settingsMenuAudioLanguageSpdifOutput);
+		setSpdifDelay(saveitems.settingsMenuAudioLanguageSpdifDelay);
+		setSpdifAttenuation(saveitems.settingsMenuAudioLanguageSpdifAttenuation);
+		setHdmiOutput(saveitems.settingsMenuAudioLanguageHdmiOutput);
+		setPreferredLanguage(saveitems.settingsMenuAudioLanguagePreferredLanguage);
 	}
 
 	/* Public API */

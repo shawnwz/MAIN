@@ -149,10 +149,22 @@ app.gui.controls.SettingsInputText.prototype._editText = function _editText(str)
 		this._clearText();
 	}
 	if (this._isEditable) {
-		if (this._isautoUpdateDot()) {
+   		if (this._isautoUpdateDot()) {
 			this._attachPeriod();
 		}
 		this._inputText.textContent = this._inputText.textContent + str;
+	}
+	this.logExit();
+};
+
+
+/**
+ * @method _backspaceText
+ */
+app.gui.controls.SettingsInputText.prototype._backspaceText = function _backspaceText() {
+	this.logEntry();
+	if (this._isEditable && this._inputText.textContent.length > 0) {
+		this._inputText.textContent = this._inputText.textContent.substr(0, this._inputText.textContent.length - 1);
 	}
 	this.logExit();
 };
@@ -270,6 +282,8 @@ app.gui.controls.SettingsInputText.prototype._onKeyDown = function _onKeyDown (e
 			isHandle = isValidData;
 			break;
 		case "ArrowLeft":
+			this._isEditable = true;
+			this._backspaceText();
 			break;
 		case "ArrowRight":
 			this._attachPeriod();

@@ -48,7 +48,7 @@ app.views.SearchFullQuery.prototype.createdCallback = function createdCallback (
 			data = selectedItem ? selectedItem.itemData : null;
 
 		if (data) {
-			$util.ControlEvents.fire("app-search-query:searchRecentList", "add", data.title);
+			$util.ControlEvents.fire("app-home-search:searchRecentList", "add", data.title);
 			$util.ControlEvents.fire("app-synopsis", "fetch", data);
 			$util.Events.fire("app:navigate:to", "synopsis");
 		}

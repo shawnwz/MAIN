@@ -64,8 +64,8 @@ app.gui.controls.GuideProgrammeList.prototype.createdCallback = function created
 			$util.ControlEvents.fire("app-video", "setSrc", channelToTune);
             $util.Events.fire("app:navigate:to", "surf");
             setTimeout(function () {
-            	//var isMaster = o5.platform.system.Preferences.get("/users/current/isMaster", true);
-				if (o5.platform.ca.ParentalControl.isChannelLocked(me._service.serviceId) || selectedEvent.ratingBlocked === true) {
+            	var isMaster = o5.platform.system.Preferences.get("/users/current/isMaster", true);
+				if (!isMaster && (o5.platform.ca.ParentalControl.isChannelLocked(me._service.serviceId) || selectedEvent.ratingBlocked === true)) {
             		if (me._pinDialog.visible === false) {
             			$util.ControlEvents.fire(":dialogPinEntryH", "show");
 						$util.ControlEvents.fire(":dialogPinEntryH", "focus", { "id": "surf" });

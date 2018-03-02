@@ -25,8 +25,8 @@ $util.PowerMgmt = (function () {
                         if (outOfStandBy === "homepage") {
                             $util.ControlEvents.fire("app-video", "stop");
                             //home page
-                            $util.Events.fire("app:navigate:to", "home-menu");
-                            $util.ControlEvents.fire("app-home-menu:portalMenu", "select", 0); // homeMenu view, home page
+                            $util.Events.fire("app:navigate:to", "home");
+                            $util.ControlEvents.fire("app-home:portalMenu", "select", 0); // homeMenu view, home page
                         } else {
                             $util.ControlEvents.fire("app-player", "stop"); // this get last service and tune to
                             // last channel view
@@ -44,12 +44,12 @@ $util.PowerMgmt = (function () {
      * @return {Boolean} when standby mode
      */
     function getPowerMode() {
-    	var powerMgr = CCOM.Pwrmgr,
-    	    currentMode = powerMgr.userModeGet(),
+        var powerMgr = CCOM.Pwrmgr,
+            currentMode = powerMgr.userModeGet(),
             res = false;
-    	if (currentMode === powerMgr.STANDBY_ON) {
-    		res = true;
-    	}
+        if (currentMode === powerMgr.STANDBY_ON) {
+            res = true;
+        }
         return res;
     }
     return {

@@ -30,7 +30,7 @@ $actions.app.LaunchAppUtil = (function LaunchAppUtil() {
     function lanchApp(data) {
         this.logEntry();
 
-        console.log("APP LAUNCH DISABLED");
+        //console.log("APP LAUNCH DISABLED");
         //return;
         var title = data ? data.title : null;
         console.log("APP LAUNCH title" + title);
@@ -60,8 +60,7 @@ $actions.app.LaunchAppUtil = (function LaunchAppUtil() {
      * @public
      */
         init: function () {
-            $util.ControlEvents.on("app-apps:app-tile-mosaic-view", "enter", lanchApp, this);
-            $util.ControlEvents.on("app-apps:app-carouselList-view", "enter", lanchApp, this);
+			$util.Events.on("app:launch", lanchApp);
         }
 
     };

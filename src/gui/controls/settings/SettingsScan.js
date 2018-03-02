@@ -184,14 +184,19 @@ app.gui.controls.SettingsScan.prototype._updateProgress = function _updateProgre
  * @public
  */
 app.gui.controls.SettingsScan.prototype.startScan = function startScan() {
+    var footerData = {};
 	this.logEntry();
 	this._hideResults();
 	this._showProgress();
 	this._scanError = false;
 	this._totalServicesFoundCount = 0;
 	this._updateProgress(0);
-	this._footer.classList = [];
-	this._footer.classList.add("ctaCancel");
+	footerData.id = this.id;
+	footerData.screen = "startScan";
+    $util.ControlEvents.fire("app-settings:ctaSettingsMenu", "fetch", footerData);
+	//this._footer.classList = [];
+	//this._footer.classList.add("ctaCancel");
+	o5.gui.ViewManager.stopTimeOut();
 	document.querySelector("#ctaCancel").children[1].innerHTML = $util.Translations.translate(document.querySelector("#ctaCancel").children[1].attributes.getNamedItem("data-i18n").value);
 	$util.Events.fire("settings:scan:scan");
 	this._isScanning = true;
@@ -255,19 +260,24 @@ app.gui.controls.SettingsScan.prototype._scanProgress = function _scanProgress(p
  * @private
  */
 app.gui.controls.SettingsScan.prototype._finishScanning = function _finishScanning() {
+	var i, footerData = {};
 	this.logEntry();
 
-	for (var i = 0; i < this._networkServicesCount.length; i++) {
+	for (i = 0; i < this._networkServicesCount.length; i++) {
 		this._totalServicesFoundCount = this._totalServicesFoundCount + this._networkServicesCount[i];
 	}
 	o5.platform.system.Preferences.set($util.constants.TERRESTRIAL_CHANNEL_TUNED_NO, this._totalServicesFoundCount.toString());
 	$util.Events.fire("settings:scan:updateScanStatus");
+	footerData.id = this.id;
+	footerData.screen = "finishScan";
+    $util.ControlEvents.fire("app-settings:ctaSettingsMenu", "fetch", footerData);
 	this._footer.classList = [];
-	this._footer.classList.add("ctaClose");
+	//this._footer.classList.add("ctaClose");
 	this._isScanning = false;
 	this._hideProgress();
 	this._setResults();
 	this._showResults();
+	o5.gui.ViewManager.kickTimeOut();
 	$util.Events.fire("settings:scan:enableAutomatic");
 	this._totalServicesFoundCount = 0;
 	this._networkType = -1;
@@ -311,7 +321,7 @@ app.gui.controls.SettingsScan.prototype._unregisterEvents = function _unregister
 app.gui.controls.SettingsScan.prototype._setResults = function _setResults() {
 	this._scanResultText.innerHTML = (this._scanError) ? "Scan Failed" : $util.Translations.translate("settingsMenuScanResultsSuccess");
 	this._scanResultText.dataset.i18n = "settingsMenuScanResultsSuccess";
-	this._scanResultDetailsNumber.textContent = this._totalServicesFoundCount;
+	this._scanResultDetailsNumber.textContent = this._totalServicesFoundCount + " ";
 	this._scanResultDetailsText.innerHTML = $util.Translations.translate("settingsMenuScanChannelCount");
 	this._scanResultDetailsText.dataset.i18n = "settingsMenuScanChannelCount";
 	this._setScanCompleteMenuItems();

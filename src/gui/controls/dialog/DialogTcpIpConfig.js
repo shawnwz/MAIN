@@ -72,19 +72,6 @@ app.gui.controls.DialogTcpIpList.prototype.createdCallback = function createdCal
 /**
  * @method createdCallback
  */
-app.gui.controls.DialogTcpIpList.prototype.attachedCallback = function attachedCallback () {
-	this.logEntry();
-	this.superCall();
-    this.updateOnNetworkStateChange = function () {
-    	this._updateManualConfigDataonNetworkUpdate();
-    };
-	o5.platform.system.Network.registerOnStatusChangedListener(this.updateOnNetworkStateChange);
-	this.logExit();
-};
-
-/**
- * @method createdCallback
- */
 app.gui.controls.DialogTcpIpList.prototype._focus = function _focus () {
 	this.logEntry();
 	this.focus();
@@ -124,6 +111,18 @@ app.gui.controls.DialogTcpIpList.prototype._populate = function _populate () {
 };
 
 /**
+ * @method _updateIPCloseDialog
+ */
+app.gui.controls.DialogTcpIpList.prototype._updateIPCloseDialog = function _updateIPCloseDialog(actionVariable) {
+	this.logEntry();
+	o5.platform.system.Preferences.set("settings.tcpIp.IpConfig", actionVariable);
+	$util.Events.fire("setDhcpStatus", actionVariable);
+	$util.ControlEvents.fire(":tcpIPConfigDialog", "hide");
+	$util.ControlEvents.fire("app-settings:settingsDHCPRenewal", "show", $util.constants.INTERNET_STATUS_OVERLAY_DISPLAY_MODE.TCP_IP);
+	this.logExit();
+};
+
+/**
  * @method _isDataReadyForManualIpRenewal
  */
 app.gui.controls.DialogTcpIpList.prototype._isDataReadyForManualIpRenewal = function _isDataReadyForManualIpRenewal() {
@@ -140,27 +139,6 @@ app.gui.controls.DialogTcpIpList.prototype._isDataReadyForManualIpRenewal = func
 		isDataReady  = true;
 	}
 	return isDataReady;
-};
-
-/**
- * @method _updateManualConfigDataonNetworkUpdate
- */
-app.gui.controls.DialogTcpIpList.prototype._updateManualConfigDataonNetworkUpdate = function _updateManualConfigDataonNetworkUpdate() {
-	this.logEntry();
-	if (o5.platform.system.Network.isDhcpEnabled === false) {
-		var connectionStatus = $service.settings.IpNetwork.getNetworkConnectionStatus(),
-			ipInterface = o5.platform.system.Network.getInterfaceByType(connectionStatus.interfaceType),
-			ipAddress = o5.platform.system.Network.getIpAddress(ipInterface),
-			subnetMask = o5.platform.system.Network.getSubnetMask(ipInterface),
-			gateway = o5.platform.system.Network.getGateway(ipInterface),
-			dnsServers = o5.platform.system.Network.getDnsServers(ipInterface);
-		$config.saveConfigValue("settings.tcpIp.IpAddress", ipAddress);
-		$config.saveConfigValue("settings.tcpIp.subnetMask", subnetMask);
-		$config.saveConfigValue("settings.tcpIp.defaultGateway", gateway);
-		$config.saveConfigValue("settings.tcpIp.primaryDns", dnsServers[0]);
-		$config.saveConfigValue("settings.tcpIp.secondaryDns", dnsServers[1]);
-	}
-	this.logExit();
 };
 
 /**
@@ -192,7 +170,12 @@ app.gui.controls.DialogTcpIpList.prototype._onKeyDown = function _onKeyDown (e) 
             break;
 
         case "ArrowLeft":
-            if (this.selectedItem && this.selectedItem.type === "settingsToggle") {
+            if (this.selectedItem && this.selectedItem.type === "settingsInputText") {
+                child = this.selectedItem.querySelector("app-settings-input-text");
+    		if (child) { // pass on the key
+                    child.onkeydown(e);
+                }
+           } else if (this.selectedItem && this.selectedItem.type === "settingsToggle") {
                 child = this.selectedItem.querySelector("app-settings-toggle-list");
                 if (child) { // pass on the key
                     child.onkeydown(e);
@@ -214,6 +197,9 @@ app.gui.controls.DialogTcpIpList.prototype._onKeyDown = function _onKeyDown (e) 
            }
            handled = this.superCall(e);
 			break;
+		case "Yellow":
+			this._updateIPCloseDialog(true);
+			break;
         case "Enter":
         case "Ok":
           if (this.selectedItem && this.selectedItem.type === "settingsInputText") {
@@ -222,11 +208,12 @@ app.gui.controls.DialogTcpIpList.prototype._onKeyDown = function _onKeyDown (e) 
                     child.onkeydown(e);
                 }
 			if (this._isDataReadyForManualIpRenewal()) {
-				$util.Events.fire("setDhcpStatus", false);
-				$util.ControlEvents.fire(":tcpIPConfigDialog", "hide");
-				$util.ControlEvents.fire("app-settings:settingsDHCPRenewal", "show", $util.constants.INTERNET_STATUS_OVERLAY_DISPLAY_MODE.TCP_IP);
+				this._updateIPCloseDialog(false);
 				}
-            }
+           } else if (this.selectedItem && this.selectedItem.type === "settingsToggle" && this.selectedItem.querySelector("app-settings-toggle-list").selectedItem._data.value) {
+           	// enter if DHCP selected
+           		this._updateIPCloseDialog(true);
+           }
             handled = true;
             break;
         case "Back":
@@ -240,6 +227,7 @@ app.gui.controls.DialogTcpIpList.prototype._onKeyDown = function _onKeyDown (e) 
 				$util.ControlEvents.fire(":tcpIPConfigDialog", "hide");
 				$util.ControlEvents.fire("app-settings:settingsNetworkDetailsViewList", "focus");
 			}
+			o5.platform.system.Preferences.set("settings.tcpIp.IpConfig", o5.platform.system.Network.isDhcpEnabled());
  	         handled = true;
             break;
 		case "1":
@@ -346,7 +334,9 @@ Object.defineProperty(app.gui.controls.DialogTcpIpListItem.prototype, "itemData"
                 item = this.querySelector("app-settings-toggle-list");
             } else if (data.data.type === "settingsInputText") {
             	item = this.querySelector("app-settings-input-text");
-            	
+            } else if (data.data.type === "settingsText") {
+                item = this.querySelector("app-settings-text");
+              this._value.innerHTML = $util.Translations.translate(data.data.get());
             }
             if (data.data.isSelectable === false) {
                 this.classList.add("unselectable");
@@ -359,7 +349,6 @@ Object.defineProperty(app.gui.controls.DialogTcpIpListItem.prototype, "itemData"
                 setTimeout(function() { // give it some time to attach
                     if (item.fireControlEvent) {
                         item.fireControlEvent("show");
-                       // item.fireControlEvent("populate", data.data.get(), data.data.getSelectedIndex());
                         if (data.data.type === "settingsInputText") {
                         	 item.fireControlEvent("populate", data);
     	
@@ -372,9 +361,6 @@ Object.defineProperty(app.gui.controls.DialogTcpIpListItem.prototype, "itemData"
                                     itemData = selectedItem ? selectedItem.itemData : null;
                                     this.ownerDocument.activeElement._configObj.currentitem[data.id] = itemData.value;
 									o5.platform.system.Preferences.set("settings.tcpIp.IpConfig", itemData.value);
-                                    if (itemData.value === true) { // If the Selected option is DHCP, then diirectly fire an event to renew the ip through o5
-										//$util.ControlEvents.fire(":setDhcpStatus");
-                                    }
     								$util.ControlEvents.fire(":tcpIpContainer", "populate");
                             });
                         }

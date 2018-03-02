@@ -141,13 +141,15 @@ app.gui.controls.HtmlFlexList.prototype._populate = function _populate (data, in
     this.logEntry();
 
     var i, len = data.length,
-        elem, actualIndex,
+        elem, actualIndex = index || 0,
         scrollEdge = this._getEdge(this._focusWindow, 0);
 
-    this._clear();
+    this.fireControlEvent("clear");
 
     this._itemNb = len; // does not include empty ones if there is a minimum value
     this._data = data;
+
+    this._sort(); // sort the data if required
 
     if (this._minItemNb && this._minItemNb > len) { // need to add some empty ones
         len = this._minItemNb;
@@ -160,7 +162,6 @@ app.gui.controls.HtmlFlexList.prototype._populate = function _populate (data, in
         this._elems[i] = elem; // additional fields are added when we populate the DOM
     }
 
-    actualIndex = index || 0;
     actualIndex = (actualIndex < 0 ? ((actualIndex % len) + len) : (actualIndex % len)); // wrap if needed
 
     // add the focused element to the DOM at the start of the scroll window
@@ -189,6 +190,8 @@ app.gui.controls.HtmlFlexList.prototype._prepend = function _prepend (data) {
     this._itemNb += len;
     this._data.unshift.apply(this._data, data);
     this._elems.unshift.apply(this._elems, elems);
+
+    this._sort(); // sort the data if required
 
     if (this._minItemNb && this._minItemNb > this._itemNb) { // get rid of empty ones if they are there
         this._elems.splice(this._minItemNb);
@@ -241,18 +244,19 @@ app.gui.controls.HtmlFlexList.prototype._append = function _append (data) {
     this._data.push.apply(this._data, data);
     this._elems.splice(this._itemNb); // get rid of empty ones if they are there
     this._elems.push.apply(this._elems, elems);
-//@hdk  to implement!!!
-    if (this._itemNb > this._maxItemNb) {
+
+    this._sort(); // sort the data if required
+
+    if (this._maxItemNb && this._itemNb > this._maxItemNb) { // limit to the max at the start
         console.warn("more than max (%d>%d) number of items!! need to implement _maxItemNb!", this._itemNb, this._maxItemNb);
-    }
-//  if (this._maxItemNb && this._itemNb > this._maxItemNb) { // limit to the max at the start
+//@hdk  to implement!!!
 //      if (this._minItemNb > this._maxItemNb) {
 //          console.warn("min larger than max! dont know what to do!");
 //      }
 //      this._data.splice(0, this._itemNb - this._maxItemNb);
 //      this._elems.splice(0, this._itemNb - this._maxItemNb);
 //      this._itemNb = this._data.length;
-//  }
+    }
 
     // reindex the elements
     len = this._itemNb;

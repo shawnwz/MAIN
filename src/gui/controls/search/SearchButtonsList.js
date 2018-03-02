@@ -32,8 +32,8 @@ app.gui.controls.SearchButtonsList.prototype.createdCallback = function createdC
 		]
 	};
 
-	$util.ControlEvents.on("app-search-query:searchButtonsList", "focus", function () {
-		$util.ControlEvents.fire("app-search-query:searchButtonsList", "select", 1);
+	$util.ControlEvents.on("app-home-search:searchButtonsList", "focus", function () {
+		$util.ControlEvents.fire("app-home-search:searchButtonsList", "select", 1);
 	}, this);
 	this.logExit();
 };

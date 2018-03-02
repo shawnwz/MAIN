@@ -14,6 +14,14 @@ app.gui.controls.HtmlScrollList.prototype.createdCallback = function createdCall
     this.logEntry();
     this.superCall();
 
+    // the window in which the highlited element should be
+    this._focusWindow = this.querySelector("#" + this.id + "-ListFocus");
+	
+    if (this._focusWindow === null) { // only append if not yet created
+        this._focusWindow = this.ownerDocument.createElement("div");
+        this.appendChild(this._focusWindow);
+    }
+
     this.animate = false;
     this._scrollFast = false; // can be used to temporarily scroll fast, e,g, on holding a key down
     this._scrollbarType = this.dataset.scrollbarType;
@@ -25,9 +33,7 @@ app.gui.controls.HtmlScrollList.prototype.createdCallback = function createdCall
      */
     this._getEdge = function (elem, offset) {
         var start = 0, size = 0,
-            index,
-            style,
-            actualElem = elem;
+          index, style, actualElem = elem;
 
         if (typeof actualElem === "number") { // use elem as index
             index = actualElem;
@@ -97,6 +103,8 @@ app.gui.controls.HtmlScrollList.prototype.createdCallback = function createdCall
         // determine how many pixels to scroll
         if (this._scrollbarType === "page") {
         	pix = edge.start - containerEdge.start; //scrolling forward pagewise
+        } else if (edge.size > containerEdge.size) { // doesnt fit: line up the top/left
+            pix = edge.start - containerEdge.start;
         } else if (edge.end > containerEdge.end) { // scroll to the end
             pix = edge.end - containerEdge.end;
         } else if (edge.start < containerEdge.start) { // scroll to the start
@@ -164,6 +172,8 @@ app.gui.controls.HtmlScrollList.prototype.attachedCallback = function attachedCa
     this.logEntry();
     this.superCall();
     if (this.id) {
+        this._focusWindow.id = this.id + "-ListFocus";
+
         this.onControlEvent("scroll", this._scroll);
     }
     this.logExit();

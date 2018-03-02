@@ -1,7 +1,7 @@
 /**
  * Example markup:
  *
- *     <app-settings-ethernet-menu-list id="settingsInfoContent"></app-settings-ethernet-menu-list>
+ *     <app-settings-ethernet-menu-list id="settingsEthernetMenuList"></app-settings-ethernet-menu-list>
  *
  * @class app.gui.controls.SettingsEthernetMenuList
  * @extends o5.gui.controls.Control
@@ -18,23 +18,7 @@ app.gui.controls.SettingsEthernetMenuList.prototype.createdCallback = function c
 	
 	this.logEntry();
 
-	this._updateEthernetConnectionStatus = function () {
-		var isEthernetNetAvailable = o5.platform.system.Network.isEthernetAvailable();
-		if (isEthernetNetAvailable) {
-			this.classList.remove("ethernetDisconnected");
-		} else {
-			this.classList.add("ethernetDisconnected");
-		}
-	};
-
 	this.superCall();
-
-	$util.Events.on("settings:fetchLicences", this._fetchLincences, this);
-
-	this._updateEthernetConnectionStatus();
-	
-	o5.platform.system.Network.StateChange.setEthDownCallBack(this._updateEthernetConnectionStatus);
-	o5.platform.system.Network.StateChange.setEthUpCallBack(this._updateEthernetConnectionStatus);
 
 	$util.Translations.update(this);
 
@@ -47,25 +31,50 @@ app.gui.controls.SettingsEthernetMenuList.prototype.createdCallback = function c
 		this._data[i] = this._elems[i].i18n;
 	}
 
+// During box boot-up, if the ethernet connection is unavailable, the screen should be updated with ethernet disconneted status
+// because, There will be no tification about the disconnection after the UI loads.
+	if (o5.platform.system.Network.isEthernetAvailable() === false) {
+		this.classList.add("ethernetDisconnected");
+	}
+
+    this.onControlEvent("visible", function () {
+ 		o5.platform.system.Network.registerOnStatusChangedListener(this._onStatusChangedCallBack.bind(this));
+    });
+   this.onControlEvent("hidden", function () {
+ 		o5.platform.system.Network.unregisterOnStatusChangedListener(this._onStatusChangedCallBack.bind(this));
+    });
+
 	this.logExit();
 };
 
+
 /**
- * @method attachedCallback
+ * @method _onStatusChangedCallBack
  */
-app.gui.controls.SettingsEthernetMenuList.prototype.attachedCallback = function attachedCallback () {
+app.gui.controls.SettingsEthernetMenuList.prototype._onStatusChangedCallBack = function _onStatusChangedCallBack(e) {
 	this.logEntry();
-	this.superCall();
-	this.selectedItem = 0;
+    if (e.eventType === CCOM.IpNetwork.LINK_DOWN ||
+        e.eventType === CCOM.IpNetwork.SIGNAL_LOST) {
+        if (e.interface.name === o5.platform.system.Network.NetworkType.ETHERNET) {
+			this.classList.add("ethernetDisconnected");// auto-update the screen with ethernet disconneted status
+        }
+    }
+
+    if (e.eventType === CCOM.IpNetwork.LINK_UP ||
+        e.eventType === CCOM.IpNetwork.SIGNAL_OK) {
+        if (e.interface.name === o5.platform.system.Network.NetworkType.ETHERNET) {
+			this.classList.remove("ethernetDisconnected");// auto-update the screen with ethernet connected status
+        }
+    }
 	this.logExit();
 };
 
 /**
- * @method _focus
+ * @method _onFocus
  */
 app.gui.controls.SettingsEthernetMenuList.prototype._onFocus = function _onFocus () {
 	this.logEntry();
-	this._updateEthernetConnectionStatus();
+	this.selectedItem = 0;
     this._updateFooter();
 	this.superCall();
 	this.logExit();

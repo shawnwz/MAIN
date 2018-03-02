@@ -7,9 +7,9 @@ var backgroundVisionOptions = $service.settings.TvGuide.getOnOffOptions(),
         pipAudioIndex = 0,
         pipAudioValue = true,
 
-        backgroundAudioOptions = $service.settings.TvGuide.getOnOffOptions(),
+        backgroundAudioOptions = $service.settings.TvGuide.getBackgroundAudioOptions(),
         backgroundAudioIndex = 0,
-        backgroundAudioValue = true,
+        backgroundAudioValue = "backgroundVision",
 
         pipSurfAndScanOptions = $service.settings.TvGuide.getOnOffOptions(),
         pipSurfAndScanIndex = 0,
@@ -134,7 +134,7 @@ app.screenConfig.settings.TV_GUIDE = {
     defaultitem: {
         settingsMenuTvGuideBackgroundVision  : true,
         settingsMenuTvGuidePipAudio          : true,
-        settingsMenuTvGuideBackgroundAudio   : true,
+        settingsMenuTvGuideBackgroundAudio   : "backgroundVision",
         settingsMenuTvGuidePipSurfAndScan    : true,
         settingsMenuTvGuideChannelNameDisplay: "logo",
         settingsMenuTvGuideNowAndNext        : true,

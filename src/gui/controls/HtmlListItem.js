@@ -114,7 +114,7 @@ Object.defineProperty(app.gui.controls.HtmlListItem.prototype, "startPos", {
     get: function get () {
         return this._position;
     },
-    set: function get (px) {
+    set: function set (px) {
         var parent = this._parent;
 
         if (parent) {
